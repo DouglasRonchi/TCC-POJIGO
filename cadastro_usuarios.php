@@ -34,7 +34,7 @@
 
       <!-- Main Content -->
       <div id="content">
-        
+
         <!-- Topbar Navbar -->
         <?php include 'src/pages/menu/topbar.php'; ?>
         <!-- End of Topbar -->
@@ -45,40 +45,121 @@
           <!-- Page Heading -->
           <h1 class="h3 mb-4 text-gray-800">Cadastro de Usuários</h1>
 
+
+
+          <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Nome</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite o seu nome completo.">
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputEmail4">Usuário</label>
+                  <input type="email" class="form-control" id="inputEmail4" placeholder="Digite seu nome para usuário">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputPassword4">Telefone</label>
+                  <input type="password" class="form-control" id="inputPassword4" placeholder="">
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label for="inputEmail4">Email</label>
+                  <input type="email" class="form-control" id="inputEmail4" placeholder="Ex: blabla@blabla.com">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputPassword4">Senha</label>
+                  <input type="password" class="form-control" id="inputPassword4" placeholder="Digite sua senha">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="inputAddress">Endereço</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="Ex: Rua Blumenau, 123">
+              </div>
+
+              <div class="form-group">
+                <label for="inputAddress">Bairro</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="Ex: Velha">
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputCity">Cidade</label>
+                  <input type="text" class="form-control" id="">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="inputState">Estado</label>
+                  <select id="inputState" class="form-control">
+                    <option selected>Choose...</option>
+                    <option>...</option>
+                  </select>
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label for="inputEmail4">RG</label>
+                  <input type="email" class="form-control" id="inputEmail4" placeholder="">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputPassword4">CPF</label>
+                  <input type="password" class="form-control" id="inputPassword4" placeholder="">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="input">Data de Nascimento</label>
+                  <input type="date" class="form-control" id="">
+                </div>
+
+
+                  <div class="form-group col-md-6">
+                    <label for="inputPassword4">CNH</label>
+                    <input type="CNH" class="form-control" id="inputPassword4" placeholder="">
+                  </div>
+              
+              </div>
+
+
+
+
+            </form>
+
+          </div>
+          <!-- /.container-fluid -->
+
+
+
         </div>
-        <!-- /.container-fluid -->
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <?php include 'src/pages/menu/footer.php'; ?>      
+        <!-- End of Footer -->
 
       </div>
-      <!-- End of Main Content -->
-
-      <!-- Footer -->
-      <?php include 'src/pages/menu/footer.php'; ?>      
-      <!-- End of Footer -->
+      <!-- End of Content Wrapper -->
 
     </div>
-    <!-- End of Content Wrapper -->
+    <!-- End of Page Wrapper -->
 
-  </div>
-  <!-- End of Page Wrapper -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
 
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
+    <!-- Logout Modal-->
+    <?php include 'src/pages/menu/logoutmodal.php'; ?>
 
-  <!-- Logout Modal-->
-  <?php include 'src/pages/menu/logoutmodal.php'; ?>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
 
-  <!-- Custom scripts for all pages-->
-  <script src="js/sb-admin-2.min.js"></script>
+  </body>
 
-</body>
-
-</html>
+  </html>
