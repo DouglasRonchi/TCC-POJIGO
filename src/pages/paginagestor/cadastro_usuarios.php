@@ -48,118 +48,174 @@
 
 
           <form>
+
             <div class="form-group">
-              <label for="exampleInputEmail1">Nome</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite o seu nome completo.">
+              <label for="inputNome">Nome</label>
+              <input type="text" class="form-control" id="inputNome" name="inputNome" placeholder="Digite o seu nome completo.">
+            </div>
 
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="inputEmail4">Usuário</label>
-                  <input type="email" class="form-control" id="inputEmail4" placeholder="Digite seu nome para usuário">
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="inputPassword4">Telefone</label>
-                  <input type="password" class="form-control" id="inputPassword4" placeholder="">
-                </div>
-
-                <div class="form-group col-md-6">
-                  <label for="inputEmail4">Email</label>
-                  <input type="email" class="form-control" id="inputEmail4" placeholder="Ex: blabla@blabla.com">
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="inputPassword4">Senha</label>
-                  <input type="password" class="form-control" id="inputPassword4" placeholder="Digite sua senha">
-                </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="Usuario">Usuário</label>
+                <input type="text" class="form-control" id="inputUsuario" name="inputUsuario" placeholder="Digite seu nome para usuário">
               </div>
 
-              <div class="form-group">
-                <label for="inputAddress">Endereço</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="Ex: Rua Blumenau, 123">
+              <div class="form-group col-md-6">
+                <label for="Telefone">Telefone</label>
+                <input type="number" class="form-control" id="inputTelefone" name="inputTelefone" placeholder="">
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="Email">Email</label>
+                <input type="text" class="form-control" id="inputEmail" name="inputEmail" placeholder="Ex: blabla@blabla.com">
               </div>
 
-              <div class="form-group">
-                <label for="inputAddress">Bairro</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="Ex: Velha">
+              <div class="form-group col-md-6">
+                <label for="Senha">Senha</label>
+                <input type="text" class="form-control" id="inputSenha" name="inputSenha" placeholder="Digite sua senha">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="Endereco">Endereço</label>
+              <input type="text" class="form-control" id="inputEndereco" name="inputEndereco" placeholder="Ex: Rua Blumenau, 123">
+            </div>
+
+            <div class="form-group">
+              <label for="inputBairro">Bairro</label>
+              <input type="text" class="form-control" id="inputBairro" name="inputBairro" placeholder="Ex: Velha">
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="Cidade">Cidade</label>
+                <input type="text" class="form-control" id="inputCidade" name="inputCidade">
               </div>
 
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="inputCity">Cidade</label>
-                  <input type="text" class="form-control" id="">
-                </div>
-                <div class="form-group col-md-4">
-                  <label for="inputState">Estado</label>
-                  <select id="inputState" class="form-control">
-                    <option selected>Choose...</option>
-                    <option>...</option>
-                  </select>
-                </div>
+              <div class="form-group col-md-4">
+                <label for="Estado">Estado</label>
+                <select id="inputEstado" class="form-control" name="inputEstado">
+                  <option selected>Procurar...</option>
+                  <option value="1">AC</option>
+                  <option value="2">AL</option>
+                  <option value="3">AP</option>
+                  <option value="4">AM</option>
+                  <option value="5">BA</option>
+                  <option value="6">CE</option>
+                  <option value="7">DF</option>
+                  <option value="8">ES</option>
+                  <option value="9">GO</option>
+                  <option value="10">MA</option>
+                  <option value="11">MT</option>
+                  <option value="12">MS</option>
+                  <option value="13">MG</option>
+                  <option value="14">PA</option>
+                  <option value="15">PB</option>
+                  <option value="16">PR</option>
+                  <option value="17">PE</option>
+                  <option value="18">PI</option>
+                  <option value="19">RJ</option>
+                  <option value="20">RN</option>
+                  <option value="21">RS</option>
+                  <option value="22">RO</option>
+                  <option value="23">RR</option>
+                  <option value="24">SC</option>
+                  <option value="25">SP</option>
+                  <option value="26">SE</option>
+                  <option value="27">TO</option>
+                </select>
+              </div>
+            </div>
 
-                <div class="form-group col-md-6">
-                  <label for="inputEmail4">RG</label>
-                  <input type="email" class="form-control" id="inputEmail4" placeholder="">
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="inputPassword4">CPF</label>
-                  <input type="password" class="form-control" id="inputPassword4" placeholder="">
-                </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="RG">RG</label>
+                <input type="number" class="form-control" id="InputRG" placeholder="">
               </div>
 
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="input">Data de Nascimento</label>
-                  <input type="date" class="form-control" id="">
-                </div>
+              <div class="form-group col-md-6">
+                <label for="CPF">CPF</label>
+                <input type="number" class="form-control" id="InputCPF" placeholder="">
+              </div>
+            </div>
 
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="Nascimento">Data de Nascimento</label>
+                <input type="date" class="form-control" id="InputNascimento">
+              </div>
 
-                  <div class="form-group col-md-6">
-                    <label for="inputPassword4">CNH</label>
-                    <input type="CNH" class="form-control" id="inputPassword4" placeholder="">
-                  </div>
+              <div class="form-group col-md-6">
+                <label for="Admissao">Data de Admissão</label>
+                <input type="date" class="form-control" id="InputAdmissao">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="CNH">CNH</label>
+                <input type="number" class="form-control" id="InputCNH" placeholder="">
+              </div>
               
+              <div class="form-group col-md-6">
+                <label for="VencimentoCNH">Vencimento CNH</label>
+                <input type="date" class="form-control" id="InputVencimentoCNH">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="MOPP">MOPP</label>
+                <input type="number" class="form-control" id="InputMOPP" placeholder="">
               </div>
 
+              <div class="form-group col-md-6">
+                <label for="VencimentoMOPP">Vencimento MOPP</label>
+                <input type="date" class="form-control" id="VencimentoMOPP">
+              </div>
+            </div>
 
-
-
-            </form>
-
-          </div>
-          <!-- /.container-fluid -->
-
-
+            <button class="btn btn-primary" type="submit">Salvar</button>
+          </form>
 
         </div>
-        <!-- End of Main Content -->
+        <!-- /.container-fluid -->
 
-        <!-- Footer -->
-        <?php include '../menu/footer.php'; ?>      
-        <!-- End of Footer -->
+
 
       </div>
-      <!-- End of Content Wrapper -->
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <?php include '../menu/footer.php'; ?>      
+      <!-- End of Footer -->
 
     </div>
-    <!-- End of Page Wrapper -->
+    <!-- End of Content Wrapper -->
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fas fa-angle-up"></i>
-    </a>
+  </div>
+  <!-- End of Page Wrapper -->
 
-    <!-- Logout Modal-->
-    <?php include '../menu/logoutmodal.php'; ?>
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="../../../vendor/jquery/jquery.min.js"></script>
-    <script src="../../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Logout Modal-->
+  <?php include '../menu/logoutmodal.php'; ?>
 
-    <!-- Core plugin JavaScript-->
-    <script src="../../../vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- Bootstrap core JavaScript-->
+  <script src="../../../vendor/jquery/jquery.min.js"></script>
+  <script src="../../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="../../../js/sb-admin-2.min.js"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="../../../vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  </body>
+  <!-- Custom scripts for all pages-->
+  <script src="../../../js/sb-admin-2.min.js"></script>
 
-  </html>
+</body>
+
+</html>
