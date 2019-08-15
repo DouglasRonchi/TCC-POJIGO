@@ -21,17 +21,20 @@
 		<header class="row">
 			<div class="col-12">
 				<img class="p-2 mx-auto d-block" src="../../../img/logoc.png">
-				<div class="mr-2 text-center text-white">
+				<!-- <div class="mr-2 text-center text-white">
 					<h6>Olá, Motorista!</h6>
 					<a class="text-white" href="#">Sair</a>
-				</div>
+				</div> -->
 			</div>
 		</header>
 
-		<div class="row">
+		<div class="row mt-4">
 			<div class="col-12 mx-auto d-block shadow-lg">
-				<div class="btn-group-vertical mx-auto d-block p-5" role="group" aria-label="Button group with nested dropdown">
-					<a href="#" class="btn btn-dark p-3 font-weight-bold">Cadastro</a>
+				<div class="text-light text-center mt-4">
+					<small>Cadastro</small>
+					<h6>86345263</h6>
+				</div>
+				<div class="btn-group-vertical mx-auto d-block p-4" role="group" aria-label="Button group with nested dropdown">
 					<a href="rotas.php" class="btn btn-dark p-3 font-weight-bold">Rota</a>
 					<a href="frota.php" class="btn btn-dark p-3 font-weight-bold">Frota</a>
 					<a href="index_motorista.php" class="btn btn-success p-3 font-weight-bold">Começar</a>
@@ -41,7 +44,7 @@
 
 
 		<footer class="row">
-			<div class="col-12 text-center text-white p-3">
+			<div class="col-12 text-center text-white p-5">
 				<small>Central:</small><h4>(47) 3333-5898</h4>
 			</div>	
 		</footer>

@@ -27,7 +27,7 @@
 
 		<div class="row">
 			
-			<div class="col-10 mx-auto btn-block shadow-lg">
+			<div class="col-11 mx-auto btn-block shadow-lg p-3">
 				<form name="form">
 					<input class="textview text-center mb-1" name="textview" id="txtarea" style="width: 100%;height: 50px" placeholder="Cadastro..."></input>
 
@@ -64,7 +64,7 @@
 
 
 		<footer class="row">
-			<div class="col-12 text-center text-white p-3">
+			<div class="col-12 text-center text-white p-4">
 				<small>Central:</small><h4>(47) 3333-5898</h4>
 			</div>	
 		</footer>

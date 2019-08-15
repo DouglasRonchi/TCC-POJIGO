@@ -19,19 +19,19 @@
 	<div class="container-fluid">
 
 		<header class="row">
-			<div class="col-4">
-				<img class="p-2 mx-auto d-block" src="../../../img/logoc.png">
+			<div class="col-4 p-0">
+				<img class="p-2 mt-2 d-block" src="../../../img/logoc.png">
 			</div>
-			<div class="col-8 text-center pt-4">
+			<div class="col-8 text-center pt-3">
 				<div id="hora" class="text-white"></div>
-				<div class="text-white">Tenha uma ótima viagem!</div>
 				<div class="text-white">Seu destino está á 523km</div>
 				<div class="text-white">Clima no destino: Chuvoso!</div>
+				<div class="text-white">Tenha uma ótima viagem!</div>
 			</div>
 		</header>
 
 		<div class="row">
-			<div class="col-12 mx-auto d-block shadow-lg">
+			<div class="col-12 mx-auto d-block shadow-lg mt-4">
 				<div class="btn-group-vertical mx-auto d-block p-5" role="group" aria-label="Button group with nested dropdown">
 					<button type="button" class="btn btn-dark p-3 font-weight-bold">Início Intervalo</button>
 					<button type="button" class="btn btn-dark p-3 font-weight-bold">Fim Intervalo</button>
@@ -51,11 +51,10 @@
 
 
 		<footer class="row">
-			<div class="col-12 text-center text-white p-3">
+			<div class="col-12 text-center text-white p-5">
 				<small>Central:</small><h4>(47) 3333-5898</h4>
 			</div>	
 		</footer>
-
 
 
 	</div>

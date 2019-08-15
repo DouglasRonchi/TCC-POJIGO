@@ -26,7 +26,7 @@
 		</header>
 
 		<div class="row">
-			<div class="col-12 mx-auto d-block shadow-lg">
+			<div class="col-12 mx-auto d-block shadow-lg pt-4 mt-3">
 				<div class="btn-group-vertical p-5 btn-block" role="group" aria-label="Button group with nested dropdown">
 					
 
@@ -56,7 +56,7 @@
 
 
 		<footer class="row">
-			<div class="col-12 text-center text-white p-3">
+			<div class="col-12 text-center text-white p-5">
 				<small>Central:</small><h4>(47) 3333-5898</h4>
 			</div>	
 		</footer>
