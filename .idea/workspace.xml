@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c934103-8016-4184-8805-c6d5a3b60100" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/classes/Usuario.class.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/Veiculo.class.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Diarias.class.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Mobile.class.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/Registro.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -98,7 +99,7 @@
       <workItem from="1565704612271" duration="3513000" />
       <workItem from="1565790829050" duration="2359000" />
       <workItem from="1565828683391" duration="7184000" />
-      <workItem from="1565868374958" duration="7324000" />
+      <workItem from="1565868374958" duration="7577000" />
     </task>
     <servers />
   </component>
