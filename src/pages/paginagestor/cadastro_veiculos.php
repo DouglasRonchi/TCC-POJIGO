@@ -45,6 +45,65 @@
           <!-- Page Heading -->
           <h1 class="h3 mb-4 text-gray-800">Cadastro de Veículos</h1>
 
+<form>
+           <div class="form-group">
+            <label for="frota">Frota: </label>
+            <input type="number" class="form-control" id="frota"  name="frota"placeholder=""  min="0" >
+          </div>
+          <form class="form-group">
+            <label class="my-1 mr-2" for="inputMarca">Marca</label>
+            <select class="custom-select my-1 mr-sm-2" id="inputMarca" name="inputMarca">
+              <option selected></option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+            </select>
+            <div class="custom-control custom-checkbox my-1 mr-sm-2">
+              <input type="checkbox" class="custom-control-input" id="marca">
+            </div>
+          </form>
+          <form class="form-group">
+            <label class="my-1 mr-2" for="inputModelo">Modelo</label>
+            <select class="custom-select my-1 mr-sm-2" id="inputModelo" name="inputModelo">
+              <option selected></option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+            </select>
+            <div class="custom-control custom-checkbox my-1 mr-sm-2">
+            </div>
+          </form>
+
+          <div class="form-group">
+            <label for="inputPlaca">Placa: </label>
+            <input type="text" class="form-control" id="inputPlaca" name="inputPlaca" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="inputChassi">Chassi: </label>
+            <input type="text" class="form-control" id="inputChassi" name="inputChassi" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="inputRenavam">Renavam: </label>
+            <input type="number" class="form-control" id="inputRenavam"  name="inputRenavam" placeholder=""  min="0" >
+          </div>
+          <div class="form-group">
+            <label for="inputCapacidadetanque">Capacidade Tanque: </label>
+            <input type="number" class="form-control" id="inputCapacidadetanque"  name="inputCapacidadetanque" placeholder=""  min="0" >
+          </div>
+          <div class="form-group">
+            <label for="inputAnofabricacao">Ano Fabricação: </label>
+            <input type="date" class="form-control" id="inputAnofabricacao" name="inputAnofabricacao"placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="inputAnomodelo">Ano Modelo: </label>
+            <input type="date" class="form-control" id="inputAnomodelo" name="inputAnomodelo" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="inputCapacidadedecarga">Capacidade De Carga: </label>
+            <input type="number" class="form-control" id="inputCapacidadedecarga"  name="inputCapacidadedecarga" placeholder=""  min="0" >
+          </div>
+          <button type="button" class="btn btn-primary">Salvar</button>
+        </form>
+
+
         </div>
         <!-- /.container-fluid -->
 

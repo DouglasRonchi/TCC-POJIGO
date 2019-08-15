@@ -8,10 +8,10 @@
 
 	class Site {
 
-        private $host="localhost";
-        private $user="root";
-        private $password="";
-        private $database="controlerotas";
+        private $host="pojigo.tk";
+        private $user="pojigo";
+        private $password="entra21@Blusoft";
+        private $database="pojigo_master";
 
         public $query;
         private $conn;
