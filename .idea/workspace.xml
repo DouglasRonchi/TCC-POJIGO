@@ -3,22 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8c934103-8016-4184-8805-c6d5a3b60100" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/404.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/404.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cadastro_rotas.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/cadastro_rotas.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cadastro_usuarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/cadastro_usuarios.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cadastro_veiculos.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/cadastro_veiculos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cnhemopp.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/cnhemopp.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/dashboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/diarias.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/diarias.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rastreamento.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/rastreamento.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registros.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/registros.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/relatorio_rotas.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/relatorio_rotas.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/relatorio_usuarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/relatorio_usuarios.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/relatorio_veiculos.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/relatorio_veiculos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Site.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Site.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/include/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/include/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/menu/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/menu/sidebar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/menu/topbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/menu/topbar.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -107,7 +92,7 @@
       <updated>1565704611138</updated>
       <workItem from="1565704612271" duration="3513000" />
       <workItem from="1565790829050" duration="2359000" />
-      <workItem from="1565828683391" duration="6061000" />
+      <workItem from="1565828683391" duration="7123000" />
     </task>
     <servers />
   </component>
