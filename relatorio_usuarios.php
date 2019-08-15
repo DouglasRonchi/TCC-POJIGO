@@ -1,7 +1,7 @@
 <?php
-require_once 'src/classes/Conexao.class.php';
+require_once 'src/classes/Site.class.php';
 // Cria a conexão:
-$conn = new Conexao;
+$conn = new Site;
 
 ?>
 <!DOCTYPE html>

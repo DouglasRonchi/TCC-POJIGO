@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c934103-8016-4184-8805-c6d5a3b60100" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/relatorio_usuarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/relatorio_usuarios.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/Site.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Site.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/include/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/include/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/include/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/include/functions.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -88,6 +89,7 @@
       <updated>1565704611138</updated>
       <workItem from="1565704612271" duration="3513000" />
       <workItem from="1565790829050" duration="2359000" />
+      <workItem from="1565828683391" duration="2437000" />
     </task>
     <servers />
   </component>
@@ -99,10 +101,16 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Aplicando Configurações Globais" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aplicando Configurações Globais" />
   </component>
 </project>
