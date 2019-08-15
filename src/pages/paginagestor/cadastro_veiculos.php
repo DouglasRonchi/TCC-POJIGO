@@ -51,8 +51,8 @@
             <input type="number" class="form-control" id="frota"  name="frota"placeholder=""  min="0" >
           </div>
           <form class="form-group">
-            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Marca</label>
-            <select class="custom-select my-1 mr-sm-2" id="marca" name="marca">
+            <label class="my-1 mr-2" for="inputMarca">Marca</label>
+            <select class="custom-select my-1 mr-sm-2" id="inputMarca" name="inputMarca">
               <option selected></option>
               <option value="1">One</option>
               <option value="2">Two</option>
@@ -62,8 +62,8 @@
             </div>
           </form>
           <form class="form-group">
-            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Modelo</label>
-            <select class="custom-select my-1 mr-sm-2" id="modelo">
+            <label class="my-1 mr-2" for="inputModelo">Modelo</label>
+            <select class="custom-select my-1 mr-sm-2" id="inputModelo" name="inputModelo">
               <option selected></option>
               <option value="1">One</option>
               <option value="2">Two</option>
@@ -73,32 +73,32 @@
           </form>
 
           <div class="form-group">
-            <label for="formGroupExampleInput">Placa: </label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+            <label for="inputPlaca">Placa: </label>
+            <input type="text" class="form-control" id="inputPlaca" name="inputPlaca" placeholder="">
           </div>
           <div class="form-group">
-            <label for="formGroupExampleInput2">Chassi: </label>
-            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="">
+            <label for="inputChassi">Chassi: </label>
+            <input type="text" class="form-control" id="inputChassi" name="inputChassi" placeholder="">
           </div>
           <div class="form-group">
-            <label for="renavam">Renavam: </label>
-            <input type="number" class="form-control" id="renavam"  name="renavam" placeholder=""  min="0" >
+            <label for="inputRenavam">Renavam: </label>
+            <input type="number" class="form-control" id="inputRenavam"  name="inputRenavam" placeholder=""  min="0" >
           </div>
           <div class="form-group">
-            <label for="tanque">Capacidade Tanque: </label>
-            <input type="number" class="form-control" id="tanque"  name="tanque" placeholder=""  min="0" >
+            <label for="inputCapacidadetanque">Capacidade Tanque: </label>
+            <input type="number" class="form-control" id="inputCapacidadetanque"  name="inputCapacidadetanque" placeholder=""  min="0" >
           </div>
           <div class="form-group">
-            <label for="ano_fabricacao">Ano Fabricação: </label>
-            <input type="date" class="form-control" id="ano_fabricacao" name="ano_fabricacao"placeholder="">
+            <label for="inputAnofabricacao">Ano Fabricação: </label>
+            <input type="date" class="form-control" id="inputAnofabricacao" name="inputAnofabricacao"placeholder="">
           </div>
           <div class="form-group">
-            <label for="ano_modelo">Ano Modelo: </label>
-            <input type="date" class="form-control" id="ano_modelo" name="ano_modelo" placeholder="">
+            <label for="inputAnomodelo">Ano Modelo: </label>
+            <input type="date" class="form-control" id="inputAnomodelo" name="inputAnomodelo" placeholder="">
           </div>
           <div class="form-group">
-            <label for="carga">Capacidade De Carga: </label>
-            <input type="number" class="form-control" id="carga"  name="carga" placeholder=""  min="0" >
+            <label for="inputCapacidadedecarga">Capacidade De Carga: </label>
+            <input type="number" class="form-control" id="inputCapacidadedecarga"  name="inputCapacidadedecarga" placeholder=""  min="0" >
           </div>
           <button type="button" class="btn btn-primary">Salvar</button>
         </form>
