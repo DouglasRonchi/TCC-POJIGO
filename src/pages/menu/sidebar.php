@@ -47,7 +47,7 @@
     <!-- Nav Item - Utilities Collapse Menu -->
     <li class="nav-item">
       <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-        <i class="fas fa-fw fa-wrench"></i>
+          <i class="fas fa-file"></i>
         <span>Relatórios</span>
       </a>
       <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
@@ -62,7 +62,7 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-      <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
         <i class="fas fa-fw fa-folder"></i>
         <span>Páginas</span>
       </a>
@@ -86,14 +86,14 @@
     <!-- Nav Item - Charts -->
     <li class="nav-item">
       <a class="nav-link" href="rastreamento.php">
-        <i class="fas fa-fw fa-chart-area"></i>
+          <i class="fas fa-map-marked-alt"></i>
         <span>Rastrear</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
       <a class="nav-link" href="registros.php">
-        <i class="fas fa-fw fa-table"></i>
+          <i class="fas fa-clock"></i>
         <span>Registros</span></a>
     </li>
 
