@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c934103-8016-4184-8805-c6d5a3b60100" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/classes/Diarias.class.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/Mobile.class.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classes/Registro.class.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/funcaoPopUp.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/funcoes.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/funcoesMobile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/Mobile.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Mobile.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/paginagestor/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/paginamotorista/frota.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginamotorista/frota.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/paginamotorista/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginamotorista/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/paginamotorista/index_motorista.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginamotorista/index_motorista.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/paginamotorista/rotas.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginamotorista/rotas.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +36,13 @@
     </option>
     <expand />
     <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -99,7 +111,7 @@
       <workItem from="1565704612271" duration="3513000" />
       <workItem from="1565790829050" duration="2359000" />
       <workItem from="1565828683391" duration="7184000" />
-      <workItem from="1565868374958" duration="7577000" />
+      <workItem from="1565868374958" duration="8960000" />
     </task>
     <servers />
   </component>

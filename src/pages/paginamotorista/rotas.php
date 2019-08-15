@@ -77,6 +77,6 @@
     <!-- Custom scripts for all pages-->
     <script src="../../../js/sb-admin-2.min.js"></script>
 
-    <script src="../../../js/funcoes.js"></script>
+    <script src="../../../js/funcoesMobile.js"></script>
 </body>
 </html>

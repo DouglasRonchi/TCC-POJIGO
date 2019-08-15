@@ -45,6 +45,9 @@
           <!-- Page Heading -->
           <h1 class="h3 mb-4 text-gray-800">Dashboard</h1>
 
+            <button type="button" class="btn btn-primary" onclick="openPopupMobile('../paginamotorista/index.php')">PopUp</button>
+
+
         </div>
         <!-- /.container-fluid -->
 
@@ -78,6 +81,7 @@
 
   <!-- Custom scripts for all pages-->
   <script src="../../../js/sb-admin-2.min.js"></script>
+  <script src="../../../js/funcaoPopUp.js"></script>
 
 </body>
 

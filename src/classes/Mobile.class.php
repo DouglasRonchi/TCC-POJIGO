@@ -2,6 +2,6 @@
 
 class Mobile extends Site {
 
-    
+
 
 }
