@@ -5,7 +5,7 @@
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
       <div class="sidebar-brand-icon">
         <!-- <i class="fas fa-laugh-wink"></i> -->
-        <img src="img/fav.png" alt="logotigo POJIGO">
+        <img src="../../../img/fav.png" alt="logotigo POJIGO">
       </div>
       <div class="sidebar-brand-text mx-3">POJIGO</div>
     </a>

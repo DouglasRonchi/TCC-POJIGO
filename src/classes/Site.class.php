@@ -36,8 +36,8 @@
             $this->connect();
 
 			// Includes de configurações e funções globais do projeto
-			require_once("src/include/config.php");
-			require_once("src/include/functions.php");
+			require_once("../../include/config.php");
+			require_once("../../include/functions.php");
 
 		}
 
