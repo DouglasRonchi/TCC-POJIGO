@@ -203,9 +203,6 @@ class Veiculo extends Site {
     }
 
 
-
-
-
     /**
      * Função de cadastro de veículos
      * @return true ou false

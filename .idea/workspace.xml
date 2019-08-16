@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c934103-8016-4184-8805-c6d5a3b60100" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/controllers/diariasController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controllers/registros.Controller.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/paginagestor/registros.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/registros.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/paginagestor/relatorio_veiculos.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/relatorio_veiculos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/Veiculo.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Veiculo.class.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +49,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/classes" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/controllers" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -58,11 +59,12 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\TCC-POJIGO\src\classes" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\TCC-POJIGO\src\pages\paginagestor" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\TCC-POJIGO\src\controllers" />
+      <recent name="C:\xampp\htdocs\TCC-POJIGO\src\classes" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -107,7 +109,7 @@
       <workItem from="1565828683391" duration="7184000" />
       <workItem from="1565868374958" duration="10118000" />
       <workItem from="1565899514396" duration="991000" />
-      <workItem from="1565954006079" duration="5247000" />
+      <workItem from="1565954006079" duration="8001000" />
     </task>
     <servers />
   </component>
