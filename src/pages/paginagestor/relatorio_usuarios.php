@@ -146,6 +146,9 @@ $conn = new Site;
 
 <!-- Page level custom scripts -->
 <script src="../../../js/demo/datatables-demo.js"></script>
+
+<?php include_once '../../include/configdatatable.php'?>
+
 </body>
 
 </html>

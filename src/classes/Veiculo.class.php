@@ -211,7 +211,7 @@ class Veiculo extends Site {
      * @return true ou false
      */
     public function cadastrarVeiculo(){
-        
+
 
     }
 
