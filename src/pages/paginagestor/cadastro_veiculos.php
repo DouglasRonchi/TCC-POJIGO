@@ -45,7 +45,7 @@
           <!-- Page Heading -->
           <h1 class="h3 mb-4 text-gray-800">Cadastro de Veículos</h1>
 
-          <form>
+          <form action="../../controllers/veiculosController.php" method="post">
            <div class="form-row">
             <div class="form-group col-md-4">
               <label for="Frota">Frota</label>
@@ -103,7 +103,7 @@
               <input type="text" class="form-control" id="InputCapacidaDeTanque" name="InputCapacidaDeTanque">
             </div>
           </div>
-          <button type="button" class="btn btn-primary">Salvar</button>
+          <button type="submit" class="btn btn-primary">Salvar</button>
         </form>
 
 
