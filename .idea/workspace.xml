@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c934103-8016-4184-8805-c6d5a3b60100" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/controllers/diariasController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/registros.Controller.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/Site.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Site.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/Veiculo.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Veiculo.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/veiculosController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/veiculosController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/paginagestor/cadastro_veiculos.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/cadastro_veiculos.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -109,7 +110,7 @@
       <workItem from="1565828683391" duration="7184000" />
       <workItem from="1565868374958" duration="10118000" />
       <workItem from="1565899514396" duration="991000" />
-      <workItem from="1565954006079" duration="8001000" />
+      <workItem from="1565954006079" duration="9844000" />
     </task>
     <servers />
   </component>

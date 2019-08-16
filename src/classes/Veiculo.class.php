@@ -1,5 +1,7 @@
 <?php
 
+require_once 'Site.class.php';
+
 class Veiculo extends Site {
 
     protected $id;

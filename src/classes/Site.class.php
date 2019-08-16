@@ -40,9 +40,15 @@
 			// Iniciando a Conexão
             $this->connect();
 
+<<<<<<< HEAD
 			// // Includes de configurações e funções globais do projeto
 			// require_once("../../include/config.php");
             // require_once("../../include/functions.php");
+=======
+			// Includes de configurações e funções globais do projeto
+//			require_once("../../include/config.php");
+//            require_once("../../include/functions.php");
+>>>>>>> 2415806b7ca27d8218212f80bbff543400689140
 
 		}
 
