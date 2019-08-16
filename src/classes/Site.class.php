@@ -27,30 +27,25 @@
 		 * Executa o autoload, inclui as configurações,
 		 * funções e cria a conexão inicial.
 		 */
-		public function __construct() {
+		public function __construct()
+        {
 
-		    if (!isset($_SESSION)){
-		        session_start();
-		    } else {
+            if (!isset($_SESSION)) {
+                session_start();
+            } else {
                 session_destroy();
                 session_start();
             }
 
 
-			// Iniciando a Conexão
+            // Iniciando a Conexão
             $this->connect();
 
-<<<<<<< HEAD
-			// // Includes de configurações e funções globais do projeto
-			// require_once("../../include/config.php");
-            // require_once("../../include/functions.php");
-=======
-			// Includes de configurações e funções globais do projeto
+
+            // Includes de configurações e funções globais do projeto
 //			require_once("../../include/config.php");
 //            require_once("../../include/functions.php");
->>>>>>> 2415806b7ca27d8218212f80bbff543400689140
-
-		}
+        }
 
         /* AUTOLOAD
              * Metodo mágico que vai carregar os arquivos
