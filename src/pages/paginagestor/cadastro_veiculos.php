@@ -48,58 +48,67 @@
           <form action="../../controllers/veiculosController.php" method="post">
            <div class="form-row">
             <div class="form-group col-md-4">
-              <label for="Frota">Frota</label>
+              <label for="inputFrota">Frota</label>
               <input type="text" class="form-control" id="inputFrota" name="inputFrota" placeholder="">
             </div>
 
-            <div class="form-group col-md-4">
-              <label for="Marca">Marca</label>
-              <input type="text" class="form-control" id="inputMarca" name="inputMarca" placeholder="">
-            </div>
+               <div class="form-group col-md-4">
+                   <label for="inputMarca">Marca&nbsp;</label><a style="cursor: pointer" class="btn-gradient-primary btn-sm" data-toggle="modal" data-target=".modal-nova-marcaemodelo">Nova marca/modelo</a>
+                   <select class="form-control" name="inputMarca" id="inputMarca">
+                       <option>1</option>
+                       <option>2</option>
+                       <option>3</option>
+                   </select>
+               </div>
 
-            <div class="form-group col-md-4">
-              <label for="Modelo">Modelo</label>
-              <input type="text" class="form-control" id="inputModelo" name="inputModelo" placeholder="">
-            </div>
+               <div class="form-group col-md-4">
+                   <label for="inputModelo">Modelo</label>
+                   <select class="form-control" name="inputModelo" id="inputModelo">
+                       <option>1</option>
+                       <option>2</option>
+                       <option>3</option>
+                   </select>
+               </div>
+
           </div>
 
           <div class="form-row">
             <div class="form-group col-md-4">
-              <label for="Placa">Placa</label>
+              <label for="inputPlaca">Placa</label>
               <input type="text" class="form-control" id="inputPlaca" name="inputPlaca" placeholder="">
             </div>
 
             <div class="form-group col-md-4">
-              <label for="Chassi">Chassi</label>
+              <label for="inputChassi">Chassi</label>
               <input type="text" class="form-control" id="inputChassi" name="inputChassi" placeholder="">
             </div>
 
             <div class="form-group col-md-4">
-              <label for="Renavam">Renavam</label>
+              <label for="inputRenavam">Renavam</label>
               <input type="text" class="form-control" id="inputRenavam" name="inputRenavam" placeholder="">
             </div>
           </div>
           
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="DataDeFabricacao">Data de Fabricação</label>
+              <label for="inputDataDeFabricacao">Data de Fabricação</label>
               <input type="date" class="form-control" id="inputDataDeFabricacao" name="inputDataDeFabricacao">
             </div>
 
             <div class="form-group col-md-6">
-              <label for="AnoModelo">Ano Modelo</label>
+              <label for="inputAnoModelo">Ano Modelo</label>
               <input type="date" class="form-control" id="inputAnoModelo" name="inputAnoModelo">
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="CapacidadeDeCarga">Capacidade de Carga</label>
+              <label for="InputCapacidaDeCarga">Capacidade de Carga</label>
               <input type="text" class="form-control" id="InputCapacidaDeCarga" name="InputCapacidaDeCarga">
             </div>
 
             <div class="form-group col-md-6">
-              <label for="CapacidadeDeTanque">Capacidade de Tanque</label>
+              <label for="InputCapacidaDeTanque">Capacidade de Tanque</label>
               <input type="text" class="form-control" id="InputCapacidaDeTanque" name="InputCapacidaDeTanque">
             </div>
           </div>
@@ -140,6 +149,41 @@
 
 <!-- Custom scripts for all pages-->
 <script src="../../../js/sb-admin-2.min.js"></script>
+
+  <!-- Small modal Nova Marca e Modelo de Veículo -->
+
+  <div class="modal fade modal-nova-marcaemodelo" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Nova Marca/Modelo</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <form>
+                      <div class="form-group">
+                          <label for="inputNovaMarca" class="col-form-label">Marca:</label>
+                          <input type="text" class="form-control" id="inputNovaMarca" name="inputNovaMarca" required>
+                      </div>
+                      <div class="form-group">
+                          <label for="inputNovoModelo" class="col-form-label">Modelo:</label>
+                          <input type="text" class="form-control" id="inputNovoModelo" name="inputNovoModelo" required>
+                      </div>
+
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                  <button type="submit" class="btn btn-primary">Salvar</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
+
+  <!-- Small modal Nova Marca e Modelo de Veículo -->
 
 </body>
 
