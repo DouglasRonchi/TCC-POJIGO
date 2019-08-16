@@ -1,5 +1,7 @@
 <?php
 
+require_once 'Site.class.php';
+
 class Usuario extends Site {
 
     protected $id;

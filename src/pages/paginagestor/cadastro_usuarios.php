@@ -47,7 +47,7 @@
 
 
 
-          <form>
+          <form action="../../controllers/usuariosController.php" method="post">
 
             <div class="form-group">
               <label for="inputNome">Nome</label>
