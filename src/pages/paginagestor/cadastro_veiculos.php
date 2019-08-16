@@ -46,17 +46,41 @@
           <h1 class="h3 mb-4 text-gray-800">Cadastro de Veículos</h1>
 
 <form>
-           <div class="form-group">
-            <label for="frota">Frota: </label>
-            <input type="number" class="form-control" id="frota"  name="frota"placeholder=""  min="0" >
-          </div>
-          <form class="form-group">
-            <label class="my-1 mr-2" for="inputMarca">Marca</label>
-            <select class="custom-select my-1 mr-sm-2" id="inputMarca" name="inputMarca">
-              <option selected></option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-            </select>
+           <div class="form-row">
+              <div class="form-group col-md-4">
+                <label for="Frota">Frota</label>
+                <input type="text" class="form-control" id="inputFrota" name="inputFrota" placeholder="">
+              </div>
+
+              <div class="form-group col-md-4">
+                <label for="Marca">Marca</label>
+                <input type="text" class="form-control" id="inputMarca" name="inputMarca" placeholder="">
+              </div>
+
+              <div class="form-group col-md-4">
+                <label for="Modelo">Modelo</label>
+                <input type="text" class="form-control" id="inputModelo" name="inputModelo" placeholder="">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <label for="Placa">Placa</label>
+                <input type="text" class="form-control" id="inputPlaca" name="inputPlaca" placeholder="">
+              </div>
+
+              <div class="form-group col-md-4">
+                <label for="Chassi">Chassi</label>
+                <input type="text" class="form-control" id="inputChassi" name="inputChassi" placeholder="">
+              </div>
+
+              <div class="form-group col-md-4">
+                <label for="Renavam">Renavam</label>
+                <input type="text" class="form-control" id="inputRenavam" name="inputRenavam" placeholder="">
+              </div>
+            </div>
+            
+
             <div class="custom-control custom-checkbox my-1 mr-sm-2">
               <input type="checkbox" class="custom-control-input" id="marca">
             </div>
