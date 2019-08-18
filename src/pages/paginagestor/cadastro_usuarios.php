@@ -68,13 +68,13 @@
             
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="Email">Email</label>
+                <label for="Email">E-mail</label>
                 <input type="text" class="form-control" id="inputEmail" name="inputEmail" placeholder="Ex: blabla@blabla.com">
               </div>
 
               <div class="form-group col-md-6">
                 <label for="Senha">Senha</label>
-                <input type="text" class="form-control" id="inputSenha" name="inputSenha" placeholder="Digite sua senha">
+                <input type="password" class="form-control" id="inputSenha" name="inputSenha" placeholder="Digite sua senha">
               </div>
             </div>
 
@@ -129,51 +129,51 @@
               </div>
             </div>
 
-            <div class="form-row">
+              <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="RG">RG</label>
-                <input type="number" class="form-control" id="InputRG" placeholder="">
+                <input type="number" class="form-control" id="inputRG" name="inputRG" placeholder="">
               </div>
 
               <div class="form-group col-md-6">
                 <label for="CPF">CPF</label>
-                <input type="number" class="form-control" id="InputCPF" placeholder="">
+                <input type="number" class="form-control" id="inputCPF" name="inputCPF" placeholder="">
               </div>
             </div>
 
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="Nascimento">Data de Nascimento</label>
-                <input type="date" class="form-control" id="InputNascimento">
+                <input type="date" class="form-control" id="inputNascimento" name="inputNascimento">
               </div>
 
               <div class="form-group col-md-6">
                 <label for="Admissao">Data de Admissão</label>
-                <input type="date" class="form-control" id="InputAdmissao">
+                <input type="date" class="form-control" id="inputAdmissao" name="inputAdmissao">
               </div>
             </div>
 
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="CNH">CNH</label>
-                <input type="number" class="form-control" id="InputCNH" placeholder="">
+                <input type="number" class="form-control" id="inputCNH" name="inputCNH" placeholder="">
               </div>
               
               <div class="form-group col-md-6">
                 <label for="VencimentoCNH">Vencimento CNH</label>
-                <input type="date" class="form-control" id="InputVencimentoCNH">
+                <input type="date" class="form-control" id="inputVencimentoCNH" name="inputVencimentoCNH">
               </div>
             </div>
 
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="MOPP">MOPP</label>
-                <input type="number" class="form-control" id="InputMOPP" placeholder="">
+                <input type="number" class="form-control" id="inputMOPP" name="inputMOPP" placeholder="">
               </div>
 
               <div class="form-group col-md-6">
                 <label for="VencimentoMOPP">Vencimento MOPP</label>
-                <input type="date" class="form-control" id="VencimentoMOPP">
+                <input type="date" class="form-control" id="inputVencimentoMOPP" name="inputVencimentoMOPP">
               </div>
             </div>
 
