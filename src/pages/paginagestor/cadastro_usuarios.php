@@ -177,6 +177,16 @@
               </div>
             </div>
 
+              <div class="form-group">
+                  <label for="inputTipoUsuario">Tipo de usuário</label>
+                  <select id="inputTipoUsuario" class="form-control" name="inputTipoUsuario">
+                      <option selected>Selecione...</option>
+                      <option value="1">Administrador</option>
+                      <option value="2">Gestor</option>
+                      <option value="3">Motorista</option>
+                  </select>
+              </div>
+
             <button class="btn btn-primary" type="submit">Salvar</button>
           </form>
 
