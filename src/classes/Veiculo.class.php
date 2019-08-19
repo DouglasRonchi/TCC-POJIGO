@@ -211,6 +211,11 @@ class Veiculo extends Site {
      */
     public function cadastrarVeiculo(){
 
+            $sql = "INSERT INTO `veiculos` (id, frota, fk_modelo, placa, chassi, renavam, capacidade_tanque, ano_fab, ano_mod, capacidade_carga) VALUES
+             (DEFAULT, '{$this->getFrota()}', '{$this->getModelo()}', '{$this->getPlaca()}', '{$this->getChassi()}', '{$this->getRenavam()}', '{$this->getCapacidadeTanque()}', '{$this->getAnoFabricacao()}', '{$this->getAnoModelo()}', '{$this->getCapacidadeCarga()}')";
+
+            $this->executeQuery($sql);
+
 
     }
 

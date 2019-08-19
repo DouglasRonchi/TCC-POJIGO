@@ -114,15 +114,16 @@ $conn = new Site;
 
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="InputCapacidaDeCarga">Capacidade de Carga</label>
-              <input type="text" class="form-control" id="InputCapacidaDeCarga" name="InputCapacidaDeCarga">
+              <label for="inputCapacidadeDeCarga">Capacidade de Carga</label>
+              <input type="number" class="form-control" id="inputCapacidadeDeCarga" name="inputCapacidadeDeCarga">
             </div>
 
             <div class="form-group col-md-6">
-              <label for="InputCapacidaDeTanque">Capacidade de Tanque</label>
-              <input type="text" class="form-control" id="InputCapacidaDeTanque" name="InputCapacidaDeTanque">
+              <label for="inputCapacidadeDeTanque">Capacidade de Tanque</label>
+              <input type="number" class="form-control" id="inputCapacidadeDeTanque" name="inputCapacidadeDeTanque">
             </div>
           </div>
+
           <button type="submit" class="btn btn-primary">Salvar</button>
         </form>
 
