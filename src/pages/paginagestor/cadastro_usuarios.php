@@ -56,30 +56,30 @@
 
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="Usuario">Usuário</label>
+                <label for="inputUsuario">Usuário</label>
                 <input type="text" class="form-control" id="inputUsuario" name="inputUsuario" placeholder="Digite seu nome para usuário">
               </div>
 
               <div class="form-group col-md-6">
-                <label for="Telefone">Telefone</label>
+                <label for="inputTelefone">Telefone</label>
                 <input type="number" class="form-control" id="inputTelefone" name="inputTelefone" placeholder="">
               </div>
             </div>
             
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="Email">E-mail</label>
+                <label for="inputEmail">E-mail</label>
                 <input type="text" class="form-control" id="inputEmail" name="inputEmail" placeholder="Ex: blabla@blabla.com">
               </div>
 
               <div class="form-group col-md-6">
-                <label for="Senha">Senha</label>
+                <label for="inputSenha">Senha</label>
                 <input type="password" class="form-control" id="inputSenha" name="inputSenha" placeholder="Digite sua senha">
               </div>
             </div>
 
             <div class="form-group">
-              <label for="Endereco">Endereço</label>
+              <label for="inputEndereco">Endereço</label>
               <input type="text" class="form-control" id="inputEndereco" name="inputEndereco" placeholder="Ex: Rua Blumenau, 123">
             </div>
 
@@ -90,12 +90,12 @@
 
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="Cidade">Cidade</label>
+                <label for="inputCidade">Cidade</label>
                 <input type="text" class="form-control" id="inputCidade" name="inputCidade">
               </div>
 
               <div class="form-group col-md-4">
-                <label for="Estado">Estado</label>
+                <label for="inputEstado">Estado</label>
                 <select id="inputEstado" class="form-control" name="inputEstado">
                   <option selected>Procurar...</option>
                   <option value="1">AC</option>
@@ -131,48 +131,48 @@
 
               <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="RG">RG</label>
+                <label for="inputRG">RG</label>
                 <input type="number" class="form-control" id="inputRG" name="inputRG" placeholder="">
               </div>
 
               <div class="form-group col-md-6">
-                <label for="CPF">CPF</label>
+                <label for="inputCPF">CPF</label>
                 <input type="number" class="form-control" id="inputCPF" name="inputCPF" placeholder="">
               </div>
             </div>
 
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="Nascimento">Data de Nascimento</label>
+                <label for="inputNascimento">Data de Nascimento</label>
                 <input type="date" class="form-control" id="inputNascimento" name="inputNascimento">
               </div>
 
               <div class="form-group col-md-6">
-                <label for="Admissao">Data de Admissão</label>
+                <label for="inputAdmissao">Data de Admissão</label>
                 <input type="date" class="form-control" id="inputAdmissao" name="inputAdmissao">
               </div>
             </div>
 
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="CNH">CNH</label>
+                <label for="inputCNH">CNH</label>
                 <input type="number" class="form-control" id="inputCNH" name="inputCNH" placeholder="">
               </div>
               
               <div class="form-group col-md-6">
-                <label for="VencimentoCNH">Vencimento CNH</label>
+                <label for="inputVencimentoCNH">Vencimento CNH</label>
                 <input type="date" class="form-control" id="inputVencimentoCNH" name="inputVencimentoCNH">
               </div>
             </div>
 
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="MOPP">MOPP</label>
+                <label for="inputMOPP">MOPP</label>
                 <input type="number" class="form-control" id="inputMOPP" name="inputMOPP" placeholder="">
               </div>
 
               <div class="form-group col-md-6">
-                <label for="VencimentoMOPP">Vencimento MOPP</label>
+                <label for="inputVencimentoMOPP">Vencimento MOPP</label>
                 <input type="date" class="form-control" id="inputVencimentoMOPP" name="inputVencimentoMOPP">
               </div>
             </div>

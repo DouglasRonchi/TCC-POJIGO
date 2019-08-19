@@ -61,7 +61,8 @@ $conn = new Site;
                <div class="form-group col-md-4">
                    <label for="inputMarca">Marca&nbsp;</label><a style="cursor: pointer" class="btn-gradient-primary btn-sm" data-toggle="modal" data-target=".modal-nova-marcaemodelo">Nova marca/modelo</a>
                    <select class="form-control" name="inputMarca" id="inputMarca">
-                   <?php
+                   <option>Selecione uma Marca</option>
+                       <?php
                       $selectMarca = $conn->executeQuery("SELECT * FROM marca_veiculo");
                       $row = mysqli_num_rows($selectMarca);
                       while ($row = mysqli_fetch_assoc($selectMarca)){
@@ -75,7 +76,8 @@ $conn = new Site;
                <div class="form-group col-md-4">
                    <label for="inputModelo">Modelo</label>
                    <select class="form-control" name="inputModelo" id="inputModelo">
-                       
+                       <option>Selecione um Modelo</option>
+
                    </select>
                </div>
 
@@ -167,7 +169,7 @@ $(document).ready(function () {
     $('#inputMarca').change(function () {
         let id = $('#inputMarca').val();
 
-        console.log(id);
+        // console.log(id);
 
             $.ajax({
                 url: 'cadastro_veiculosAjax.php',
@@ -180,7 +182,7 @@ $(document).ready(function () {
                     
                 },
                 beforeSend: function () {
-                  $('#inputModelo').children('option').remove();
+                  $('#inputModelo').children('option:not(:first)').remove();
                 }
 
             }).done(function () {
