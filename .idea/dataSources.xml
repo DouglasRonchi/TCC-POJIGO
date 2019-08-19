@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="controlerotas@localhost" uuid="81c0da7c-9b77-43f8-97fe-12028905ddda">
+    <data-source source="LOCAL" name="@pojico.tk" uuid="00d466b2-16a1-417b-a7dc-36aa80fe7006">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/controlerotas</jdbc-url>
+      <jdbc-url>jdbc:mysql://pojigo.tk:3306/pojigo_master</jdbc-url>
       <driver-properties>
         <property name="autoReconnect" value="true" />
         <property name="zeroDateTimeBehavior" value="CONVERT_TO_NULL" />
