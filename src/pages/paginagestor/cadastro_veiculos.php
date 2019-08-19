@@ -1,3 +1,9 @@
+<?php
+require_once '../../classes/Site.class.php';
+// Cria a conexão:
+$conn = new Site;
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,18 +61,21 @@
                <div class="form-group col-md-4">
                    <label for="inputMarca">Marca&nbsp;</label><a style="cursor: pointer" class="btn-gradient-primary btn-sm" data-toggle="modal" data-target=".modal-nova-marcaemodelo">Nova marca/modelo</a>
                    <select class="form-control" name="inputMarca" id="inputMarca">
-                       <option>1</option>
-                       <option>2</option>
-                       <option>3</option>
+                   <?php
+                      $selectMarca = $conn->executeQuery("SELECT * FROM marca_veiculo");
+                      $row = mysqli_num_rows($selectMarca);
+                      while ($row = mysqli_fetch_assoc($selectMarca)){
+                              echo "<option value='".$row['id']."'>".$row['marca']."</option>";
+                            }
+                            
+                      ?>
                    </select>
                </div>
 
                <div class="form-group col-md-4">
                    <label for="inputModelo">Modelo</label>
                    <select class="form-control" name="inputModelo" id="inputModelo">
-                       <option>1</option>
-                       <option>2</option>
-                       <option>3</option>
+                       
                    </select>
                </div>
 
@@ -149,6 +158,41 @@
 
 <!-- Custom scripts for all pages-->
 <script src="../../../js/sb-admin-2.min.js"></script>
+
+<!-- Script Ajax para selecionar a marca e modelo de veiculos -->
+
+<script>
+
+$(document).ready(function () {
+    $('#inputMarca').change(function () {
+        let id = $('#inputMarca').val();
+
+        console.log(id);
+
+            $.ajax({
+                url: 'cadastro_veiculosAjax.php',
+                type: 'post',
+                data: { id: id },
+                success: function (data) {
+                    $('#inputModelo').append(data);
+                },
+                error: function (data) {
+                    
+                },
+                beforeSend: function () {
+                  $('#inputModelo').children('option').remove();
+                }
+
+            }).done(function () {
+              
+            });
+
+    });
+
+});
+
+</script>
+
 
   <!-- Small modal Nova Marca e Modelo de Veículo -->
 
