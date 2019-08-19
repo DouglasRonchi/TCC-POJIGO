@@ -18,3 +18,4 @@ $veiculo->setCapacidadeTanque($_POST['inputCapacidadeDeTanque']);
 
 $veiculo->cadastrarVeiculo();
 
+header('Location: ../pages/paginagestor');
