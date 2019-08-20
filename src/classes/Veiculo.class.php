@@ -2,7 +2,8 @@
 
 require_once 'Autoload.class.php';
 
-class Veiculo extends Site {
+class Veiculo extends Site
+{
 
     protected $id;
     protected $frota;
@@ -209,12 +210,13 @@ class Veiculo extends Site {
      * Função de cadastro de veículos
      * @return true ou false
      */
-    public function cadastrarVeiculo(){
+    public function cadastrarVeiculo()
+    {
 
-            $sql = "INSERT INTO `veiculos` (id, frota, fk_modelo, placa, chassi, renavam, capacidade_tanque, ano_fab, ano_mod, capacidade_carga) VALUES
+        $sql = "INSERT INTO `veiculos` (id, frota, fk_modelo, placa, chassi, renavam, capacidade_tanque, ano_fab, ano_mod, capacidade_carga) VALUES
              (DEFAULT, '{$this->getFrota()}', '{$this->getModelo()}', '{$this->getPlaca()}', '{$this->getChassi()}', '{$this->getRenavam()}', '{$this->getCapacidadeTanque()}', '{$this->getAnoFabricacao()}', '{$this->getAnoModelo()}', '{$this->getCapacidadeCarga()}')";
 
-            $this->executeQuery($sql);
+        $this->executeQuery($sql);
 
 
     }
@@ -223,7 +225,8 @@ class Veiculo extends Site {
      * Função de atualizar de veículos
      * @return true ou false
      */
-    public function atualizarVeiculo(){
+    public function atualizarVeiculo()
+    {
 
 
     }
@@ -232,11 +235,28 @@ class Veiculo extends Site {
      * Função para deletar veículos
      * @return true ou false
      */
-    public function deletarVeiculo(){
+    public function deletarVeiculo()
+    {
 
 
     }
 
+    /**
+     * Função para cadastrar nova marca e modelo de veículo
+     * @return true ou false
+     */
+
+    public function cadastrarMarcaModelo($marca, $modelo)
+    {
+
+//        $sql = "INSERT INTO marca_veiculo (id, marca) VALUES (DEFAULT,'{$marca}')";
+//        $this->executeQuery($sql);
+//        $lastid = $this->executeQuery("SELECT LAST_INSERT_ID() INTO @marca_veiculo");
+//
+//        $sql = "INSERT INTO modelo_veiculo (id, modelo, fk_marca) VALUES (DEFAULT,'{$modelo}',{$lastid})";
+//        $this->executeQuery($sql);
+
+    }
 
 
 }
