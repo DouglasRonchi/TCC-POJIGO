@@ -1,5 +1,5 @@
 <?php
-require_once '../../classes/Site.class.php';
+require_once '../../classes/Autoload.class.php';
 // Cria a conexão:
 $conn = new Site;
 

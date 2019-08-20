@@ -1,6 +1,6 @@
 <?php
 
-require_once 'Site.class.php';
+require_once 'Autoload.class.php';
 
 class Veiculo extends Site {
 

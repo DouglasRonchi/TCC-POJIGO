@@ -1,6 +1,6 @@
 <?php
 
-require_once "../classes/Usuario.class.php";
+require_once '../classes/Autoload.class.php';
 
 $usuario = new Usuario;
 

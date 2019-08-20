@@ -47,23 +47,6 @@
 //            require_once("../../include/functions.php");
         }
 
-        /* AUTOLOAD
-             * Metodo mágico que vai carregar os arquivos
-             * das classes automaticamente com base no nome
-             * da classe. O nome do arquivo php deve ter o
-             * mesmo nome da classe.
-             */
-
-        function __autoload($class_name) {
-            $class_name = strtolower($class_name);
-            $path = "classes/$class_name.class.php";
-
-            if (file_exists($path)) {
-                require_once($path);
-            } else {
-                die("Classe <b>".$class_name."</b> não encontrada no servidor!");
-            }
-        }
 
 		/* Função de Conexão com o Banco */
         public function connect(){

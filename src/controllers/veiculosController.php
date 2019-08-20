@@ -1,6 +1,5 @@
 <?php
-
-require_once '../classes/Veiculo.class.php';
+require_once '../classes/Autoload.class.php';
 
 $veiculo = New Veiculo;
 
