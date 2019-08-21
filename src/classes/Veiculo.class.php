@@ -241,22 +241,6 @@ class Veiculo extends Site
 
     }
 
-    /**
-     * Função para cadastrar nova marca e modelo de veículo
-     * @return true ou false
-     */
-
-    public function cadastrarMarcaModelo($marca, $modelo)
-    {
-
-//        $sql = "INSERT INTO marca_veiculo (id, marca) VALUES (DEFAULT,'{$marca}')";
-//        $this->executeQuery($sql);
-//        $lastid = $this->executeQuery("SELECT LAST_INSERT_ID() INTO @marca_veiculo");
-//
-//        $sql = "INSERT INTO modelo_veiculo (id, modelo, fk_marca) VALUES (DEFAULT,'{$modelo}',{$lastid})";
-//        $this->executeQuery($sql);
-
-    }
 
 
 }

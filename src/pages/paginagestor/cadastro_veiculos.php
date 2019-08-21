@@ -59,11 +59,8 @@ $veiculo = New Veiculo;
                         </div>
 
                         <div class="form-group col-md-4">
-                            <label for="inputMarca">Marca&nbsp;</label><a style="cursor: pointer"
-                                                                          class="btn-gradient-primary btn-sm"
-                                                                          data-toggle="modal"
-                                                                          data-target=".modal-nova-marcaemodelo">Nova
-                                marca/modelo</a>
+                            <label for="inputMarca">Marca&nbsp;</label>
+                            <a style="cursor: pointer" href="cadastro_novaMarca.php" class="text-decoration-none btn-sm text-muted">Nova marca/modelo</a>
                             <select class="form-control" name="inputMarca" id="inputMarca">
                                 <option>Selecione uma Marca</option>
                                 <?php
@@ -132,7 +129,7 @@ $veiculo = New Veiculo;
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Salvar</button>
+                    <button type="submit" name="btnSalvarNovo" class="btn btn-primary">Salvar</button>
                 </form>
 
 
@@ -203,51 +200,6 @@ $veiculo = New Veiculo;
     });
 
 </script>
-
-
-<!-- Small modal Nova Marca e Modelo de Veículo -->
-
-<div class="modal fade modal-nova-marcaemodelo" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Nova Marca/Modelo</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="" method="post">
-                    <div class="form-group">
-                        <label for="inputNovaMarca" class="col-form-label">Marca:</label>
-                        <input type="text" class="form-control" id="inputNovaMarca" name="inputNovaMarca" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputNovoModelo" class="col-form-label">Modelo:</label>
-                        <input type="text" class="form-control" id="inputNovoModelo" name="inputNovoModelo" required>
-                    </div>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                <button type="submit" name="btnSalvarMarca" class="btn btn-primary">Salvar</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-
-<?php
-if (isset($_POST['btnSalvarMarca'])) {
-    $veiculo->cadastrarMarcaModelo($_POST['inputNovaMarca'], $_POST['inputNovoModelo']);
-    header('Location: cadastro_veiculos.php');
-}
-
-?>
-
-<!-- Small modal Nova Marca e Modelo de Veículo -->
 
 </body>
 
