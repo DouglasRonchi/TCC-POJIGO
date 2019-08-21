@@ -1,4 +1,8 @@
 <?php 
+require_once '../../classes/Autoload.class.php';
+$conn = New Site;
+$usuario = New Usuario;
+$usuario->setCadastro(17);
 
 ?>
 <!DOCTYPE html>
@@ -31,8 +35,8 @@
 		<div class="row mt-4">
 			<div class="col-12 mx-auto d-block shadow-lg">
 				<div class="text-light text-center mt-4">
-					<small>Cadastro</small>
-					<h6>86345263</h6>
+					<h2>Cadastro</h2>
+					<h6><?=$usuario->getCadastro()?></h6>
 				</div>
 				<div class="btn-group-vertical mx-auto d-block p-4" role="group" aria-label="Button group with nested dropdown">
 					<a href="rotas.php" class="btn btn-dark p-3 font-weight-bold">Rota</a>

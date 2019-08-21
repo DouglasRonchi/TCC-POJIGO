@@ -1,4 +1,7 @@
-<?php 
+<?php
+require_once '../../classes/Autoload.class.php';
+$conn = New Site;
+
 
  ?>
 <!DOCTYPE html>
@@ -27,11 +30,26 @@
 
 		<div class="row">
 			<div class="col-12 mx-auto d-block shadow-lg pt-4 mt-3">
-				<div class="btn-group-vertical p-5 btn-block" role="group" aria-label="Button group with nested dropdown">
-					
+				<div class="btn-group-vertical p-5 btn-block" role="group">
+
+                    <div class="input-group mb-4">
+                        <select class="custom-select" id="inputRota" name="inputRota">
+                            <option selected>Rota:</option>
+                            <?php
+                            $selectRota = $conn->executeQuery("SELECT * FROM rotas");
+                            $selectRotaRows = mysqli_num_rows($selectRota);
+                            while ($selectRotaRows = mysqli_fetch_assoc($selectRota)):
+                            ?>
+                            <option value="<?=$selectRotaRows['id']?>"><?=$selectRotaRows['nome_rota']?></option>
+                            <?php
+                            endwhile;
+                            ?>
+                        </select>
+
+                    </div>
 
 					<div class="input-group mb-4">
-						<select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+						<select class="custom-select" id="inputOrigem" name="inputOrigem">
 							<option selected>Origem:</option>
 							<option value="1">Blumenau</option>
 							<option value="2">Rio do Sul</option>
@@ -40,7 +58,7 @@
 					
 					</div>
 					<div class="input-group mb-4">
-						<select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+						<select class="custom-select" id="inputDestino" name="inputDestino">
 							<option selected>Destino:</option>
 							<option value="1">Blumenau</option>
 							<option value="2">Rio do Sul</option>
@@ -78,5 +96,57 @@
     <script src="../../../js/sb-admin-2.min.js"></script>
 
     <script src="../../../js/funcoesMobile.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+            $('#inputRota').change(function () {
+                let id = $('#inputRota').val();
+
+                // console.log(id);
+
+                $.ajax({
+                    url: 'rotasOrigemAjax.php',
+                    type: 'post',
+                    data: {id: id},
+                    success: function (data) {
+                        $('#inputOrigem').append(data);
+                    },
+                    error: function (data) {
+
+                    },
+                    beforeSend: function () {
+                        $('#inputOrigem').children('option').remove();
+                    }
+
+                }).done(function () {
+
+                });
+
+                $.ajax({
+                    url: 'rotasDestinoAjax.php',
+                    type: 'post',
+                    data: {id: id},
+                    success: function (data) {
+                        $('#inputDestino').append(data);
+                    },
+                    error: function (data) {
+
+                    },
+                    beforeSend: function () {
+                        $('#inputDestino').children('option').remove();
+                    }
+
+                }).done(function () {
+
+                });
+
+            });
+
+        });
+
+    </script>
+
+
 </body>
 </html>
