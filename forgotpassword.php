@@ -22,25 +22,28 @@
 
   <form action="index.php" class="login-form">
     <div class="text-center logologin">
-    <h1>POJIGO</h1>
-    <small>Rotas & Registros</small>  
+      <h1>POJIGO</h1>
+      <small>Rotas & Registros</small>
+      <hr>
+      <small>Digite seu usuário e seu e-mail e enviaremos para você um link para redefinição de senha.</small>
+
     </div>
+
 
     <div class="txtb">
       <input type="text" id="inputUser" name="inputUser">
       <span data-placeholder="Usuário"></span>
     </div>
 
-
     <div class="txtb">
-      <input type="password" id="inputSenha" name="inputSenha">
-      <span data-placeholder="Senha"></span>
+      <input type="email" id="inputEmail" name="inputEmail">
+      <span data-placeholder="E-mail"></span>
     </div>
 
-    <input type="submit" class="logbtn btn btn-primary" value="Entrar">
+    <input type="submit" class="logbtn btn btn-primary" value="Redefinir Senha">
 
     <div class="bottom-text">
-      <a href="forgotpassword.php">Esqueçeu a senha?</a>
+      <a href="login.php">Lembrou? Logar!</a>
     </div>
 
   </form>
@@ -48,6 +51,7 @@
 
 
   <!-- Logout Modal-->
+  <?php include 'src/pages/menu/logoutmodal.php'; ?>
 
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
