@@ -1,3 +1,8 @@
+<?php
+require_once '../../classes/Autoload.class.php';
+$login = new Login;
+$login->VerificarLogin();
+?>
 <!DOCTYPE html>
 <html lang="en">
 

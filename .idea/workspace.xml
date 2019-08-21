@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8c934103-8016-4184-8805-c6d5a3b60100" name="Default Changelist" comment="" />
+    <list default="true" id="8c934103-8016-4184-8805-c6d5a3b60100" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/controllers/loginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/Login.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Login.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/Site.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Site.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/menu/logoutmodal.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/menu/logoutmodal.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/menu/topbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/menu/topbar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/paginagestor/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/paginamotorista/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginamotorista/index.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,6 +122,7 @@
       <workItem from="1566299661738" duration="214000" />
       <workItem from="1566339113295" duration="4236000" />
       <workItem from="1566386414894" duration="12399000" />
+      <workItem from="1566404110013" duration="4253000" />
     </task>
     <servers />
   </component>
