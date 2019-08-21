@@ -4,6 +4,11 @@ $conn = New Site;
 $usuario = New Usuario;
 $usuario->setCadastro(17);
 
+//Quando existir o Login, assim que logar vai gerar um novo código de viagem e setar o usuario no banco
+//if (isset($_SESSION['usuario']) && isset($_SESSION['codigo_viagem'])){
+$sql = "INSERT INTO registro_ponto (fk_usuario, cod_viagem) VALUES ('$fk_usuario', '$cod_viagem')";
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">

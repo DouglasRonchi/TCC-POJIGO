@@ -28,8 +28,8 @@
 		<div class="row">
 			
 			<div class="col-11 mx-auto btn-block shadow-lg p-3">
-				<form name="form">
-					<input class="textview text-center mb-1" name="textview" id="txtarea" style="width: 100%;height: 50px" placeholder="Cadastro..."></input>
+				<form name="form" action="../../controllers/mobileController.php" method="post">
+					<input readonly class="textview text-center mb-1" name="textview" id="txtarea" style="width: 100%;height: 50px" placeholder="Frota..."></input>
 
 					<div class="btn-group btn-block" role="group" aria-label="Button">
 						<button type="button" id="btn" class="btn btn-dark p-2 font-weight-bold" onclick="insert(1)">1</button>
@@ -56,7 +56,7 @@
 					</div>
 					<div class="btn-group btn-block" role="group" aria-label="Button">
 
-						<a href="index.php" class="btn btn-success p-2 font-weight-bold">Ok</a>
+						<button name="btnFrota" class="btn btn-success p-2 font-weight-bold">Ok</button>
 					</div>
 				</form>
 			</div>
