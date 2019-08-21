@@ -2,6 +2,10 @@
 require_once '../../classes/Autoload.class.php';
 $conn = New Site;
 $veiculo = New Veiculo;
+if(isset($_GET['id'])){
+$selectVeiculo = $conn->executeQuery("SELECT * FROM veiculos WHERE id = {$_GET['id']}");
+$selectVeiculoRows = mysqli_fetch_assoc($selectVeiculo);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,7 +59,8 @@ $veiculo = New Veiculo;
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="inputFrota">Frota</label>
-                            <input type="text" class="form-control" id="inputFrota" name="inputFrota" placeholder="">
+                            <input type="text" class="form-control" id="inputFrota" name="inputFrota"
+                                   value="<?= (isset($_GET['editar']))? $selectVeiculoRows['frota'] :''; ?>">
                         </div>
 
                         <div class="form-group col-md-4">
@@ -67,7 +72,7 @@ $veiculo = New Veiculo;
                                 $selectMarca = $conn->executeQuery("SELECT * FROM marca_veiculo");
                                 $row = mysqli_num_rows($selectMarca);
                                 while ($row = mysqli_fetch_assoc($selectMarca)) {
-                                    echo "<option value='" . $row['id'] . "'>" . $row['marca'] . "</option>";
+                                    echo "<option value='" . $row['id'] . "' >" . $row['marca'] . "</option>";
                                 }
 
                                 ?>
@@ -87,31 +92,35 @@ $veiculo = New Veiculo;
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="inputPlaca">Placa</label>
-                            <input type="text" class="form-control" id="inputPlaca" name="inputPlaca" placeholder="">
+                            <input type="text" class="form-control" id="inputPlaca" name="inputPlaca"
+                                   value="<?= (isset($_GET['editar']))? $selectVeiculoRows['placa'] :''; ?>">
                         </div>
 
                         <div class="form-group col-md-4">
                             <label for="inputChassi">Chassi</label>
-                            <input type="text" class="form-control" id="inputChassi" name="inputChassi" placeholder="">
+                            <input type="text" class="form-control" id="inputChassi" name="inputChassi"
+                                   value="<?= (isset($_GET['editar']))? $selectVeiculoRows['chassi'] :''; ?>">
                         </div>
 
                         <div class="form-group col-md-4">
                             <label for="inputRenavam">Renavam</label>
                             <input type="text" class="form-control" id="inputRenavam" name="inputRenavam"
-                                   placeholder="">
+                                   value="<?= (isset($_GET['editar']))? $selectVeiculoRows['renavam'] :''; ?>">
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="inputDataDeFabricacao">Data de Fabricação</label>
-                            <input type="date" class="form-control" id="inputDataDeFabricacao"
-                                   name="inputDataDeFabricacao">
+                            <label for="inputDataDeFabricacao">Ano de Fabricação</label>
+                            <input type="number" class="form-control" id="inputDataDeFabricacao"
+                                   name="inputDataDeFabricacao"
+                                   value="<?= (isset($_GET['editar']))? $selectVeiculoRows['ano_fab'] :''; ?>">
                         </div>
 
                         <div class="form-group col-md-6">
-                            <label for="inputAnoModelo">Ano Modelo</label>
-                            <input type="date" class="form-control" id="inputAnoModelo" name="inputAnoModelo">
+                            <label for="inputAnoModelo">Ano do Modelo</label>
+                            <input type="number" class="form-control" id="inputAnoModelo" name="inputAnoModelo"
+                                   value="<?= (isset($_GET['editar']))? $selectVeiculoRows['ano_mod'] :''; ?>">
                         </div>
                     </div>
 
@@ -119,13 +128,15 @@ $veiculo = New Veiculo;
                         <div class="form-group col-md-6">
                             <label for="inputCapacidadeDeCarga">Capacidade de Carga</label>
                             <input type="number" class="form-control" id="inputCapacidadeDeCarga"
-                                   name="inputCapacidadeDeCarga">
+                                   name="inputCapacidadeDeCarga"
+                                   value="<?= (isset($_GET['editar']))? $selectVeiculoRows['capacidade_carga'] :''; ?>">
                         </div>
 
                         <div class="form-group col-md-6">
                             <label for="inputCapacidadeDeTanque">Capacidade de Tanque</label>
                             <input type="number" class="form-control" id="inputCapacidadeDeTanque"
-                                   name="inputCapacidadeDeTanque">
+                                   name="inputCapacidadeDeTanque"
+                                   value="<?= (isset($_GET['editar']))? $selectVeiculoRows['capacidade_tanque'] :''; ?>">
                         </div>
                     </div>
 

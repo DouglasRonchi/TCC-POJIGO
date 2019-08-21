@@ -43,5 +43,10 @@ if (isset($_POST['btnSalvarNovo'])) {
 
     header('Location: ../pages/paginagestor/cadastro_veiculos.php');
 
+} else if (isset($_POST['btnExcluir'])){
+    $conn->executeQuery("DELETE FROM veiculos WHERE id = {$_GET['id']}");
+    header('Location: ../pages/paginagestor/relatorio_veiculos.php');
+} else if (isset($_POST['btnEditar'])){
+    header("Location: ../pages/paginagestor/cadastro_veiculos.php?editar=1&id={$_GET['id']}");
 }
 

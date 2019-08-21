@@ -92,10 +92,14 @@ $conn = New Site;
                                         <td><?= $marca['marca'] ?></td>
                                         <td><?= $modelo['modelo'] ?></td>
                                         <td>
-                                            <div class="btn-group btn-block">
-                                                <button class="btn btn-sm btn-primary">Editar</button>
-                                                <button class="btn btn-sm btn-danger">Excluir</button>
-                                            </div>
+                                            <form action="../../controllers/veiculosController.php?id=<?=$selectVeiculoRows["id"]?>" method="post">
+                                                <div class="btn-group btn-block">
+                                                    <button class="btn btn-sm btn-primary" name="btnEditar">Editar</button>
+                                                    <button class="btn btn-sm btn-danger" name="btnExcluir" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir
+                                                    </button>
+                                                </div>
+
+                                            </form>
                                         </td>
                                     </tr>
                                 <?php endwhile; ?>

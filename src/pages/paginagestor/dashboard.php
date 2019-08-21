@@ -47,7 +47,6 @@
 
             <button type="button" class="btn btn-primary" onclick="openPopupMobile('../paginamotorista/index.php')">PopUp Mobile</button>
 
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".modal-nova-marcaemodelo">Cadastrar Nova Marca</button>
 
             <hr>
 
@@ -86,41 +85,6 @@
   <!-- Custom scripts for all pages-->
   <script src="../../../js/sb-admin-2.min.js"></script>
   <script src="../../../js/funcaoPopUp.js"></script>
-
-  <!-- Small modal Nova Marca e Modelo de Veículo -->
-
-  <div class="modal fade modal-nova-marcaemodelo" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-sm">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Nova Marca/Modelo</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                  </button>
-              </div>
-              <div class="modal-body">
-                  <form>
-                      <div class="form-group">
-                          <label for="inputNovaMarca" class="col-form-label">Marca:</label>
-                          <input type="text" class="form-control" id="inputNovaMarca" name="inputNovaMarca" required>
-                      </div>
-                      <div class="form-group">
-                          <label for="inputNovoModelo" class="col-form-label">Modelo:</label>
-                          <input type="text" class="form-control" id="inputNovoModelo" name="inputNovoModelo" required>
-                      </div>
-
-              </div>
-              <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                  <button type="submit" class="btn btn-primary">Salvar</button>
-                  </form>
-              </div>
-          </div>
-          </div>
-      </div>
-  </div>
-
-  <!-- Small modal Nova Marca e Modelo de Veículo -->
 
 
 </body>
