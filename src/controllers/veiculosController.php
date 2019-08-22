@@ -21,7 +21,7 @@ if (isset($_POST['btnSalvarNovo'])) {
 
     $conn->setAlerta(
         'success',
-        'Veículo cadastrado com sucesso',
+        'Veículo '.$veiculo->getFrota().' cadastrado com sucesso',
         '<img class="img-fluid" src="'.$conn->path('img/icons/success.png').'">',
         $_SESSION['usuario_id']
     );
@@ -51,14 +51,16 @@ if (isset($_POST['btnSalvarNovo'])) {
     header('Location: ../pages/paginagestor/cadastro_veiculos.php');
 
 } else if (isset($_POST['btnExcluir'])){
-    $conn->executeQuery("DELETE FROM veiculos WHERE id = {$_GET['id']}");
+    $idFrota = $_GET['id'];
 
     $conn->setAlerta(
         'success',
-        'Veículo excluido com sucesso',
+        'Veículo '.$veiculo->getFrotaById($idFrota).' excluido com sucesso',
         '<img class="img-fluid" src="'.$conn->path('img/icons/success.png').'">',
         $_SESSION['usuario_id']
     );
+
+    $conn->executeQuery("DELETE FROM veiculos WHERE id = {$idFrota}");
 
     header('Location: ../pages/paginagestor/relatorio_veiculos.php');
 } else if (isset($_POST['btnEditar'])){

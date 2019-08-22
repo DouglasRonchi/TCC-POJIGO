@@ -96,6 +96,23 @@ $conn = new Site;
                     endif;
                 endwhile;
                 ?>
+                <?php
+                if ($qtdNotificacoes == 0):
+                ?>
+                    <a class="dropdown-item d-flex align-items-center" href="#">
+                        <div class="mr-3">
+                            <div class="icon-circle bg-dark">
+                                <i class="fas fa-smile-beam text-white"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="small text-gray-500">Olá, Tudo bem?</div>
+                            <span class="font-weight-bold">Você não tem nenhuma nova notificação!</span>
+                        </div>
+                    </a>
+                <?php
+                endif;
+                ?>
                 <hr>
                 <!-- Button trigger modal -->
                 <a class="dropdown-item text-center small text-gray-500" href="#" data-toggle="modal"
@@ -250,6 +267,7 @@ $conn = new Site;
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <form action="../../controllers/notificacoesController.php" method="post">
                     <button type="submit" name="dismissAll" class="btn btn-primary">Limpar tudo</button>
+                    <button type="submit" name="deleteAll" class="btn btn-danger">Deletar todas</button>
                 </form>
             </div>
         </div>

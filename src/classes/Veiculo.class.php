@@ -205,6 +205,11 @@ class Veiculo extends Site
         return $this;
     }
 
+    public function getFrotaById($id)
+    {
+        $result = mysqli_fetch_assoc($this->executeQuery("SELECT frota FROM veiculos WHERE id = $id"));
+        return $result['frota'];
+    }
 
     /**
      * Função de cadastro de veículos
@@ -240,7 +245,6 @@ class Veiculo extends Site
 
 
     }
-
 
 
 }

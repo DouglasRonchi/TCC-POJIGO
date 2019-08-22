@@ -7,9 +7,12 @@ $id = $_POST['id'];
 if (isset($_POST['clicknotificacao'])){
 
 	$conn->executeQuery("UPDATE notificacoes SET lida = '1' WHERE notificacoes.id = {$id};");
-	header('Location: /TCC-POJIGO/src/pages/paginagestor/index.php');
+	header('Location: '.$conn->path('src/pages/paginagestor/index.php'));
 
 } else if (isset($_POST['dismissAll'])){
-    $conn->executeQuery("UPDATE notificacoes SET lida = '1'");
-    header('Location: /TCC-POJIGO/src/pages/paginagestor/index.php');
+    $conn->executeQuery("UPDATE notificacoes SET lida = '1' WHERE fk_usuario = {$_SESSION['usuario_id']}");
+    header('Location: '.$conn->path('src/pages/paginagestor/index.php'));
+} else if (isset($_POST['deleteAll'])){
+    $conn->executeQuery("DELETE FROM notificacoes WHERE fk_usuario = '{$_SESSION['usuario_id']}'");
+    header('Location: '.$conn->path('src/pages/paginagestor/index.php'));
 }
