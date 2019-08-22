@@ -75,8 +75,9 @@ $conn->setAlerta(
 
 header('Location:../pages/paginagestor/relatorio_usuarios.php');
 } else if (isset($_POST['btnEditar'])){
-    header("Location:/pages/paginagestor/cadastro_usuarios.php?editar=1&id={$_GET['id']}");
+    header("Location: ../pages/paginagestor/cadastro_usuarios.php?editar=1&id={$_GET['id']}");
 }
+
 
 
 ?> 
