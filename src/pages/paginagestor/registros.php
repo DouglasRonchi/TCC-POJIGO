@@ -1,3 +1,7 @@
+<?php
+require_once '../../classes/Autoload.class.php';
+$conn = new Site;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
