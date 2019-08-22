@@ -187,7 +187,7 @@
                   </select>
               </div>
 
-            <button class="btn btn-primary" type="submit">Salvar</button>
+            <button class="btn btn-primary"  type="submit">Salvar</button>
           </form>
 
         </div>

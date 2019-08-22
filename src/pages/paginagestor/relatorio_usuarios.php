@@ -96,7 +96,16 @@ $conn = new Site;
                                         <td><?= $selectUsersRows["cpf"] ?></td>
                                         <td><?= $selectUsersRows["rg"] ?></td>
                                         <td><?= $selectUsersRows["tipo_usuario"] ?></td>
-                                        <td><button class="btn btn-sm btn-outline-primary btn-block">Editar</button></td>
+                                       <td>
+                                            <form action="../../controllers/usuariosController.php?id=<?=$selectUsersRows["usuario_id"]?>" method="post">
+                                                <div class="btn-group btn-block">
+                                                    <button class="btn btn-sm btn-primary" name="btnEditar">Editar</button>
+                                                    <button class="btn btn-sm btn-danger" name="btnExcluir" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir
+                                                    </button>
+                                                </div>
+
+                                            </form>
+                                        </td>
                                     </tr>
                                 <?php endwhile; ?>
                                 </tbody>

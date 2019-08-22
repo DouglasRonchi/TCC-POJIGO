@@ -141,6 +141,7 @@ $selectVeiculoRows = mysqli_fetch_assoc($selectVeiculo);
                     </div>
 
                     <button type="submit" name="btnSalvarNovo" class="btn btn-primary">Salvar</button>
+                    <button class="btn btn-danger" name="btnExcluir" type="submit">Excluir</button>
                 </form>
 
 
