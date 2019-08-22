@@ -1,6 +1,5 @@
 <?php
 $conn = new Site;
-
 ?>
 
 <!-- Topbar -->
