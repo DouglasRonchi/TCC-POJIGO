@@ -9,15 +9,15 @@
 class Site
 {
 
-    // private $host = "pojigo.tk:3306";
-    // private $user = "pojigo";
-    // private $password = "entra21@Blusoft";
-    // private $database = "pojigo_master";
-    //  
- private $host="localhost";
- private $user="root";
- private $password="";
- private $database="controlerotas";
+     private $host = "pojigo.tk:3306";
+     private $user = "pojigo";
+     private $password = "entra21@Blusoft";
+     private $database = "pojigo_master";
+
+// private $host="localhost";
+// private $user="root";
+// private $password="";
+// private $database="controlerotas";
 
  public $query;
  private $conn;
