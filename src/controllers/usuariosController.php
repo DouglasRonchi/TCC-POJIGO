@@ -63,12 +63,10 @@ $usuario->cadastrarUsuario();
 $conn->executeQuery("DELETE FROM usuario WHERE usuario_id = {$_GET['id']}");
 
 $conn->setAlerta(
-
         'success',
         'Usuario excluido com sucesso',
         '<img class="img-fluid" src="'.$conn->path('img/icons/success.png').'">',
         $_SESSION['usuario_id']
-    
 );
 
 
