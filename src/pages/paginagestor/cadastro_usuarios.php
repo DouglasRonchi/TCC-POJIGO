@@ -1,6 +1,12 @@
 <?php
 require_once '../../classes/Autoload.class.php';
 $conn = new Site;
+$usuario = New Usuario;
+if(isset($_GET['id'])){
+$selectUsuario = $conn->executeQuery("SELECT * FROM usuarios WHERE id = {$_GET['id']}");
+$selectUsuariosRows = mysqli_fetch_assoc($selectUsuarios);
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,7 +61,8 @@ $conn = new Site;
 
             <div class="form-group">
               <label for="inputNome">Nome</label>
-              <input type="text" class="form-control" id="inputNome" name="inputNome" placeholder="Digite o seu nome completo.">
+              <input type="text" class="form-control" id="inputNome" name="inputNome" placeholder="Digite o seu nome completo."
+              value="<?= (isset($_GET['editar']))? $selectUsuariosRows['nome'] :''; ?>">
             </div>
 
             <div class="form-row">
@@ -66,7 +73,7 @@ $conn = new Site;
 
               <div class="form-group col-md-6">
                 <label for="inputTelefone">Telefone</label>
-                <input type="number" class="form-control" id="inputTelefone" name="inputTelefone" placeholder="">
+                <input type="text" class="form-control" id="inputTelefone" name="inputTelefone" placeholder="">
               </div>
             </div>
             
@@ -136,12 +143,12 @@ $conn = new Site;
               <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputRG">RG</label>
-                <input type="number" class="form-control" id="inputRG" name="inputRG" placeholder="">
+                <input type="text" class="form-control" id="inputRG" name="inputRG" placeholder="">
               </div>
 
               <div class="form-group col-md-6">
                 <label for="inputCPF">CPF</label>
-                <input type="number" class="form-control" id="inputCPF" name="inputCPF" placeholder="">
+                <input type="text" class="form-control" id="inputCPF" name="inputCPF" placeholder="">
               </div>
             </div>
 
@@ -172,7 +179,7 @@ $conn = new Site;
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputMOPP">MOPP</label>
-                <input type="number" class="form-control" id="inputMOPP" name="inputMOPP" placeholder="">
+                <input type="text" class="form-control" id="inputMOPP" name="inputMOPP" placeholder="">
               </div>
 
               <div class="form-group col-md-6">
@@ -191,7 +198,7 @@ $conn = new Site;
                   </select>
               </div>
 
-            <button class="btn btn-primary"  type="submit">Salvar</button>
+            <button class="btn btn-primary" name="btnSalvar" type="submit">Salvar</button>
           </form>
 
         </div>
