@@ -1,7 +1,7 @@
 <?php
 
 require_once '../classes/Autoload.class.php';
-$conn=new Site;
+$conn = new Site;
 
 $usuario = new Usuario;
 
@@ -52,7 +52,15 @@ $usuario->setVencimentoMopp($_POST['inputVencimentoMOPP']);
 $usuario->setTipoUsuario($tipo_usuario);
 $usuario->setPrevilegio($previlegio);
 
+if (isset($_FILES['inputFoto'])){
+    $extensao = strtolower(substr($_FILES['inputFoto']['name'],-4));
+    $novo_nome = md5(time()).$extensao;
+    $diretorio = "C:/xampp/htdocs/TCC-POJIGO/uploads/";
 
+    move_uploaded_file($_FILES['inputFoto']['tmp_name'],$diretorio.$novo_nome);
+
+    $usuario->setFotoPerfil($novo_nome);
+}
 
 $usuario->cadastrarUsuario();
 

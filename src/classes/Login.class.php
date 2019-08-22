@@ -53,7 +53,6 @@ class Login extends Site {
             $_SESSION['usuario_id'] = $usuario['usuario_id'];
             $_SESSION['usuario'] = $usuario['usuario'];
             $_SESSION['email'] = $usuario['email'];
-            $_SESSION['senha'] = $usuario['senha'];
             $_SESSION['cadastro'] = $usuario['cadastro'];
             $_SESSION['nome'] = $usuario['nome'];
             $_SESSION['rg'] = $usuario['rg'];
@@ -73,6 +72,7 @@ class Login extends Site {
             $_SESSION['tipo_usuario'] = $usuario['tipo_usuario'];
             $_SESSION['previlegio'] = $usuario['previlegio'];
             $_SESSION['online'] = $usuario['online'];
+            $_SESSION['foto'] = $usuario['foto_perfil'];
             header('Location: ../../redirect.php');
         } else {
             //Alerta Usuário ou senha inválidos

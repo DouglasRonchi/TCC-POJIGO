@@ -28,6 +28,7 @@ class Usuario extends Site {
     protected $tipo_usuario;
     protected $previlegio;
     protected $online;
+    protected $foto_perfil;
 
     /**
      * @return mixed
@@ -434,6 +435,23 @@ class Usuario extends Site {
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getFotoPerfil()
+    {
+        return $this->foto_perfil;
+    }
+
+    /**
+     * @param mixed $foto_perfil
+     * @return Usuario
+     */
+    public function setFotoPerfil($foto_perfil)
+    {
+        $this->foto_perfil = $foto_perfil;
+        return $this;
+    }
 
     /**
      * Função de cadastro de usuários
@@ -441,8 +459,8 @@ class Usuario extends Site {
      */
     public function cadastrarUsuario(){
 
-    $sql = "INSERT INTO `usuario` (`usuario_id`, `usuario`, `email`, `senha`, `cadastro`, `nome`, `rg`, `cpf`, `endereco`, `estado`, `cidade`, `bairro`, `telefone`, `data_admissao`, `data_nascimento`, `cnh`, `venc_cnh`, `mopp`, `venc_mopp`, `data_cadastro`, `tipo_usuario`, `previlegio`, `online`) VALUES
-(DEFAULT, '{$this->usuario}', '{$this->email}', '{$this->senha}', '{$this->cadastro}', '{$this->nome}', '{$this->rg}', '{$this->cpf}', '{$this->endereco}', '{$this->estado}', '{$this->cidade}', '{$this->bairro}', '{$this->telefone}', '{$this->data_admissao}', '{$this->data_nascimento}', '{$this->cnh}', '{$this->vencimento_cnh}', '{$this->mopp}', '{$this->vencimento_mopp}', '".date("Y-m-d H:i:s")."', '{$this->tipo_usuario}', {$this->previlegio}, 1);";
+    $sql = "INSERT INTO `usuario` (`usuario_id`, `usuario`, `email`, `senha`, `cadastro`, `nome`, `rg`, `cpf`, `endereco`, `estado`, `cidade`, `bairro`, `telefone`, `data_admissao`, `data_nascimento`, `cnh`, `venc_cnh`, `mopp`, `venc_mopp`, `data_cadastro`, `tipo_usuario`, `previlegio`, `online`,`foto_perfil`,`data_foto`) VALUES
+(DEFAULT, '{$this->usuario}', '{$this->email}', '{$this->senha}', '{$this->cadastro}', '{$this->nome}', '{$this->rg}', '{$this->cpf}', '{$this->endereco}', '{$this->estado}', '{$this->cidade}', '{$this->bairro}', '{$this->telefone}', '{$this->data_admissao}', '{$this->data_nascimento}', '{$this->cnh}', '{$this->vencimento_cnh}', '{$this->mopp}', '{$this->vencimento_mopp}', '".date("Y-m-d H:i:s")."', '{$this->tipo_usuario}', {$this->previlegio}, 1, '{$this->getFotoPerfil()}', NOW());";
 
         $this->executeQuery($sql);
     }
