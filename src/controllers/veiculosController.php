@@ -19,6 +19,13 @@ if (isset($_POST['btnSalvarNovo'])) {
 
     $veiculo->cadastrarVeiculo();
 
+    $conn->setAlerta(
+        'success',
+        'Veículo cadastrado com sucesso',
+        '<i class="far fa-check-circle"></i>',
+        $_SESSION['usuario_id']
+    );
+
     header('Location: ../pages/paginagestor');
 
 } else if (isset($_POST['btnMarcaeModelo'])) {
@@ -45,6 +52,14 @@ if (isset($_POST['btnSalvarNovo'])) {
 
 } else if (isset($_POST['btnExcluir'])){
     $conn->executeQuery("DELETE FROM veiculos WHERE id = {$_GET['id']}");
+
+    $conn->setAlerta(
+        'success',
+        'Veículo excluido com sucesso',
+        '<i class="fas fa-recycle"></i>',
+        $_SESSION['usuario_id']
+    );
+
     header('Location: ../pages/paginagestor/relatorio_veiculos.php');
 } else if (isset($_POST['btnEditar'])){
     header("Location: ../pages/paginagestor/cadastro_veiculos.php?editar=1&id={$_GET['id']}");

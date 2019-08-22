@@ -73,16 +73,16 @@ class Login extends Site {
             $_SESSION['tipo_usuario'] = $usuario['tipo_usuario'];
             $_SESSION['previlegio'] = $usuario['previlegio'];
             $_SESSION['online'] = $usuario['online'];
-            header('Location: ../../index.php');
+            header('Location: ../../redirect.php');
         } else {
             //Alerta Usuário ou senha inválidos
-            header('Location: ../../login.php');
+            header('Location: ../../index.php');
         }
     }
 
     public function VerificarLogin(){
         if (!isset($_SESSION) || $_SESSION['logado']==false){
-            header('Location: /TCC-POJIGO/login.php');
+            header('Location: /TCC-POJIGO/index.php');
             //alerta Acesso Restrito
         }
 
@@ -92,7 +92,7 @@ class Login extends Site {
     public function Logout()
     {
         session_destroy();
-        header('Location: ../../login.php');
+        header('Location: ../../index.php');
     }
 
 }

@@ -9,19 +9,21 @@
 class Site
 {
 
-    private $host = "pojigo.tk:3306";
-    private $user = "pojigo";
-    private $password = "entra21@Blusoft";
-    private $database = "pojigo_master";
-//
-//        private $host="localhost";
-//        private $user="root";
-//        private $password="";
-//        private $database="controlerotas";
+    // private $host = "pojigo.tk:3306";
+    // private $user = "pojigo";
+    // private $password = "entra21@Blusoft";
+    // private $database = "pojigo_master";
+    //  
+ private $host="localhost";
+ private $user="root";
+ private $password="";
+ private $database="controlerotas";
 
-    public $query;
-    private $conn;
-    public $result;
+ public $query;
+ private $conn;
+ public $result;
+
+ public $notificacao;
 
     /**
      * SITE CONSTRUCT
@@ -99,6 +101,25 @@ class Site
     {
 
     }
+
+
+    /**
+    *
+    * Funções de Alertas e Notificações
+    *
+    */
+
+    public function setAlerta($tipo,$msg,$icone,$usuario)
+    {
+        $mensagem = utf8_decode($msg); 
+
+        $this->executeQuery("INSERT INTO notificacoes (id,tipo,msg,icone,fk_usuario) VALUES (DEFAULT,'{$tipo}','{$mensagem}','{$icone}',{$usuario})");
+    }
+
+    
+
+
+
 
 }
 
