@@ -22,7 +22,7 @@ if (isset($_POST['btnSalvarNovo'])) {
     $conn->setAlerta(
         'success',
         'Veículo cadastrado com sucesso',
-        '<i class="far fa-check-circle"></i>',
+        '<img class="img-fluid" src="'.$conn->path('img/icons/success.png').'">',
         $_SESSION['usuario_id']
     );
 
@@ -56,7 +56,7 @@ if (isset($_POST['btnSalvarNovo'])) {
     $conn->setAlerta(
         'success',
         'Veículo excluido com sucesso',
-        '<i class="fas fa-recycle"></i>',
+        '<img class="img-fluid" src="'.$conn->path('img/icons/success.png').'">',
         $_SESSION['usuario_id']
     );
 

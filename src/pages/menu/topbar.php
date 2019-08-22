@@ -91,9 +91,6 @@ $conn = new Site;
                                     <!-- Pega o ID da notificação -->
                                 </button>
                             </form>
-                            <button type="button" class="close ml-1 mb-5">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
                         </div>
                     <?php
                     endif;
@@ -232,7 +229,7 @@ $conn = new Site;
                             <button type="submit" class="dropdown-item d-flex align-items-center"
                                     name="clicknotificacao">
                                 <div class="mr-3">
-                                    <div class="icon-circle bg-success">
+                                    <div class="icon-circle bg-<?= $result['tipo'] ?>">
                                         <?= $result['icone'] ?>
                                     </div>
                                 </div>

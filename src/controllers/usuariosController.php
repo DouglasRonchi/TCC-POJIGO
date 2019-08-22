@@ -66,7 +66,7 @@ $conn->setAlerta(
 
         'success',
         'Usuario excluido com sucesso',
-        '<i class="far fa-check-circle"></i>',
+        '<img class="img-fluid" src="'.$conn->path('img/icons/success.png').'">',
         $_SESSION['usuario_id']
     
 );
