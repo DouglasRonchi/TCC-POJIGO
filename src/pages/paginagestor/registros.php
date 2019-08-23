@@ -77,123 +77,35 @@ $conn = new Site;
                                     <th>Inicio de Jornada</th>
                                     <th>Inicio de Intervalo</th>
                                     <th>Fim de Intervalo</th>
-                                    <th>Inicio de Intervalo</th>
-                                    <th>Fim de Intervalo</th>
-                                    <th>Inicio de Intervalo</th>
-                                    <th>Fim de Intervalo</th>
+                                    <th>Inicio de Parada 1</th>
+                                    <th>Fim de Parada 1</th>
+                                    <th>Inicio de Parada 2</th>
+                                    <th>Fim de Parada 2</th>
                                     <th>Fim de Jornada</th>
                                     <th></th>
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <?php
+                                $selectRegistros = $conn->executeQuery("SELECT * FROM registro_ponto WHERE fk_usuario = 20");
+                                $rows = mysqli_num_rows($selectRegistros);
+                                while ($rows = mysqli_fetch_assoc($selectRegistros)):
+                                ?>
                                 <tr>
-                                    <td>219060</td>
-                                    <td>209746</td>
-                                    <td>123696</td>
-                                    <td>074618</td>
-                                    <td>018641</td>
-                                    <td>219060</td>
-                                    <td>209746</td>
-                                    <td>123666</td>
+                                    <td><?=$rows['hora_inicio']?></td>
+                                    <td><?=$rows['hora_inicio_intervalo']?></td>
+                                    <td><?=$rows['hora_fim_intervalo']?></td>
+                                    <td><?=$rows['inicio_parada_um']?></td>
+                                    <td><?=$rows['fim_parada_um']?></td>
+                                    <td><?=$rows['inicio_parada_dois']?></td>
+                                    <td><?=$rows['fim_parada_dois']?></td>
+                                    <td><?=$rows['hora_fim']?></td>
                                     <td>
-                                        <center>
-                                            <button type="button" class="btn btn-outline-primary">Visualizar</button>
-                                        </center>
+                                        <button type="button" class="btn btn-outline-primary">Visualizar</button>
                                     </td>
 
                                 </tr>
-                                <tr>
-                                    <td>219060</td>
-                                    <td>962455</td>
-                                    <td>123696</td>
-                                    <td>074618</td>
-                                    <td>018646</td>
-                                    <td>219060</td>
-                                    <td>962455</td>
-                                    <td>123666</td>
-                                    <td>
-                                        <center>
-                                            <button type="button" class="btn btn-outline-primary">Visualizar</button>
-                                        </center>
-                                    </td>
-
-                                </tr>
-                                <tr>
-                                    <td>219060</td>
-                                    <td>145675</td>
-                                    <td>123696</td>
-                                    <td>074618</td>
-                                    <td>018646</td>
-                                    <td>219060</td>
-                                    <td>145675</td>
-                                    <td>123666</td>
-                                    <td>
-                                        <center>
-                                            <button type="button" class="btn btn-outline-primary">Visualizar</button>
-                                        </center>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>219060</td>
-                                    <td>729652</td>
-                                    <td>123696</td>
-                                    <td>074618</td>
-                                    <td>018646</td>
-                                    <td>219060</td>
-                                    <td>729652</td>
-                                    <td>123666</td>
-                                    <td>
-                                        <center>
-                                            <button type="button" class="btn btn-outline-primary">Visualizar</button>
-                                        </center>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>219060</td>
-                                    <td>462557</td>
-                                    <td>123696</td>
-                                    <td>074618</td>
-                                    <td>018646</td>
-                                    <td>219060</td>
-                                    <td>462557</td>
-                                    <td>123666</td>
-                                    <td>
-                                        <center>
-                                            <button type="button" class="btn btn-outline-primary">Visualizar</button>
-                                        </center>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>219060</td>
-                                    <td>265555</td>
-                                    <td>123696</td>
-                                    <td>074618</td>
-                                    <td>018648</td>
-                                    <td>219060</td>
-                                    <td>265555</td>
-                                    <td>123666</td>
-                                    <td>
-                                        <center>
-                                            <button type="button" class="btn btn-outline-primary">Visualizar</button>
-                                        </center>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>219060</td>
-                                    <td>434675</td>
-                                    <td>123696</td>
-                                    <td>074618</td>
-                                    <td>018645</td>
-                                    <td>219060</td>
-                                    <td>434675</td>
-                                    <td>123666</td>
-                                    <td>
-                                        <center>
-                                            <button type="button" class="btn btn-outline-primary">Visualizar</button>
-                                        </center>
-                                    </td>
-                                </tr>
-
+                                <?php endwhile; ?>
                                 </tbody>
                             </table>
                         </div>
