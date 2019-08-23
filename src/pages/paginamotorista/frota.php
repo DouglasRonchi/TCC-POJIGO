@@ -56,7 +56,7 @@
 					</div>
 					<div class="btn-group btn-block" role="group" aria-label="Button">
 
-						<button name="btnFrota" class="btn btn-success p-2 font-weight-bold">Ok</button>
+						<button name="btnFrotaOk" class="btn btn-success p-2 font-weight-bold">Ok</button>
 					</div>
 				</form>
 			</div>

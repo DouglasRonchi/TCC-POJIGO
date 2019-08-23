@@ -1,7 +1,5 @@
 <?php
-require_once '../../classes/Autoload.class.php';
-// Cria a conexão:
-$conn = new Site;
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -16,7 +14,7 @@ $conn = new Site;
           rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="../../../css/sb-admin-2.min.css" rel="stylesheet">
-    <title>Viajando...</title>
+    <title>Parada...</title>
 </head>
 <body onload="pegarHoras()" class="bg-gradient-primary">
 
@@ -36,33 +34,15 @@ $conn = new Site;
 
     <div class="row">
         <div class="col-12 mx-auto d-block shadow-lg mt-4">
-            <div class="btn-group mx-auto d-block p-5" role="group"
+            <div class="btn-group-vertical mx-auto d-block p-5" role="group"
                  aria-label="Button group with nested dropdown">
                 <form action="../../controllers/mobileController.php" method="post">
-                    <button type="submit" name="btnInicioIntervalo" class="btn btn-dark btn-block p-3 font-weight-bold">
-                        Início Intervalo
+                    <div class="display-4 text-center text-white mb-2">Contador</div>
+                    <button type="submit" name="btnFimParada<?=(isset($_GET['n']))?'1':'2';?>" class="btn btn-dark btn-block p-3 font-weight-bold">Fim
+                        Parada
                     </button>
-
-                    <div class="btn-group-vertical mx-auto d-block" role="group">
-                        <button id="btnDropMotivo" type="button" class="btn btn-dark dropdown-toggle p-3"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Relatar Problema
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="btnDropMotivo">
-                            <?php
-                            $selectMotivos = $conn->executeQuery("SELECT * FROM motivos_atrasos");
-                            $Rows = mysqli_num_rows($selectMotivos);
-                            while ($Rows = mysqli_fetch_assoc($selectMotivos)):
-                                ?>
-                                <a class="dropdown-item" href="../../controllers/mobileController.php?motivo=<?=$Rows['id']?>"><?=utf8_encode($Rows['nome_motivo'])?></a>
-                            <?php endwhile; ?>
-                        </div>
-                    </div>
-                    <button type="submit" name="btnFimViagem" class="btn btn-danger btn-block p-3 font-weight-bold"
-                            onclick="confirm('Tem certeza que deseja finalizar sua viagem?')">Fim de Viagem
-                    </button>
+                </form>
             </div>
-            </form>
         </div>
     </div>
 

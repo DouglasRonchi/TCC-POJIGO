@@ -49,24 +49,18 @@ $conn = New Site;
                     </div>
 
 					<div class="input-group mb-4">
-						<select class="custom-select" id="inputOrigem" name="inputOrigem">
+						<select class="custom-select" id="inputOrigem" name="inputOrigem" readonly="">
 							<option selected>Origem:</option>
-							<option value="1">Blumenau</option>
-							<option value="2">Rio do Sul</option>
-							<option value="3">Navegantes</option>
 						</select>
 					
 					</div>
 					<div class="input-group mb-4">
-						<select class="custom-select" id="inputDestino" name="inputDestino">
+						<select class="custom-select" id="inputDestino" name="inputDestino" readonly="">
 							<option selected>Destino:</option>
-							<option value="1">Blumenau</option>
-							<option value="2">Rio do Sul</option>
-							<option value="3">Navegantes</option>
 						</select>
 					</div>
 
-					<button type="submit" name="btnRotaOk" class="btn btn-success font-weight-bold mb-5">Ok</button>
+					<button type="submit" name="btnRotaOk" class="btn btn-success font-weight-bold mb-5 btn-block">Ok</button>
                 </form>
 				</div>
 			</div>

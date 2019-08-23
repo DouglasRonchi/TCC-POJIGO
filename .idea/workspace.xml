@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c934103-8016-4184-8805-c6d5a3b60100" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/pages/paginamotorista/intervalo.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/paginamotorista/parada.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/Diarias.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Diarias.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Mobile.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Mobile.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Registro.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Registro.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/mobileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/mobileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/paginamotorista/frota.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginamotorista/frota.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/paginamotorista/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginamotorista/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/paginamotorista/index_motorista.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginamotorista/index_motorista.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/paginamotorista/rotas.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginamotorista/rotas.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -78,13 +80,13 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\TCC-POJIGO\src\pages\paginagestor" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\TCC-POJIGO\src\pages\paginamotorista" />
       <recent name="C:\xampp\htdocs\TCC-POJIGO\src\controllers" />
       <recent name="C:\xampp\htdocs\TCC-POJIGO\src\classes" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\TCC-POJIGO\src\pages\paginagestor" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -140,7 +142,8 @@
       <workItem from="1566472921344" duration="10355000" />
       <workItem from="1566490775240" duration="7076000" />
       <workItem from="1566560186299" duration="277000" />
-      <workItem from="1566562092335" duration="5355000" />
+      <workItem from="1566562092335" duration="5680000" />
+      <workItem from="1566575649792" duration="8167000" />
     </task>
     <servers />
   </component>

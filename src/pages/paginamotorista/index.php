@@ -4,11 +4,18 @@ $conn = New Site;
 $usuario = New Usuario;
 $login = new Login;
 $mobile = New Mobile;
+$diaria = New Diarias;
 $login->VerificarLogin();
 
 if ($_SESSION['previlegio']==3 && !isset($_SESSION['motoristalogado'])){
     $_SESSION['motoristalogado'] = true;
     $mobile->startRegistro();
+}
+if (isset($_GET['fim']) && $_GET['fim']==true){
+    $query = $conn->executeQuery("SELECT * FROM registro_ponto WHERE id = {$_SESSION['id_rota']}");
+    $diaria->pagarDiaria($query);
+    session_destroy();
+    header('Location: ../../../index.php');
 }
 
 ?>
@@ -50,7 +57,9 @@ if ($_SESSION['previlegio']==3 && !isset($_SESSION['motoristalogado'])){
                  aria-label="Button group with nested dropdown">
                 <a href="rotas.php" class="btn btn-dark p-3 font-weight-bold">Rota</a>
                 <a href="frota.php" class="btn btn-dark p-3 font-weight-bold">Frota</a>
-                <a href="index_motorista.php" class="btn btn-success p-3 font-weight-bold">Começar</a>
+                <form action="../../controllers/mobileController.php" method="post">
+                <button type="submit" name="btnInicioViagem" class="btn btn-success btn-block p-3 font-weight-bold">Começar</button>
+                </form>
             </div>
         </div>
         <form action="../../controllers/loginController.php" method="post">
