@@ -2,23 +2,13 @@
 
 require_once 'Autoload.class.php';
 
-class Diarias extends Site
-{
+class Diarias extends Site {
 
     public $id;
-    public $fk_usuario;
-    public $fk_inicial;
-    public $hora_inicio;
-    public $hora_inicio_intervalo;
-    public $hora_fim_intervalo;
-    public $inicio_parada_um;
-    public $fim_parada_um;
-    public $inicio_parada_dois;
-    public $fim_parada_dois;
-    public $hora_fim;
+    public $nome;
+    public $valor;
     public $fk_diaria;
-    public $fk_mtivo_parada_um;
-    public $fk_motivo_parada_dois;
+
 
     /**
      * @return mixed
@@ -41,180 +31,36 @@ class Diarias extends Site
     /**
      * @return mixed
      */
-    public function getFkUsuario()
+    public function getNome()
     {
-        return $this->fk_usuario;
+        return $this->Nome;
     }
 
     /**
-     * @param mixed $fk_usuario
+     * @param mixed $Nome
      * @return Diarias
      */
-    public function setFkUsuario($fk_usuario)
+    public function setNome($Nome)
     {
-        $this->fk_usuario = $fk_usuario;
+        $this->Nome = $Nome;
         return $this;
     }
 
     /**
      * @return mixed
      */
-    public function getFkInicial()
+    public function getValor()
     {
-        return $this->fk_inicial;
+        return $this->Valor;
     }
 
     /**
-     * @param mixed $fk_inicial
+     * @param mixed $Valor
      * @return Diarias
      */
-    public function setFkInicial($fk_inicial)
+    public function setValor($Valor)
     {
-        $this->fk_inicial = $fk_inicial;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getHoraInicio()
-    {
-        return $this->hora_inicio;
-    }
-
-    /**
-     * @param mixed $hora_inicio
-     * @return Diarias
-     */
-    public function setHoraInicio($hora_inicio)
-    {
-        $this->hora_inicio = $hora_inicio;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getHoraInicioIntervalo()
-    {
-        return $this->hora_inicio_intervalo;
-    }
-
-    /**
-     * @param mixed $hora_inicio_intervalo
-     * @return Diarias
-     */
-    public function setHoraInicioIntervalo($hora_inicio_intervalo)
-    {
-        $this->hora_inicio_intervalo = $hora_inicio_intervalo;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getHoraFimIntervalo()
-    {
-        return $this->hora_fim_intervalo;
-    }
-
-    /**
-     * @param mixed $hora_fim_intervalo
-     * @return Diarias
-     */
-    public function setHoraFimIntervalo($hora_fim_intervalo)
-    {
-        $this->hora_fim_intervalo = $hora_fim_intervalo;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getInicioParadaUm()
-    {
-        return $this->inicio_parada_um;
-    }
-
-    /**
-     * @param mixed $inicio_parada_um
-     * @return Diarias
-     */
-    public function setInicioParadaUm($inicio_parada_um)
-    {
-        $this->inicio_parada_um = $inicio_parada_um;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getFimParadaUm()
-    {
-        return $this->fim_parada_um;
-    }
-
-    /**
-     * @param mixed $fim_parada_um
-     * @return Diarias
-     */
-    public function setFimParadaUm($fim_parada_um)
-    {
-        $this->fim_parada_um = $fim_parada_um;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getInicioParadaDois()
-    {
-        return $this->inicio_parada_dois;
-    }
-
-    /**
-     * @param mixed $inicio_parada_dois
-     * @return Diarias
-     */
-    public function setInicioParadaDois($inicio_parada_dois)
-    {
-        $this->inicio_parada_dois = $inicio_parada_dois;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getFimParadaDois()
-    {
-        return $this->fim_parada_dois;
-    }
-
-    /**
-     * @param mixed $fim_parada_dois
-     * @return Diarias
-     */
-    public function setFimParadaDois($fim_parada_dois)
-    {
-        $this->fim_parada_dois = $fim_parada_dois;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getHoraFim()
-    {
-        return $this->hora_fim;
-    }
-
-    /**
-     * @param mixed $hora_fim
-     * @return Diarias
-     */
-    public function setHoraFim($hora_fim)
-    {
-        $this->hora_fim = $hora_fim;
+        $this->Valor = $Valor;
         return $this;
     }
 
@@ -236,44 +82,10 @@ class Diarias extends Site
         return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getFkMtivoParadaUm()
+    public function pagarDiaria()
     {
-        return $this->fk_mtivo_parada_um;
+        # code...
     }
-
-    /**
-     * @param mixed $fk_mtivo_parada_um
-     * @return Diarias
-     */
-    public function setFkMtivoParadaUm($fk_mtivo_parada_um)
-    {
-        $this->fk_mtivo_parada_um = $fk_mtivo_parada_um;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getFkMotivoParadaDois()
-    {
-        return $this->fk_motivo_parada_dois;
-    }
-
-    /**
-     * @param mixed $fk_motivo_parada_dois
-     * @return Diarias
-     */
-    public function setFkMotivoParadaDois($fk_motivo_parada_dois)
-    {
-        $this->fk_motivo_parada_dois = $fk_motivo_parada_dois;
-        return $this;
-    }
-
-
-
 
 
 

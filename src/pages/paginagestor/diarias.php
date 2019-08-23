@@ -1,24 +1,7 @@
 <?php
 
-error_reporting(0);
-
 require_once '../../classes/Autoload.class.php';
 $conn = new Site;
-
-CONST HOST = "pojigo.tk:3306";
-CONST USER = "pojigo";
-CONST PASS = "entra21@Blusoft";
-CONST DB = "pojigo_master";
-
-$con = mysqli_connect(HOST, USER, PASS, DB);
-
-if (!$con) {
-  die("ERRO: Não foi possível conectar => " . mysqli_connect_error());
-}
-
-//Consulta no banco de dados
-$sqlDiarias = "SELECT * FROM usuario";
-$queryDiarias = mysqli_query($con, $sqlDiarias);
 
 ?>
 <!DOCTYPE html>
