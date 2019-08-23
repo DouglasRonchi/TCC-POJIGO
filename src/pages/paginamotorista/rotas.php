@@ -31,7 +31,7 @@ $conn = New Site;
 		<div class="row">
 			<div class="col-12 mx-auto d-block shadow-lg pt-4 mt-3">
 				<div class="btn-group-vertical p-5 btn-block" role="group">
-
+                <form action="../../controllers/mobileController.php" method="post">
                     <div class="input-group mb-4">
                         <select class="custom-select" id="inputRota" name="inputRota">
                             <option selected>Rota:</option>
@@ -66,8 +66,8 @@ $conn = New Site;
 						</select>
 					</div>
 
-					<a href="index.php" class="btn btn-success font-weight-bold mb-5">Ok</a>
-
+					<button type="submit" name="btnRotaOk" class="btn btn-success font-weight-bold mb-5">Ok</button>
+                </form>
 				</div>
 			</div>
 		</div>

@@ -76,6 +76,7 @@ class Diarias extends Site {
      * @param mixed $fk_diaria
      * @return Diarias
      */
+
     public function setFkDiaria($fk_diaria)
     {
         $this->fk_diaria = $fk_diaria;

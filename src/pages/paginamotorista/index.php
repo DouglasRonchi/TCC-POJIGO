@@ -3,9 +3,13 @@ require_once '../../classes/Autoload.class.php';
 $conn = New Site;
 $usuario = New Usuario;
 $login = new Login;
+$mobile = New Mobile;
 $login->VerificarLogin();
 
-
+if ($_SESSION['previlegio']==3 && !isset($_SESSION['motoristalogado'])){
+    $_SESSION['motoristalogado'] = true;
+    $mobile->startRegistro();
+}
 
 ?>
 <!DOCTYPE html>
