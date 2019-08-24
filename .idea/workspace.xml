@@ -3,7 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="8c934103-8016-4184-8805-c6d5a3b60100" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/paginagestor/registros.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/registros.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/funcoesMobile.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/funcoesMobile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/Diarias.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Diarias.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/Mobile.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Mobile.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/Registro.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Registro.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/mobileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/mobileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/paginamotorista/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginamotorista/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/paginamotorista/intervalo.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginamotorista/intervalo.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -137,6 +143,7 @@
       <workItem from="1566560186299" duration="277000" />
       <workItem from="1566562092335" duration="5680000" />
       <workItem from="1566575649792" duration="8650000" />
+      <workItem from="1566678040455" duration="4113000" />
     </task>
     <servers />
   </component>

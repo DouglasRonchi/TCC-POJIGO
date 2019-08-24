@@ -51,6 +51,7 @@ if (isset($_GET['fim']) && $_GET['fim']==true){
         <div class="col-12 mx-auto d-block shadow-lg">
             <div class="text-light text-center mt-4">
                 <h2>Cadastro</h2>
+                <h6>Bem vindo! <?= $_SESSION['nome'] ?></h6>
                 <h6><?= $_SESSION['cadastro'] ?></h6>
             </div>
             <div class="btn-group-vertical mx-auto d-block p-4" role="group"
@@ -62,8 +63,8 @@ if (isset($_GET['fim']) && $_GET['fim']==true){
                 </form>
             </div>
         </div>
-        <form action="../../controllers/loginController.php" method="post">
-            <button class="btn-sm btn-danger" name="logout">sair</button>
+        <form action="../../controllers/mobileController.php" method="post">
+            <button class="btn-sm btn-danger" onclick="return confirm('Tem certeza que deseja sair? Isto apagará todo seu registro até agora!')" name="logoutMobile">sair</button>
         </form>
     </div>
 

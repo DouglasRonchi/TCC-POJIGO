@@ -4,10 +4,10 @@ require_once 'Autoload.class.php';
 
 class Diarias extends Site {
 
-    public $id;
-    public $nome;
-    public $valor;
-    public $fk_diaria;
+    protected $id;
+    protected $nome;
+    protected $valor;
+    protected $fk_diaria;
 
 
     /**
@@ -18,31 +18,22 @@ class Diarias extends Site {
         return $this->id;
     }
 
-    /**
-     * @param mixed $id
-     * @return Diarias
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-        return $this;
-    }
 
     /**
      * @return mixed
      */
     public function getNome()
     {
-        return $this->Nome;
+        return $this->nome;
     }
 
     /**
      * @param mixed $Nome
      * @return Diarias
      */
-    public function setNome($Nome)
+    public function setNome($nome)
     {
-        $this->Nome = $Nome;
+        $this->Nome = $nome;
         return $this;
     }
 
@@ -51,16 +42,16 @@ class Diarias extends Site {
      */
     public function getValor()
     {
-        return $this->Valor;
+        return $this->valor;
     }
 
     /**
      * @param mixed $Valor
      * @return Diarias
      */
-    public function setValor($Valor)
+    public function setValor($valor)
     {
-        $this->Valor = $Valor;
+        $this->Valor = $valor;
         return $this;
     }
 
@@ -133,6 +124,8 @@ class Diarias extends Site {
         } else if ($hora_inicio <= 13 && $hora_fim >= 21){
             //Almoço + Janta
             $this->setFkDiaria(5);
+        } else {
+            $this->setFkDiaria(7);
         }
 
         $this->executeQuery("UPDATE registro_ponto SET fk_diaria = ({$this->getFkDiaria()}) WHERE id = {$_SESSION['id_rota']}");

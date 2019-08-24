@@ -2,10 +2,10 @@
 
 function pegarHoras() {
 
-	var msghora = document.getElementById('hora')
-	var data = new Date()
-	var hora = data.getHours()
-	var minuto = data.getMinutes()
+	var msghora = document.getElementById('hora');
+	var data = new Date();
+	var hora = data.getHours();
+	var minuto = data.getMinutes();
 
 	if (hora<10) {
 		hora = '0'+hora
@@ -24,6 +24,7 @@ function pegarHoras() {
 		msghora.innerHTML = `Hora inválida!`
 	}
 
+	setTimeout('pegarHoras()',60000)
 }
 
 
@@ -35,36 +36,5 @@ function insert(num){
 function limpar(){
 	document.form.textview.value = ""
 }
-
-
-
-// text to Speech
-
-
-
-$(function() {
-	$('a.say').on('click',function(e){
-		e.preventDefault();
-		var text = $('input[name="text"]').val();
-		// text += $('input[name="text1"]').val();
-		// text += $('input[name="text2"]').val();
-		text = encodeURIComponent(text);
-		console.log(text);
-		var url = "https://translate.google.com/translate_tts?ie=UTF-8&tl=pt-TR&client=tw-ob&q="+text
-		$('audio').attr('src', url).get(0).play();
-	});
-});
-
-
-
-
-
-
-
-
-
-
-
-
 
 

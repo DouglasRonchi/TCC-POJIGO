@@ -319,16 +319,3 @@ class Registro extends Site {
     }
 
 }
-
-$registro = New Registro;
-$query = $registro->selectRegistros(19);
-$result = mysqli_fetch_assoc($query);
-
-
-$hora_inicio = (int)substr($result['hora_inicio'], -8,-6);
-$minuto_inicio = (int)substr($result['hora_inicio'], -4,-2);
-
-
-
-var_dump($hora_inicio);
-var_dump($minuto_inicio);

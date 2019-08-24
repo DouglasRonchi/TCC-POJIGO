@@ -6,10 +6,8 @@ $conn = New Site;
 if (isset($_POST['btnFrotaOk'])){
     $id_rota = $_SESSION['id_rota'];
     $frota = $_POST['textview'];
-
     $query = $conn->executeQuery("SELECT id FROM veiculos WHERE frota = {$frota}");
     $id_frota = mysqli_fetch_assoc($query);
-
     $conn->executeQuery("UPDATE registro_ponto SET fk_veiculo = {$id_frota['id']} WHERE id = {$id_rota}");
 
     header('Location: ../pages/paginamotorista/index.php');
@@ -63,6 +61,11 @@ if (isset($_POST['btnFrotaOk'])){
     $conn->executeQuery("UPDATE registro_ponto SET fim_parada_dois = NOW() WHERE id = {$id_rota}");
     header('Location: ../pages/paginamotorista/index_motorista.php');
 
+}else if (isset($_POST['logoutMobile'])){
+    $id_rota = $_SESSION['id_rota'];
+    $conn->executeQuery("DELETE FROM registro_ponto WHERE id = {$id_rota}");
+    session_destroy();
+    header('Location: ../../index.php');
 }
 
 
