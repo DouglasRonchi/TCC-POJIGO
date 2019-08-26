@@ -22,7 +22,7 @@
 
     <header class="row">
         <div class="col-4 p-0">
-            <img class="p-2 mt-2 d-block" src="../../../img/logoc.png">
+            <img class="p-2 mt-2 d-block" src="../../../img/logoc.png" alt="logotipo POJIGO">
         </div>
         <div class="col-8 text-center pt-3">
             <div id="hora" class="text-white"></div>

@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8c934103-8016-4184-8805-c6d5a3b60100" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Uploader.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Uploader.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/Usuario.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Usuario.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/usuariosController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/usuariosController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/paginagestor/cadastro_usuarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/cadastro_usuarios.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/47e88fd2efdf56565039baba135520ba.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/paginamotorista/intervalo.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginamotorista/intervalo.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -142,7 +141,7 @@
       <workItem from="1566575649792" duration="8650000" />
       <workItem from="1566678040455" duration="4113000" />
       <workItem from="1566821033296" duration="5479000" />
-      <workItem from="1566834432059" duration="620000" />
+      <workItem from="1566834432059" duration="1229000" />
     </task>
     <servers />
   </component>

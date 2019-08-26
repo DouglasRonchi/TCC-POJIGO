@@ -62,6 +62,13 @@ if (isset($_POST['btnSalvar'])) {
 
     $usuario->cadastrarUsuario();
 
+    $conn->setAlerta(
+        'success',
+        'Usuário '.$usuario->getNome().' cadastrado com sucesso',
+        '<img class="img-fluid" src="'.$conn->path('img/icons/success.png').'">',
+        $_SESSION['usuario_id']
+    );
+
     header('Location: ../pages/paginagestor/cadastro_usuarios.php');
 
 } else if (isset($_POST['btnExcluir'])) {
