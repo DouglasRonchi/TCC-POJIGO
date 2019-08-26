@@ -68,7 +68,7 @@ if (isset($_GET['id'])) {
 
                         <div class="form-group col-md-6">
                             <label for="inputFoto">Foto de Perfil</label>
-                            <input type="file" class="form-control-file" name="inputFoto" id="inputFoto">
+                            <input type="file" class="form-control-file" name="arquivos" id="arquivos">
                         </div>
                     </div>
                     <div class="form-row">

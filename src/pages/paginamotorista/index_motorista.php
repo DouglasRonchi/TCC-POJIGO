@@ -28,8 +28,7 @@ $conn = new Site;
         </div>
         <div class="col-8 text-center pt-3">
             <div id="hora" class="text-white"></div>
-            <div class="text-white">Seu destino está á 523km</div>
-            <div class="text-white">Clima no destino: Chuvoso!</div>
+            <div id="informacoes" class="text-white"></div>
             <div class="text-white">Tenha uma ótima viagem!</div>
         </div>
     </header>
@@ -54,7 +53,8 @@ $conn = new Site;
                             $Rows = mysqli_num_rows($selectMotivos);
                             while ($Rows = mysqli_fetch_assoc($selectMotivos)):
                                 ?>
-                                <a class="dropdown-item" href="../../controllers/mobileController.php?motivo=<?=$Rows['id']?>"><?=utf8_encode($Rows['nome_motivo'])?></a>
+                                <a class="dropdown-item"
+                                   href="../../controllers/mobileController.php?motivo=<?= $Rows['id'] ?>"><?= utf8_encode($Rows['nome_motivo']) ?></a>
                             <?php endwhile; ?>
                         </div>
                     </div>
@@ -87,5 +87,34 @@ $conn = new Site;
 <script src="../../../js/sb-admin-2.min.js"></script>
 
 <script src="../../../js/funcoesMobile.js"></script>
+
+<script type="text/javascript">
+    function localizador() {
+        navigator.geolocation.getCurrentPosition(function (posicao) {
+            var url = "http://nominatim.openstreetmap.org/reverse?lat=" + posicao.coords.latitude + "&lon=" + posicao.coords.longitude + "&format=json&json_callback=preencherDados";
+
+            var script = document.createElement('script');
+            script.src = url;
+            document.body.appendChild(script);
+        });
+        setTimeout(localizador,100000);
+    }
+
+    localizador();
+
+    function preencherDados(dados) {
+        var cidade = document.getElementById('informacoes');
+
+        cidade.innerHTML = dados.address.city + "<br>";
+        if (dados.address.road === 'undefined') {
+            cidade.innerHTML += dados.address.road + "<br>";
+        }
+        cidade.innerHTML += dados.address.suburb + "<br>";
+        cidade.innerHTML += dados.address.state + "<br>";
+        // cidade.innerHTML += dados.lat + "<br>";
+        // cidade.innerHTML += dados.lon + "<br>";
+    }
+</script>
+
 </body>
 </html>

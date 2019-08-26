@@ -24,7 +24,7 @@ function pegarHoras() {
 		msghora.innerHTML = `Hora inválida!`
 	}
 
-	setTimeout('pegarHoras()',60000)
+	setTimeout(pegarHoras,10000)
 }
 
 

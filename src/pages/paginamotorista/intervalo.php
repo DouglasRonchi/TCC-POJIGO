@@ -26,8 +26,6 @@
         </div>
         <div class="col-8 text-center pt-3">
             <div id="hora" class="text-white"></div>
-            <div class="text-white">Seu destino está á 523km</div>
-            <div class="text-white">Clima no destino: Chuvoso!</div>
             <div class="text-white">Tenha uma ótima viagem!</div>
         </div>
     </header>
@@ -117,11 +115,16 @@
                 hours += 1;
             }
 
-
+            if (mints >= 15) {
+                if (seconds % 2 === 0){
+                    document.body.style.background = 'red';
+                } else {
+                    document.body.style.background = 'blue';
+                }
+            }
 
             // adds data in #showtm
             document.getElementById('showtm').innerHTML = hours + ' : ' + mints + ' : ' + seconds + '<sub>' + zecsec + '</sub>';
-
             // if the chronometer reaches to the values for stop, calls whenChrStop(), else, auto-calls chronometer()
             setTimeout("chronometer()", 100);
         }
