@@ -1,3 +1,9 @@
+<?php
+require_once '../../classes/Autoload.class.php';
+// Cria a conexão:
+$conn = new Site;
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 

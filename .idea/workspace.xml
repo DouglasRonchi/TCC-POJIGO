@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="8c934103-8016-4184-8805-c6d5a3b60100" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/paginagestor/cadastro_rotas.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/cadastro_rotas.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/paginagestor/cadastro_usuarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/cadastro_usuarios.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/paginagestor/cadastro_veiculos.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/cadastro_veiculos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/paginagestor/rastreamento.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/rastreamento.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/paginagestor/relatorio_rotas.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/relatorio_rotas.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -139,7 +143,7 @@
       <workItem from="1566575649792" duration="8650000" />
       <workItem from="1566678040455" duration="4113000" />
       <workItem from="1566821033296" duration="5479000" />
-      <workItem from="1566834432059" duration="2571000" />
+      <workItem from="1566834432059" duration="3322000" />
     </task>
     <servers />
   </component>

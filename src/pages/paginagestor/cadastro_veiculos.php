@@ -164,7 +164,6 @@ if (isset($_GET['editar'])){
                     </div>
 
                     <button type="submit" name="btnSalvarNovo" class="btn btn-primary">Salvar</button>
-                    <button class="btn btn-danger" name="btnExcluir" type="submit">Excluir</button> 
                 </form>
 
 
