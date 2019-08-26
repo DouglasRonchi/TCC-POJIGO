@@ -107,12 +107,21 @@ class Diarias extends Site {
         if ($hora_inicio > 6 && $hora_inicio < 9){
             $this->setFkDiaria(1);
         }
+        if ($hora_fim > 6 && $hora_fim < 9){
+            $this->setFkDiaria(1);
+        }
         //Almoço
         if ($hora_inicio > 11 && $hora_inicio < 13) {
             $this->setFkDiaria(2);
         }
+        if ($hora_fim > 11 && $hora_fim < 13) {
+            $this->setFkDiaria(2);
+        }
         //Janta
         if ($hora_inicio > 19 && $hora_inicio < 22){
+            $this->setFkDiaria(3);
+        }
+        if ($hora_fim > 19 && $hora_fim < 22){
             $this->setFkDiaria(3);
         }
         //Cheia

@@ -96,7 +96,9 @@ $conn = new Site;
                     </tr>
                   </tfoot>
                   <tbody>
-                    <?php while ($resultado = mysqli_fetch_array($queryDiarias)) { ?>
+                    <?php
+                    $sqlDiaria = $conn->executeQuery("SELECT * FROM usuario WHERE previlegio = 3");
+                    while ($resultado = mysqli_fetch_assoc($sqlDiaria)) { ?>
                       <tr>
                         <td><?=$resultado['cadastro']?></td>
                         <td><?=$resultado['nome']?></td>
