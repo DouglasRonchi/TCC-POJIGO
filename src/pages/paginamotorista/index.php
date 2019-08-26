@@ -40,18 +40,14 @@ if (isset($_GET['fim']) && $_GET['fim']==true){
     <header class="row">
         <div class="col-12">
             <img class="p-2 mx-auto d-block" src="../../../img/logoc.png">
-            <!-- <div class="mr-2 text-center text-white">
-                <h6>Olá, Motorista!</h6>
-                <a class="text-white" href="#">Sair</a>
-            </div> -->
         </div>
     </header>
 
     <div class="row mt-4">
         <div class="col-12 mx-auto d-block shadow-lg">
             <div class="text-light text-center mt-4">
-                <h2>Cadastro</h2>
-                <h6>Bem vindo! <?= $_SESSION['nome'] ?></h6>
+                <h2>Bem vindo!</h2>
+                <h6><?= $_SESSION['nome'] ?></h6>
                 <h6><?= $_SESSION['cadastro'] ?></h6>
             </div>
             <div class="btn-group-vertical mx-auto d-block p-4" role="group"

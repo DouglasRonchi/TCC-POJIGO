@@ -10,6 +10,7 @@ class Mobile extends Site {
     public function startRegistro(){
         //id fk_usuario cod_viagem
         $codigo_viagem = md5(time());
+        $_SESSION['cod_viagem'] = $codigo_viagem;
         $this->executeQuery("INSERT INTO registro_ponto (id, fk_usuario, cod_viagem) VALUES (DEFAULT,{$_SESSION['usuario_id']},'{$codigo_viagem}')");
         $_SESSION['id_rota'] = mysqli_insert_id($this->getConn());
     }

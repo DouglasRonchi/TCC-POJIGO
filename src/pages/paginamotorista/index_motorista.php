@@ -97,10 +97,9 @@ $conn = new Site;
             script.src = url;
             document.body.appendChild(script);
         });
-        setTimeout(localizador,100000);
+        setTimeout(localizador, 100000);
     }
 
-    localizador();
 
     function preencherDados(dados) {
         var cidade = document.getElementById('informacoes');
@@ -114,7 +113,61 @@ $conn = new Site;
         // cidade.innerHTML += dados.lat + "<br>";
         // cidade.innerHTML += dados.lon + "<br>";
     }
+
+    localizador();
+
 </script>
+
+<!--Manda Latitude e Longitude para o Banco de dados-->
+<script type="text/javascript">
+
+</script>
+<script>
+
+    $(document).ready(function coordenadasBD() {
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            console.log("Geolocation is not supported by this browser.");
+        }
+
+        setTimeout(coordenadasBD, 2000);
+
+        function showPosition(position) {
+            console.log(position.coords.latitude);
+            console.log(position.coords.longitude);
+
+            let lat = position.coords.latitude;
+            let lon = position.coords.longitude;
+
+            // console.log(id);
+
+            $.ajax({
+                url: 'coordenadasAjax.php',
+                type: 'post',
+                data: {lat: lat, lon: lon},
+                success: function (data) {
+
+                },
+                error: function (data) {
+
+                },
+                beforeSend: function () {
+
+                }
+
+            }).done(function () {
+
+            });
+
+        }
+
+    });
+
+
+</script>
+
 
 </body>
 </html>

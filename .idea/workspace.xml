@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c934103-8016-4184-8805-c6d5a3b60100" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/pages/paginamotorista/coordenadasAjax.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/paginagestor/cadastro_rotas.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/cadastro_rotas.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/paginagestor/cadastro_usuarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/cadastro_usuarios.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/paginagestor/cadastro_veiculos.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/cadastro_veiculos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/paginagestor/rastreamento.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/rastreamento.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/paginagestor/relatorio_rotas.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/relatorio_rotas.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/funcoesMobile.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/funcoesMobile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/Mobile.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Mobile.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/paginamotorista/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginamotorista/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/paginamotorista/index_motorista.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginamotorista/index_motorista.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -143,7 +143,8 @@
       <workItem from="1566575649792" duration="8650000" />
       <workItem from="1566678040455" duration="4113000" />
       <workItem from="1566821033296" duration="5479000" />
-      <workItem from="1566834432059" duration="3322000" />
+      <workItem from="1566834432059" duration="3664000" />
+      <workItem from="1566857884242" duration="2196000" />
     </task>
     <servers />
   </component>
