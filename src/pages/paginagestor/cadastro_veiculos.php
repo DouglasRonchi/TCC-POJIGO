@@ -5,6 +5,19 @@ $veiculo = New Veiculo;
 if(isset($_GET['id'])){
 $selectVeiculo = $conn->executeQuery("SELECT * FROM veiculos WHERE id = {$_GET['id']}");
 $selectVeiculoRows = mysqli_fetch_assoc($selectVeiculo);
+
+if (isset($_GET['editar'])){
+    $query = $conn->executeQuery("SELECT * FROM modelo_veiculo WHERE id = {$selectVeiculoRows['fk_modelo']}");
+    $modeloRow = mysqli_num_rows($query);
+    while ($modeloRow = mysqli_fetch_assoc($query)){
+        $fk_marca = $modeloRow['fk_marca'];
+        $idModelo = $modeloRow['id'];
+        $modeloModelo = $modeloRow['modelo'];
+    }
+}
+
+
+
 }
 ?>
 <!DOCTYPE html>
@@ -62,7 +75,6 @@ $selectVeiculoRows = mysqli_fetch_assoc($selectVeiculo);
                             <input type="text" class="form-control" id="inputFrota" name="inputFrota"
                                    value="<?= (isset($_GET['editar']))? $selectVeiculoRows['frota'] :''; ?>">
                         </div>
-
                         <div class="form-group col-md-4">
                             <label for="inputMarca">Marca&nbsp;</label>
                             <a style="cursor: pointer" href="cadastro_novaMarca.php" class="text-decoration-none btn-sm text-muted">Nova marca/modelo</a>
@@ -71,10 +83,16 @@ $selectVeiculoRows = mysqli_fetch_assoc($selectVeiculo);
                                 <?php
                                 $selectMarca = $conn->executeQuery("SELECT * FROM marca_veiculo");
                                 $row = mysqli_num_rows($selectMarca);
+                                if (isset($_GET['editar'])){
+                                    $queryMarca = $conn->executeQuery("SELECT * FROM marca_veiculo WHERE id = {$fk_marca}");
+                                    $marcaRow = mysqli_num_rows($queryMarca);
+                                    while ($marcaRow = mysqli_fetch_assoc($queryMarca)){
+                                        echo "<option value='".$fk_marca."' selected>".$marcaRow['marca']."</option>";
+                                    }
+                                }
                                 while ($row = mysqli_fetch_assoc($selectMarca)) {
                                     echo "<option value='" . $row['id'] . "' >" . $row['marca'] . "</option>";
                                 }
-
                                 ?>
                             </select>
                         </div>
@@ -83,7 +101,12 @@ $selectVeiculoRows = mysqli_fetch_assoc($selectVeiculo);
                             <label for="inputModelo">Modelo</label>
                             <select class="form-control" name="inputModelo" id="inputModelo">
                                 <option>Selecione um Modelo</option>
+                                <?php
+                                if (isset($_GET['editar'])){
+                                    echo "<option value='".$idModelo."' selected>".$modeloModelo."</option>";
+                                }
 
+                                ?>
                             </select>
                         </div>
 
