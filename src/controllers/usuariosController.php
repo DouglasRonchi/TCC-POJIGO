@@ -53,16 +53,11 @@ if (isset($_POST['btnSalvar'])) {
     $usuario->setPrevilegio($previlegio);
 
     if (isset($_FILES['arquivos'])) {
-//    $upload = new Uploader('arquivos');
-//    $uploads = $upload->upload();
-//    var_dump($uploads);
-        $extensao = strtolower(substr($_FILES['arquivos']['name'], -4));
-        $novo_nome = md5(time()) . $extensao;
-        $diretorio = "C:/xampp/htdocs/TCC-POJIGO/uploads/";
+        $upload = new Uploader('arquivos');
+        $foto = $upload->upload();
+        $foto = $foto[0]['dados']['nome_novo'];
 
-        move_uploaded_file($_FILES['arquivos']['tmp_name'], $diretorio . $novo_nome);
-
-        $usuario->setFotoPerfil($novo_nome);
+        $usuario->setFotoPerfil($foto);
     }
 
     $usuario->cadastrarUsuario();

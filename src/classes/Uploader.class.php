@@ -8,7 +8,7 @@ require_once 'Autoload.class.php';
 	{
 
 		// Diretório que será salvo o arquivo
-		CONST DIRETORIO = "uploads/";
+		CONST DIRETORIO = "C:/xampp/htdocs/TCC-POJIGO/uploads/";
 
 		// Nome do input
 		public $name_input;
@@ -48,7 +48,7 @@ require_once 'Autoload.class.php';
 				 * Validações dos arquivos
 				 */
 				// Verifica o tamanho máximo permitido
-				if ($_FILES[$this->name_input]["size"][$contador] < 500000)
+				if ($_FILES[$this->name_input]["size"][$contador] > 5000000)
 					$erro = true;
 
 				// Verificando os formatos dos arquivo
