@@ -91,7 +91,7 @@ $conn = new Site;
 <script type="text/javascript">
     function localizador() {
         navigator.geolocation.getCurrentPosition(function (posicao) {
-            var url = "http://nominatim.openstreetmap.org/reverse?lat=" + posicao.coords.latitude + "&lon=" + posicao.coords.longitude + "&format=json&json_callback=preencherDados";
+            var url = "https://nominatim.openstreetmap.org/reverse?lat=" + posicao.coords.latitude + "&lon=" + posicao.coords.longitude + "&format=json&json_callback=preencherDados";
 
             var script = document.createElement('script');
             script.src = url;
@@ -120,9 +120,6 @@ $conn = new Site;
 
 <!--Manda Latitude e Longitude para o Banco de dados-->
 <script type="text/javascript">
-
-</script>
-<script>
 
     $(document).ready(function coordenadasBD() {
 
