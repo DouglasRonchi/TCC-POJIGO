@@ -25,6 +25,8 @@ $conn = new Site;
     <!-- Custom styles for this template-->
     <link href="../../../css/sb-admin-2.min.css" rel="stylesheet">
 
+    <!--  CSS personalizado  -->
+    <link href="../../../css/rastreamento.css" rel="stylesheet">
     <!-- Custom styles for this page -->
     <link href="../../../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
@@ -69,9 +71,9 @@ $conn = new Site;
                                 <tr>
                                     <th>Frota</th>
                                     <th>Placa</th>
-                                    <th>Última Posição</th>
+                                    <th>Latitude</th>
+                                    <th>Longitude</th>
                                     <th>Motorista</th>
-                                    <th>Info</th>
                                     <th>Visualizar</th>
                                 </tr>
                                 </thead>
@@ -92,7 +94,7 @@ $conn = new Site;
                                 while ($row = mysqli_fetch_assoc($selectRastrear)):
                                     ?>
                                     <tr>
-                                        <td><?= $row["frota"] ?></td>
+                                        <td><button class="btn infoveiculo"><i class="fa fa-truck" aria-hidden="true" data-toggle="modal" data-target="#modalinfoveiculo"></i></button> <?= $row["frota"] ?></td>
                                         <td><?= $row["placa"] ?></td>
                                         <td><?= $row["latitude"] ?></td>
                                         <td><?= $row["longitude"] ?></td>
@@ -158,6 +160,27 @@ $conn = new Site;
 <script src="../../../js/demo/datatables-demo.js"></script>
 
 <?php include_once '../../include/configdatatable.php'?>
+
+<!-- Modal -->
+<div class="modal fade" id="modalinfoveiculo" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Informações do Veículo, Frota, Placa, Renavam, Etc...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 </body>
 

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c934103-8016-4184-8805-c6d5a3b60100" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/css/rastreamento.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/paginagestor/rastreamento.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/rastreamento.php" afterDir="false" />
     </list>
@@ -143,7 +144,7 @@
       <workItem from="1566857884242" duration="2196000" />
       <workItem from="1566916889656" duration="115000" />
       <workItem from="1566942163662" duration="131000" />
-      <workItem from="1566991030448" duration="5488000" />
+      <workItem from="1566991030448" duration="5969000" />
     </task>
     <servers />
   </component>
