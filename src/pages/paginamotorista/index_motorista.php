@@ -122,16 +122,21 @@ $conn = new Site;
 <script type="text/javascript">
 
     $(document).ready(function coordenadasBD() {
+        var options = {
+            enableHighAccuracy: true,
+            maximumAge        : 1000,
+            timeout           : 1000
+        };
 
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
+            navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
         } else {
             console.log("Geolocation is not supported by this browser.");
         }
 
-        setTimeout(coordenadasBD, 30000);
+        setTimeout(coordenadasBD, 5000);
 
-        function showPosition(position) {
+        function onSuccess(position) {
             console.log(position.coords.latitude);
             console.log(position.coords.longitude);
 
@@ -142,7 +147,7 @@ $conn = new Site;
 
             $.ajax({
                 url: 'coordenadasAjax.php',
-                type: 'post',
+                type: 'POST',
                 data: {lat: lat, lon: lon},
                 success: function (data) {
 
@@ -158,6 +163,10 @@ $conn = new Site;
 
             });
 
+        }
+
+        function onError(err) {
+            console.log(err);
         }
 
     });
