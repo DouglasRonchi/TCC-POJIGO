@@ -79,24 +79,24 @@ $conn = new Site;
                                 <tr>
                                     <th>Frota</th>
                                     <th>Placa</th>
-                                    <th>Última Posição</th>
+                                    <th>Latitude</th>
+                                    <th>Longitude</th>
                                     <th>Motorista</th>
-                                    <th>Info</th>
                                     <th>Visualizar</th>
                                 </tr>
                                 </tfoot>
                                 <tbody>
                                 <?php
-                                $selectUsers = $conn->executeQuery("SELECT * FROM usuario");
-                                $selectUsersRows = mysqli_num_rows($selectUsers);
-                                while ($selectUsersRows = mysqli_fetch_assoc($selectUsers)):
+                                $selectRastrear = $conn->executeQuery("SELECT vei.frota, vei.placa, coo.hora, coo.latitude, coo.longitude, usu.nome FROM registro_ponto rp JOIN coordenadas coo ON rp.cod_viagem = coo.fk_cod_viagem JOIN usuario usu ON usu.usuario_id = rp.fk_usuario JOIN veiculos vei ON rp.fk_veiculo = vei.id GROUP BY vei.frota ORDER BY coo.hora DESC");
+                                $row = mysqli_num_rows($selectRastrear);
+                                while ($row = mysqli_fetch_assoc($selectRastrear)):
                                     ?>
                                     <tr>
-                                        <td><?= $selectUsersRows["cadastro"] ?></td>
-                                        <td><?= $selectUsersRows["nome"] ?></td>
-                                        <td><?= $selectUsersRows["cpf"] ?></td>
-                                        <td><?= $selectUsersRows["rg"] ?></td>
-                                        <td><?= $selectUsersRows["tipo_usuario"] ?></td>
+                                        <td><?= $row["frota"] ?></td>
+                                        <td><?= $row["placa"] ?></td>
+                                        <td><?= $row["latitude"] ?></td>
+                                        <td><?= $row["longitude"] ?></td>
+                                        <td><?= $row["nome"] ?></td>
                                         <td>
                                             <form action="" method="post">
                                                 <div class="btn-group btn-block">
