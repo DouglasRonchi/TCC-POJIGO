@@ -14,10 +14,10 @@ $conn = new Site;
   <meta name="description" content="">
   <meta name="author" content="">
   <style type="text/css">
-a{
-  border-radius: 10px;
+    a{
+      border-radius: 10px;
 
-}
+    }
 
 
   </style>
@@ -25,15 +25,15 @@ a{
   <title>Pojigo - Início</title>
 
   <!-- Custom fonts for this template-->
-<link href="../../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-      rel="stylesheet">
+  <link href="../../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+  rel="stylesheet">
 
-<!-- Custom styles for this template-->
-<link href="../../../css/sb-admin-2.min.css" rel="stylesheet">
+  <!-- Custom styles for this template-->
+  <link href="../../../css/sb-admin-2.min.css" rel="stylesheet">
 
-<!-- Custom styles for this page -->
-<link href="../../../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+  <!-- Custom styles for this page -->
+  <link href="../../../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 
 </head>
@@ -52,7 +52,7 @@ a{
 
       <!-- Main Content -->
       <div id="content">
-        
+
         <!-- Topbar Navbar -->
         <?php include '../menu/topbar.php'; ?>
         <!-- End of Topbar -->
@@ -62,7 +62,7 @@ a{
 
           <!-- Page Heading -->
           <h1 class="h3 mb-4 text-gray-800"><center>CNH & MOPP</center></h1>
- <h1 class="h3 mb-2 text-gray-800"></h1>
+          <h1 class="h3 mb-2 text-gray-800"></h1>
           <p class="mb-4"><a target="_blank" href="https://datatables.net"></a>.</p>
 
           <!-- DataTales Example -->
@@ -79,7 +79,10 @@ a{
                       <th>NOME</th>
                       <th>CPF</th>
                       <th>CNH</th>
+                      <th>VENCIMENTO CNH</th>
                       <th>MOPP</th>
+                      <th>VENCIMENTO MOPP</th>
+
                       <th></th>
                     </tr>
                   </thead>
@@ -89,13 +92,64 @@ a{
                       <td>FULANO</td>
                       <td>12369542566</td>
                       <td>035741618</td>
+                      <th>
+                        <input type="date" class="form-control" id="inputVencimentoCNH" name="inputVencimentoCNH" value="venc_cnh">
+                      </th>
                       <td>01864</td>
-                        <td><center><button type="button" class="btn btn-outline-primary">Editar/ Visualizar</button></center></td>
-                      
+                      <th>
+                        <input type="date" class="form-control" id="inputVencimentoMOPP" name="inputVencimentoMOPP" value="venc_mopp">
+                      </th>
                     </tr>
+                  </tbody>
+                  <tbody>
+                    <?php
+                    $selectUsers = $conn->executeQuery("SELECT * FROM usuario");
+                    $selectUsersRows = mysqli_num_rows($selectUsers);
+                    while ($selectUsersRows = mysqli_fetch_assoc($selectUsers)):
+                      ?>
+                      <tr>
+                        <td><?= $selectUsersRows["cadastro"] ?></td>
+                        <td><?= $selectUsersRows["nome"] ?></td>
+                        <td><?= $selectUsersRows["cpf"] ?></td>
+                        <td><?= $selectUsersRows["cnh"] ?></td>
+                        <td><?= $selectUsersRows["venc_cnh"] ?></td>
+                        <td><?= $selectUsersRows["mopp"] ?></td>
+                        <td><?= $selectUsersRows["venc_mopp"] ?></td>
+                        <td>
+                          <form action="../../controllers/usuariosController.php?id=<?=$selectUsersRows["usuario_id"]?>" method="post">
+                            
 
+                          </form>
+                        </td >
+                      </tr>
+                    <?php endwhile; ?>
                   </tbody>
                 </table>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Salvar alterações
+          </button>
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Alterações</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  Tem certeza que deseja salvar as alterações?
+                </div>
+                <div class="modal-footer">
+
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                  
+                  <form><button type="button" class="btn btn-primary">Salvar</button></form>
+
+                </div>
               </div>
             </div>
           </div>
@@ -145,29 +199,29 @@ a{
       </div>
     </div>
   </div>
-        </div>
-        <!-- /.container-fluid -->
+</div>
+<!-- /.container-fluid -->
 
-      </div>
-      <!-- End of Main Content -->
+</div>
+<!-- End of Main Content -->
 
-      <!-- Footer -->
-      <?php include '../menu/footer.php'; ?>      
-      <!-- End of Footer -->
+<!-- Footer -->
+<?php include '../menu/footer.php'; ?>      
+<!-- End of Footer -->
 
-    </div>
-    <!-- End of Content Wrapper -->
+</div>
+<!-- End of Content Wrapper -->
 
-  </div>
-  <!-- End of Page Wrapper -->
+</div>
+<!-- End of Page Wrapper -->
 
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+  <i class="fas fa-angle-up"></i>
+</a>
 
-  <!-- Logout Modal-->
-  <?php include '../menu/logoutmodal.php'; ?>
+<!-- Logout Modal-->
+<?php include '../menu/logoutmodal.php'; ?>
 <!-- Bootstrap core JavaScript-->
 <script src="../../../vendor/jquery/jquery.min.js"></script>
 <script src="../../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
