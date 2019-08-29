@@ -164,6 +164,7 @@ if (isset($_GET['editar'])){
                     </div>
 
                     <button type="submit" name="btnSalvarNovo" class="btn btn-primary">Salvar</button>
+                         <a class="btn btn-secondary" href="index.php" role="button">Voltar</a>
                 </form>
 
 
