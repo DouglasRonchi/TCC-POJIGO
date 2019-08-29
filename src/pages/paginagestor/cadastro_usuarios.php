@@ -156,7 +156,7 @@ if (isset($_GET['id'])) {
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputRG">RG</label>
-                                <input type="text" class="form-control" id="inputRG" name="inputRG" placeholder="" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['rg'] : ''; ?>">
+                                <input type="number" class="form-control" id="inputRG" name="inputRG" placeholder="" min="7" max="7" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['rg'] : ''; ?>",>
                             </div>
 
                             <div class="form-group col-md-6">
@@ -168,7 +168,7 @@ if (isset($_GET['id'])) {
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputNascimento">Data de Nascimento</label>
-                                <input type="date" class="form-control" id="inputNascimento" name="inputNascimento" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['data_nascimento'] : ''; ?>">
+                                <input type="text" data-mask="00/00/0000" maxlength="10" autocomplete="off" class="form-control data-mask" id="inputNascimento" name="inputNascimento" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['data_nascimento'] : ''; ?>">
                             </div>
 
                             <div class="form-group col-md-6">
@@ -218,6 +218,7 @@ if (isset($_GET['id'])) {
                         else:
                             ?>
                             <button class="btn btn-primary" name="btnSalvar" type="submit">Salvar</button>
+                         <a class="btn btn-secondary" href="index.php" role="button">Voltar</a>
                             <?php 
                         endif;
                         ?>

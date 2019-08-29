@@ -13,6 +13,8 @@ if (isset($_POST['btnSalvar'])) {
         $cadastro = $row['cadastro'];
     }
 
+
+
     $tipo_usuario = $_POST['inputTipoUsuario'];
     switch ($tipo_usuario) {
         case "1":
