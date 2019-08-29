@@ -203,7 +203,7 @@ $conn = new Site;
 
 <!-- Script Routes-->
 <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbqJXX7fEFddatn-vaBp3BtBS-4TJNIbg&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HEREbg&callback=initMap">
 </script>
 <script>
     function initMap() {
