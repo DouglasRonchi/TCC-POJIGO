@@ -8,5 +8,5 @@ $lat = $_POST['lat'];
 $lon = $_POST['lon'];
 $cod_viagem = $_SESSION['cod_viagem'];
 
-$conn->executeQuery("INSERT INTO coordenadas (id, fk_cod_viagem, latitute, longitude) VALUES (DEFAULT,'{$_SESSION['cod_viagem']}','{$lat}','{$lon}')");
+$conn->executeQuery("INSERT INTO coordenadas (id, fk_cod_viagem, hora, latitute, longitude) VALUES (DEFAULT,'{$_SESSION['cod_viagem']}',NOW(),'{$lat}','{$lon}')");
 
