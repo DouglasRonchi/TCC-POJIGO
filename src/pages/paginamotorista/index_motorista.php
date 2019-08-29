@@ -143,8 +143,6 @@ $conn = new Site;
             let lat = position.coords.latitude;
             let lon = position.coords.longitude;
 
-            // console.log(id);
-
             $.ajax({
                 url: 'coordenadasAjax.php',
                 type: 'POST',
