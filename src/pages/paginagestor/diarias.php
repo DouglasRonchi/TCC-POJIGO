@@ -59,19 +59,21 @@ $conn = new Site;
             <div class="card-header py-3">
               <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
               <hr>
-              <div class="row">
-                <div class="col-3">
-                  Data Inicial:
-                  <input type="date" class="form-control" placeholder="First name">
-                </div>
-                <div class="col-3">
-                  Data Final:
-                  <input type="date" class="form-control" placeholder="Last name">
-                </div>
-                <div class="col mt-4">
-                  <button class="btn btn-outline-primary">Procurar</button>
-                </div>
-              </div>
+              <form action="" method="get" class="form-inline">
+                    <div class="form-group mr-2">
+                        <label for="cad">Cadastro:</label>
+                        <input type="number" class="form-control ml-2" name="cad" id="cad" value="<?= (isset($_GET['cad']))? $_GET['cad'] : '' ; ?>">       
+                    </div>
+                    <div class="form-group mr-2">
+                        <label for="dtini">Data Inicial:</label>
+                        <input type="date" class="form-control ml-2" name="dtini" id="dtini" value="<?= (isset($_GET['dtini']))? $_GET['dtini'] : '' ; ?>">
+                    </div>
+                    <div class="form-group mr-2">
+                        <label for="dtfin">Data Final:</label>
+                        <input type="date" class="form-control ml-2" name="dtfin" id="dtfin" value="<?= (isset($_GET['dtfin']))? $_GET['dtfin'] : '' ; ?>">
+                    </div>
+                    <button type="sumbit" class="btn btn-primary">Procurar</button>
+                </form>
 
             </div>
             <div class="card-body">
