@@ -11,7 +11,7 @@ $conn = new Site;
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -29,7 +29,22 @@ $conn = new Site;
     <link href="../../../css/rastreamento.css" rel="stylesheet">
     <!-- Custom styles for this page -->
     <link href="../../../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <style>
+        #map {
+            height: 450px;
+            float: left;
+            width: 100%;
+        }
 
+        #directions-panel {
+            color: #000000;
+            margin-top: 10px;
+            background-color: rgba(191, 186, 167, 0.56);
+            padding: 10px;
+            overflow: scroll;
+            height: 174px;
+        }
+    </style>
 </head>
 
 <body id="page-top">
@@ -56,9 +71,16 @@ $conn = new Site;
 
                 <!-- Page Heading -->
                 <h1 class="h3 mb-4 text-gray-800">Rastreamentos</h1>
-
-                <div style="height: 400px; background: green">A</div>
-
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                    </div>
+                    <div class="card-body">
+                        <div id="map"></div>
+                        <h2>Informações da rota:</h2>
+                        <div id="directions-panel"></div>
+                        <input type="submit" id="submit">
+                    </div>
+                </div>
 
                 <!-- DataTales Rastreamento -->
                 <div class="card shadow mb-4">
@@ -69,6 +91,7 @@ $conn = new Site;
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                 <tr>
+                                    <th>Viagem</th>
                                     <th>Frota</th>
                                     <th>Placa</th>
                                     <th>Latitude</th>
@@ -79,6 +102,7 @@ $conn = new Site;
                                 </thead>
                                 <tfoot>
                                 <tr>
+                                    <th>Viagem</th>
                                     <th>Frota</th>
                                     <th>Placa</th>
                                     <th>Latitude</th>
@@ -89,12 +113,18 @@ $conn = new Site;
                                 </tfoot>
                                 <tbody>
                                 <?php
-                                $selectRastrear = $conn->executeQuery("SELECT vei.frota, vei.placa, coo.hora, coo.latitude, coo.longitude, usu.nome FROM registro_ponto rp JOIN coordenadas coo ON rp.cod_viagem = coo.fk_cod_viagem JOIN usuario usu ON usu.usuario_id = rp.fk_usuario JOIN veiculos vei ON rp.fk_veiculo = vei.id GROUP BY vei.frota ORDER BY coo.hora DESC");
+                                $selectRastrear = $conn->executeQuery("SELECT vei.frota, vei.placa, coo.hora, coo.latitude, coo.longitude, usu.nome, rp.cod_viagem FROM registro_ponto rp JOIN coordenadas coo ON rp.cod_viagem = coo.fk_cod_viagem JOIN usuario usu ON usu.usuario_id = rp.fk_usuario JOIN veiculos vei ON rp.fk_veiculo = vei.id GROUP BY rp.cod_viagem ORDER BY coo.hora DESC");
                                 $row = mysqli_num_rows($selectRastrear);
                                 while ($row = mysqli_fetch_assoc($selectRastrear)):
                                     ?>
                                     <tr>
-                                        <td><button class="btn infoveiculo"><i class="fa fa-truck" aria-hidden="true" data-toggle="modal" data-target="#modalinfoveiculo"></i></button> <?= $row["frota"] ?></td>
+                                        <td><?= $row["cod_viagem"] ?></td>
+                                        <td>
+                                            <button class="btn infoveiculo"><i class="fa fa-truck" aria-hidden="true"
+                                                                               data-toggle="modal"
+                                                                               data-target="#modalinfoveiculo"></i>
+                                            </button> <?= $row["frota"] ?>
+                                        </td>
                                         <td><?= $row["placa"] ?></td>
                                         <td><?= $row["latitude"] ?></td>
                                         <td><?= $row["longitude"] ?></td>
@@ -102,7 +132,8 @@ $conn = new Site;
                                         <td>
                                             <form action="" method="post">
                                                 <div class="btn-group btn-block">
-                                                    <button class="btn btn-sm btn-primary" name="btnEditar">Editar</button>
+                                                    <button class="btn btn-sm btn-primary" name="btnEditar">Editar
+                                                    </button>
                                                 </div>
 
                                             </form>
@@ -114,8 +145,6 @@ $conn = new Site;
                         </div>
                     </div>
                 </div>
-
-
 
 
             </div>
@@ -159,10 +188,73 @@ $conn = new Site;
 <!-- Page level custom scripts -->
 <script src="../../../js/demo/datatables-demo.js"></script>
 
-<?php include_once '../../include/configdatatable.php'?>
+<?php include_once '../../include/configdatatable.php' ?>
+
+<!-- Script Routes-->
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbqJXX7fEFddatn-vaBp3BtBS-4TJNIbg&callback=initMap">
+</script>
+<script>
+    function initMap() {
+        var directionsService = new google.maps.DirectionsService;
+        var directionsDisplay = new google.maps.DirectionsRenderer;
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 6,
+            center: {lat: 41.85, lng: -87.65}
+        });
+        directionsDisplay.setMap(map);
+
+        document.getElementById('submit').addEventListener('click', function () {
+            calculateAndDisplayRoute(directionsService, directionsDisplay);
+        });
+    }
+
+    function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+        var waypts = [];
+
+
+        // var checkboxArray = document.getElementById('waypoints');
+        // for (var i = 0; i < checkboxArray.length; i++) {
+        //     if (checkboxArray.options[i].selected) {
+        //         waypts.push({
+        //             location: checkboxArray[i].value,
+        //             stopover: true
+        //         });
+        //     }
+        // }
+
+        directionsService.route({
+            origin: '-26.8953105, -49.0675989', //Primeira Coordenada
+            destination: '-26.8954366,-49.0693557', //Última Coordenada
+            waypoints: waypts, //restante delas
+            optimizeWaypoints: true,
+            travelMode: 'DRIVING'
+        }, function (response, status) {
+            if (status === 'OK') {
+                directionsDisplay.setDirections(response);
+                var route = response.routes[0];
+                var summaryPanel = document.getElementById('directions-panel');
+                summaryPanel.innerHTML = '';
+                // For each route, display summary information.
+                for (var i = 0; i < route.legs.length; i++) {
+                    var routeSegment = i + 1;
+                    summaryPanel.innerHTML += '<b>Route Segment: ' + routeSegment +
+                        '</b><br>';
+                    summaryPanel.innerHTML += route.legs[i].start_address + ' to ';
+                    summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
+                    summaryPanel.innerHTML += route.legs[i].distance.text + '<br><br>';
+                }
+            } else {
+                window.alert('Directions request failed due to ' + status);
+            }
+        });
+    }
+</script>
+
 
 <!-- Modal -->
-<div class="modal fade" id="modalinfoveiculo" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalinfoveiculo" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
