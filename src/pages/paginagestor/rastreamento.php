@@ -79,8 +79,19 @@ $conn = new Site;
                         <h2>Informações da rota:</h2>
                         <div id="directions-panel"></div>
                         <input type="submit" id="submit">
+                        <?php
+                        $wayp = array(1,2,3);
+                        $start = 1;
+                        $end = 2;
+                        ?>
+                        <div id="infos" data-start="<?=$start?>" data-end="<?=$end?>" data-wayp="<?=$wayp?>"></div>
                     </div>
                 </div>
+                <script>
+                    var infos = document.querySelector('#infos');
+                    console.log(infos.dataset.start);
+                    alert(infos.dataset.start);
+                </script>
 
                 <!-- DataTales Rastreamento -->
                 <div class="card shadow mb-4">
