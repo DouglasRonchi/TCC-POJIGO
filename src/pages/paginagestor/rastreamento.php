@@ -80,18 +80,29 @@ $conn = new Site;
                         <div id="directions-panel"></div>
                         <input type="submit" id="submit">
                         <?php
-                        $wayp = array(1,2,3);
-                        $start = 1;
-                        $end = 2;
+                        if (isset($_GET['cdv'])) {
+                            $wayp = array();
+                            $query = $conn->executeQuery("SELECT * FROM coordenadas WHERE fk_cod_viagem = {$_GET['cdv']} ORDER BY hora ASC");
+                            $row = mysqli_fetch_assoc($query);
+                            $startPosition = $row['latitude'] . "," . $row['longitude'];
+
+                            $query = $conn->executeQuery("SELECT * FROM coordenadas WHERE fk_cod_viagem = {$_GET['cdv']} ORDER BY hora DESC");
+                            $row = mysqli_fetch_assoc($query);
+                            $endPosition = $row['latitude'] . "," . $row['longitude'];
+
+                            $query = $conn->executeQuery("SELECT * FROM coordenadas WHERE fk_cod_viagem = {$_GET['cdv']} ORDER BY hora DESC");
+                            while ($row = mysqli_fetch_assoc($query)){
+                                array_push($wayp,$row['latitude'] . "," . $row['longitude']);
+                            }
+
+                            $jsonwayp = json_encode($wayp);
+                        }
+
                         ?>
-                        <div id="infos" data-start="<?=$start?>" data-end="<?=$end?>" data-wayp="<?=$wayp?>"></div>
+                        <div id="infos" data-start="<?= $startPosition ?>" data-end="<?= $endPosition ?>"
+                             data-wayp="<?= $jsonwayp ?>"></div>
                     </div>
                 </div>
-                <script>
-                    var infos = document.querySelector('#infos');
-                    console.log(infos.dataset.start);
-                    alert(infos.dataset.start);
-                </script>
 
                 <!-- DataTales Rastreamento -->
                 <div class="card shadow mb-4">
@@ -141,13 +152,14 @@ $conn = new Site;
                                         <td><?= $row["longitude"] ?></td>
                                         <td><?= $row["nome"] ?></td>
                                         <td>
-                                            <form action="" method="post">
-                                                <div class="btn-group btn-block">
-                                                    <button class="btn btn-sm btn-primary" name="btnEditar">Editar
+                                            <div class="btn-group btn-block">
+                                                <form action="" method="get">
+                                                    <input type="hidden" name="cdv" value="<?= $row["cod_viagem"] ?>">
+                                                    <button class="btn btn-sm btn-primary" type="submit"
+                                                            name="btnVisualizar">Ver no Mapa
                                                     </button>
-                                                </div>
-
-                                            </form>
+                                                </form>
+                                            </div>
                                         </td>
                                     </tr>
                                 <?php endwhile; ?>
@@ -203,7 +215,16 @@ $conn = new Site;
 
 <!-- Script Routes-->
 <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HEREbg&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbqJXX7fEFddatn-vaBp3BtBS-4TJNIbg&callback=initMap">
+</script>
+<script>
+    var infos = document.querySelector('#infos');
+    // console.log(infos.dataset.start); //inicio
+    // console.log(infos.dataset.end); //final
+    // console.log(infos.dataset.wayp); //waypoints
+
+    var array = JSON.parse(infos.dataset.wayp);
+    // console.log(array[0]);
 </script>
 <script>
     function initMap() {
