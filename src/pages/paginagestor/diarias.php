@@ -99,7 +99,7 @@ $conn = new Site;
                   </tfoot>
                   <tbody>
                     <?php
-                    if (isset($_GET['cad'])) :
+                    if (isset($_GET['cad'])) {
                       $sql = "SELECT COUNT(rp.fk_diaria) as quantidade,SUM(dia.valor) as soma, rp.fk_usuario, usu.cadastro, usu.nome FROM registro_ponto rp JOIN diarias dia ON dia.id = rp.fk_diaria JOIN usuario usu on usu.usuario_id = rp.fk_usuario WHERE usu.cadastro = {$_GET['cad']} AND hora_inicio BETWEEN '{$_GET['dtini']}' AND '{$_GET['dtfin']}'";
                       $query = $conn->executeQuery($sql);
                       
@@ -122,7 +122,30 @@ $conn = new Site;
                         </tr>
                         <?php
                       endwhile;
-                    endif;
+                    } else {
+                  
+                       $sql = "SELECT COUNT(rp.fk_diaria) as quantidade,SUM(dia.valor) as soma, rp.fk_usuario, usu.cadastro, usu.nome FROM registro_ponto rp JOIN diarias dia ON dia.id = rp.fk_diaria JOIN usuario usu on usu.usuario_id = rp.fk_usuario WHERE previlegio = 3";
+                        $query = $conn->executeQuery($sql);
+                      
+                      $row = mysqli_num_rows($query);
+                      while ($row = mysqli_fetch_assoc($query)): ?>
+                        <tr>
+                          <td><?=$row['cadastro']?></td>
+                          <td><?=$row['nome']?></td>
+                          <td><?=$row['quantidade']?></td>
+                          <td><?=$row['soma']?></td>
+                          <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Visualizar</button></td>
+
+                          <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                              <div class="modal-content">
+                              </div>
+                            </div>
+                          </div>
+                        </tr>
+                        <?php
+                        endwhile;
+                    }
                     ?>
                     
                   </tbody>
