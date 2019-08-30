@@ -124,57 +124,100 @@ tr.subtitles th {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php
-                                            $selectRegistros = $conn->executeQuery("SELECT * FROM registro_ponto rp JOIN usuario us ON rp.fk_usuario = us.usuario_id WHERE us.cadastro = {$_GET['cad']} AND hora_inicio BETWEEN '{$_GET['dtini']}' AND '{$_GET['dtfin']}'");
-                                            $rows = mysqli_num_rows($selectRegistros);
-                                            while ($rows = mysqli_fetch_assoc($selectRegistros)):
-                                                ?>
-                                                <tr>
-                                                    <td><?=$rows['hora_inicio']?></td>
-                                                    <td><?=$rows['hora_inicio_intervalo']?></td>
-                                                    <td><?=$rows['hora_fim_intervalo']?></td>
-                                                    <td><?=$rows['inicio_parada_um']?></td>
-                                                    <td><?=$rows['fim_parada_um']?></td>
-                                                    <td><?=$rows['inicio_parada_dois']?></td>
-                                                    <td><?=$rows['fim_parada_dois']?></td>
-                                                    <td><?=$rows['hora_fim']?></td>
-                                                    <td>
-                                                        <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Editar</button>
-                                                        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                                                          <div class="modal-dialog modal-lg">
-                                                            <div class="modal-content">
-                                                              ...
-                                                          </div>
-                                                      </div>
-                                                  </div>
-                                              </td>
-                                          </tr>
-                                      <?php endwhile; ?>
-                                  </tbody>
-                              </table>
-                          </div>
-                      </div>
-                  </div>
-                  <button class="btn btn-primary" data-toggle="modal" data-target=".bd-modal-ponto">Gerar Relatório</button>
-              <?php else: ?>
-                <div class="mt-3">
-                    Selecione um cadastro, uma data inicial e uma data final para visualisar os registros...
-                </div>
-            <?php endif; ?>
-        </div>
-        <!-- /.container-fluid -->
-    </div>
-    <!-- End of Main Content -->
+                                         <?php
+                                         $selectRegistros = $conn->executeQuery("SELECT * FROM registro_ponto rp JOIN usuario us ON rp.fk_usuario = us.usuario_id WHERE us.cadastro = {$_GET['cad']} AND hora_inicio BETWEEN '{$_GET['dtini']}' AND '{$_GET['dtfin']}'");
+                                         $rows = mysqli_num_rows($selectRegistros);
+                                         while ($rows = mysqli_fetch_assoc($selectRegistros)):
+                                            ?>
+                                            <tr>
+                                             <td><?=$rows['hora_inicio']?></td>
+                                             <td><?=$rows['hora_inicio_intervalo']?></td>
+                                             <td><?=$rows['hora_fim_intervalo']?></td>
+                                             <td><?=$rows['inicio_parada_um']?></td>
+                                             <td><?=$rows['fim_parada_um']?></td>
+                                             <td><?=$rows['inicio_parada_dois']?></td>
+                                             <td><?=$rows['fim_parada_dois']?></td>
+                                             <td><?=$rows['hora_fim']?></td>
+                                             <td>
+                                                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Editar</button>
+                                                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                                  <div class="modal-dialog modal-lg">
+                                                    <div class="modal-content col-10">
+                                                      <form action="../../controllers/usuariosController.php<?= (isset($_GET['editar'])) ? "?id=".$_GET['id'] : ''; ?>" method="post" enctype="multipart/form-data">
+                                                        
+                                                        <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label for="inputhora_inicio"><strong>inicio jornada</strong></label>
+                                                            <input type="text" class="form-control" id="inputhora_inicio" name="inputhora_inicio" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['hora_inicio'] : ''; ?>">
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="inputhora_inicio_intervalo"><strong>inicio intervalo</strong></label>
+                                                            <input type="text" class="form-control" id="inputhora_inicio_intervalo" name="inputhora_inicio_intervalo" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['hora_inicio_intervalo'] : ''; ?>">
+                                                        </div>
 
-    <!-- Footer -->
-    <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-                <span>Copyright &copy; Your Website 2019</span>
+                                                        <div class="col-md-6">
+                                                            <label for="inputhora_fim_intervalo"><strong>fim intervalo</strong></label>
+                                                            <input type="text" class="form-control" id="inputhora_fim_intervalo" name="inputhora_fim_intervalo" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['hora_fim_intervalo'] : ''; ?>">
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="inputinicio_parada_um"><strong>Inicio parada 1</strong></label>
+                                                            <input type="text" class="form-control" id="inputinicio_parada_um" name="inputinicio_parada_um" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['inicio_parada_um'] : ''; ?>">
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="inputfim_parada_um"><strong>fim parada 1</strong></label>
+                                                            <input type="text" class="form-control" id="inputfim_parada_um" name="inputfim_parada_um" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['fim_parada_um'] : ''; ?>">
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="inputinicio_parada_dois"> <strong>Inicio parada 2</strong></label>
+                                                            <input type="text" class="form-control" id="inputinicio_parada_dois" name="inputinicio_parada_dois" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['inicio_parada_dois'] : ''; ?>">
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="inputfim_parada_dois"><strong> fim parada 2 </strong></label>
+                                                            <input type="text" class="form-control" id="inputfim_parada_dois" name="inputfim_parada_dois" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['fim_parada_dois'] : ''; ?>">
+                                                        </div>
+                                                        <div class="col-md-6" class="form-group ">
+                                                            <label for="inputhora_fim"><strong>Fim jornada</strong></label>
+                                                            <input type="text" class="form-control" id="inputhora_fim" name="inputhora_fim" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['hora_fim'] : ''; ?>">
+                                                        </div>  
+                                                        
+                                                            </div>
+                                                            <br>
+                                                        <button type="button" class="btn btn-primary">Salvar</button><br>
+                                                        <br>
+                                                            </form>      
+                                                        </div>                                
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            <?php endwhile; ?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
-    </footer>
-    <!-- End of Footer -->
+        <button class="btn btn-primary" data-toggle="modal" data-target=".bd-modal-ponto">Gerar Relatório</button>
+    <?php else: ?>
+        <div class="mt-3">
+            Selecione um cadastro, uma data inicial e uma data final para visualisar os registros...
+        </div>
+    <?php endif; ?>
+</div>
+<!-- /.container-fluid -->
+</div>
+<!-- End of Main Content -->
+
+<!-- Footer -->
+<footer class="sticky-footer bg-white">
+    <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Your Website 2019</span>
+        </div>
+    </div>
+</footer>
+<!-- End of Footer -->
 
 </div>
 <!-- End of Content Wrapper -->
@@ -386,16 +429,16 @@ tr.subtitles th {
 
 <script>
     function imprimirDiv(div) {
-     var impressao = document.getElementById(div).innerHTML;
-     var original = document.body.innerHTML;
+       var impressao = document.getElementById(div).innerHTML;
+       var original = document.body.innerHTML;
 
-     document.body.innerHTML = impressao;
+       document.body.innerHTML = impressao;
 
-     window.print();
+       window.print();
 
-     document.body.innerHTML = original;
-     location.reload();
- }
+       document.body.innerHTML = original;
+       location.reload();
+   }
 </script>
 </body>
 
