@@ -66,6 +66,7 @@ $conn = new Site;
           <p class="mb-4"><a target="_blank" href="https://datatables.net"></a>.</p>
 
           <!-- DataTales Example -->
+           
           <div class="card shadow mb-4">
             <div class="card-header py-3">
               <h6 class="m-0 font-weight-bold text-primary"></h6>
@@ -82,25 +83,10 @@ $conn = new Site;
                       <th>VENCIMENTO CNH</th>
                       <th>MOPP</th>
                       <th>VENCIMENTO MOPP</th>
-
                       <th></th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr>
-                      <td>219060</td>
-                      <td>FULANO</td>
-                      <td>12369542566</td>
-                      <td>035741618</td>
-                      <th>
-                        <input type="date" class="form-control" id="inputVencimentoCNH" name="inputVencimentoCNH" value="venc_cnh">
-                      </th>
-                      <td>01864</td>
-                      <th>
-                        <input type="date" class="form-control" id="inputVencimentoMOPP" name="inputVencimentoMOPP" value="venc_mopp">
-                      </th>
-                    </tr>
-                  </tbody>
+
                   <tbody>
                     <?php
                     $selectUsers = $conn->executeQuery("SELECT * FROM usuario");
@@ -116,11 +102,12 @@ $conn = new Site;
                         <td><?= $selectUsersRows["mopp"] ?></td>
                         <td><?= $selectUsersRows["venc_mopp"] ?></td>
                         <td>
-                          <form action="../../controllers/usuariosController.php?id=<?=$selectUsersRows["usuario_id"]?>" method="post">
-                            
-
-                          </form>
-                        </td >
+                           <form action="" method="get">
+                          <a  class="btn btn-primary botao_ajax_modal" data-id="<?= $selectUsersRows["cadastro"] ?>" data-toggle="modal" data-target="#exampleModal">
+                            Editar
+                          </a>
+                        </form>
+                        </td>
                       </tr>
                     <?php endwhile; ?>
                   </tbody>
@@ -128,77 +115,92 @@ $conn = new Site;
               </div>
             </div>
           </div>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-            Salvar alterações
-          </button>
+
+        <!--   $('.botao_ajax_modal').click(function() {
+
+          var id = $(this).getAttr('data-id');
+
+          $.ajax({});
+        });
+ -->
           <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id="exampleModalLabel">Alterações</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  Tem certeza que deseja salvar as alterações?
-                </div>
-                <div class="modal-footer">
+                   <span aria-hidden="true">&times;</span>
+                 </button>
+               </div>
 
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                  
-                  <form><button type="button" class="btn btn-primary">Salvar</button></form>
+               <div class="modal-body">
 
-                </div>
+                <label>Vencimento CNH</label>
+                <input type="date" class="form-control" id="inputVencimentoCNH" name="inputVencimentoCNH" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['venc_cnh'] : ''; ?>">
+                <br>
+                <br>
+                <label>Vencimento MOPP</label>
+                <input type="date" class="form-control" id="inputVencimentoMOPP" name="inputVencimentoMOPP" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['venc_mopp'] : ''; ?>">
+
+              </div>
+
+              <div class="modal-footer">
+
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+
+                <form><button type="button" class="btn btn-primary" name="btnSalvar">Salvar</button></form>
+
               </div>
             </div>
           </div>
-
         </div>
-        <!-- /.container-fluid -->
+      
 
       </div>
-      <!-- End of Main Content -->
-
-      <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2019</span>
-          </div>
-        </div>
-      </footer>
-      <!-- End of Footer -->
+      <!-- /.container-fluid -->
 
     </div>
-    <!-- End of Content Wrapper -->
+    <!-- End of Main Content -->
+
+    <!-- Footer -->
+    <footer class="sticky-footer bg-white">
+      <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+          <span>Copyright &copy; Your Website 2019</span>
+        </div>
+      </div>
+    </footer>
+    <!-- End of Footer -->
 
   </div>
-  <!-- End of Page Wrapper -->
+  <!-- End of Content Wrapper -->
 
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
+</div>
+<!-- End of Page Wrapper -->
 
-  <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
-        </div>
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+  <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+        <a class="btn btn-primary" href="login.html">Logout</a>
       </div>
     </div>
   </div>
+</div>
 </div>
 <!-- /.container-fluid -->
 
