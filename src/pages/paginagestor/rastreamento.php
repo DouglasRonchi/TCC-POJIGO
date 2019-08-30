@@ -77,11 +77,11 @@ $conn = new Site;
                     <div class="card-body">
                         <div id="map"></div>
                         <h2>Informações da rota:</h2>
-                        <div id="directions-panel"></div>
-                        <input type="submit" id="submit">
+                        <div id="directions-panel">
+                            <span class="font-weight-light">Selecione uma viagem para ver as informações...</span>
+                        </div>
                         <?php
                         if (isset($_GET['cdv'])) {
-                            $wayp = array();
                             $query = $conn->executeQuery("SELECT * FROM coordenadas WHERE fk_cod_viagem = {$_GET['cdv']} ORDER BY hora ASC");
                             $row = mysqli_fetch_assoc($query);
                             $startPosition = $row['latitude'] . "," . $row['longitude'];
@@ -90,17 +90,19 @@ $conn = new Site;
                             $row = mysqli_fetch_assoc($query);
                             $endPosition = $row['latitude'] . "," . $row['longitude'];
 
-                            $query = $conn->executeQuery("SELECT * FROM coordenadas WHERE fk_cod_viagem = {$_GET['cdv']} ORDER BY hora DESC");
+                            $wayp = array();
+                            $query = $conn->executeQuery("SELECT * FROM coordenadas WHERE fk_cod_viagem = {$_GET['cdv']} ORDER BY hora DESC LIMIT 3");
                             while ($row = mysqli_fetch_assoc($query)){
                                 array_push($wayp,$row['latitude'] . "," . $row['longitude']);
                             }
 
                             $jsonwayp = json_encode($wayp);
+
                         }
 
                         ?>
                         <div id="infos" data-start="<?= $startPosition ?>" data-end="<?= $endPosition ?>"
-                             data-wayp="<?= $jsonwayp ?>"></div>
+                             data-wayp='<?= $jsonwayp ?>'></div>
                     </div>
                 </div>
 
@@ -155,7 +157,7 @@ $conn = new Site;
                                             <div class="btn-group btn-block">
                                                 <form action="" method="get">
                                                     <input type="hidden" name="cdv" value="<?= $row["cod_viagem"] ?>">
-                                                    <button class="btn btn-sm btn-primary" type="submit"
+                                                    <button class="btn btn-sm btn-primary submit" type="submit"
                                                             name="btnVisualizar">Ver no Mapa
                                                     </button>
                                                 </form>
@@ -217,47 +219,39 @@ $conn = new Site;
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbqJXX7fEFddatn-vaBp3BtBS-4TJNIbg&callback=initMap">
 </script>
-<script>
-    var infos = document.querySelector('#infos');
-    // console.log(infos.dataset.start); //inicio
-    // console.log(infos.dataset.end); //final
-    // console.log(infos.dataset.wayp); //waypoints
 
-    var array = JSON.parse(infos.dataset.wayp);
-    // console.log(array[0]);
-</script>
 <script>
     function initMap() {
         var directionsService = new google.maps.DirectionsService;
         var directionsDisplay = new google.maps.DirectionsRenderer;
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 6,
-            center: {lat: 41.85, lng: -87.65}
+            center: {lat: -26.89, lng: -49.08}
         });
         directionsDisplay.setMap(map);
-
-        document.getElementById('submit').addEventListener('click', function () {
-            calculateAndDisplayRoute(directionsService, directionsDisplay);
-        });
+        calculateAndDisplayRoute(directionsService, directionsDisplay);
     }
 
     function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+        var infos = document.querySelector('#infos');
+        // console.log(infos.dataset.start); //inicio
+        // console.log(infos.dataset.end); //final
+        // console.log(infos.dataset.wayp); //waypoints
         var waypts = [];
+        var ObjWaypts = JSON.parse(infos.dataset.wayp);
 
 
-        // var checkboxArray = document.getElementById('waypoints');
-        // for (var i = 0; i < checkboxArray.length; i++) {
-        //     if (checkboxArray.options[i].selected) {
-        //         waypts.push({
-        //             location: checkboxArray[i].value,
-        //             stopover: true
-        //         });
-        //     }
-        // }
+        $.each(ObjWaypts,function(key,val){
+            waypts.push({
+                location: val,
+                stopover: true
+            });
+        });
 
+        console.log(waypts);
         directionsService.route({
-            origin: '-26.8953105, -49.0675989', //Primeira Coordenada
-            destination: '-26.8954366,-49.0693557', //Última Coordenada
+            origin: infos.dataset.start, //Primeira Coordenada
+            destination: infos.dataset.end, //Última Coordenada
             waypoints: waypts, //restante delas
             optimizeWaypoints: true,
             travelMode: 'DRIVING'
