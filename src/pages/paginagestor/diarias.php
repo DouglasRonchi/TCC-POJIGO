@@ -60,20 +60,20 @@ $conn = new Site;
               <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
               <hr>
               <form action="" method="get" class="form-inline">
-                    <div class="form-group mr-2">
-                        <label for="cad">Cadastro:</label>
-                        <input type="number" class="form-control ml-2" name="cad" id="cad" value="<?= (isset($_GET['cad']))? $_GET['cad'] : '' ; ?>">       
-                    </div>
-                    <div class="form-group mr-2">
-                        <label for="dtini">Data Inicial:</label>
-                        <input type="date" class="form-control ml-2" name="dtini" id="dtini" value="<?= (isset($_GET['dtini']))? $_GET['dtini'] : '' ; ?>">
-                    </div>
-                    <div class="form-group mr-2">
-                        <label for="dtfin">Data Final:</label>
-                        <input type="date" class="form-control ml-2" name="dtfin" id="dtfin" value="<?= (isset($_GET['dtfin']))? $_GET['dtfin'] : '' ; ?>">
-                    </div>
-                    <button type="sumbit" class="btn btn-primary">Procurar</button>
-                </form>
+                <div class="form-group mr-2">
+                  <label for="cad">Cadastro:</label>
+                  <input type="number" class="form-control ml-2" name="cad" id="cad" value="<?= (isset($_GET['cad']))? $_GET['cad'] : '' ; ?>">       
+                </div>
+                <div class="form-group mr-2">
+                  <label for="dtini">Data Inicial:</label>
+                  <input type="date" class="form-control ml-2" name="dtini" id="dtini" value="<?= (isset($_GET['dtini']))? $_GET['dtini'] : '' ; ?>">
+                </div>
+                <div class="form-group mr-2">
+                  <label for="dtfin">Data Final:</label>
+                  <input type="date" class="form-control ml-2" name="dtfin" id="dtfin" value="<?= (isset($_GET['dtfin']))? $_GET['dtfin'] : '' ; ?>">
+                </div>
+                <button type="sumbit" class="btn btn-primary">Procurar</button>
+              </form>
 
             </div>
             <div class="card-body">
@@ -99,24 +99,31 @@ $conn = new Site;
                   </tfoot>
                   <tbody>
                     <?php
-                    $sqlDiaria = $conn->executeQuery("SELECT * FROM usuario WHERE previlegio = 3");
-                    while ($resultado = mysqli_fetch_assoc($sqlDiaria)) { ?>
-                      <tr>
-                        <td><?=$resultado['cadastro']?></td>
-                        <td><?=$resultado['nome']?></td>
-                        <td><?=$resultado['']?></td>
-                        <td><?=$resultado['']?></td>
-                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Visualizar</button></td>
+                    if (isset($_GET['cad'])) :
+                      $sql = "SELECT COUNT(rp.fk_diaria) as quantidade,SUM(dia.valor) as soma, rp.fk_usuario, usu.cadastro, usu.nome FROM registro_ponto rp JOIN diarias dia ON dia.id = rp.fk_diaria JOIN usuario usu on usu.usuario_id = rp.fk_usuario WHERE usu.cadastro = {$_GET['cad']} AND hora_inicio BETWEEN '{$_GET['dtini']}' AND '{$_GET['dtfin']}'";
+                      $query = $conn->executeQuery($sql);
+                      
+                      $row = mysqli_num_rows($query);
+                      while ($row = mysqli_fetch_assoc($query)): ?>
+                        <tr>
+                          <td><?=$row['cadastro']?></td>
+                          <td><?=$row['nome']?></td>
+                          <td><?=$row['quantidade']?></td>
+                          <td><?=$row['soma']?></td>
+                          <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Visualizar</button></td>
 
-                        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                          <div class="modal-dialog modal-lg">
-                            <div class="modal-content">
+                          <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                              <div class="modal-content">
+                              </div>
                             </div>
                           </div>
-                        </div>
-                        
-                      </tr>
-                    <?php } ?>
+
+                        </tr>
+                        <?php
+                      endwhile;
+                    endif;
+                    ?>
                     
                   </tbody>
                 </table>
@@ -126,7 +133,6 @@ $conn = new Site;
 
         </div>
         <!-- /.container-fluid -->
-
       </div>
       <!-- End of Main Content -->
 
@@ -234,6 +240,8 @@ $conn = new Site;
 
 <!-- Page level custom scripts -->
 <script src="../../../js/demo/datatables-demo.js"></script>
+
+<?php include_once '../../include/configdatatable.php'?>
 
 </body>
 
