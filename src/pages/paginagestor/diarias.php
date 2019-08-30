@@ -73,6 +73,7 @@ $conn = new Site;
                   <input type="date" class="form-control ml-2" name="dtfin" id="dtfin" value="<?= (isset($_GET['dtfin']))? $_GET['dtfin'] : '' ; ?>">
                 </div>
                 <button type="sumbit" class="btn btn-primary">Procurar</button>
+                <a href="diarias.php" class="btn btn-secondary ml-2">Limpar</a>
               </form>
 
             </div>
