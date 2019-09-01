@@ -16,14 +16,16 @@
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
   <link href="css/styleLogin.css" rel="stylesheet">
+  <!-- Favicon icon site -->
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
 
 </head>
 <body>
 
   <form action="src/controllers/loginController.php" class="login-form" method="post">
     <div class="text-center logologin">
-    <h1>POJIGO</h1>
-    <small>Rotas & Registros</small>  
+      <h1>POJIGO</h1>
+      <small>Rotas & Registros</small>  
     </div>
 
     <div class="txtb">

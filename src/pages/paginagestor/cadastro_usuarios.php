@@ -81,7 +81,7 @@ if (isset($_GET['id'])) {
 
                             <div class="form-group col-md-6">
                                 <label for="inputTelefone">Telefone</label>
-                                <input type="text" class="form-control" id="inputTelefone" name="inputTelefone"
+                                <input type="number" class="form-control" id="inputTelefone" name="inputTelefone"
                                 placeholder="" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['telefone'] : ''; ?>">
                             </div>
                         </div>
@@ -156,19 +156,19 @@ if (isset($_GET['id'])) {
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputRG">RG</label>
-                                <input type="number" class="form-control" id="inputRG" name="inputRG" placeholder="" min="7" max="7" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['rg'] : ''; ?>",>
+                                <input type="number" class="form-control" id="inputRG" name="inputRG" placeholder="" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['rg'] : ''; ?>",>
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label for="inputCPF">CPF</label>
-                                <input type="text" class="form-control" id="inputCPF" name="inputCPF" placeholder="" value="cpf">
+                                <input type="number" class="form-control" id="inputCPF" name="inputCPF" placeholder="" value="cpf">
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputNascimento">Data de Nascimento</label>
-                                <input type="text" data-mask="00/00/0000" maxlength="10" autocomplete="off" class="form-control data-mask" id="inputNascimento" name="inputNascimento" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['data_nascimento'] : ''; ?>">
+                                <input type="date" data-mask="00/00/0000" maxlength="10" autocomplete="off" class="form-control data-mask" id="inputNascimento" name="inputNascimento" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['data_nascimento'] : ''; ?>">
                             </div>
 
                             <div class="form-group col-md-6">
@@ -192,7 +192,7 @@ if (isset($_GET['id'])) {
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputMOPP">MOPP</label>
-                                <input type="text" class="form-control" id="inputMOPP" name="inputMOPP" placeholder="" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['mopp'] : ''; ?>">
+                                <input type="number" class="form-control" id="inputMOPP" name="inputMOPP" placeholder="" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['mopp'] : ''; ?>">
                             </div>
 
                             <div class="form-group col-md-6">

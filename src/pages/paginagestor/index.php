@@ -38,7 +38,7 @@ $login->VerificarLogin();
 
       <!-- Main Content -->
       <div id="content">
-        
+
         <!-- Topbar Navbar -->
         <?php include '../menu/topbar.php'; ?>
         <!-- End of Topbar -->
@@ -48,6 +48,31 @@ $login->VerificarLogin();
 
           <!-- Page Heading -->
           <h1 class="h3 mb-4 text-gray-800">Página Inicial</h1>
+
+          <div class="card-deck">
+            <div class="card">
+              <img src="../../../img/inicial_icons/Caminhao.png" class="card-img-top" alt="Rastreamento de veículos">
+              <div class="card-body">
+                <h5 class="card-title"><strong>Rastreamento</strong></h5>
+                <p class="card-text">Rastreie suas frotas para uma melhor precisão em suas entregas.</p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="../../../img/inicial_icons/relatorio.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"><strong>Monitoramento</strong></h5>
+                <p class="card-text">Monitore seus motoristas, tenha controle e relatórios de horários, diárias entre outros.</p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="../../../img/inicial_icons/cnh.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"><strong>Controle de CNH e MOOP</strong></h5>
+                <p class="card-text">Garanta a segurança em sua empresa.<br> Avisos sobre vencimento de CNH e MOOP serão enviados aos motoristas.</p>
+              </div>
+            </div>
+          </div>
+
 
         </div>
         <!-- /.container-fluid -->
