@@ -6,8 +6,7 @@ if (isset($_GET['id'])) {
     $selectUsuario = $conn->executeQuery("SELECT * FROM usuario WHERE usuario_id = {$_GET['id']}");
     $selectUsuariosRows = mysqli_fetch_assoc($selectUsuario);
 }
-
-
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +19,7 @@ if (isset($_GET['id'])) {
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Pojigo - Início</title>
+    <title>Pojigo - Cadastro Usuarios</title>
 
     <!-- Custom fonts for this template-->
     <link href="../../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -161,7 +160,7 @@ if (isset($_GET['id'])) {
 
                             <div class="form-group col-md-6">
                                 <label for="inputCPF">CPF</label>
-                                <input type="number" class="form-control" id="inputCPF" name="inputCPF" placeholder="" value="cpf">
+                                <input type="number" class="form-control" id="inputCPF" name="inputCPF" placeholder="" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['cpf'] : ''; ?>">
                             </div>
                         </div>
 
@@ -197,7 +196,7 @@ if (isset($_GET['id'])) {
 
                             <div class="form-group col-md-6">
                                 <label for="inputVencimentoMOPP">Vencimento MOPP</label>
-                                <input type="date" class="form-control" id="inputVencimentoMOPP" name="inputVencimentoMOPP" value="venc_mopp">
+                                <input type="date" class="form-control" id="inputVencimentoMOPP" name="inputVencimentoMOPP" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['venc_mopp'] : ''; ?>">
                             </div>
                         </div>
 

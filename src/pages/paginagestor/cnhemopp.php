@@ -22,7 +22,7 @@ $conn = new Site;
 
   </style>
 
-  <title>Pojigo - Início</title>
+  <title>Pojigo - CNH e MOPP</title>
 
   <!-- Custom fonts for this template-->
   <link href="../../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -62,8 +62,6 @@ $conn = new Site;
 
           <!-- Page Heading -->
           <h1 class="h3 mb-4 text-gray-800"><center>CNH & MOPP</center></h1>
-          <h1 class="h3 mb-2 text-gray-800"></h1>
-          <p class="mb-4"><a target="_blank" href="https://datatables.net"></a>.</p>
 
           <!-- DataTales Example -->
 
@@ -91,30 +89,24 @@ $conn = new Site;
                     <?php
                     $selectUsers = $conn->executeQuery("SELECT * FROM usuario");
                     $selectUsersRows = mysqli_num_rows($selectUsers);
-                    while ($selectUsersRows = mysqli_fetch_assoc($selectUsers)):
+                    while ($Rows = mysqli_fetch_assoc($selectUsers)):
                       ?>
                       <tr>
-                        <td><?= $selectUsersRows["cadastro"] ?></td>
-                        <td><?= $selectUsersRows["nome"] ?></td>
-                        <td><?= $selectUsersRows["cpf"] ?></td>
-                        <td><?= $selectUsersRows["cnh"] ?></td>
-                        <td><?= $selectUsersRows["venc_cnh"] ?></td>
-                        <td><?= $selectUsersRows["mopp"] ?></td>
-                        <td><?= $selectUsersRows["venc_mopp"] ?></td>
-                        <td>
-                         <form action="" method="get">
-                          <a  class="btn btn-primary botao_ajax_modal text-white" data-id="<?= $selectUsersRows["cadastro"] ?>" data-toggle="modal" data-target="#exampleModal">
-                            Editar
-                          </a>
-                        </form>
-                      </td>
-                    </tr>
-                  <?php endwhile; ?>
-                </tbody>
-              </table>
+                        <td><?= $Rows["cadastro"] ?></td>
+                        <td><?= $Rows["nome"] ?></td>
+                        <td><?= $Rows["cpf"] ?></td>
+                        <td><?= $Rows["cnh"] ?></td>
+                        <td><?= $Rows["venc_cnh"] ?></td>
+                        <td><?= $Rows["mopp"] ?></td>
+                        <td><?= $Rows["venc_mopp"] ?></td>
+                        <td><button type="button" class="btn btn-primary" name="btnEditar" id="btnEditar" data-toggle="modal" data-target="#exampleModal">Editar</button></td>
+                      </tr>
+                    <?php endwhile; ?>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
-        </div>
 
         <!--   $('.botao_ajax_modal').click(function() {
 
@@ -123,43 +115,43 @@ $conn = new Site;
           $.ajax({});
         });
       -->
+      <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">Alterações</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-               <span aria-hidden="true">&times;</span>
-             </button>
-           </div>
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
 
-           <div class="modal-body">
+              <label>Vencimento CNH</label>
+              <input type="date" class="form-control" id="VenciCNH" name="VenciCNH" value="<?=(isset($_POST['btnEditar']))? $Rows['venc_cnh'] :''; ?>">
+              <br>
+              <br>
+              <label>Vencimento MOPP</label>
+              <input type="date" class="form-control" id="VenciMOPP" name="VenciMOPP" value="<?=(isset($_POST['btnEditar']))? $Rows['venc_mopp'] :''; ?>">
 
-            <label>Vencimento CNH</label>
-            <input type="date" class="form-control" id="inputVencimentoCNH" name="inputVencimentoCNH" value="<?=(isset($_GET['editar'])) ? $selectUsuariosRows['venc_cnh'] : ''; ?>">
-            <br>
-            <br>
-            <label>Vencimento MOPP</label>
-            <input type="date" class="form-control" id="inputVencimentoMOPP" name="inputVencimentoMOPP" value="<?=(isset($_GET['editar'])) ? $selectUsuariosRows['venc_mopp'] : ''; ?>">
+            </div>
 
-          </div>
+            <div class="modal-footer">
 
-          <div class="modal-footer">
+              <?php
+              if (isset($_POST['btnSalvar'])) {
+                $sqlUpdate = $conn->executeQuery("UPDATE usuario SET venc_cnh = {$_POST['VenciCNH']} AND venc_mopp = {$_POST['VenciMOPP']} WHERE cadastro = {$Rows["cadastro"]}");
+                $salvar = mysqli_fetch_assoc($sqlUpdate);
+                header('Location: /cnhemopp.php');
+              }
+              ?>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+              <button type="button" class="btn btn-primary" name="btnSalvar" id="btnSalvar">Salvar</button>
 
-            <?php
-            if (isset($_POST['btnSalvar'])) {
-              $sqlUpdate = $conn->executeQuery("UPDATE usuario SET venc_cnh = {$_POST['inputVencimentoCNH']} AND venc_mopp = {$_POST['inputVencimentoMOPP']} WHERE cadastro = {$selectUsersRows["cadastro"]}");
-              $salvar = mysqli_fetch_assoc($sqlUpdate);
-              header('Location: /cnhemopp.php');
-            }
-            ?>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-            <button type="button" class="btn btn-primary" name="btnSalvar" id="btnSalvar">Salvar</button>
-
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
   </div>
   <!-- /.container-fluid -->
@@ -183,15 +175,15 @@ $conn = new Site;
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Pronto para partir?</h5>
         <button class="close" type="button" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">×</span>
         </button>
       </div>
-      <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+      <div class="modal-body">Selecione "Sair" abaixo se você estiver pronto para encerrar sua sessão atual.</div>
       <div class="modal-footer">
-        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-        <a class="btn btn-primary" href="login.html">Logout</a>
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+        <a class="btn btn-primary" href="login.html">Sair</a>
       </div>
     </div>
   </div>

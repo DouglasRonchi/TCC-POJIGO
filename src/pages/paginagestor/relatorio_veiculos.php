@@ -57,7 +57,7 @@ $conn = New Site;
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Tabela de Dados</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Tabela de Veículos</h6>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -80,7 +80,7 @@ $conn = New Site;
                                 $selectVeiculoRows = mysqli_num_rows($selectVeiculo);
 
                                 while ($selectVeiculoRows = mysqli_fetch_assoc($selectVeiculo)):
-                                    $selectModelo = $conn->executeQuery("SELECT modelo,fk_marca FROM modelo_veiculo WHERE id = {$selectVeiculoRows["fk_modelo"]}");
+                                    $selectModelo = $conn->executeQuery("SELECT modelo, fk_marca FROM modelo_veiculo WHERE id = {$selectVeiculoRows["fk_modelo"]}");
                                     $modelo = mysqli_fetch_assoc($selectModelo);
 
                                     $selectMarca = $conn->executeQuery("SELECT marca FROM marca_veiculo WHERE id = {$modelo['fk_marca']}");

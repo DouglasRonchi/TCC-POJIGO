@@ -44,7 +44,7 @@ $conn = new Site;
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Pojigo - Início</title>
+  <title>Pojigo - Diarias</title>
 
   <!-- Custom fonts for this template-->
   <link href="../../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -86,7 +86,7 @@ $conn = new Site;
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Tabela de Diárias</h6>
               <hr>
               <form action="" method="get" class="form-inline">
                 <div class="form-group mr-2">
@@ -206,10 +206,10 @@ $conn = new Site;
           <span aria-hidden="true">×</span>
         </button>
       </div>
-      <div class="modal-body">Selecione "Logout" abaixo se você estiver pronto para terminar sua sessão atual.</div>
+      <div class="modal-body">Selecione "Sair" abaixo se você estiver pronto para terminar sua sessão atual.</div>
       <div class="modal-footer">
-        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-        <a class="btn btn-primary" href="login.html">Logout</a>
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+        <a class="btn btn-primary" href="login.html">Sair</a>
       </div>
     </div>
   </div>
@@ -237,10 +237,10 @@ $conn = new Site;
           <span aria-hidden="true">×</span>
         </button>
       </div>
-      <div class="modal-body">Selecione "Logout" abaixo se você estiver pronto para terminar sua sessão atual.</div>
+      <div class="modal-body">Selecione "Sair" abaixo se você estiver pronto para terminar sua sessão atual.</div>
       <div class="modal-footer">
         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-        <a class="btn btn-primary" href="login.html">Logout</a>
+        <a class="btn btn-primary" href="login.html">Sair</a>
       </div>
     </div>
   </div>
