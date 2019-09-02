@@ -1,6 +1,22 @@
 <?php
-require_once '../../classes/Autoload.class.php';
-$conn = new Site;
+  require_once '../../classes/Autoload.class.php';
+  $conn = new Site;
+
+  if (isset($_POST["btnSalvar"])) {
+    $cnh = $_POST["VenciCNH"];
+    $mopp = $_POST["VenciMOPP"];
+    $usuarioId = $_POST["UsuarioId"];
+
+    $result = $conn->executeQuery("UPDATE usuario SET venc_cnh = '{$cnh}', venc_mopp = '{$mopp}' WHERE usuario_id = {$usuarioId}");
+  }
+
+  if (isset($_GET['userId'])) {
+    header('Content-type: application/json');
+    $usuario_id = $_GET['userId'];
+    $resultado = $conn->executeQuery("SELECT venc_cnh, venc_mopp FROM usuario WHERE usuario_id = '{$usuario_id}'");
+    $user = mysqli_fetch_assoc($resultado);
+    echo json_encode($user);
+  } else {
 ?>
 
 <!DOCTYPE html>
@@ -99,7 +115,7 @@ $conn = new Site;
                         <td><?= $Rows["venc_cnh"] ?></td>
                         <td><?= $Rows["mopp"] ?></td>
                         <td><?= $Rows["venc_mopp"] ?></td>
-                        <td><button type="button" class="btn btn-primary" name="btnEditar" id="btnEditar" data-toggle="modal" data-target="#exampleModal">Editar</button></td>
+                        <td><button type="button" class="btn btn-primary" name="btnEditar" id="<?= $Rows["usuario_id"] ?>" data-toggle="modal" data-target="#exampleModal">Editar</button></td>
                       </tr>
                     <?php endwhile; ?>
                   </tbody>
@@ -117,6 +133,7 @@ $conn = new Site;
       -->
       <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <form action="cnhemopp.php" method="POST">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -128,29 +145,23 @@ $conn = new Site;
             <div class="modal-body">
 
               <label>Vencimento CNH</label>
-              <input type="date" class="form-control" id="VenciCNH" name="VenciCNH" value="<?=(isset($_POST['btnEditar']))? $Rows['venc_cnh'] :''; ?>">
+              <input type="date" class="form-control" id="VenciCNH" name="VenciCNH">
               <br>
               <br>
               <label>Vencimento MOPP</label>
-              <input type="date" class="form-control" id="VenciMOPP" name="VenciMOPP" value="<?=(isset($_POST['btnEditar']))? $Rows['venc_mopp'] :''; ?>">
+              <input type="date" class="form-control" id="VenciMOPP" name="VenciMOPP">
+              <input type="hidden" class="form-control" id="UsuarioId" name="UsuarioId">
 
             </div>
 
             <div class="modal-footer">
-
-              <?php
-              if (isset($_POST['btnSalvar'])) {
-                $sqlUpdate = $conn->executeQuery("UPDATE usuario SET venc_cnh = {$_POST['VenciCNH']} AND venc_mopp = {$_POST['VenciMOPP']} WHERE cadastro = {$Rows["cadastro"]}");
-                $salvar = mysqli_fetch_assoc($sqlUpdate);
-                header('Location: /cnhemopp.php');
-              }
-              ?>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-              <button type="button" class="btn btn-primary" name="btnSalvar" id="btnSalvar">Salvar</button>
+              <button type="submit" class="btn btn-primary" name="btnSalvar" id="btnSalvar">Salvar</button>
 
             </div>
           </div>
         </div>
+        </form>
       </div>
 
   </div>
@@ -227,6 +238,20 @@ $conn = new Site;
 
 <!-- Page level custom scripts -->
 <script src="../../../js/demo/datatables-demo.js"></script>
+<script>
+  $('.btn[name="btnEditar"]').click(function(event){
+    btn = $(event.currentTarget);
+    id = btn.attr("id");
+    $.ajax(location["href"] + "?userId=" + id).done(function(data){
+      $("#VenciCNH").val(data["venc_cnh"]);
+      $("#VenciMOPP").val(data["venc_mopp"]);
+      $("#UsuarioId").val(id);
+    })
+  });
+</script>
 </body>
 
 </html>
+<?php
+}
+?>
