@@ -76,6 +76,8 @@ class Login extends Site {
             header('Location: ../../redirect.php');
         } else {
             //Alerta Usuário ou senha inválidos
+            setcookie('inv',"true",time()+5,"/");
+            $_COOKIE['inv'] = true;
             header('Location: ../../index.php');
         }
     }

@@ -98,7 +98,7 @@ if (isset($_GET['id'])) {
                                 placeholder="Digite sua senha" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['senha'] : ''; ?>">
                             </div>
                             <?php else: ?>
-                            
+
                             <?php endif; ?>
                         </div>
 
