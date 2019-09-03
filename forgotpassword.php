@@ -20,7 +20,7 @@
 </head>
 <body>
 
-  <form action="index.php" class="login-form">
+  <form action="src/controllers/loginController.php" class="login-form" method="post">
     <div class="text-center logologin">
       <h1>POJIGO</h1>
       <small>Rotas & Registros</small>
@@ -40,7 +40,7 @@
       <span data-placeholder="E-mail"></span>
     </div>
 
-    <input type="submit" class="logbtn btn btn-primary" value="Redefinir Senha">
+    <input type="submit" class="logbtn btn btn-primary" name="btnForgotpass" value="Redefinir Senha">
 
     <div class="bottom-text">
       <a href="login.php">Lembrou? Logar!</a>
