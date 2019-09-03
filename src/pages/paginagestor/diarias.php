@@ -5,7 +5,7 @@ $conn = new Site;
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <style>
 table {
   font-family: arial, sans-serif;
@@ -70,7 +70,7 @@ tr.subtitles th {
         <!-- Begin Page Content -->
         <div class="container-fluid">
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800 text-center">Diárias</h1>
+          <h1 class="mb-4 text-gray-800 text-center">Diárias</h1>
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
@@ -97,6 +97,10 @@ tr.subtitles th {
                 <a href="diarias.php" class="btn btn-secondary ml-2">Limpar</a>
               </form>
             </div>
+
+
+           <?php if (isset($_GET['cad']) && isset($_GET['dtini']) && isset($_GET['dtfin']) && $_GET['cad'] != '' && $_GET['dtini'] != '' && $_GET['dtfin'] != ''): ?>
+            
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -143,6 +147,7 @@ tr.subtitles th {
                 </table>
               </div>
             </div>
+          <?php endif;?>
           </div>
         </div>
         <!-- /.container-fluid -->
@@ -275,19 +280,18 @@ aria-hidden="true">
                   <tr>
                     <th class="largura10 text-center" colspan="10">Relatório de Diárias</th>
                   </tr>
-                    <?php
-                    $selectRegistrosUnicos = $conn->executeQuery("SELECT COUNT(rp.fk_diaria) as quantidade, SUM(dia.valor) as soma, rp.hora_inicio, rp.hora_inicio_intervalo, rp.hora_fim_intervalo, rp.inicio_parada_um, rp.fim_parada_um, rp.inicio_parada_dois, rp.fim_parada_dois, rp.hora_fim, dia.nome as nome FROM registro_ponto rp JOIN usuario us ON us.usuario_id = rp.fk_usuario JOIN diarias dia on dia.id = rp.fk_diaria WHERE us.cadastro = {$_GET['cad']} GROUP BY dia.nome ORDER BY rp.hora_inicio ASC");
-
-                    $rowHoras = mysqli_num_rows($selectRegistrosUnicos);
-                    while ($rowHoras = mysqli_fetch_assoc($selectRegistrosUnicos)):?>
                   <tr class="subtitles">
                     <th colspan="2">Dia</th>
                     <th>Entrada</th>
-                    <th>Quantidade</th>
                     <th>Tipo Diária</th>
                     <th>Saída</th>
                     <th>Valor Diaria</th>
                   </tr>
+                    <?php
+                    $selectRegistrosUnicos = $conn->executeQuery("SELECT SUM(dia.valor) as soma, rp.hora_inicio, rp.hora_fim, dia.nome as nome FROM registro_ponto rp JOIN usuario us ON us.usuario_id = rp.fk_usuario JOIN diarias dia on dia.id = rp.fk_diaria WHERE us.cadastro = {$_GET['cad']} GROUP BY rp.hora_inicio");
+
+                    $rowHoras = mysqli_num_rows($selectRegistrosUnicos);
+                    while ($rowHoras = mysqli_fetch_assoc($selectRegistrosUnicos)):?>
                   <tr class="subtitles">
                     <th class="largura02">
                     <?php
@@ -298,14 +302,13 @@ aria-hidden="true">
                       <?php echo strftime("%d", strtotime($rowHoras['hora_inicio']))?>
                     </th>
                     <th><?=strftime("%R", strtotime($rowHoras['hora_inicio']))?></th>
-                    <th><?=$rowHoras['quantidade']?></th>
-                    </th><th><?=utf8_encode($rowHoras['nome'])?></th>
+                    <th><?=utf8_encode($rowHoras['nome'])?></th>
                     <th><?=strftime("%R", strtotime($rowHoras['hora_fim']))?></th>
                     <th><?=$rowHoras['soma']?></th>
                   </tr>
                   <?php endwhile; ?>
                   <tr class="subtitles">
-                    <th colspan="5"></th>
+                    <th colspan="4"></th>
                     <th>Valor Total</th>
                     <?php
                     $sqlSoma = $conn->executeQuery ("SELECT COUNT(rp.fk_diaria) as quantidade, SUM(dia.valor) as soma FROM registro_ponto rp JOIN diarias dia ON dia.id = rp.fk_diaria JOIN usuario usu on usu.usuario_id = rp.fk_usuario WHERE usu.cadastro = {$_GET['cad']} AND hora_inicio BETWEEN '{$_GET['dtini']}' AND '{$_GET['dtfin']}'");
