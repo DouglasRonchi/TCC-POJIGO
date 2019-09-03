@@ -38,7 +38,7 @@ if (isset($_POST['btnSalvar'])) {
     $usuario->setTelefone($_POST['inputTelefone']);
     $usuario->setUsuario($_POST['inputUsuario']);
     $usuario->setEmail($_POST['inputEmail']);
-    $usuario->setSenha($_POST['inputSenha']);
+    $usuario->setSenha(hash('sha512', $_POST['inputSenha']));
     $usuario->setEndereco($_POST['inputEndereco']);
     $usuario->setBairro($_POST['inputBairro']);
     $usuario->setCidade($_POST['inputCidade']);
@@ -117,7 +117,6 @@ $usuario->setCadastro($cadastro+1);
 $usuario->setTelefone($_POST['inputTelefone']);
 $usuario->setUsuario($_POST['inputUsuario']);
 $usuario->setEmail($_POST['inputEmail']);
-$usuario->setSenha($_POST['inputSenha']);
 $usuario->setEndereco($_POST['inputEndereco']);
 $usuario->setBairro($_POST['inputBairro']);
 $usuario->setCidade($_POST['inputCidade']);
