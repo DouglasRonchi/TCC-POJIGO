@@ -144,6 +144,14 @@ if (isset($_FILES['inputFoto'])){
 }
 
 $usuario->atualizarUsuario();
+
+    $conn->setAlerta(
+        'success',
+        'Usuário '.$usuario->getNome().' atualizado com sucesso',
+        '<img class="img-fluid" src="'.$conn->path('img/icons/success.png').'">',
+        $_SESSION['usuario_id']
+    );
+
 header('location: ../pages/paginagestor/relatorio_usuarios.php');
 
 }
