@@ -29,14 +29,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <style type="text/css">
-    a{
-      border-radius: 10px;
-
-    }
-
-
-  </style>
 
   <title>Pojigo - CNH e MOPP</title>
 
@@ -100,7 +92,18 @@
                       <th></th>
                     </tr>
                   </thead>
-
+                  <tfoot>
+                    <tr>
+                      <th>CADASTRO</th>
+                      <th>NOME</th>
+                      <th>CPF</th>
+                      <th>CNH</th>
+                      <th>VENCIMENTO CNH</th>
+                      <th>MOPP</th>
+                      <th>VENCIMENTO MOPP</th>
+                      <th></th>
+                    </tr>
+                  </tfoot>
                   <tbody>
                     <?php
                     $selectUsers = $conn->executeQuery("SELECT * FROM usuario");
@@ -206,7 +209,7 @@
 <!-- End of Main Content -->
 
 <!-- Footer -->
-<?php include '../menu/footer.php'; ?>      
+<?php include '../menu/footer.php'; ?>
 <!-- End of Footer -->
 
 </div>

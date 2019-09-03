@@ -64,7 +64,8 @@ tr.subtitles th {
     <div id="content-wrapper" class="d-flex flex-column">
       <!-- Main Content -->
       <div id="content">
-        <!-- Topbar Navbar --> <?php include '../menu/topbar.php'; ?>
+        <!-- Topbar Navbar -->
+        <?php include '../menu/topbar.php'; ?>
         <!-- End of Topbar -->
         <!-- Begin Page Content -->
         <div class="container-fluid">
@@ -73,9 +74,8 @@ tr.subtitles th {
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Tabela de Diárias</h6>
+              <h6 class="m-0 font-weight-bold"><b>Preencha os dados abaixo e precione <strong class="text-primary">'visualizar'</strong> para ver o relatório de diarias!</b></h6>
               <hr>
-              <p style="font-family: calibri;"><b>Preencha os dados abaixo e precione <strong class="text-primary">'visualizar'</strong> para ver o relatório de diarias!</b></p>
               <form action="" method="get" class="form-inline">
 
                 <div class="form-group mr-2">
@@ -138,7 +138,8 @@ tr.subtitles th {
                       data-target=".bd-modal-ponto">Visualizar</button></td>
                   </tr> <?php
                   endwhile;
-                  ?> </tbody>
+                  ?>
+                  </tbody>
                 </table>
               </div>
             </div>

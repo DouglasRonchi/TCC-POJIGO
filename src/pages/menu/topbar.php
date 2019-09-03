@@ -117,7 +117,7 @@ $conn = new Site;
                 <!-- Button trigger modal -->
                 <a class="dropdown-item text-center small text-gray-500" href="#" data-toggle="modal"
                    data-target="#modalAllAlerts">
-                    Show All Alerts
+                    Mostrar todos os alertas
                 </a>
 
 
@@ -144,9 +144,7 @@ $conn = new Site;
                         <div class="status-indicator bg-success"></div>
                     </div>
                     <div class="font-weight-bold">
-                        <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been
-                            having.
-                        </div>
+                        <div class="text-truncate">Olá! Gostaria de saber se você pode me ajudar com um problema que tenho tido.</div>
                         <div class="small text-gray-500">Emily Fowler · 58m</div>
                     </div>
                 </a>
@@ -156,9 +154,7 @@ $conn = new Site;
                         <div class="status-indicator"></div>
                     </div>
                     <div>
-                        <div class="text-truncate">I have the photos that you ordered last month, how would you like
-                            them sent to you?
-                        </div>
+                        <div class="text-truncate">Tenho as fotos que você pediu no mês passado, como gostaria que elas fossem enviadas para você?</div>
                         <div class="small text-gray-500">Jae Chun · 1d</div>
                     </div>
                 </a>
@@ -168,9 +164,7 @@ $conn = new Site;
                         <div class="status-indicator bg-warning"></div>
                     </div>
                     <div>
-                        <div class="text-truncate">Last month's report looks great, I am very happy with the progress so
-                            far, keep up the good work!
-                        </div>
+                        <div class="text-truncate">O relatório do mês passado está ótimo, estou muito feliz com o progresso até agora, continue com o bom trabalho!</div>
                         <div class="small text-gray-500">Morgan Alvarez · 2d</div>
                     </div>
                 </a>
@@ -180,13 +174,12 @@ $conn = new Site;
                         <div class="status-indicator bg-success"></div>
                     </div>
                     <div>
-                        <div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that
-                            people say this to all dogs, even if they aren't good...
+                        <div class="text-truncate">De os parabéns a equipe em meu nome, estou muito feliz com os resultados apresentados.
                         </div>
-                        <div class="small text-gray-500">Chicken the Dog · 2w</div>
+                        <div class="small text-gray-500">Steve Jobs · 2sem</div>
                     </div>
                 </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+                <a class="dropdown-item text-center small text-gray-500" href="#">Leia mais mensagens</a>
             </div>
         </li>
 

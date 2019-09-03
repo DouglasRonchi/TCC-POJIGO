@@ -87,7 +87,7 @@ tr.subtitles th {
                     <form action="" method="get" class="form-inline">
                         <div class="form-group mr-2">
                             <label for="cad">Cadastro:</label>
-                            <input type="number" class="form-control ml-2" name="cad" id="cad" value="<?= (isset($_GET['cad']))? $_GET['cad'] : '' ; ?>">       
+                            <input type="number" class="form-control ml-2" name="cad" id="cad" value="<?= (isset($_GET['cad']))? $_GET['cad'] : '' ; ?>">
                         </div>
                         <div class="form-group mr-2">
                             <label for="dtini">Data Inicial:</label>
@@ -98,6 +98,7 @@ tr.subtitles th {
                             <input type="date" class="form-control ml-2" name="dtfin" id="dtfin" value="<?= (isset($_GET['dtfin']))? $_GET['dtfin'] : '' ; ?>">
                         </div>
                         <button type="sumbit" class="btn btn-primary">Procurar</button>
+                        <a href="registros.php" class="btn btn-secondary ml-2">Limpar</a>
                     </form>
 
                     <?php if (isset($_GET['cad']) && isset($_GET['dtini']) && isset($_GET['dtfin']) && $_GET['cad']!='' && $_GET['dtini']!='' && $_GET['dtfin']!=''): ?>
@@ -123,6 +124,19 @@ tr.subtitles th {
                                                 <th></th>
                                             </tr>
                                         </thead>
+                                        <tfoot>
+                                          <tr>
+                                              <th>Inicio de Jornada</th>
+                                              <th>Inicio de Intervalo</th>
+                                              <th>Fim de Intervalo</th>
+                                              <th>Inicio de Parada 1</th>
+                                              <th>Fim de Parada 1</th>
+                                              <th>Inicio de Parada 2</th>
+                                              <th>Fim de Parada 2</th>
+                                              <th>Fim de Jornada</th>
+                                              <th></th>
+                                          </tr>
+                                        </tfoot>
                                         <tbody>
                                          <?php
                                          $selectRegistros = $conn->executeQuery("SELECT * FROM registro_ponto rp JOIN usuario us ON rp.fk_usuario = us.usuario_id WHERE us.cadastro = {$_GET['cad']} AND hora_inicio BETWEEN '{$_GET['dtini']}' AND '{$_GET['dtfin']}'");
@@ -140,55 +154,8 @@ tr.subtitles th {
                                              <td><?=$rows['hora_fim']?></td>
                                              <td>
                                                 <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Editar</button>
-                                                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                                                  <div class="modal-dialog modal-lg">
-                                                    <div class="modal-content col-10">
-                                                      <form action="../../controllers/usuariosController.php<?= (isset($_GET['editar'])) ? "?id=".$_GET['id'] : ''; ?>" method="post" enctype="multipart/form-data">
-                                                        
-                                                        <div class="row">
-                                                        <div class="col-md-6">
-                                                            <label for="inputhora_inicio"><strong>inicio jornada</strong></label>
-                                                            <input type="text" class="form-control" id="inputhora_inicio" name="inputhora_inicio" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['hora_inicio'] : ''; ?>">
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <label for="inputhora_inicio_intervalo"><strong>inicio intervalo</strong></label>
-                                                            <input type="text" class="form-control" id="inputhora_inicio_intervalo" name="inputhora_inicio_intervalo" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['hora_inicio_intervalo'] : ''; ?>">
-                                                        </div>
 
-                                                        <div class="col-md-6">
-                                                            <label for="inputhora_fim_intervalo"><strong>fim intervalo</strong></label>
-                                                            <input type="text" class="form-control" id="inputhora_fim_intervalo" name="inputhora_fim_intervalo" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['hora_fim_intervalo'] : ''; ?>">
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <label for="inputinicio_parada_um"><strong>Inicio parada 1</strong></label>
-                                                            <input type="text" class="form-control" id="inputinicio_parada_um" name="inputinicio_parada_um" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['inicio_parada_um'] : ''; ?>">
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <label for="inputfim_parada_um"><strong>fim parada 1</strong></label>
-                                                            <input type="text" class="form-control" id="inputfim_parada_um" name="inputfim_parada_um" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['fim_parada_um'] : ''; ?>">
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <label for="inputinicio_parada_dois"> <strong>Inicio parada 2</strong></label>
-                                                            <input type="text" class="form-control" id="inputinicio_parada_dois" name="inputinicio_parada_dois" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['inicio_parada_dois'] : ''; ?>">
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <label for="inputfim_parada_dois"><strong> fim parada 2 </strong></label>
-                                                            <input type="text" class="form-control" id="inputfim_parada_dois" name="inputfim_parada_dois" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['fim_parada_dois'] : ''; ?>">
-                                                        </div>
-                                                        <div class="col-md-6" class="form-group ">
-                                                            <label for="inputhora_fim"><strong>Fim jornada</strong></label>
-                                                            <input type="text" class="form-control" id="inputhora_fim" name="inputhora_fim" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['hora_fim'] : ''; ?>">
-                                                        </div>  
-                                                        
-                                                            </div>
-                                                            <br>
-                                                        <button type="button" class="btn btn-primary">Salvar</button><br>
-                                                        <br>
-                                                            </form>      
-                                                        </div>                                
-                                                    </div>
-                                                </div>
-                                            </div>
+                                          </div>
                                         </div>
                                     </td>
                                 </tr>
@@ -198,6 +165,67 @@ tr.subtitles th {
                 </div>
             </div>
         </div>
+
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+              <form action="../../controllers/usuariosController.php<?= (isset($_GET['editar'])) ? "?id=".$_GET['id'] : ''; ?>" method="post" enctype="multipart/form-data">
+
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                      <thead>
+                        <tr>
+                          <th>Inicio de Jornada</th>
+                          <th>Inicio de Intervalo</th>
+                          <th>Fim de Intervalo</th>
+                          <th>Inicio de Parada 1</th>
+                          <th>Fim de Parada 1</th>
+                          <th>Inicio de Parada 2</th>
+                          <th>Fim de Parada 2</th>
+                          <th>Fim de Jornada</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                        <th class="px-4">
+                          <input type="text" class="form-control px-5" id="inputhora_inicio" name="inputhora_inicio" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['hora_inicio'] : ''; ?>">
+                        </th>
+                        <th class="px-4">
+                          <input type="text" class="form-control px-5" id="inputhora_inicio_intervalo" name="inputhora_inicio_intervalo" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['hora_inicio_intervalo'] : ''; ?>">
+                        </th>
+                        <th class="px-4">
+                          <input type="text" class="form-control px-5" id="inputhora_fim_intervalo" name="inputhora_fim_intervalo" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['hora_fim_intervalo'] : ''; ?>">
+                        </th>
+                        <th class="px-4">
+                          <input type="text" class="form-control px-5" id="inputinicio_parada_um" name="inputinicio_parada_um" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['inicio_parada_um'] : ''; ?>">
+                        </th>
+                        <th class="px-4">
+                          <input type="text" class="form-control px-5" id="inputfim_parada_um" name="inputfim_parada_um" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['fim_parada_um'] : ''; ?>">
+                        </th>
+                        <th class="px-4">
+                          <input type="text" class="form-control px-5" id="inputinicio_parada_dois" name="inputinicio_parada_dois" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['inicio_parada_dois'] : ''; ?>">
+                        </th>
+                        <th class="px-4">
+                          <input type="text" class="form-control px-5" id="inputfim_parada_dois" name="inputfim_parada_dois" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['fim_parada_dois'] : ''; ?>">
+                        </th>
+                        <th class="px-4">
+                          <input type="text" class="form-control px-5" id="inputhora_fim" name="inputhora_fim" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['hora_fim'] : ''; ?>">
+                        </th>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <button type="button" class="btn btn-primary m-3">Salvar</button>
+                <button type="button" title="Fechar" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <br>
+              </form>
+            </div>
+          </div>
+        </div>
+
         <button class="btn btn-primary" data-toggle="modal" data-target=".bd-modal-ponto">Gerar Relatório</button>
     <?php else: ?>
         <div class="mt-3">
@@ -205,6 +233,7 @@ tr.subtitles th {
         </div>
     <?php endif; ?>
 </div>
+
 <!-- /.container-fluid -->
 </div>
 <!-- End of Main Content -->
@@ -312,7 +341,7 @@ tr.subtitles th {
                                 <th>Total Horas</th>
                                 <th>Horas Extras</th>
                             </tr>
-                            
+
                             <?php
                             $horas_totais_mensais = 0;
                             $selectRegistrosUnicos = $conn->executeQuery("SELECT * FROM registro_ponto rp JOIN usuario us ON rp.fk_usuario = us.usuario_id WHERE us.cadastro = {$_GET['cad']} AND rp.hora_inicio BETWEEN '{$_GET['dtini']}' AND '{$_GET['dtfin']}' ORDER BY rp.hora_inicio");
@@ -324,19 +353,19 @@ tr.subtitles th {
 
                                 <tr class="subtitles">
                                     <th class="largura02">
-                                        <?php 
+                                        <?php
                                         setlocale(LC_ALL, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
                                         echo ucfirst( utf8_encode( strftime("%A", strtotime($rowHoras['hora_inicio']))))?>
                                     </th>
                                     <th class="largura02">
-                                        <?php 
+                                        <?php
                                         echo strftime("%d", strtotime($rowHoras['hora_inicio']))?>
                                     </th>
                                     <th><?=strftime("%R", strtotime($rowHoras['hora_inicio']))?></th>
                                     <th><?=strftime("%R", strtotime($rowHoras['hora_inicio_intervalo']))?></th>
                                     <th><?=strftime("%R", strtotime($rowHoras['hora_fim_intervalo']))?></th>
                                     <th><?=strftime("%R", strtotime($rowHoras['hora_fim']))?></th>
-                                    <th> 
+                                    <th>
                                         <?php
                                     //Pega as horas e transforma em segundos
                                         $inicio_jornada = strtotime($rowHoras['hora_inicio']);
