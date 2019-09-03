@@ -40,7 +40,7 @@ $conn = new Site;
 
       <!-- Main Content -->
       <div id="content">
-        
+
         <!-- Topbar Navbar -->
         <?php include '../menu/topbar.php'; ?>
         <!-- End of Topbar -->
@@ -48,8 +48,13 @@ $conn = new Site;
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
+
+
           <!-- Page Heading -->
           <h1 class="h3 mb-4 text-gray-800">Relatório de Rotas</h1>
+
+
+
 
         </div>
         <!-- /.container-fluid -->
