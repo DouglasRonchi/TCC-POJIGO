@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c934103-8016-4184-8805-c6d5a3b60100" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resetpassword.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Login.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Login.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/paginagestor/cadastro_usuarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/cadastro_usuarios.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +63,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/classes" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -75,13 +73,14 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\TCC-POJIGO\src\pages\paginagestor" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\TCC-POJIGO" />
       <recent name="C:\xampp\htdocs\TCC-POJIGO\src\classes" />
       <recent name="C:\xampp\htdocs\TCC-POJIGO\src\pages\paginamotorista" />
       <recent name="C:\xampp\htdocs\TCC-POJIGO\src\controllers" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\TCC-POJIGO\src\pages\paginagestor" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -148,7 +147,7 @@
       <workItem from="1566991030448" duration="6322000" />
       <workItem from="1567077492195" duration="12292000" />
       <workItem from="1567164802924" duration="6206000" />
-      <workItem from="1567510182778" duration="8041000" />
+      <workItem from="1567510182778" duration="9448000" />
     </task>
     <servers />
   </component>
