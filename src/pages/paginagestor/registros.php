@@ -1,7 +1,6 @@
 <?php
 require_once '../../classes/Autoload.class.php';
 $conn = new Site;
-error_reporting(0);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -198,6 +197,45 @@ error_reporting(0);
 </a>
 
 
+
+
+<!-- Bootstrap core JavaScript-->
+<script src="../../../vendor/jquery/jquery.min.js"></script>
+<script src="../../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="../../../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="../../../js/sb-admin-2.min.js"></script>
+
+<!-- Page level plugins -->
+<script src="../../../vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="../../../vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+<!-- Page level custom scripts -->
+<script src="../../../js/demo/datatables-demo.js"></script>
+
+<?php include_once '../../include/configdatatable.php' ?>
+
+<script>
+    function imprimirDiv(div) {
+        var impressao = document.getElementById(div).innerHTML;
+        var original = document.body.innerHTML;
+
+        document.body.innerHTML = impressao;
+
+        window.print();
+
+        document.body.innerHTML = original;
+        location.reload();
+    }
+</script>
+
+
+
+
+
 <!-- Modal de Registro de Pontos -->
 <div class="modal fade bd-modal-ponto" tabindex="-1" role="dialog" aria-labelledby="pontoLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
@@ -358,38 +396,7 @@ error_reporting(0);
 
     <!-- Logout Modal-->
     <?php include '../menu/logoutmodal.php'; ?>
-    <!-- Bootstrap core JavaScript-->
-    <script src="../../../vendor/jquery/jquery.min.js"></script>
-    <script src="../../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="../../../vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="../../../js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="../../../vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="../../../vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="../../../js/demo/datatables-demo.js"></script>
-
-    <?php include_once '../../include/configdatatable.php' ?>
-
-    <script>
-        function imprimirDiv(div) {
-            var impressao = document.getElementById(div).innerHTML;
-            var original = document.body.innerHTML;
-
-            document.body.innerHTML = impressao;
-
-            window.print();
-
-            document.body.innerHTML = original;
-            location.reload();
-        }
-    </script>
 </body>
 
 </html>
