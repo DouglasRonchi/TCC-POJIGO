@@ -62,7 +62,7 @@ $conn = new Site;
                 $queryQtd = $conn->executeQuery("SELECT * FROM notificacoes WHERE fk_usuario = {$_SESSION['usuario_id']} AND lida = 0");
                 $qtdNotificacoes = mysqli_num_rows($queryQtd);
                 ?>
-                <span class="badge badge-danger badge-counter"><?= ($qtdNotificacoes > 0) ? $qtdNotificacoes . '+' : $qtdNotificacoes; ?></span>
+                <span class="badge badge-danger badge-counter"><?= ($qtdNotificacoes > 0) ? $qtdNotificacoes . '+' : ''; ?></span>
             </a>
             <!-- Dropdown - Alerts -->
             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"

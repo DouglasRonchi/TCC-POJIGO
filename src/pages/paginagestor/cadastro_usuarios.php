@@ -91,12 +91,15 @@ if (isset($_GET['id'])) {
                                 <input type="text" class="form-control" id="inputEmail" name="inputEmail"
                                 placeholder="Ex: blabla@blabla.com" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['email'] : ''; ?>">
                             </div>
-
+                            <?php if (!isset($_GET['editar'])): ?>
                             <div class="form-group col-md-6">
                                 <label for="inputSenha">Senha</label>
                                 <input type="password" class="form-control" id="inputSenha" name="inputSenha"
                                 placeholder="Digite sua senha" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['senha'] : ''; ?>">
                             </div>
+                            <?php else: ?>
+
+                            <?php endif; ?>
                         </div>
 
                         <div class="form-group">

@@ -27,8 +27,16 @@
       <h1>POJIGO</h1>
       <small>Rotas & Registros</small>  
     </div>
+    <?php if (isset($_COOKIE['inv'])): ?>
+      <div class="alert alert-danger alert-dismissible animated--grow-in fade show" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+          <strong>Usuário ou senha Inválidos.</strong>
+      </div>
+      <?php endif; ?>
 
-    <div class="txtb">
+      <div class="txtb">
       <input type="text" id="inputUser" name="inputUser">
       <span data-placeholder="Usuário"></span>
     </div>

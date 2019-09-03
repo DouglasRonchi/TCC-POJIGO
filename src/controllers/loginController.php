@@ -5,7 +5,7 @@ $login = New Login;
 
 if (isset($_POST['btnLogar'])){
     $login->setUser($_POST['inputUser']);
-    $login->setSenha($_POST['inputSenha']);
+    $login->setSenha(hash('sha512', $_POST['inputSenha']));
     $login->Logar();
 
 } else if (isset($_POST['logout'])){
