@@ -241,7 +241,11 @@
 
 <!-- Page level custom scripts -->
 <script src="../../../js/demo/datatables-demo.js"></script>
-<script>
+
+  <?php include_once '../../include/configdatatable.php'?>
+
+
+  <script>
   $('.btn[name="btnEditar"]').click(function(event){
     btn = $(event.currentTarget);
     id = btn.attr("id");
