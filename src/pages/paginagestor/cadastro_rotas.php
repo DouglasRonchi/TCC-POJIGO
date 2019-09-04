@@ -131,31 +131,33 @@ $conn = new Site;
         <iframe width="750" scrolling="no" height="350" frameborder="0" id="map" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?saddr=são paulo&daddr=rio de janeiro&output=embed"></iframe>
       </div> -->
 
+    <div class="map-responsive">
  <table width="100%" cellspacing="0" cellpadding="0" border="0">
       <tbody>
-        <tr>
+        <tr >
           <td>
-            <label for="txtOrigem"><strong>Endere&ccedil;o de origem</strong></label>
-            <input type="text" id="txtOrigem" class="field" style="width: 400px" />
-
+            <label for="txtOrigem"><strong>Origem:</strong></label>
+            <input type="text" id="txtOrigem" class="field" style="width: 400px"/>
           </td>
         </tr>
+        
         <tr>
           <td>
-            <label for="txtDestino"><strong>Endere&ccedil;o de destino</strong></label>
-            <input type="text" style="width: 400px" class="field" id="txtDestino" />
-
+            <label for="txtDestino"><strong>Destino:</strong></label>
+            <input type="text" id="txtDestino" class="field" style="width: 398px"/>
           </td>
-        </tr>
-        <tr>
+        
+
+        
           <td>
-            <input type="button" value="Calcular dist&acirc;ncia" onclick="CalculaDistancia()" class="btnNew" />
+            <input type="button" value="Calcular distância" onclick="CalculaDistancia()" class="btnNew" id="txtDestino"/>
+            <input type="text" id="txtDistancia" class="field" style="width: 100px"/>
           </td>
         </tr>
       </tbody>
     </table>
 
-      <div id="mapa"></div>
+      <div id="mapa" style="width: 100%; margin-top: 12px"></div>
       <script>
 
         function inicializar() {
@@ -176,7 +178,13 @@ $conn = new Site;
       <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbqJXX7fEFddatn-vaBp3BtBS-4TJNIbg&callback=inicializar">
     </script>
-   
+  </div> 
+
+
+
+
+  
+
 
 
 
