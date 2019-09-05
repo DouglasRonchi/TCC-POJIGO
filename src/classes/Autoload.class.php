@@ -1,4 +1,8 @@
 <?php
+if (!isset($_SESSION)){
+    require_once 'Site.class.php';
+    header('Location: '.Site::path('index.php').'');
+}
 class Autoload {
     public function __construct() {
         spl_autoload_extensions('.class.php');

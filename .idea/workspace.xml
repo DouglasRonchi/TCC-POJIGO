@@ -3,16 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="8c934103-8016-4184-8805-c6d5a3b60100" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Diarias.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Diarias.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/Autoload.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Autoload.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/Login.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Login.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Mobile.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Mobile.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/PHPMailer.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/PHPMailer.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/POP3.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/POP3.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Registro.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Registro.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/SMTP.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/SMTP.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Uploader.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Uploader.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Usuario.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Usuario.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Veiculo.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Veiculo.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/Site.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Site.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/include/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/include/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/include/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/include/functions.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -158,7 +153,7 @@
       <workItem from="1567164802924" duration="6206000" />
       <workItem from="1567510182778" duration="11613000" />
       <workItem from="1567596852844" duration="9441000" />
-      <workItem from="1567682718703" duration="8559000" />
+      <workItem from="1567682718703" duration="8960000" />
     </task>
     <servers />
   </component>

@@ -5,7 +5,10 @@
  * Classe principal do projeto.
  *
  */
-
+if (!isset($_SESSION)){
+    require_once 'Site.class.php';
+    header('Location: '.Site::path('index.php').'');
+}
 class Site
 {
 
@@ -55,7 +58,7 @@ class Site
 //            require_once($this->path("src/include/functions.php"));
     }
 
-    public function path($url){
+    public static function path($url){
         return '/TCC-POJIGO/'.$url;
     }
 
