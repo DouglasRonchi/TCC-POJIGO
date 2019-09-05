@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
-  font-family: Nunito;
+  font-family: Nunito, sans-serif;
   box-sizing: border-box;
 }
 
@@ -25,7 +25,7 @@ body{
 
 .login-form h1{
   text-align: center;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .logologin {
@@ -63,10 +63,12 @@ body{
 .txtb span::after{
   content: '';
   position: absolute;
-  width: 0%;
+  width: 0;
   height: 2px;
   background: linear-gradient(180deg,#4e73df,#224abe);
   transition: .5s;
+  margin-top: 40px;
+  margin-left: -100%;
 }
 
 .focus + span::before{
