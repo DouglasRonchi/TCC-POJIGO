@@ -31,10 +31,10 @@ if (isset($_POST['btnLogar'])) {
 //configuração do email
         $mail->SMTPKeepAlive = true;
         $mail->Mailer = '“smtp”'; // don't change the quotes!
-        $mail->Port = '25'; //porta usada pelo email.
-        $mail->Host = 'smtp-mail.outlook.com';
+        $mail->Port = '587'; //porta usada pelo email.
+        $mail->Host = 'smtp.office365.com';
         $mail->IsHTML(true);
-        $mail->SMTPSecure = 'ssl';
+        $mail->SMTPSecure = 'STARTTLS';
 
 //configuração do usuário do email
         $mail->SMTPAuth = true;

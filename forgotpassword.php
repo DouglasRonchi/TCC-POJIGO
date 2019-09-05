@@ -43,7 +43,7 @@
     <input type="submit" class="logbtn btn btn-primary" name="btnForgotpass" value="Redefinir Senha">
 
     <div class="bottom-text">
-      <a href="login.php">Lembrou? Logar!</a>
+      <a href="index.php">Lembrou? Logar!</a>
     </div>
 
   </form>

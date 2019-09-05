@@ -8,4 +8,7 @@ if ($_SESSION['previlegio']=='1'){
     header('Location: src/pages/paginagestor/index.php');
 } else if ($_SESSION['previlegio']=='3'){
     header('Location: src/pages/paginamotorista/index.php');
+} else {
+    header('Location: index.php');
+
 }

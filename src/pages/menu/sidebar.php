@@ -63,17 +63,14 @@
     <li class="nav-item">
       <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
         <i class="fas fa-fw fa-folder"></i>
-        <span>Páginas</span>
+        <span>Documentos</span>
       </a>
       <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-          <h6 class="collapse-header">Telas Diversas:</h6>
+          <h6 class="collapse-header">Diversos:</h6>
           <a class="collapse-item" href="cnhemopp.php">CNH & MOPP</a>
           <a class="collapse-item" href="diarias.php">Diárias</a>
-          <a class="collapse-item" href="#">Mobile</a>
-          <div class="collapse-divider"></div>
-          <h6 class="collapse-header">Outras Páginas:</h6>
-          <a class="collapse-item" href="404.php">404 Page</a>
+<!--          <div class="collapse-divider"></div>-->
         </div>
       </div>
     </li>
