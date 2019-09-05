@@ -1,6 +1,8 @@
 <?php
 require_once '../../classes/Autoload.class.php';
 $conn = New Site;
+$login = new Login;
+$login->VerificarLogin();
 $veiculo = New Veiculo;
 if(isset($_GET['id'])){
     $selectVeiculo = $conn->executeQuery("SELECT * FROM veiculos WHERE id = {$_GET['id']}");

@@ -1,6 +1,8 @@
 <?php
   require_once '../../classes/Autoload.class.php';
   $conn = new Site;
+$login = new Login;
+$login->VerificarLogin();
 
   if (isset($_POST["btnSalvar"])) {
     $cnh = $_POST["VenciCNH"];

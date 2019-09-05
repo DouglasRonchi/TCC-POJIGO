@@ -2,6 +2,8 @@
 require_once '../../classes/Autoload.class.php';
 // Cria a conexão:
 $conn = new Site;
+$login = new Login;
+$login->VerificarLogin();
 
 ?>
 <!DOCTYPE html>

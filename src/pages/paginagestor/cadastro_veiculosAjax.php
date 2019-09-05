@@ -1,6 +1,8 @@
 <?php
 require_once '../../classes/Autoload.class.php';
 $conn = New Site;
+$login = new Login;
+$login->VerificarLogin();
 
 // //Recebe os dados
 $id = $_POST['id'];

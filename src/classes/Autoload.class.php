@@ -1,4 +1,7 @@
 <?php
+require_once 'Login.class.php';
+$login = new Login;
+$login->VerificarLogin();
 class Autoload {
     public function __construct() {
         spl_autoload_extensions('.class.php');
