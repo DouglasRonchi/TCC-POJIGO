@@ -5,10 +5,7 @@
  * Classe principal do projeto.
  *
  */
-if (!isset($_SESSION)){
-    require_once 'Site.class.php';
-    header('Location: '.Site::path('index.php').'');
-}
+
 class Site
 {
 

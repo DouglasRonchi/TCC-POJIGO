@@ -1,9 +1,6 @@
 <?php
 require_once 'Autoload.class.php';
-if (!isset($_SESSION)){
-    require_once 'Site.class.php';
-    header('Location: '.Site::path('index.php').'');
-}
+
 
 class Login extends Site {
     protected $user;
