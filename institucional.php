@@ -53,8 +53,7 @@
     <div id="content-wrapper" class="d-flex flex-column">
 
       <!-- Begin Page Content -->
-      <div class="container-fluid">
-       <nav class="navbar navbar-expand-lg navbar-default">
+      <nav class="navbar navbar-expand-lg navbar-default">
         <a class="navbar-brand text-primary" href="institucional.php"><strong>Pojigo</strong></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -77,21 +76,21 @@
 
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="img/inicial_icons/monitoramento.jpg" class="d-block w-100 imgcarousel" alt="..." height="650">
+            <img src="img/inicial_icons/monitoramento.jpg" class="d-block w-100 imgcarousel" alt="..." height="700">
             <div class="carousel-caption d-none d-md-block">
               <H3><strong>MONITORAMENTO</strong></H3>
-              <h5 class="mb-4"><strong>Monitore seus motoristas, tenha controle e relatórios de horários, diárias entre outros.</strong></h5>
+              
             </div>
           </div>
           <div class="carousel-item">
-            <img src="img/inicial_icons/rastreamento.png" class="d-block w-100 imgcarousel" alt="..." height="650">
+            <img src="img/inicial_icons/rastreamento.png" class="d-block w-100 imgcarousel" alt="..." height="700">
             <div class="carousel-caption d-none d-md-block ">
               <H3><strong>RASTREAMENTO</strong></H3>
-              <h5 class="mb-4"><strong>Rastreie suas frotas para uma melhor precisão em suas entregas.</strong></h5>
+            
             </div>
           </div>
           <div class="carousel-item">
-            <img src="img/inicial_icons/cnh.jpg" class="d-block w-100 imgcarousel" alt="..." height="650">
+            <img src="img/inicial_icons/cnh.jpg" class="d-block w-100 imgcarousel" alt="..." height="700">
             <div class="carousel-caption d-none d-md-block ">
               <H3><strong>CNH E MOPP</strong></H3>
               <h5 class="mb-4"><strong>Garanta a segurança em sua empresa.
@@ -110,61 +109,68 @@
       </div>
 
       <br><br>
-
       <div class="container-fluid">
+
+
        <center><h1>CONECTANDO O VEÍCULO AO SEU NEGÓCIO</h1></center>
        <center><p>VOCÊ NÃO PRECISA TER UM GERENTE DE FROTAS PARA UTILIZAR O ROTAEXATA. SIMPLES DE USAR, ALTA TECNOLOGIA PARA FROTAS<br> PEQUENAS ATRAVÉS DE UM CONJUNTO COMPLETO DE PRODUTOS PARA RASTREAMENTO VEICULAR, GESTÃO DE FROTAS, ROTEIRIZAÇÃO E <br>GERENCIAMENTO DE ENTREGAS E SERVIÇOS: <strong>TUDO INTEGRADO EM UMA ÚNICA PLATAFORMA.</strong></p></center>
-     </div>
-     <br><br><br>
 
-<div class="container">
-     <div id="list-example" class="list-group">
-      <div class="row">
-       <div class="card  col m-1" style="width: 18rem;">
-        <img src="img/inicial_icons/monitoramento.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">MONITORAMENTO</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <center><a class="list-group-item list-group-item-action btnscrol" href="#list-item-1"><img height="20" width="20" src="img/inicial_icons/g.png"></a></center>
+       <br><br><br>
+
+       <div id="list-example" class="list-group">
+        <div class="row">
+
+
+          <div class="card col m-3 text-center" style="width: 18rem;">
+            <img src="img/inicial_icons/monitoramento.jpg" class="card-img-top" alt="...">
+            <div class="card-body m-3">
+              <h3 class="card-title">MONITORAMENTO</h3>  
+              <center>
+              <a class="list-group-item list-group-item-action btnscrol col-4 mt-4" href="#list-item-1"><img height="30" width="30" src="img/inicial_icons/bootom.png"></a>
+            </center>
+            </div>
+          </div>
+
+          <div class="card col m-3 text-center" style="width: 18rem;">
+            <img src="img/inicial_icons/rastreamento.png" class="card-img-top" alt="...">
+            <div class="card-body m-3">
+              <h3 class="card-title">Rastreamento</h3>  
+              <center>
+              <a class="list-group-item list-group-item-action btnscrol col-4 mt-4" href="#list-item-1"><img height="30" width="30" src="img/inicial_icons/bootom.png"></a>
+            </center>
+            </div>
+          </div>
+
+          <div class="card col m-3 text-center" style="width: 18rem;">
+            <img src="img/inicial_icons/cnh.jpg" class="card-img-top" alt="...">
+            <div class="card-body m-3">
+              <h3 class="card-title">CNH e MOPP</h3>  
+              <center>
+              <a class="list-group-item list-group-item-action btnscrol col-4 mt-4" href="#list-item-1"><img height="30" width="30" src="img/inicial_icons/bootom.png"></a>
+            </center>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="card col m-1" style="width: 18rem;">
-        <img src="img/inicial_icons/rastreamento.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">RASTREAMENTO</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <center><a class="list-group-item list-group-item-action btnscrol" href="#list-item-2"><img height="20" width="20" src="img/inicial_icons/g.png"></a></center>
-        </div>
+
+      <br><br><br><br><br><br><br><br>
+
+      <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
+        <h4 id="list-item-1" class="text-center">MONITORAMENTO</h4>
+        <h5 class="mb-4 text-center"><strong>Monitore seus motoristas, tenha controle e relatórios de horários, diárias entre outros.</strong></h5>
+        <h4 id="list-item-2" class="text-center">RASTREAMENTO</h4>
+         <h5 class="mb-4 text-center"><strong>Rastreie suas frotas para uma melhor precisão em suas entregas.</strong></h5>
+        <h4 id="list-item-3" class="text-center">CNH E MOPP</h4>
+         <h5 class="mb-4 text-center"><strong>Garanta a segurança em sua empresa.
+              Avisos sobre vencimento de CNH e MOPP serão enviados aos motoristas.</strong></h5>
+
       </div>
-      <div class="card col m-1" style="width: 18rem;">
-        <img src="img/inicial_icons/cnhemopp.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">CNH E MOPP</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <center><a class="list-group-item list-group-item-action btnscrol" href="#list-item-3"><img height="20" width="20" src="img/inicial_icons/g.png"></a></center>
-        </div>
-      </div>
+
     </div>
-  </div>
-</div>
-
-  <br><br><br><br><br><br><br><br>
-
-  <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
-    <h4 id="list-item-1" class="text-center">MONITORAMENTO</h4>
-    <p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
-    <h4 id="list-item-2" class="text-center">RASTREAMENTO</h4>
-    <p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
-    <h4 id="list-item-3" class="text-center">CNH E MOPP</h4>
-    <p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+    <!-- /.container-fluid -->
 
   </div>
-
-</div>
-<!-- /.container-fluid -->
-
-</div>
-<!-- End of Content Wrapper -->
+  <!-- End of Content Wrapper -->
 
 </div>
 <!-- End of Page Wrapper -->
