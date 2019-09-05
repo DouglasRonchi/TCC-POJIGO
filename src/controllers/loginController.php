@@ -26,15 +26,16 @@ if (isset($_POST['btnLogar'])) {
 
         $mail = new PHPMailer(); // instancia a classe PHPMailer
 
-        $mail->IsSMTP();
+        $mail->isSMTP();
 
 //configuração do email
+        //$mail->SMTPDebug = 3;
         $mail->SMTPKeepAlive = true;
         $mail->Mailer = '“smtp”'; // don't change the quotes!
         $mail->Port = '587'; //porta usada pelo email.
         $mail->Host = 'smtp.office365.com';
         $mail->IsHTML(true);
-        $mail->SMTPSecure = 'STARTTLS';
+        $mail->SMTPSecure = 'ssl';
 
 //configuração do usuário do email
         $mail->SMTPAuth = true;
