@@ -2,6 +2,9 @@
 
 require_once 'Autoload.class.php';
 
+$login = new Login;
+$login->VerificarLogin();
+
 class Diarias extends Site {
 
     protected $id;

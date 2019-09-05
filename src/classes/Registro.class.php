@@ -1,6 +1,7 @@
 <?php
 require_once 'Autoload.class.php';
-
+$login = new Login;
+$login->VerificarLogin();
 
 class Registro extends Site {
 

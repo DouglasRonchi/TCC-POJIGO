@@ -1,7 +1,8 @@
 <?php
 
 require_once 'Autoload.class.php';
-
+$login = new Login;
+$login->VerificarLogin();
 
 class Usuario extends Site {
 

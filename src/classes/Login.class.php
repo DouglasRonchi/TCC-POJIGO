@@ -84,7 +84,7 @@ class Login extends Site {
 
     public function VerificarLogin(){
         if (!isset($_SESSION) || $_SESSION['logado']==false){
-            header('Location: /TCC-POJIGO/dashboard.php');
+            header('Location: '.$this->path('index.php').'');
             //alerta Acesso Restrito
         }
 
