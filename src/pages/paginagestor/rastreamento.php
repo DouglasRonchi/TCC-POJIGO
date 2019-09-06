@@ -93,9 +93,16 @@ $login->VerificarLogin();
                             $endPosition = $row['latitude'] . "," . $row['longitude'];
 
                             $wayp = array();
-                            $query = $conn->executeQuery("SELECT * FROM coordenadas WHERE fk_cod_viagem = {$_GET['cdv']} ORDER BY hora DESC LIMIT 3");
+                            $query = $conn->executeQuery("SELECT * FROM coordenadas WHERE fk_cod_viagem = {$_GET['cdv']} ORDER BY hora DESC");
+
+                            $queryMedia = $conn->executeQuery("SELECT COUNT(*)/23 AS media  FROM coordenadas WHERE fk_cod_viagem = {$_GET['cdv']}");
+                            $result = mysqli_fetch_assoc($queryMedia);
+                            $i = 0;
                             while ($row = mysqli_fetch_assoc($query)){
+                                $i += 1;
+                                if ($i % (int)$result['media'] == 0){
                                 array_push($wayp,$row['latitude'] . "," . $row['longitude']);
+                                }
                             }
 
                             $jsonwayp = json_encode($wayp);
@@ -242,15 +249,15 @@ $login->VerificarLogin();
         var waypts = [];
         var ObjWaypts = JSON.parse(infos.dataset.wayp);
 
+        for (var item in ObjWaypts) {
+            ObjWaypts.hasOwnProperty(item); {
+                waypts.push({
+                    location: ObjWaypts[item],
+                    stopover: true
+                });
+            }
+        }
 
-        $.each(ObjWaypts,function(key,val){
-            waypts.push({
-                location: val,
-                stopover: true
-            });
-        });
-
-        console.log(waypts);
         directionsService.route({
             origin: infos.dataset.start, //Primeira Coordenada
             destination: infos.dataset.end, //Última Coordenada
@@ -264,6 +271,7 @@ $login->VerificarLogin();
                 var summaryPanel = document.getElementById('directions-panel');
                 summaryPanel.innerHTML = '';
                 // For each route, display summary information.
+                var total = 0;
                 for (var i = 0; i < route.legs.length; i++) {
                     var routeSegment = i + 1;
                     summaryPanel.innerHTML += '<b>Route Segment: ' + routeSegment +
