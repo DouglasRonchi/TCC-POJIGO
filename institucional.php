@@ -174,51 +174,47 @@
 
       <div class="row">
 
-        <div class="card col" style="width: 18rem;background-color: rgba(0, 0, 0, 0.3); ">
+        <div class="card col " style="width: 18rem;background-color: rgba(0, 0, 0, 0);border-left-width: 0px;border-top-width: 0px;border-right-width: 0px;border-bottom-width: 0px;">
           <img class="card-img-top rounded-circle mt-2" src="img/inicial_icons/douglas.jpg" alt="Imagem de capa do card">
           <div class="card-body text-center">
-           <h5 class="card-title">Douglas</h5>
-           <a href="#" class="btn btn-primary">Visitar</a>
+           <h5 class="card-title text-white">Douglas</h5>
+           <img href="#" class="btn btn-light" src="img/inicial_icons/in.png" height="33" width="100">
          </div>
        </div>
 
-       <div class="card col" style="width: 18rem;background-color: rgba(0, 0, 0, 0.3);">
+       <div class="card col" style="width: 18rem;background-color: rgba(0, 0, 0, 0);border-left-width: 0px;border-top-width: 0px;border-right-width: 0px;border-bottom-width: 0px;">
         <img class="card-img-top rounded-circle m-0" src="img/inicial_icons/paloma" alt="Imagem de capa do card">
         <div class="card-body text-center">
-          <h5 class="card-title">Paloma</h5>
-          <a href="#" class="btn btn-primary">Visitar</a>
+          <h5 class="card-title text-white">Paloma</h5>
+          <img href="#" class="btn btn-light" src="img/inicial_icons/in.png" height="33" width="100">
         </div>
       </div>
 
-      <div class="card col" style="width: 18rem;background-color: rgba(0, 0, 0, 0.3);">
+      <div class="card col" style="width: 18rem;background-color: rgba(0, 0, 0, 0);border-left-width: 0px;border-top-width: 0px;border-right-width: 0px;border-bottom-width: 0px;">
         <img class="card-img-top rounded-circle mt-2" src="img/inicial_icons/giovane" alt="Imagem de capa do card">
         <div class="card-body text-center">
-          <h5 class="card-title">Geovane</h5>
-          <a href="#" class="btn btn-primary">Visitar</a>
+          <h5 class="card-title text-white">Geovane</h5>
+          <img href="#" class="btn btn-light" src="img/inicial_icons/in.png" height="33" width="100">
         </div>
       </div>
 
-      <div class="card col" style="width: 18rem;background-color: rgba(0, 0, 0, 0.3);">
+      <div class="card col" style="width: 18rem;background-color: rgba(0, 0, 0, 0);border-left-width: 0px;border-top-width: 0px;border-right-width: 0px;border-bottom-width: 0px;">
         <img class="card-img-top rounded-circle mt-2" src="img/inicial_icons/dauana.jpg" alt="Imagem de capa do card">
         <div class="card-body text-center">
-          <h5 class="card-title">Dauana</h5>
-          <a href="#" class="btn btn-primary">Visitar</a>
+          <h5 class="card-title text-white">Dauana</h5>
+          <img href="#" class="btn btn-light" src="img/inicial_icons/in.png" height="33" width="100">
         </div>
       </div>
 
-      <div class="card col" style="width: 18rem;background-color: rgba(0, 0, 0, 0.3);">
+      <div class="card col" style="width: 18rem;background-color: rgba(0, 0, 0, 0);border-left-width: 0px;border-top-width: 0px;border-right-width: 0px;border-bottom-width: 0px;">
         <img class="card-img-top rounded-circle mt-2" src="img/inicial_icons/jonas.png" alt="Imagem de capa do card">
         <div class="card-body text-center">
-          <h5 class="card-title">Jonas</h5>
-          <a href="#" class="btn btn-primary">Visitar</a>
+          <h5 class="card-title text-white">Jonas</h5>
+          <img href="https://getbootstrap.com/docs/4.3/utilities/colors/" class="btn btn-light" src="img/inicial_icons/in.png" height="33" width="100">
         </div>
       </div>
     </div>
 
-    <h6 class="card-subtitle mb-2 text-muted">Subtitulo do card</h6>
-    <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
-    <a href="#" class="card-link">Link do card</a>
-    <a href="#" class="card-link">Outro link</a>
   </div>
 
 <br><br><br><br>
