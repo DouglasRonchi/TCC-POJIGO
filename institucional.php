@@ -14,29 +14,29 @@
 
 <head>
   <style type="text/css">
-    .imgcarousel{
-      width:100%;
-      max-width:100%;
-      filter: brightness(51%);
-    }
+  .imgcarousel{
+    width:100%;
+    max-width:100%;
+    filter: brightness(51%);
+  }
 
-    .navbar{
-      position:fixed;
-      width:100%;
-      background-color:rgba(0, 0, 0, 0.2);
-      z-index:10;
-      border-radius:0;
-      border-color:transparent;
-    }
+  .navbar{
+    position:fixed;
+    width:100%;
+    background-color:rgba(0, 0, 0, 0.2);
+    z-index:10;
+    border-radius:0;
+    border-color:transparent;
+  }
 
-    .btnscrol{
-      border-left-width: 0px;
-      border-top-width: 0px;
-      border-right-width: 0px;
-      border-bottom-width: 0px;
-    }
+  .btnscrol{
+    border-left-width: 0px;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+  }
 
-  </style>
+</style>
 </head>
 
 <body id="page-top" class="sidebar-toggled">
@@ -57,7 +57,7 @@
           <div class="navbar-nav">
             <a class="nav-item nav-link active text-white" href="#">Home<span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link text-light" href="contato.php">Fale conosco</a>
-            <a class="btn nav-link text-white float-right" href="quemsomos.php"><strong>Quem somos</strong></a>
+            <a class="btn nav-link text-white float-right" href="#list-item-1"><strong>Quem somos</strong></a>
           </div>
         </div>
       </nav>
@@ -81,15 +81,13 @@
             <img src="img/inicial_icons/rastreamento.png" class="d-block w-100 imgcarousel" alt="..." height="700">
             <div class="carousel-caption d-none d-md-block ">
               <H3><strong>RASTREAMENTO</strong></H3>
-            
+
             </div>
           </div>
           <div class="carousel-item">
             <img src="img/inicial_icons/cnh.jpg" class="d-block w-100 imgcarousel" alt="..." height="700">
             <div class="carousel-caption d-none d-md-block ">
               <H3><strong>CNH E MOPP</strong></H3>
-              <h5 class="mb-4"><strong>Garanta a segurança em sua empresa.
-              Avisos sobre vencimento de CNH e MOPP serão enviados aos motoristas.</strong></h5>
             </div>
           </div>
         </div>
@@ -117,55 +115,124 @@
 
 
           <div class="card col m-3 text-center" style="width: 18rem;">
-            <img src="img/inicial_icons/monitoramento.jpg" class="card-img-top" alt="...">
+            <img src="img/inicial_icons/monitoramento1.jpg" class="card-img-top mt-4 " alt="..." style="height: 200px; width: 400px; border-radius: 15px;">
             <div class="card-body m-3">
               <h3 class="card-title">MONITORAMENTO</h3>  
               <center>
-              <a class="list-group-item list-group-item-action btnscrol col-4 mt-4" href="#list-item-1"><img height="30" width="30" src="img/inicial_icons/bootom.png"></a>
-            </center>
+                <a class="list-group-item list-group-item-action btnscrol col-4 mt-4" href="#list-item-1"><img height="30" width="30" src="img/inicial_icons/bootom.png" ></a>
+              </center>
+
             </div>
           </div>
 
           <div class="card col m-3 text-center" style="width: 18rem;">
-            <img src="img/inicial_icons/rastreamento.png" class="card-img-top" alt="...">
+            <img src="img/inicial_icons/rastreamento1.jpg" class="card-img-top mt-4" alt="..." style="height: 200px; width: 400px; border-radius: 15px;">
             <div class="card-body m-3">
               <h3 class="card-title">Rastreamento</h3>  
               <center>
-              <a class="list-group-item list-group-item-action btnscrol col-4 mt-4" href="#list-item-1"><img height="30" width="30" src="img/inicial_icons/bootom.png"></a>
-            </center>
+                <a class="list-group-item list-group-item-action btnscrol col-4 mt-4  " href="#list-item-1"><img height="30" width="30" src="img/inicial_icons/bootom.png"></a>
+              </center>
             </div>
           </div>
 
           <div class="card col m-3 text-center" style="width: 18rem;">
-            <img src="img/inicial_icons/cnh.jpg" class="card-img-top" alt="...">
+            <img src="img/inicial_icons/cnh1.jpg" class="card-img-top mt-4" alt="..."  style="height: 200px; width: 400px;">
             <div class="card-body m-3">
               <h3 class="card-title">CNH e MOPP</h3>  
               <center>
-              <a class="list-group-item list-group-item-action btnscrol col-4 mt-4" href="#list-item-1"><img height="30" width="30" src="img/inicial_icons/bootom.png"></a>
-            </center>
+                <a class="list-group-item list-group-item-action btnscrol col-4 mt-4 btn-white" href="#list-item-1"><img height="30" width="30" src="img/inicial_icons/bootom.png"></a>
+              </center>
             </div>
           </div>
         </div>
       </div>
 
       <br><br><br><br><br><br><br><br>
+      
+      <center>
+        <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
+          <h4 id="list-item-1" class="text-center">MONITORAMENTO</h4>
+          <h5 class="mb-4 text-center"><strong>Monitore seus motoristas, tenha controle e relatórios de horários, diárias entre outros.</strong></h5>
+          <a class="btn btn-primary" href="index.php" role="button">EXPERIMENTE AGORA</a>
 
-      <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
-        <h4 id="list-item-1" class="text-center">MONITORAMENTO</h4>
-        <h5 class="mb-4 text-center"><strong>Monitore seus motoristas, tenha controle e relatórios de horários, diárias entre outros.</strong></h5>
-        <h4 id="list-item-2" class="text-center">RASTREAMENTO</h4>
-         <h5 class="mb-4 text-center"><strong>Rastreie suas frotas para uma melhor precisão em suas entregas.</strong></h5>
-        <h4 id="list-item-3" class="text-center">CNH E MOPP</h4>
-         <h5 class="mb-4 text-center"><strong>Garanta a segurança em sua empresa.
-              Avisos sobre vencimento de CNH e MOPP serão enviados aos motoristas.</strong></h5>
 
+          <h4 id="list-item-2" class="text-center">RASTREAMENTO</h4>
+          <h5 class="mb-4 text-center"><strong>Rastreie suas frotas para uma melhor precisão em suas entregas.</strong></h5>
+          <a class="btn btn-primary" href="index.php" role="button">EXPERIMENTE AGORA</a>
+
+
+          <h4 id="list-item-3" class="text-center">CNH E MOPP</h4>
+          <h5 class="mb-4 text-center"><strong>Garanta a segurança em sua empresa.
+          Avisos sobre vencimento de CNH e MOPP serão enviados aos motoristas.</strong></h5>
+
+
+        </div>
+      </div>
+    </center>
+    <div class="container-fluid" style="background-color: rgb(52, 111, 207);">
+      <h5 class="card-title text-center mb-4">QUEM SOMOS?</h5>
+
+      <div class="row">
+
+        <div class="card col" style="width: 18rem;background-color: rgba(0, 0, 0, 0.3); ">
+          <img class="card-img-top rounded-circle mt-2" src="img/inicial_icons/douglas.jpg" alt="Imagem de capa do card">
+          <div class="card-body text-center">
+           <h5 class="card-title">Douglas</h5>
+           <a href="#" class="btn btn-primary">Visitar</a>
+         </div>
+       </div>
+
+       <div class="card col" style="width: 18rem;background-color: rgba(0, 0, 0, 0.3);">
+        <img class="card-img-top rounded-circle m-0" src="img/inicial_icons/paloma" alt="Imagem de capa do card">
+        <div class="card-body text-center">
+          <h5 class="card-title">Paloma</h5>
+          <a href="#" class="btn btn-primary">Visitar</a>
+        </div>
       </div>
 
-    </div>
-    <!-- /.container-fluid -->
+      <div class="card col" style="width: 18rem;background-color: rgba(0, 0, 0, 0.3);">
+        <img class="card-img-top rounded-circle mt-2" src="img/inicial_icons/giovane" alt="Imagem de capa do card">
+        <div class="card-body text-center">
+          <h5 class="card-title">Geovane</h5>
+          <a href="#" class="btn btn-primary">Visitar</a>
+        </div>
+      </div>
 
+      <div class="card col" style="width: 18rem;background-color: rgba(0, 0, 0, 0.3);">
+        <img class="card-img-top rounded-circle mt-2" src="img/inicial_icons/dauana.jpg" alt="Imagem de capa do card">
+        <div class="card-body text-center">
+          <h5 class="card-title">Dauana</h5>
+          <a href="#" class="btn btn-primary">Visitar</a>
+        </div>
+      </div>
+
+      <div class="card col" style="width: 18rem;background-color: rgba(0, 0, 0, 0.3);">
+        <img class="card-img-top rounded-circle mt-2" src="img/inicial_icons/jonas.png" alt="Imagem de capa do card">
+        <div class="card-body text-center">
+          <h5 class="card-title">Jonas</h5>
+          <a href="#" class="btn btn-primary">Visitar</a>
+        </div>
+      </div>
+    </div>
+
+    <h6 class="card-subtitle mb-2 text-muted">Subtitulo do card</h6>
+    <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
+    <a href="#" class="card-link">Link do card</a>
+    <a href="#" class="card-link">Outro link</a>
   </div>
-  <!-- End of Content Wrapper -->
+
+<br><br><br><br>
+
+<footer>
+  ajkfhjksdklgj
+</footer>
+
+
+</div>
+<!-- /.container-fluid -->
+
+</div>
+<!-- End of Content Wrapper -->
 
 </div>
 <!-- End of Page Wrapper -->
