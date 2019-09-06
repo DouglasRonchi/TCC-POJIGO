@@ -268,6 +268,8 @@ $login->VerificarLogin();
             if (status === 'OK') {
                 directionsDisplay.setDirections(response);
                 var route = response.routes[0];
+
+                // console.log(parseFloat(response.routes[0].legs[0].distance.text));
                 var summaryPanel = document.getElementById('directions-panel');
                 summaryPanel.innerHTML = '';
                 // For each route, display summary information.
@@ -279,7 +281,23 @@ $login->VerificarLogin();
                     summaryPanel.innerHTML += route.legs[i].start_address + ' to ';
                     summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
                     summaryPanel.innerHTML += route.legs[i].distance.text + '<br><br>';
+
+                    var str = route.legs[i].distance.text;
+                    // console.log(str);
+                    var n = str.indexOf("km");
+                    if (n === -1){
+                        //Metros
+                        total += parseFloat(route.legs[i].distance.text)/1000;
+                        // console.log("metros");
+                    } else {
+                        //Kms
+                        total += parseFloat(route.legs[i].distance.text);
+                        // console.log("Kms");
+                    }
+
                 }
+                summaryPanel.innerHTML += total;
+
             } else {
                 window.alert('Directions request failed due to ' + status);
             }

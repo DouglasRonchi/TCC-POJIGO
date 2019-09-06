@@ -44,7 +44,7 @@ if (isset($_POST['btnFrotaOk'])) {
         $pontoFinal = $row['latitude'] . "," . $row['longitude'];
     }
 
-
+   
     header('Location: ../pages/paginamotorista/index.php?fim=true');
 
 
