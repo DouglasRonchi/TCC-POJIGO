@@ -18,9 +18,8 @@
 <body id="page-top" class="sidebar-toggled">
 
   <div id="list-example" class="list-group">
-
     <!-- Begin Page Content -->
-    <nav class="navbar navbar-expand-lg navbar-default">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
       <a class="navbar-brand text-primary"><img class="mr-2" src="../../../img/institucional/inicial_icons/navicon.png" height="30" width="30"><strong>Pojigo</strong></a>
       <button class="navbar-toggler togle" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 
@@ -145,7 +144,7 @@
           <img class="sombra" style="border-radius: 15px;" src="../../../img/institucional/rastreagif.gif" width="600" height="350">
         </div>
         <h5 class="mb-5 text-center"><strong>Rastreie suas frotas para uma melhor precisão em suas entregas.</strong></h5>
-        <a class="btn btn-primary" href="../../../index.php" role="button">EXPERIMENTE AGORA</a>
+        <a class="btn btn-primary" href="../../../login.php" role="button">EXPERIMENTE AGORA</a>
       </div>
 
       <br><br><br id="list-item-1"><br><br><br>
@@ -156,7 +155,7 @@
           <img class="sombra" style="border-radius: 15px;" src="../../../img/institucional/monitorgif.gif" width="600" height="350">
         </div>
         <h5 class="mb-5 text-center"><strong>Monitore seus motoristas, tenha controle e relatórios de horários, diárias entre outros.</strong></h5>
-        <a class="btn btn-primary" href="../../../index.php" role="button">EXPERIMENTE AGORA</a>
+        <a class="btn btn-primary" href="../../../login.php" role="button">EXPERIMENTE AGORA</a>
       </div>
 
       <br><br><br id="list-item-3"><br><br><br>
@@ -168,7 +167,7 @@
         </div>        
         <h5 class="mb-5 text-center"><strong>Garanta a segurança em sua empresa.
         Avisos sobre vencimento de CNH e MOPP serão enviados aos motoristas.</strong></h5>
-        <a class="btn btn-primary" href="../../../index.php" role="button">EXPERIMENTE AGORA</a>
+        <a class="btn btn-primary" href="../../../login.php" role="button">EXPERIMENTE AGORA</a>
       </div>
   </div>
 

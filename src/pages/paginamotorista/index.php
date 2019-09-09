@@ -15,7 +15,7 @@ if (isset($_GET['fim']) && $_GET['fim']==true){
     $query = $conn->executeQuery("SELECT * FROM registro_ponto WHERE id = {$_SESSION['id_rota']}");
     $diaria->pagarDiaria($query);
     session_destroy();
-    header('Location: ../../../index.php');
+    header('Location: ../../../login.php');
 }
 
 ?>

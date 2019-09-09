@@ -3,20 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="8c934103-8016-4184-8805-c6d5a3b60100" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contato.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/inicial_icons/Mapa_clientes.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/inicial_icons/bootom.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/inicial_icons/cnh.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/inicial_icons/cnhemopp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/inicial_icons/contato.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/inicial_icons/dauana.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/inicial_icons/douglas.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/inicial_icons/g.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/inicial_icons/jonas.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/inicial_icons/monitoramento.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/inicial_icons/rastreamento.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/institucional.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quemsomos.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/forgotpassword.php" beforeDir="false" afterPath="$PROJECT_DIR$/forgotpassword.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/redirect.php" beforeDir="false" afterPath="$PROJECT_DIR$/redirect.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/Login.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Login.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/mobileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/mobileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/notificacoesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/notificacoesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/include/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/include/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/include/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/include/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/institucional/institucional.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/institucional/institucional.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/paginamotorista/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginamotorista/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -164,7 +160,7 @@
       <workItem from="1567596852844" duration="9441000" />
       <workItem from="1567682718703" duration="11684000" />
       <workItem from="1567768863043" duration="9962000" />
-      <workItem from="1568028753512" duration="1953000" />
+      <workItem from="1568028753512" duration="2906000" />
     </task>
     <servers />
   </component>

@@ -78,13 +78,13 @@ class Login extends Site {
             //Alerta Usuário ou senha inválidos
             setcookie('inv',"true",time()+5,"/");
             $_COOKIE['inv'] = true;
-            header('Location: ../../index.php');
+            header('Location: ../../login.php');
         }
     }
 
     public function VerificarLogin(){
         if (!isset($_SESSION) || $_SESSION['logado']==false){
-            header('Location: '.$this->path('index.php').'');
+            header('Location: '.$this->path('login.php').'');
             //alerta Acesso Restrito
         }
 
@@ -94,7 +94,7 @@ class Login extends Site {
     public function Logout()
     {
         session_destroy();
-        header('Location: ../../index.php');
+        header('Location: ../../login.php');
     }
 
 }

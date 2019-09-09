@@ -10,14 +10,14 @@ if (isset($_POST['btnFrotaOk'])) {
     $id_frota = mysqli_fetch_assoc($query);
     $conn->executeQuery("UPDATE registro_ponto SET fk_veiculo = {$id_frota['id']} WHERE id = {$id_rota}");
 
-    header('Location: ../pages/paginamotorista/index.php');
+    header('Location: ../pages/paginamotorista/login.php');
 
 } else if (isset($_POST['btnRotaOk'])) {
     $id_rota = $_SESSION['id_rota'];
     $rota = $_POST['inputRota'];
     $conn->executeQuery("UPDATE registro_ponto SET fk_rota = {$rota} WHERE id = {$id_rota}");
 
-    header('Location: ../pages/paginamotorista/index.php');
+    header('Location: ../pages/paginamotorista/login.php');
 } else if (isset($_POST['btnInicioViagem'])) {
     $id_rota = $_SESSION['id_rota'];
     $conn->executeQuery("UPDATE registro_ponto SET hora_inicio = NOW() WHERE id = {$id_rota}");
@@ -45,7 +45,7 @@ if (isset($_POST['btnFrotaOk'])) {
     }
 
 
-    header('Location: ../pages/paginamotorista/index.php?fim=true');
+    header('Location: ../pages/paginamotorista/login.php?fim=true');
 
 
 } else if (isset($_GET['motivo'])) {
@@ -77,7 +77,7 @@ if (isset($_POST['btnFrotaOk'])) {
     $id_rota = $_SESSION['id_rota'];
     $conn->executeQuery("DELETE FROM registro_ponto WHERE id = {$id_rota}");
     session_destroy();
-    header('Location: ../../index.php');
+    header('Location: ../../login.php');
 }
 
 
