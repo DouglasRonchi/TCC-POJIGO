@@ -19,7 +19,7 @@
 
 <div id="list-example" class="list-group">
     <!-- Begin Page Content -->
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-default">
         <a class="navbar-brand text-primary"><img class="mr-2"
                                                   src="../../../img/institucional/inicial_icons/navicon.png" height="30"
                                                   width="30"><strong>Pojigo</strong></a>
@@ -42,8 +42,8 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-item nav-link text-white" href="#"><strong>Home</strong><span class="sr-only">(current)</span></a>
-                <a href="#list-item-4" class="nav-item nav-link text-white"><strong>Quem somos</strong></a>
-                <a href="#list-item-5" class="nav-item nav-link text-white"><strong>Fale conosco</strong></a>
+                <a href="#quemsomos" class="nav-item nav-link text-white"><strong>Quem somos</strong></a>
+                <a href="#faleconosco" class="nav-item nav-link text-white"><strong>Fale conosco</strong></a>
             </div>
         </div>
         <div class="form-inline my-2 my-lg-0">
@@ -111,12 +111,12 @@
                                            alt="..."></div>
                 <div class="card-body m-3">
                     <h3 class="card-title">MONITORAMENTO</h3>
-                    <center>
+                    <div class="btnscroll text-center">
                         <!-- Scroll to Top Button-->
-                        <a class="rounded" href="#page-monitoramento">
+                        <a class="rounded" href="#monitoramento">
                             <i class="fas fa-angle-down"></i>
                         </a>
-                    </center>
+                    </div>
 
                 </div>
             </div>
@@ -126,10 +126,10 @@
                 </div>
                 <div class="card-body m-3">
                     <h3 class="card-title">RASTREAMENTO</h3>
-                    <center>
-                        <a class="list-group-item list-group-item-action btnscrol col-4 mt-4" href="#list-item-2"><img
+                    <div class="btnscroll text-center">
+                        <a class="list-group-item list-group-item-action btnscrol col-4 mt-4" href="#rastreamento"><img
                                     height="30" width="30" src="../../../img/institucional/inicial_icons/down.gif"></a>
-                    </center>
+                    </div>
                 </div>
             </div>
 
@@ -137,11 +137,11 @@
                 <div class="col mt-4"><img class="imgcard" src="../../../img/institucional/cnh1.jpg" alt="..."></div>
                 <div class="card-body m-3">
                     <h3 class="card-title">CNH e MOPP</h3>
-                    <center>
+                    <div class="btnscroll text-center">
                         <a class="list-group-item list-group-item-action btnscrol col-4 mt-4 btn-white"
-                           href="#list-item-3"><img height="30" width="30"
+                           href="#cnhemopp"><img height="30" width="30"
                                                     src="../../../img/institucional/inicial_icons/down.gif"></a>
-                    </center>
+                    </div>
                 </div>
             </div>
         </div>
@@ -149,7 +149,7 @@
     </div>
 </div>
 
-<br><br><br><br><br id="list-item-2"><br><br><br>
+<br><br><br><br><br id="rastreamento"><br><br><br>
 
 <center>
     <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
@@ -165,7 +165,7 @@
             <a class="btn btn-primary" href="../../../login.php" role="button">EXPERIMENTE AGORA</a>
         </div>
 
-        <br><br><br id="list-item-1"><br><br><br>
+        <br><br><br id="monitoramento"><br><br><br>
 
         <div class="col-12" id="page-monitoramento">
             <h4 class="text-center mb-4">MONITORAMENTO</h4>
@@ -178,7 +178,7 @@
             <a class="btn btn-primary" href="../../../login.php" role="button">EXPERIMENTE AGORA</a>
         </div>
 
-        <br><br><br id="list-item-3"><br><br><br>
+        <br><br><br id="cnhemopp"><br><br><br>
 
         <div class="col-12">
             <h4 class="text-center mb-4">CNH E MOPP</h4>
@@ -192,7 +192,7 @@
         </div>
     </div>
 
-    <br id="list-item-4"><br><br><br><br>
+    <br id="quemsomos"><br><br><br><br>
 
     <div class="container-fluid pt-5 divfotos bg-indigo">
         <h2 class="card-title text-center text-white mb-5">QUEM SOMOS ?</h2>
@@ -269,7 +269,7 @@
 
 <br><br><br><br><br>
 
-<div id="list-item-5" class="container-fluid contatos">
+<div id="contatos" class="container-fluid contatos">
     <div class="row">
 
         <a href="https://web.facebook.com/Pojigo-101839457873456" target="_blank"
@@ -310,9 +310,6 @@
 
 
 <script type="text/javascript">
-    //Get the button:
-    mybutton = document.getElementById("myBtn");
-
     // When the user scrolls down 20px from the top of the document, show the button
     window.onscroll = function () {
         scrollFunction()
@@ -320,10 +317,8 @@
 
     function scrollFunction() {
         if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-            mybutton.style.display = "block";
             $('.navbar').css("background-color", "rgba(0, 0, 0, 0.8)");
         } else {
-            mybutton.style.display = "none";
             $('.navbar').css("background-color", "transparent");
         }
     }
@@ -333,6 +328,17 @@
         document.body.scrollTop = 0; // For Safari
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     }
+
+    // scrolls suaves areas site
+    $('.btnscroll a[href^="#"]').on('click', function(e) {
+    e.preventDefault();
+    var id = $(this).attr('href'),
+            targetOffset = $(id).offset().top;
+            
+    $('html, body').animate({ 
+        scrollTop: targetOffset - 100
+    }, 500);
+});
 </script>
 
 <!-- Bootstrap core JavaScript-->
