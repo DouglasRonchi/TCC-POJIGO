@@ -1,3 +1,5 @@
+/*Arquivo CSS*/
+
 body{background-color: rgb(245, 245, 245);}
 
 .sombra{box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 0px 28px 0 rgba(0, 0, 0, 0.2);}
@@ -8,25 +10,38 @@ body{background-color: rgb(245, 245, 245);}
   z-index:10;
   border-radius:0;
 }
+.menulink {
+  margin-left: 10px;
+  font-size: 15px;
+  -webkit-transition: 0.3s ease-in;
+  -moz-transition: 0.3s ease-in;
+  -o-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+}
+.menulink:hover {
+  font-size: 22px;
+}
 
 
 .imgcarousel{
   width:100%;
   max-width:100%;
+  height: 550px;
+  max-height: 550px;
   filter: brightness(51%);
 }
 
 
-p {
-  font-size: 18px;
-  font-family: arial;
+p {font-size: 18px;font-family: arial;}
+
+
+.card{
+  /* width: 18rem; */
 }
-
-
 .imgcard{
-  height: 200px;
+  height: 100%;
   width: 100%;
-  border-radius: 15px;
+  border-radius: 20px;
 }
 .btnscrol{
   border: none; /* Remove borders */
@@ -43,11 +58,12 @@ p {
 
 .divfotos{
   box-shadow: 0px 3px 20px 8px rgba(0, 0, 0, 0.2), 0px 3px 20px 8px rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(180deg,#4e73df,#224abe);
-  height: 600px;
+  background-image: linear-gradient(rgb(0, 130, 255), rgb(0, 50, 255));
+  /* height: 600px; */
   font-family: inherit;
 }
 .divperfil{
+  border: 0;
   width: 18rem;
   background-color: rgba(0, 0, 0, 0);
 }
@@ -55,36 +71,16 @@ p {
   width: 100%;
   max-width: 100%;
   height: 100%;
-  max-height: 100%; 
-}
-
-
-#myBtn {
-  display: none; /* Hidden by default */
-  position: fixed; /* Fixed/sticky position */
-  bottom: 50px; /* Place the button at the bottom of the page */
-  right: 30px; /* Place the button 30px from the right */
-  z-index: 99; /* Make sure it does not overlap */
-  border: none; /* Remove borders */
-  outline: none; /* Remove outline */
-  background-color: rgba(0, 0, 0, 0.3); /* Set a background color */
-  color: white; /* Text color */
-  cursor: pointer; /* Add a mouse pointer on hover */
-  padding: 15px; /* Some padding */
-  border-radius: 20px; /* Rounded corners */
-  /*font-size: 18px;  Increase font size */
-}
-#myBtn:hover {
-  background-color: rgba(0, 17, 255, 0.5); /* Add a dark-grey background on hover */
+  max-height: 100%;
 }
 
 
 .contatos{
   height: 140px;
   background-image: linear-gradient(rgb(20, 20, 20), rgb(24, 24, 24));
-  box-shadow: 100px 100px 100px rgba(0, 0, 0, 0.9);
+  box-shadow: 0px 3px 20px 8px rgba(0, 0, 0, 0.2), 0px 3px 20px 8px rgba(0, 0, 0, 0.2);
 }
-.contatos img{
+.contatos: img{
   width: 100%;
   max-width: 100%;
   height: 100%;
@@ -121,6 +117,10 @@ footer{
   stroke-width:5.5;
   stroke-linecap:round;
 }
+
+.ham4 .top {stroke-dasharray: 40 121;}
+
+.ham4 .bottom {stroke-dasharray: 40 121;}
 
 .ham4.active .top {stroke-dashoffset: -68px;}
 
