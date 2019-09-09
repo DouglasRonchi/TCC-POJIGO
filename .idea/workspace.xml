@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8c934103-8016-4184-8805-c6d5a3b60100" name="Default Changelist" comment="" />
+    <list default="true" id="8c934103-8016-4184-8805-c6d5a3b60100" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contato.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/inicial_icons/Mapa_clientes.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/inicial_icons/bootom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/inicial_icons/cnh.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/inicial_icons/cnhemopp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/inicial_icons/contato.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/inicial_icons/dauana.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/inicial_icons/douglas.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/inicial_icons/g.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/inicial_icons/jonas.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/inicial_icons/monitoramento.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/inicial_icons/rastreamento.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/institucional.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quemsomos.php" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,6 +164,7 @@
       <workItem from="1567596852844" duration="9441000" />
       <workItem from="1567682718703" duration="11684000" />
       <workItem from="1567768863043" duration="9962000" />
+      <workItem from="1568028753512" duration="1953000" />
     </task>
     <servers />
   </component>
