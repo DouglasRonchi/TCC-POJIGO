@@ -41,9 +41,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link text-white" href="#"><strong>Home</strong><span class="sr-only">(current)</span></a>
-                <a href="#quemsomos" class="nav-item nav-link text-white btnscroll"><strong>Quem somos</strong></a>
-                <a href="#faleconosco" class="nav-item nav-link text-white btnscroll"><strong>Fale conosco</strong></a>
+                <a class="nav-item nav-link text-white menulink" href="#"><strong>Home</strong><span class="sr-only">(current)</span></a>
+                <a href="#quemsomos" class="nav-item nav-link text-white btnscroll menulink"><strong>Quem somos</strong></a>
+                <a href="#faleconosco" class="nav-item nav-link text-white btnscroll menulink"><strong>Fale conosco</strong></a>
             </div>
         </div>
         <div class="form-inline my-2 my-lg-0">
@@ -133,7 +133,7 @@
                         <div class="card-body m-3">
                             <h3 class="card-title">CNH e MOPP</h3>
                             <center>
-                                    <a class="list-group-item list-group-item-action bg-dark btnscrol col-4 mt-4" href="#cnhemopp"><img height="30" width="30" src="../../../img/institucional/inicial_icons/down.gif"></a>
+                                    <a class="list-group-item list-group-item-action bg-dark btnscroll col-4 mt-4" href="#cnhemopp"><img height="30" width="30" src="../../../img/institucional/inicial_icons/down.gif"></a>
                                 </center>
                             </div>
                         </div>
