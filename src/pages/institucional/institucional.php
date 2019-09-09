@@ -41,9 +41,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link text-white menulink" href="#"><strong>Home</strong><span class="sr-only">(current)</span></a>
-                <a href="#list-item-4" class="nav-item nav-link text-white menulink"><strong>Quem somos</strong></a>
-                <a href="#list-item-5" class="nav-item nav-link text-white menulink"><strong>Fale conosco</strong></a>
+                <a class="nav-item nav-link text-white" href="#"><strong>Home</strong><span class="sr-only">(current)</span></a>
+                <a href="#list-item-4" class="nav-item nav-link text-white"><strong>Quem somos</strong></a>
+                <a href="#list-item-5" class="nav-item nav-link text-white"><strong>Fale conosco</strong></a>
             </div>
         </div>
         <div class="form-inline my-2 my-lg-0">
