@@ -111,7 +111,7 @@
                     <div class="card-body m-3">
                         <h3 class="card-title">MONITORAMENTO</h3>
                         <center>
-                            <a class="list-group-item list-group-item-action bg-dark btnscroll col-4 mt-4" href="#monitoramento"><img height="30" width="30" src="../../../img/institucional/inicial_icons/down.gif"></a>
+                            <a class="list-group-item list-group-item-action bg-dark btnscroll col-5 mt-4" href="#monitoramento"><img height="30" width="30" src="../../../img/institucional/inicial_icons/down.gif"></a>
                         </center>
                     </div>
                 </div>
@@ -123,7 +123,7 @@
                         <h3 class="card-title">RASTREAMENTO</h3>
 
                         <center>
-                            <a class="list-group-item list-group-item-action bg-dark btnscroll col-4 mt-4" href="#rastreamento"><img height="30" width="30" src="../../../img/institucional/inicial_icons/down.gif"></a>
+                            <a class="list-group-item list-group-item-action bg-dark btnscroll col-5 mt-4" href="#rastreamento"><img height="30" width="30" src="../../../img/institucional/inicial_icons/down.gif"></a>
                         </center>
                         </div>
                     </div>
@@ -133,7 +133,7 @@
                         <div class="card-body m-3">
                             <h3 class="card-title">CNH e MOPP</h3>
                             <center>
-                                    <a class="list-group-item list-group-item-action bg-dark btnscroll col-4 mt-4" href="#cnhemopp"><img height="30" width="30" src="../../../img/institucional/inicial_icons/down.gif"></a>
+                                    <a class="list-group-item list-group-item-action bg-dark btnscroll col-5 mt-4" href="#cnhemopp"><img height="30" width="30" src="../../../img/institucional/inicial_icons/down.gif"></a>
                                 </center>
                             </div>
                         </div>
