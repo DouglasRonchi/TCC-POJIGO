@@ -44,8 +44,6 @@
                 <a class="nav-item nav-link text-white" href="#"><strong>Home</strong><span class="sr-only">(current)</span></a>
                 <a href="#quemsomos" class="nav-item nav-link text-white btnscroll"><strong>Quem somos</strong></a>
                 <a href="#faleconosco" class="nav-item nav-link text-white btnscroll"><strong>Fale conosco</strong></a>
-                <a href="#quemsomos" class="nav-item nav-link text-white"><strong>Quem somos</strong></a>
-                <a href="#faleconosco" class="nav-item nav-link text-white"><strong>Fale conosco</strong></a>
             </div>
         </div>
         <div class="form-inline my-2 my-lg-0">
@@ -112,18 +110,9 @@
                     <div class="col mt-4"><img class="imgcard" src="../../../img/institucional/monitoramento1.png" alt="..."></div>
                     <div class="card-body m-3">
                         <h3 class="card-title">MONITORAMENTO</h3>
-
                         <center>
                             <a class="list-group-item list-group-item-action bg-dark btnscroll col-4 mt-4" href="#monitoramento"><img height="30" width="30" src="../../../img/institucional/inicial_icons/down.gif"></a>
                         </center>
-                        <div class="btnscroll text-center">
-                            <!-- Scroll to Top Button-->
-                            <a class="rounded" href="#monitoramento">
-                                <i class="fas fa-angle-down"></i>
-                            </a>
-                        </div>
-
-
                     </div>
                 </div>
 
@@ -136,11 +125,6 @@
                         <center>
                             <a class="list-group-item list-group-item-action bg-dark btnscroll col-4 mt-4" href="#rastreamento"><img height="30" width="30" src="../../../img/institucional/inicial_icons/down.gif"></a>
                         </center>
-                        <div class="btnscroll text-center">
-                            <a class="list-group-item list-group-item-action btnscrol col-4 mt-4" href="#rastreamento"><img
-                                height="30" width="30" src="../../../img/institucional/inicial_icons/down.gif"></a>
-                            </div>
-
                         </div>
                     </div>
 
@@ -148,16 +132,9 @@
                         <div class="col mt-4"><img class="imgcard" src="../../../img/institucional/cnh1.jpg" alt="..."></div>
                         <div class="card-body m-3">
                             <h3 class="card-title">CNH e MOPP</h3>
-                            <<<<<<< HEAD
                             <center>
-                                <a class="list-group-item list-group-item-action bg-dark btnscroll col-4 mt-4 btn-white"
-                                =======
-                                <div class="btnscroll text-center">
-                                    <a class="list-group-item list-group-item-action btnscrol col-4 mt-4 btn-white"
-
-                                    href="#cnhemopp"><img height="30" width="30"
-                                    src="../../../img/institucional/inicial_icons/down.gif"></a>
-                                </div>
+                                    <a class="list-group-item list-group-item-action bg-dark btnscrol col-4 mt-4" href="#cnhemopp"><img height="30" width="30" src="../../../img/institucional/inicial_icons/down.gif"></a>
+                                </center>
                             </div>
                         </div>
                     </div>
@@ -176,8 +153,7 @@
                             <img class="sombra" style="border-radius: 15px;" src="../../../img/institucional/rastreagif.gif"
                             width="600" height="350">
                         </div>
-                        <h5 class="mb-5 text-center"><strong>Rastreie suas frotas para uma melhor precisão em suas
-                        entregas.</strong></h5>
+                        <h5 class="mb-5 text-center"><strong>Rastreie suas frotas para uma melhor precisão em suas entregas.</strong></h5>
                         <a class="btn btn-primary" href="../../../login.php" role="button">EXPERIMENTE AGORA</a>
                     </div>
 
@@ -189,8 +165,7 @@
                             <img class="sombra" style="border-radius: 15px;" src="../../../img/institucional/monitorgif.gif"
                             width="600" height="350">
                         </div>
-                        <h5 class="mb-5 text-center"><strong>Monitore seus motoristas, tenha controle e relatórios de horários,
-                        diárias entre outros.</strong></h5>
+                        <h5 class="mb-5 text-center"><strong>Monitore seus motoristas, tenha controle e relatórios de horários, diárias entre outros.</strong></h5>
                         <a class="btn btn-primary" href="../../../login.php" role="button">EXPERIMENTE AGORA</a>
                     </div>
 
@@ -285,10 +260,7 @@
 
 <br><br><br><br><br>
 
-
-<div id="faleconosco" class="container-fluid contatos">
-
-    <div id="contatos" class="container-fluid contatos">
+ <div id="faleconosco" class="container-fluid contatos">
 
         <div class="row">
 
@@ -349,18 +321,6 @@
         document.body.scrollTop = 0; // For Safari
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     }
-
-
-    // scrolls suaves areas site
-    $('.btnscroll a[href^="#"]').on('click', function(e) {
-        e.preventDefault();
-        var id = $(this).attr('href'),
-        targetOffset = $(id).offset().top;
-        
-        $('html, body').animate({ 
-            scrollTop: targetOffset - 100
-        }, 500);
-    });
 
 </script>
 
