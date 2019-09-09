@@ -73,7 +73,7 @@ class Login extends Site {
             $_SESSION['previlegio'] = $usuario['previlegio'];
             $_SESSION['online'] = $usuario['online'];
             $_SESSION['foto'] = $usuario['foto_perfil'];
-            header('Location: ../../redirect.php');
+            header('Location: ../../index.php');
         } else {
             //Alerta Usuário ou senha inválidos
             setcookie('inv',"true",time()+5,"/");
