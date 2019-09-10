@@ -60,21 +60,21 @@
 
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="../../../img/institucional/monitoramento.jpg" class="d-block w-100 imgcarousel" alt="..."
+                <img src="../../../img/institucional/monitoramento.jpg" class="d-block w-100 imgcarousel" 
                 height="550">
                 <div class="carousel-caption d-none d-md-block mb-4">
                     <H3><strong>MONITORAMENTO</strong></H3>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="../../../img/institucional/rastreamento.png" class="d-block w-100 imgcarousel" alt="..."
+                <img src="../../../img/institucional/rastreamento.png" class="d-block w-100 imgcarousel" 
                 height="550">
                 <div class="carousel-caption d-none d-md-block mb-4">
                     <H3><strong>RASTREAMENTO</strong></H3>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="../../../img/institucional/cnh.jpg" class="d-block w-100 imgcarousel" alt="..." height="550">
+                <img src="../../../img/institucional/cnh.jpg" class="d-block w-100 imgcarousel"  height="550">
                 <div class="carousel-caption d-none d-md-block mb-4">
                     <H3><strong>CNH E MOPP</strong></H3>
                 </div>
@@ -107,33 +107,33 @@
 
             <div class="row">
                 <div class="card col m-3 text-center sombra" style="width: 18rem;">
-                    <div class="col mt-4"><img class="imgcard" src="../../../img/institucional/monitoramento1.png" alt="..."></div>
+                    <div class="col mt-4"><img class="imgcard" src="../../../img/institucional/monitoramento1.png" title="MONITORAMENTO"></div>
                     <div class="card-body m-3">
                         <h3 class="card-title">MONITORAMENTO</h3>
                         <center>
-                            <a class="list-group-item list-group-item-action bg-dark btnscroll col-5 mt-4" href="#monitoramento"><img height="30" width="30" src="../../../img/institucional/inicial_icons/down.gif"></a>
+                            <a class="btn bg-dark btnscroll col-3 mt-4" href="#monitoramento"><img height="30" width="30" src="../../../img/institucional/inicial_icons/down.gif"></a>
                         </center>
                     </div>
                 </div>
 
                 <div class="card col m-3 text-center sombra" style="width: 18rem;">
-                    <div class="col mt-4"><img class="imgcard" src="../../../img/institucional/rastreamento1.jpg" alt="...">
+                    <div class="col mt-4"><img class="imgcard" src="../../../img/institucional/rastreamento1.jpg" title="RASTREAMENTO">
                     </div>
                     <div class="card-body m-3">
                         <h3 class="card-title">RASTREAMENTO</h3>
 
                         <center>
-                            <a class="list-group-item list-group-item-action bg-dark btnscroll col-5 mt-4" href="#rastreamento"><img height="30" width="30" src="../../../img/institucional/inicial_icons/down.gif"></a>
+                            <a class="btn bg-dark btnscroll col-3 mt-4" href="#rastreamento"><img height="30" width="30" src="../../../img/institucional/inicial_icons/down.gif"></a>
                         </center>
                         </div>
                     </div>
 
                     <div class="card col m-3 text-center sombra" style="width: 18rem;">
-                        <div class="col mt-4"><img class="imgcard" src="../../../img/institucional/cnh1.jpg" alt="..."></div>
+                        <div class="col mt-4"><img class="imgcard" src="../../../img/institucional/cnh1.jpg" title="CNH E MOPP"></div>
                         <div class="card-body m-3">
                             <h3 class="card-title">CNH e MOPP</h3>
                             <center>
-                                    <a class="list-group-item list-group-item-action bg-dark btnscroll col-5 mt-4" href="#cnhemopp"><img height="30" width="30" src="../../../img/institucional/inicial_icons/down.gif"></a>
+                                    <a class="btn bg-dark btnscroll col-3 mt-4" href="#cnhemopp"><img height="30" width="30" src="../../../img/institucional/inicial_icons/down.gif"></a>
                                 </center>
                             </div>
                         </div>
@@ -150,7 +150,7 @@
                     <div class="col-12">
                         <h4 class="text-center mb-4">RASTREAMENTO</h4>
                         <div class="mb-5">
-                            <img class="sombra" style="border-radius: 15px;" src="../../../img/institucional/rastreagif.gif"
+                            <img class="sombra" title="RASTREAMENTO" style="border-radius: 15px;" src="../../../img/institucional/rastreagif.gif"
                             width="600" height="350">
                         </div>
                         <h5 class="mb-5 text-center"><strong>Rastreie suas frotas para uma melhor precisão em suas entregas.</strong></h5>
@@ -162,7 +162,7 @@
                     <div class="col-12">
                         <h4 class="text-center mb-4">MONITORAMENTO</h4>
                         <div class="mb-5">
-                            <img class="sombra" style="border-radius: 15px;" src="../../../img/institucional/monitorgif.gif"
+                            <img class="sombra" style="border-radius: 15px;" title="MONITORAMENTO" src="../../../img/institucional/monitorgif.gif"
                             width="600" height="350">
                         </div>
                         <h5 class="mb-5 text-center"><strong>Monitore seus motoristas, tenha controle e relatórios de horários, diárias entre outros.</strong></h5>
@@ -174,7 +174,7 @@
                     <div class="col-12">
                         <h4 class="text-center mb-4">CNH E MOPP</h4>
                         <div class="mb-5">
-                            <img class="sombra" style="border-radius: 15px;" src="../../../img/institucional/cnhgif.gif" width="600"
+                            <img class="sombra" style="border-radius: 15px;" title="CNH E MOPP" src="../../../img/institucional/cnhgif.gif" width="600"
                             height="350">
                         </div>
                         <h5 class="mb-5 text-center"><strong>Garanta a segurança em sua empresa.
@@ -191,7 +191,7 @@
                     <div class="row pt-3 pb-5">
 
                         <div class="card col border-0 divperfil">
-                            <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/douglas.png"
+                            <img class="rounded-circle mt-2 col foto" title="Douglas" src="../../../img/institucional/perfil/douglas.png"
                             alt="Imagem de capa do card">
                             <div class="card-body text-center">
                                 <h4 class="card-title text-white">Douglas Ronchi</h4>
@@ -204,11 +204,11 @@
                     </div>
 
                     <div class="card col border-0 divperfil">
-                        <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/paloma.jpg"
+                        <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/paloma.jpg" title="Paloma" 
                         alt="Imagem de capa do card">
                         <div class="card-body text-center">
                             <h4 class="card-title text-white">Paloma Teply</h4>
-                            <a href="#" target="_blank">
+                            <a href="https://www.linkedin.com/in/paloma-teply-b25970190" target="_blank">
                                 <img class="btn btn-light" src="../../../img/institucional/inicial_icons/in.png" height="33"
                                 width="100">
                             </a>
@@ -216,11 +216,11 @@
                     </div>
 
                     <div class="card col border-0 divperfil">
-                        <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/giovane.png"
+                        <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/giovane.png" title="Geovane" 
                         alt="Imagem de capa do card">
                         <div class="card-body text-center">
                             <h4 class="card-title text-white">Geovane Duarte</h4>
-                            <a href="https://www.linkedin.com/in/giovane-duarte-bb6786132?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BYLCcM9djRlK8lMJAcgWG8Q%3D%3D"
+                            <a href="https://www.linkedin.com/in/geovane-duarte-da-silva-989b16189"
                             target="_blank">
                             <img class="btn btn-light" src="../../../img/institucional/inicial_icons/in.png" height="33"
                             width="100">
@@ -230,7 +230,7 @@
 
                 <div class="card col border-0 divperfil">
                     <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/dauana.jpg"
-                    alt="Imagem de capa do card">
+                    alt="Imagem de capa do card" title="Dauana">
                     <div class="card-body text-center">
                         <h4 class="card-title text-white">Dauana Severo</h4>
                         <a href="https://www.linkedin.com/in/dauana-severo-bb152a18a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BaWjt6wBpRle6nhDbEtZ0nQ%3D%3D"
@@ -243,7 +243,7 @@
 
             <div class="card col border-0 divperfil">
                 <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/jonas.png"
-                alt="Imagem de capa do card">
+                alt="Imagem de capa do card" title="Jonas">
                 <div class="card-body text-center">
                     <h4 class="card-title text-white">Jonas Antunes</h4>
                     <a href="https://www.linkedin.com/in/jonas-antunes-049197187?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B7FBba2MVRt6sC%2F4fQ26CUA%3D%3D"
@@ -267,21 +267,21 @@
             <a href="https://web.facebook.com/Pojigo-101839457873456" target="_blank"
             class="card col text-white bg-transparent text-center cardcontatos">
             <div class="card-body col">
-                <img src="../../../img/institucional/inicial_icons/face.png" height="60" width="70">
+                <img src="../../../img/institucional/inicial_icons/face.png" title="facebook POJIGO" class="mt-2" height="60" width="70">
                 <h5 class="mt-1">Pagina facebook</h5>
             </div>
         </a>
 
         <div class="card col text-white bg-transparent text-center cardcontatos">
             <div class="card-body col">
-                <img src="../../../img/institucional/inicial_icons/contato.png" height="60" width="70">
+                <img src="../../../img/institucional/inicial_icons/contato.png" title="Telefone: 33546588" height="60" width="70">
                 <h5 class="mt-2">(47) 33546588</h5>
             </div>
         </div>
 
         <div class="card col text-white bg-transparent text-center cardcontatos">
             <div class="card-body col">
-                <img src="../../../img/institucional/inicial_icons/whats.png" height="70" width="130">
+                <img src="../../../img/institucional/inicial_icons/whats.png" title="Whats: 99654524" height="70" width="130">
                 <h5 class="">(47) 996545424</h5>
             </div>
         </div>
