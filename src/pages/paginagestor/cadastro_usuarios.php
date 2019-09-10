@@ -222,7 +222,7 @@ if (isset($_GET['id'])) {
                         else:
                             ?>
                             <button class="btn btn-primary" name="btnSalvar" type="submit">Salvar</button>
-                         <a class="btn btn-secondary" href="index.php" role="button">Voltar</a>
+                         <a class="btn btn-secondary" href="dashboard.php" role="button">Voltar</a>
                             <?php 
                         endif;
                         ?>
