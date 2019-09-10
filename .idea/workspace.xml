@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="8c934103-8016-4184-8805-c6d5a3b60100" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/paginagestor/404.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/404.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/paginagestor/cadastro_usuarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/cadastro_usuarios.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/redirect.php" beforeDir="false" afterPath="$PROJECT_DIR$/redirect.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/mobileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/mobileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/notificacoesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/notificacoesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/paginagestor/rastreamento.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/rastreamento.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -153,7 +155,7 @@
       <workItem from="1567682718703" duration="11684000" />
       <workItem from="1567768863043" duration="9962000" />
       <workItem from="1568028753512" duration="3858000" />
-      <workItem from="1568114010861" duration="2123000" />
+      <workItem from="1568114010861" duration="5941000" />
     </task>
     <servers />
   </component>

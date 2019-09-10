@@ -5,6 +5,17 @@ $conn = new Site;
 $login = new Login;
 $login->VerificarLogin();
 
+if (isset($_GET['btnExcluir'])) {
+    $conn->executeQuery("DELETE FROM registro_ponto WHERE cod_viagem = {$_GET['cdv']}");
+    $conn->executeQuery("DELETE FROM coordenadas WHERE fk_cod_viagem = {$_GET['cdv']}");
+    $conn->setAlerta(
+        'danger',
+        'Rastreamento da viagem N.' . $_GET['cdv'] . ' excluído com sucesso',
+        '<img class="img-fluid" src="' . $conn->path('img/icons/success.png') . '">',
+        $_SESSION['usuario_id']
+    );
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -98,10 +109,10 @@ $login->VerificarLogin();
                             $queryMedia = $conn->executeQuery("SELECT COUNT(*)/23 AS media  FROM coordenadas WHERE fk_cod_viagem = {$_GET['cdv']}");
                             $result = mysqli_fetch_assoc($queryMedia);
                             $i = 0;
-                            while ($row = mysqli_fetch_assoc($query)){
+                            while ($row = mysqli_fetch_assoc($query)) {
                                 $i += 1;
-                                if ($i % (int)$result['media'] == 0){
-                                array_push($wayp,$row['latitude'] . "," . $row['longitude']);
+                                if ($i % (int)$result['media'] == 0) {
+                                    array_push($wayp, $row['latitude'] . "," . $row['longitude']);
                                 }
                             }
 
@@ -164,10 +175,14 @@ $login->VerificarLogin();
                                         <td><?= $row["nome"] ?></td>
                                         <td>
                                             <div class="btn-group btn-block">
-                                                <form action="" method="get">
+                                                <form action="" method="get" name="rastreiosForm">
                                                     <input type="hidden" name="cdv" value="<?= $row["cod_viagem"] ?>">
                                                     <button class="btn btn-sm btn-primary submit" type="submit"
                                                             name="btnVisualizar">Ver no Mapa
+                                                    </button>
+                                                    <button class="btn btn-sm btn-danger" value="Excluir"
+                                                            name="btnExcluir"
+                                                            onclick="excluirViagem()">&times;
                                                     </button>
                                                 </form>
                                             </div>
@@ -224,6 +239,31 @@ $login->VerificarLogin();
 
 <?php include_once '../../include/configdatatable.php' ?>
 
+<!-- SWEET ALERTS  -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+<script>
+    function excluirViagem() {
+
+        Swal.fire({
+            title: 'Você tem certeza que quer deletar esta viagem?',
+            text: "Você não conseguirá recuperar isto!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sim, excluir!'
+        }).then((result) => {
+            if (result.value) {
+                document.rastreiosForm.submit();
+                Swal.fire(
+                    'Excluído!',
+                    'Sua viagem foi excluída.',
+                    'success'
+                )
+            }
+        });
+    }
+</script>
 <!-- Script Routes-->
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbqJXX7fEFddatn-vaBp3BtBS-4TJNIbg&callback=initMap">
@@ -250,7 +290,8 @@ $login->VerificarLogin();
         var ObjWaypts = JSON.parse(infos.dataset.wayp);
 
         for (var item in ObjWaypts) {
-            ObjWaypts.hasOwnProperty(item); {
+            ObjWaypts.hasOwnProperty(item);
+            {
                 waypts.push({
                     location: ObjWaypts[item],
                     stopover: true
@@ -285,9 +326,9 @@ $login->VerificarLogin();
                     var str = route.legs[i].distance.text;
                     // console.log(str);
                     var n = str.indexOf("km");
-                    if (n === -1){
+                    if (n === -1) {
                         //Metros
-                        total += parseFloat(route.legs[i].distance.text)/1000;
+                        total += parseFloat(route.legs[i].distance.text) / 1000;
                         // console.log("metros");
                     } else {
                         //Kms

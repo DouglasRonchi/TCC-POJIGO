@@ -7,7 +7,7 @@ if ($_SESSION['previlegio'] == '1') {
 } else if ($_SESSION['previlegio'] == '2') {
     header('Location: src/pages/paginagestor/dashboard.php');
 } else if ($_SESSION['previlegio'] == '3') {
-    header('Location: src/pages/paginamotorista/login.php');
+    header('Location: src/pages/paginamotorista/index.php');
 } else {
     header('Location: login.php');
 }
