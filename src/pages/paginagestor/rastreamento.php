@@ -109,7 +109,7 @@ if (isset($_GET['btnExcluirRota'])) {
                             $queryMedia = $conn->executeQuery("SELECT COUNT(*)/23 AS media FROM coordenadas WHERE fk_cod_viagem = {$_GET['cdv']}");
                             $result = mysqli_fetch_assoc($queryMedia);
                             $rows = mysqli_num_rows($queryMedia);
-                            if ($rows < 23){
+                            if ($rows < 23) {
                                 $queryMediaMenor = $conn->executeQuery("SELECT COUNT(*)/{$rows} AS media FROM coordenadas WHERE fk_cod_viagem = {$_GET['cdv']}");
                                 $result = mysqli_fetch_assoc($queryMediaMenor);
                             }
@@ -143,8 +143,8 @@ if (isset($_GET['btnExcluirRota'])) {
                                     <th>Viagem</th>
                                     <th>Frota</th>
                                     <th>Placa</th>
-                                    <th>Latitude</th>
-                                    <th>Longitude</th>
+                                    <th>Cidade</th>
+                                    <th>Bairro</th>
                                     <th>Motorista</th>
                                     <th>Visualizar</th>
                                 </tr>
@@ -154,15 +154,15 @@ if (isset($_GET['btnExcluirRota'])) {
                                     <th>Viagem</th>
                                     <th>Frota</th>
                                     <th>Placa</th>
-                                    <th>Latitude</th>
-                                    <th>Longitude</th>
+                                    <th>Cidade</th>
+                                    <th>Bairro</th>
                                     <th>Motorista</th>
                                     <th>Visualizar</th>
                                 </tr>
                                 </tfoot>
                                 <tbody>
                                 <?php
-                                $selectRastrear = $conn->executeQuery("SELECT vei.frota, vei.placa, coo.hora, coo.latitude, coo.longitude, usu.nome, rp.cod_viagem FROM registro_ponto rp JOIN coordenadas coo ON rp.cod_viagem = coo.fk_cod_viagem JOIN usuario usu ON usu.usuario_id = rp.fk_usuario JOIN veiculos vei ON rp.fk_veiculo = vei.id GROUP BY rp.cod_viagem ORDER BY coo.hora DESC");
+                                $selectRastrear = $conn->executeQuery("SELECT vei.id,vei.frota, vei.placa, coo.hora, coo.latitude, coo.longitude, usu.nome, rp.cod_viagem FROM registro_ponto rp JOIN coordenadas coo ON rp.cod_viagem = coo.fk_cod_viagem JOIN usuario usu ON usu.usuario_id = rp.fk_usuario JOIN veiculos vei ON rp.fk_veiculo = vei.id GROUP BY rp.cod_viagem ORDER BY coo.hora DESC");
                                 $row = mysqli_num_rows($selectRastrear);
                                 while ($row = mysqli_fetch_assoc($selectRastrear)):
                                     ?>
@@ -175,8 +175,21 @@ if (isset($_GET['btnExcluirRota'])) {
                                             </button> <?= $row["frota"] ?>
                                         </td>
                                         <td><?= $row["placa"] ?></td>
-                                        <td><?= $row["latitude"] ?></td>
-                                        <td><?= $row["longitude"] ?></td>
+                                        <td id="cidade<?=$row['id']?>"></td>
+                                        <td id="bairro<?=$row['id']?>"></td>
+                                        <script type="text/javascript">
+                                            var url = "https://nominatim.openstreetmap.org/reverse?lat=" + <?=$row["latitude"]?> +"&lon=" + <?=$row["longitude"]?> +"&format=json&json_callback=preencherDados";
+
+                                            var script = document.createElement('script');
+                                            script.src = url;
+                                            document.body.appendChild(script);
+                                            function preencherDados(dados) {
+                                                var cidade<?=$row['id']?> = document.getElementById('cidade<?=$row['id']?>');
+                                                var bairro<?=$row['id']?> = document.getElementById('bairro<?=$row['id']?>');
+                                                cidade<?=$row['id']?>.innerHTML = dados.address.city;
+                                                bairro<?=$row['id']?>.innerHTML = dados.address.suburb;
+                                            }
+                                        </script>
                                         <td><?= $row["nome"] ?></td>
                                         <td>
                                             <div class="btn-group btn-block">
@@ -187,7 +200,8 @@ if (isset($_GET['btnExcluirRota'])) {
                                                     </button>
                                                     <button class="btn btn-sm btn-danger" value="Excluir"
                                                             name="btnExcluirRota" type="submit"
-                                                            onclick="return confirm('Tem certeza que deseja excluir a viagem?')">&times;
+                                                            onclick="return confirm('Tem certeza que deseja excluir a viagem?')">
+                                                        &times;
                                                     </button>
                                                 </form>
                                             </div>

@@ -97,7 +97,7 @@ $conn = new Site;
             script.src = url;
             document.body.appendChild(script);
         });
-        setTimeout(localizador, 5000);
+        setTimeout(localizador, 300000);
     }
 
 
