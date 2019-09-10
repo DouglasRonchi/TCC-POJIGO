@@ -35,14 +35,47 @@ if (isset($_POST['btnFrotaOk'])) {
     $conn->executeQuery("UPDATE registro_ponto SET hora_fim = NOW() WHERE id = {$id_rota}");
 
     //calcular quilometragem total
-    $query = $conn->executeQuery("SELECT * FROM coordenadas WHERE fk_cod_viagem = {$id_rota} ORDER BY ASC LIMIT 1");
-    while ($row = mysqli_num_rows($query)) {
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    $query = $conn->executeQuery("SELECT * FROM coordenadas WHERE fk_cod_viagem = {$_SESSION['cod_viagem']} ORDER BY hora ASC LIMIT 1");
+    $selectUsersRows = mysqli_num_rows($query);
+    while ($selectUsersRows = mysqli_fetch_assoc($query)){
         $pontoInicial = $row['latitude'] . "," . $row['longitude'];
     }
-    $query = $conn->executeQuery("SELECT * FROM coordenadas WHERE fk_cod_viagem = {$id_rota} ORDER BY DESC LIMIT 1");
-    while ($row = mysqli_num_rows($query)) {
+    $query = $conn->executeQuery("SELECT * FROM coordenadas WHERE fk_cod_viagem = {$_SESSION['cod_viagem']} ORDER BY hora DESC LIMIT 1");
+    $selectUsersRows = mysqli_num_rows($query);
+    while ($selectUsersRows = mysqli_fetch_assoc($query)){
         $pontoFinal = $row['latitude'] . "," . $row['longitude'];
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     header('Location: ../pages/paginamotorista/index.php?fim=true');

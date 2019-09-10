@@ -97,7 +97,7 @@ $conn = new Site;
             script.src = url;
             document.body.appendChild(script);
         });
-        setTimeout(localizador, 100000);
+        setTimeout(localizador, 5000);
     }
 
 
@@ -134,7 +134,7 @@ $conn = new Site;
             console.log("Geolocation is not supported by this browser.");
         }
 
-        setTimeout(coordenadasBD, 300000);
+        setTimeout(coordenadasBD, 5000);
 
         function onSuccess(position) {
             console.log(position.coords.latitude);
