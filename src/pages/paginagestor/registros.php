@@ -309,6 +309,8 @@ $conn = new Site;
                                                 $horas_totais_mensais = 0;
                                                 $selectRegistrosUnicos = $conn->executeQuery("SELECT * FROM registro_ponto rp JOIN usuario us ON rp.fk_usuario = us.usuario_id WHERE us.cadastro = {$_GET['cad']} AND rp.hora_inicio BETWEEN '{$_GET['dtini']}' AND '{$_GET['dtfin']}' ORDER BY rp.hora_inicio");
                                                 $rowHoras = mysqli_num_rows($selectRegistrosUnicos);
+                                                $horas_mensais_exibicao = 0;
+                                                $minutos_mensais_exibicao = 0;
                                                 while ($rowHoras = mysqli_fetch_assoc($selectRegistrosUnicos)):
                                                     ?>
 
@@ -349,7 +351,7 @@ $conn = new Site;
                                                                 $intervalo = $fim_intervalo - $inicio_intervalo;
                                                                 $horas_trabalhadas = ($fim_jornada - $inicio_jornada) - $intervalo;
                                                             }
-                                                        
+
                                                 //verifica as horas extras
                                                             if ($horas_trabalhadas > 28800) {
                                                                 $horasExtras = $horas_trabalhadas - 28800;
@@ -359,10 +361,20 @@ $conn = new Site;
                                                 //setando as horas totais do período
                                                             $horas_mensais += $horas_trabalhadas;
                                                             $horaTot = sprintf("%02s", floor($horas_mensais / (60 * 60)));
+                                                            $horaTot = (int) $horaTot;
+                                                            $horaTot = intval($horaTot);
+
+
                                                             $horas_mensais = ($horas_mensais % (60 * 60));
                                                             $minutoTot = sprintf("%02s", floor($horas_mensais / 60));
+                                                            $minutoTot = (int) $minutoTot;
+                                                            $minutoTot = intval($minutoTot);
+
                                                             $horas_mensais = ($horas_mensais % 60);
-                                                            $horas_totais_mensais .= $horaTot;
+                                                            $horas_mensais_exibicao += $horaTot;
+                                                            $minutos_mensais_exibicao += $minutoTot; 
+                                                            // var_dump($horaTot);
+
 
                                                 //Arredonda para formato de Horas
                                                             $hora = sprintf("%02s", floor($horas_trabalhadas / (60 * 60)));
@@ -376,18 +388,27 @@ $conn = new Site;
                                                             $horasExtras = ($horasExtras % 60);
                                                             $horas_extras = $horaExtra . ":" . $minutoExtra;
 
-                                                            echo $hora . ":" . $minuto;
+                                                            $horas_totais = $hora . ":" . $minuto;
+
+                                                            echo $horas_totais;
                                                             ?>
 
                                                         </th>
                                                         <th><?=$horas_extras?></th>
                                                     </tr>
 
-                                                <?php endwhile; ?>
+                                                <?php endwhile;?>
                                                 <tr class="subtitles">
                                                     <th colspan="6"></th>
                                                     <th>Horas Totais</th>
-                                                    <th><?= $horas_totais_mensais ?></th>
+                                                    <th><?php 
+                                                    $horadominuto = floor($minutos_mensais_exibicao / 60);
+                                                    $nova_hora_exibicao = $horas_mensais_exibicao + $horadominuto;
+                                                    $nova_minuto_exibicao = $minutos_mensais_exibicao - ($horadominuto * 60);
+                                                    
+                                                    echo $nova_hora_exibicao . ":" . $nova_minuto_exibicao;
+                                                    ?>
+                                                    </th>
                                                 </tr>
                                             </table>
                                             <br>
