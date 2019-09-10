@@ -18,40 +18,46 @@
 <body id="page-top" class="sidebar-toggled">
 
     <div id="list-example" class="list-group">
+
         <!-- Begin Page Content -->
         <nav class="navbar navbar-expand-lg navbar-default">
             <a class="navbar-brand text-primary"><img class="mr-2"
               src="../../../img/institucional/inicial_icons/navicon.png" height="30"
               width="30"><strong>Pojigo</strong></a>
-              <button class="navbar-toggler togle" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-              aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+                <span class="navbar-toggler-icon mr-2">
+                    <svg class="ham hamRotate ham4" viewBox="0 0 100 100" width="60" onclick="this.classList.toggle('active')">
+                        <path
+                        class="line top"
+                        d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20"/>
+                        <path
+                        class="line middle"
+                        d="m 70,50 h -40"/>
+                        <path
+                        class="line bottom"
+                        d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20"/>
+                    </svg>
 
-              <svg class="ham hamRotate ham4" viewBox="0 0 100 100" width="60" onclick="this.classList.toggle('active')">
-                <path
-                class="line top"
-                d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20"/>
-                <path
-                class="line middle"
-                d="m 70,50 h -40"/>
-                <path
-                class="line bottom"
-                d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20"/>
-            </svg>
+                </span>
+            </button>
 
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link text-white menulink" href="#"><strong>Home</strong><span class="sr-only">(current)</span></a>
-                <a href="#quemsomos" class="nav-item nav-link text-white btnscroll menulink"><strong>Quem somos</strong></a>
-                <a href="#faleconosco" class="nav-item nav-link text-white btnscroll menulink"><strong>Fale conosco</strong></a>
-            </div>
-        </div>
-        <div class="form-inline my-2 my-lg-0">
-            <a href="../../../login.php" class="btn btn-outline-success my-2 my-sm-0">Entrar</a>
-        </div>
-    </nav>
+            <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+                <div class="navbar-nav mr-auto">
+                    <div class="navbar-nav mr-auto">
+                        <a class="nav-item nav-link text-white menulink" href="#"><strong>Home</strong><span class="sr-only">(current)</span></a>
+                        <a href="#quemsomos" class="nav-item nav-link text-white btnscroll menulink"><strong>Quem somos</strong></a>
+                        <a href="#faleconosco" class="nav-item nav-link text-white btnscroll menulink"><strong>Fale conosco</strong></a>
 
-    <div id="carouselExampleCaptions" class="carousel slide sombra" data-ride="carousel" data-wrap="true">
+                    </div>
+                </div>
+                <form class="form-inline my-2 my-lg-0">
+                  <a href="../../../login.php" class="btn btn-outline-success my-2 my-sm-0 ">Entrar</a>
+              </form>
+          </div>
+      </nav>
+
+
+      <div id="carouselExampleCaptions" class="carousel slide sombra" data-ride="carousel" data-wrap="true">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
@@ -125,115 +131,77 @@
                         <center>
                             <a class="btn bg-dark btnscroll col-3 mt-4" href="#rastreamento"><img height="30" width="30" src="../../../img/institucional/inicial_icons/down.gif"></a>
                         </center>
-                        </div>
                     </div>
+                </div>
 
-                    <div class="card col m-3 text-center sombra" style="width: 18rem;">
-                        <div class="col mt-4"><img class="imgcard" src="../../../img/institucional/cnh1.jpg" title="CNH E MOPP"></div>
-                        <div class="card-body m-3">
-                            <h3 class="card-title">CNH e MOPP</h3>
-                            <center>
-                                    <a class="btn bg-dark btnscroll col-3 mt-4" href="#cnhemopp"><img height="30" width="30" src="../../../img/institucional/inicial_icons/down.gif"></a>
-                                </center>
-                            </div>
-                        </div>
+                <div class="card col m-3 text-center sombra" style="width: 18rem;">
+                    <div class="col mt-4"><img class="imgcard" src="../../../img/institucional/cnh1.jpg" title="CNH E MOPP"></div>
+                    <div class="card-body m-3">
+                        <h3 class="card-title">CNH e MOPP</h3>
+                        <center>
+                            <a class="btn bg-dark btnscroll col-3 mt-4" href="#cnhemopp"><img height="30" width="30" src="../../../img/institucional/inicial_icons/down.gif"></a>
+                        </center>
                     </div>
-
                 </div>
             </div>
 
-            <br><br><br><br><br id="rastreamento"><br><br><br>
+        </div>
+    </div>
 
-            <center>
-                <!-- <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example"> -->
+    <br><br><br><br><br id="rastreamento"><br><br><br>
 
-                    <div class="col-12">
-                        <h4 class="text-center mb-4">RASTREAMENTO</h4>
-                        <div class="mb-5">
-                            <img class="sombra" title="RASTREAMENTO" style="border-radius: 15px;" src="../../../img/institucional/rastreagif.gif"
-                            width="600" height="350">
-                        </div>
-                        <h5 class="mb-5 text-center"><strong>Rastreie suas frotas para uma melhor precisão em suas entregas.</strong></h5>
-                        <a class="btn btn-primary" href="../../../login.php" role="button">EXPERIMENTE AGORA</a>
-                    </div>
+    <center>
+        <!-- <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example"> -->
 
-                    <br><br><br id="monitoramento"><br><br><br>
-
-                    <div class="col-12">
-                        <h4 class="text-center mb-4">MONITORAMENTO</h4>
-                        <div class="mb-5">
-                            <img class="sombra" style="border-radius: 15px;" title="MONITORAMENTO" src="../../../img/institucional/monitorgif.gif"
-                            width="600" height="350">
-                        </div>
-                        <h5 class="mb-5 text-center"><strong>Monitore seus motoristas, tenha controle e relatórios de horários, diárias entre outros.</strong></h5>
-                        <a class="btn btn-primary" href="../../../login.php" role="button">EXPERIMENTE AGORA</a>
-                    </div>
-
-                    <br><br><br id="cnhemopp"><br><br><br>
-
-                    <div class="col-12">
-                        <h4 class="text-center mb-4">CNH E MOPP</h4>
-                        <div class="mb-5">
-                            <img class="sombra" style="border-radius: 15px;" title="CNH E MOPP" src="../../../img/institucional/cnhgif.gif" width="600"
-                            height="350">
-                        </div>
-                        <h5 class="mb-5 text-center"><strong>Garanta a segurança em sua empresa.
-                        Avisos sobre vencimento de CNH e MOPP serão enviados aos motoristas.</strong></h5>
-                        <a class="btn btn-primary" href="../../../login.php" role="button">EXPERIMENTE AGORA</a>
-                    </div>
+            <div class="col-12">
+                <h4 class="text-center mb-4">RASTREAMENTO</h4>
+                <div class="mb-5">
+                    <img class="sombra" title="RASTREAMENTO" style="border-radius: 15px;" src="../../../img/institucional/rastreagif.gif"
+                    width="600" height="350">
                 </div>
+                <h5 class="mb-5 text-center"><strong>Rastreie suas frotas para uma melhor precisão em suas entregas.</strong></h5>
+                <a class="btn btn-primary" href="../../../login.php" role="button">EXPERIMENTE AGORA</a>
+            </div>
 
-                <br id="quemsomos"><br><br><br><br>
+            <br><br><br id="monitoramento"><br><br><br>
 
-                <div class="container-fluid pt-5 divfotos bg-indigo">
-                    <h2 class="card-title text-center text-white mb-5">QUEM SOMOS ?</h2>
-
-                    <div class="row pt-3 pb-5">
-
-                        <div class="card col border-0 divperfil">
-                            <img class="rounded-circle mt-2 col foto" title="Douglas" src="../../../img/institucional/perfil/douglas.png"
-                            alt="Imagem de capa do card">
-                            <div class="card-body text-center">
-                                <h4 class="card-title text-white">Douglas Ronchi</h4>
-                                <a href="https://www.linkedin.com/in/douglas-ronchi-7b5a2b134?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BIB6XpEfMSHqmMjokcZRiCw%3D%3D"
-                                target="_blank">
-                                <img class="btn btn-light" src="../../../img/institucional/inicial_icons/in.png" height="33"
-                                width="100">
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="card col border-0 divperfil">
-                        <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/paloma.jpg" title="Paloma" 
-                        alt="Imagem de capa do card">
-                        <div class="card-body text-center">
-                            <h4 class="card-title text-white">Paloma Teply</h4>
-                            <a href="https://www.linkedin.com/in/paloma-teply-b25970190" target="_blank">
-                                <img class="btn btn-light" src="../../../img/institucional/inicial_icons/in.png" height="33"
-                                width="100">
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="card col border-0 divperfil">
-                        <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/giovane.png" title="Geovane" 
-                        alt="Imagem de capa do card">
-                        <div class="card-body text-center">
-                            <h4 class="card-title text-white">Geovane Duarte</h4>
-                            <a href="https://www.linkedin.com/in/geovane-duarte-da-silva-989b16189"
-                            target="_blank">
-                            <img class="btn btn-light" src="../../../img/institucional/inicial_icons/in.png" height="33"
-                            width="100">
-                        </a>
-                    </div>
+            <div class="col-12">
+                <h4 class="text-center mb-4">MONITORAMENTO</h4>
+                <div class="mb-5">
+                    <img class="sombra" style="border-radius: 15px;" title="MONITORAMENTO" src="../../../img/institucional/monitorgif.gif"
+                    width="600" height="350">
                 </div>
+                <h5 class="mb-5 text-center"><strong>Monitore seus motoristas, tenha controle e relatórios de horários, diárias entre outros.</strong></h5>
+                <a class="btn btn-primary" href="../../../login.php" role="button">EXPERIMENTE AGORA</a>
+            </div>
+
+            <br><br><br id="cnhemopp"><br><br><br>
+
+            <div class="col-12">
+                <h4 class="text-center mb-4">CNH E MOPP</h4>
+                <div class="mb-5">
+                    <img class="sombra" style="border-radius: 15px;" title="CNH E MOPP" src="../../../img/institucional/cnhgif.gif" width="600"
+                    height="350">
+                </div>
+                <h5 class="mb-5 text-center"><strong>Garanta a segurança em sua empresa.
+                Avisos sobre vencimento de CNH e MOPP serão enviados aos motoristas.</strong></h5>
+                <a class="btn btn-primary" href="../../../login.php" role="button">EXPERIMENTE AGORA</a>
+            </div>
+        </div>
+
+        <br id="quemsomos"><br><br><br><br>
+
+        <div class="container-fluid pt-5 divfotos bg-indigo">
+            <h2 class="card-title text-center text-white mb-5">QUEM SOMOS ?</h2>
+
+            <div class="row pt-3 pb-5">
 
                 <div class="card col border-0 divperfil">
-                    <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/dauana.jpg"
-                    alt="Imagem de capa do card" title="Dauana">
+                    <img class="rounded-circle mt-2 col foto" title="Douglas" src="../../../img/institucional/perfil/douglas.png"
+                    alt="Imagem de capa do card">
                     <div class="card-body text-center">
-                        <h4 class="card-title text-white">Dauana Severo</h4>
-                        <a href="https://www.linkedin.com/in/dauana-severo-bb152a18a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BaWjt6wBpRle6nhDbEtZ0nQ%3D%3D"
+                        <h4 class="card-title text-white">Douglas Ronchi</h4>
+                        <a href="https://www.linkedin.com/in/douglas-ronchi-7b5a2b134?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BIB6XpEfMSHqmMjokcZRiCw%3D%3D"
                         target="_blank">
                         <img class="btn btn-light" src="../../../img/institucional/inicial_icons/in.png" height="33"
                         width="100">
@@ -242,51 +210,89 @@
             </div>
 
             <div class="card col border-0 divperfil">
-                <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/jonas.png"
-                alt="Imagem de capa do card" title="Jonas">
+                <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/paloma.jpg" title="Paloma" 
+                alt="Imagem de capa do card">
                 <div class="card-body text-center">
-                    <h4 class="card-title text-white">Jonas Antunes</h4>
-                    <a href="https://www.linkedin.com/in/jonas-antunes-049197187?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B7FBba2MVRt6sC%2F4fQ26CUA%3D%3D"
+                    <h4 class="card-title text-white">Paloma Teply</h4>
+                    <a href="https://www.linkedin.com/in/paloma-teply-b25970190" target="_blank">
+                        <img class="btn btn-light" src="../../../img/institucional/inicial_icons/in.png" height="33"
+                        width="100">
+                    </a>
+                </div>
+            </div>
+
+            <div class="card col border-0 divperfil">
+                <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/giovane.png" title="Geovane" 
+                alt="Imagem de capa do card">
+                <div class="card-body text-center">
+                    <h4 class="card-title text-white">Geovane Duarte</h4>
+                    <a href="https://www.linkedin.com/in/geovane-duarte-da-silva-989b16189"
                     target="_blank">
                     <img class="btn btn-light" src="../../../img/institucional/inicial_icons/in.png" height="33"
                     width="100">
                 </a>
             </div>
         </div>
+
+        <div class="card col border-0 divperfil">
+            <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/dauana.jpg"
+            alt="Imagem de capa do card" title="Dauana">
+            <div class="card-body text-center">
+                <h4 class="card-title text-white">Dauana Severo</h4>
+                <a href="https://www.linkedin.com/in/dauana-severo-bb152a18a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BaWjt6wBpRle6nhDbEtZ0nQ%3D%3D"
+                target="_blank">
+                <img class="btn btn-light" src="../../../img/institucional/inicial_icons/in.png" height="33"
+                width="100">
+            </a>
+        </div>
     </div>
+
+    <div class="card col border-0 divperfil">
+        <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/jonas.png"
+        alt="Imagem de capa do card" title="Jonas">
+        <div class="card-body text-center">
+            <h4 class="card-title text-white">Jonas Antunes</h4>
+            <a href="https://www.linkedin.com/in/jonas-antunes-049197187?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B7FBba2MVRt6sC%2F4fQ26CUA%3D%3D"
+            target="_blank">
+            <img class="btn btn-light" src="../../../img/institucional/inicial_icons/in.png" height="33"
+            width="100">
+        </a>
+    </div>
+</div>
+</div>
 </div>
 
 </center>
 
 <br><br><br><br><br>
 
- <div id="faleconosco" class="container-fluid contatos">
+<div id="faleconosco" class="container-fluid contatos">
 
-        <div class="row">
+    <div class="row">
 
-            <a href="https://web.facebook.com/Pojigo-101839457873456" target="_blank"
-            class="card col text-white bg-transparent text-center cardcontatos">
-            <div class="card-body col">
-                <img src="../../../img/institucional/inicial_icons/face.png" title="facebook POJIGO" class="mt-2" height="60" width="70">
-                <h5 class="mt-1">Pagina facebook</h5>
-            </div>
-        </a>
-
-        <div class="card col text-white bg-transparent text-center cardcontatos">
-            <div class="card-body col">
-                <img src="../../../img/institucional/inicial_icons/contato.png" title="Telefone: 33546588" height="60" width="70">
-                <h5 class="mt-2">(47) 33546588</h5>
-            </div>
+        <a href="https://web.facebook.com/Pojigo-101839457873456" target="_blank"
+        class="card col text-white bg-transparent text-center cardcontatos">
+        <div class="card-body col">
+            <img src="../../../img/institucional/inicial_icons/face.png" title="facebook POJIGO" class="mt-2" height="60" width="70">
+            <h5 class="mt-1">Pagina facebook</h5>
         </div>
+    </a>
 
-        <div class="card col text-white bg-transparent text-center cardcontatos">
-            <div class="card-body col">
-                <img src="../../../img/institucional/inicial_icons/whats.png" title="Whats: 99654524" height="70" width="130">
-                <h5 class="">(47) 996545424</h5>
-            </div>
+    <div class="card col text-white bg-transparent text-center cardcontatos">
+        <div class="card-body col">
+            <img src="../../../img/institucional/inicial_icons/contato.png" title="Telefone: 33546588" height="60" width="70">
+            <h5 class="mt-2">(47) 33546588</h5>
         </div>
-
     </div>
+
+    <div class="card col text-white bg-transparent text-center cardcontatos">
+        <div class="card-body col">
+            <img src="../../../img/institucional/inicial_icons/whats.png" title="Whats: 99654524" height="70" width="130">
+            <h5 class="">(47) 996545424</h5>
+        </div>
+    </div>
+
+</div>
 </div>
 
 <!-- Scroll to Top Button-->
@@ -336,7 +342,7 @@
 
 <script src="../../../js/funcoesMobile.js"></script>
 <script type="text/javascript">
-    
+
         // scrolls suaves areas site
         $('.btnscroll').on('click', function(e) {
             e.preventDefault();
