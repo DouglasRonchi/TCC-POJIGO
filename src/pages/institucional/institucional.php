@@ -102,10 +102,8 @@
 
         <center>
             <h1>CONECTANDO O VEÍCULO AO SEU NEGÓCIO</h1>
-            <p>VOCÊ NÃO PRECISA TER UM GERENTE DE FROTAS PARA UTILIZAR A ROTA EXATA. SIMPLES DE USAR, ALTA TECNOLOGIA
-                PARA FROTAS<br> PEQUENAS ATRAVÉS DE UM CONJUNTO COMPLETO DE PRODUTOS PARA RASTREAMENTO VEICULAR, GESTÃO
-                DE FROTAS, ROTEIRIZAÇÃO E <br>GERENCIAMENTO DE ENTREGAS E SERVIÇOS: <strong>TUDO INTEGRADO EM UMA ÚNICA
-                PLATAFORMA.</strong></p>
+            <p>VOCÊ NÃO PRECISA TER UM GERENTE DE FROTAS PARA UTILIZAR O POJIGO. SIMPLES DE USAR, ALTA TECNOLOGIA
+                PARA FROTAS<br> PEQUENAS ATRAVÉS DE UM CONJUNTO COMPLETO DE PRODUTOS PARA RASTREAMENTO, MONITORAMENTO,CONTROLE DE CNH E MOPP  E <br>GERENCIAMENTO DE ENTREGAS E SERVIÇOS: <strong>TUDO INTEGRADO EM UMA ÚNICA PLATAFORMA.</strong></p>
             </center>
 
             <br><br><br>
@@ -222,7 +220,7 @@
             </div>
 
             <div class="card col border-0 divperfil">
-                <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/giovane.png" title="Geovane" 
+                <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/giovane.jpg" title="Geovane" 
                 alt="Imagem de capa do card">
                 <div class="card-body text-center">
                     <h4 class="card-title text-white">Geovane Duarte</h4>
