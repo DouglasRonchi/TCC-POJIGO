@@ -143,6 +143,7 @@ if (isset($_GET['btnExcluirRota'])) {
                                     <th>Viagem</th>
                                     <th>Frota</th>
                                     <th>Placa</th>
+                                    <th>Hora</th>
                                     <th>Cidade</th>
                                     <th>Bairro</th>
                                     <th>Motorista</th>
@@ -154,6 +155,7 @@ if (isset($_GET['btnExcluirRota'])) {
                                     <th>Viagem</th>
                                     <th>Frota</th>
                                     <th>Placa</th>
+                                    <th>Hora</th>
                                     <th>Cidade</th>
                                     <th>Bairro</th>
                                     <th>Motorista</th>
@@ -162,7 +164,7 @@ if (isset($_GET['btnExcluirRota'])) {
                                 </tfoot>
                                 <tbody>
                                 <?php
-                                $selectRastrear = $conn->executeQuery("SELECT vei.id,vei.frota, vei.placa, coo.hora, coo.latitude, coo.longitude, usu.nome, rp.cod_viagem FROM registro_ponto rp JOIN coordenadas coo ON rp.cod_viagem = coo.fk_cod_viagem JOIN usuario usu ON usu.usuario_id = rp.fk_usuario JOIN veiculos vei ON rp.fk_veiculo = vei.id GROUP BY rp.cod_viagem ORDER BY coo.hora DESC");
+                                $selectRastrear = $conn->executeQuery("SELECT vei.frota, vei.placa, coo.hora, coo.latitude, coo.longitude, usu.nome, rp.cod_viagem FROM registro_ponto rp JOIN coordenadas coo ON rp.cod_viagem = coo.fk_cod_viagem JOIN usuario usu ON usu.usuario_id = rp.fk_usuario JOIN veiculos vei ON rp.fk_veiculo = vei.id GROUP BY rp.cod_viagem ORDER BY coo.hora DESC");
                                 $row = mysqli_num_rows($selectRastrear);
                                 while ($row = mysqli_fetch_assoc($selectRastrear)):
                                     ?>
@@ -175,21 +177,9 @@ if (isset($_GET['btnExcluirRota'])) {
                                             </button> <?= $row["frota"] ?>
                                         </td>
                                         <td><?= $row["placa"] ?></td>
-                                        <td id="cidade<?=$row['id']?>"></td>
-                                        <td id="bairro<?=$row['id']?>"></td>
-                                        <script type="text/javascript">
-                                            var url = "https://nominatim.openstreetmap.org/reverse?lat=" + <?=$row["latitude"]?> +"&lon=" + <?=$row["longitude"]?> +"&format=json&json_callback=preencherDados";
-
-                                            var script = document.createElement('script');
-                                            script.src = url;
-                                            document.body.appendChild(script);
-                                            function preencherDados(dados) {
-                                                var cidade<?=$row['id']?> = document.getElementById('cidade<?=$row['id']?>');
-                                                var bairro<?=$row['id']?> = document.getElementById('bairro<?=$row['id']?>');
-                                                cidade<?=$row['id']?>.innerHTML = dados.address.city;
-                                                bairro<?=$row['id']?>.innerHTML = dados.address.suburb;
-                                            }
-                                        </script>
+                                        <td><?= $row["hora"] ?></td>
+                                        <td>city</td>
+                                        <td>bairro</td>
                                         <td><?= $row["nome"] ?></td>
                                         <td>
                                             <div class="btn-group btn-block">
@@ -207,7 +197,9 @@ if (isset($_GET['btnExcluirRota'])) {
                                             </div>
                                         </td>
                                     </tr>
-                                <?php endwhile; ?>
+                                <?php
+                                endwhile;
+                                ?>
                                 </tbody>
                             </table>
                         </div>
