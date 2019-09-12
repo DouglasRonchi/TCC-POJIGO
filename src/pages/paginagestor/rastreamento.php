@@ -104,25 +104,36 @@ if (isset($_GET['btnExcluirRota'])) {
                             $endPosition = $row['latitude'] . "," . $row['longitude'];
 
                             $wayp = array();
-                            $query = $conn->executeQuery("SELECT * FROM coordenadas WHERE fk_cod_viagem = {$_GET['cdv']} ORDER BY hora DESC");
+                            $query = $conn->executeQuery("SELECT * FROM coordenadas WHERE fk_cod_viagem = {$_GET['cdv']}");
 
-                            $queryMedia = $conn->executeQuery("SELECT COUNT(*)/23 AS media FROM coordenadas WHERE fk_cod_viagem = {$_GET['cdv']}");
-                            $result = mysqli_fetch_assoc($queryMedia);
-                            $rows = mysqli_num_rows($queryMedia);
+                            $queryMediaTotal = $conn->executeQuery("SELECT * FROM coordenadas WHERE fk_cod_viagem = {$_GET['cdv']}");
+                            $rows = mysqli_num_rows($queryMediaTotal);
+
                             if ($rows < 23) {
                                 $queryMediaMenor = $conn->executeQuery("SELECT COUNT(*)/{$rows} AS media FROM coordenadas WHERE fk_cod_viagem = {$_GET['cdv']}");
                                 $result = mysqli_fetch_assoc($queryMediaMenor);
-                            }
-                            $i = 0;
-                            while ($row = mysqli_fetch_assoc($query)) {
-                                $i += 1;
-                                if ($i % (int)$result['media'] == 0) {
-                                    array_push($wayp, $row['latitude'] . "," . $row['longitude']);
+
+                                $row = mysqli_fetch_all($query);
+                                $i = 1;
+                                while ($i < $rows -1) {
+                                    $i += 1;
+                                    array_push($wayp, $row[$i][3] . "," . $row[$i][4]);
+                                }
+                            } else {
+                                $queryMedia = $conn->executeQuery("SELECT COUNT(*)/23 AS media FROM coordenadas WHERE fk_cod_viagem = {$_GET['cdv']}");
+                                $result = mysqli_fetch_assoc($queryMedia);
+
+                                $row = mysqli_fetch_all($query);
+                                $i = 1;
+                                while ($i < $rows -1) {
+                                    $i += 1;
+                                    if ($i % (int)$result['media'] == 0) {
+                                        array_push($wayp, $row[$i][3] . "," . $row[$i][4]);
+                                    }
                                 }
                             }
 
                             $jsonwayp = json_encode($wayp);
-
                         }
 
                         ?>
