@@ -61,7 +61,9 @@ $login->VerificarLogin();
                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Km's
                                             Rodados (Mensal)
                                         </div>
+
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">400.585 km</div>
+
                                     </div>
                                     <div class="col-auto">
                                         <i class="fa fa-truck fa-2x text-gray-300"></i>
@@ -80,7 +82,11 @@ $login->VerificarLogin();
                                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Viagens
                                             Realizadas (Mensal)
                                         </div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">415</div>
+                                        <?php
+                                        $result = mysqli_fetch_assoc($conn->executeQuery("SELECT COUNT(*) AS total FROM registro_ponto"));
+                                        ?>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$result['total']?></div>
+
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
@@ -101,7 +107,10 @@ $login->VerificarLogin();
                                         </div>
                                         <div class="row no-gutters align-items-center">
                                             <div class="col-auto">
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800">15</div>
+                                                <?php
+                                                $result = mysqli_fetch_assoc($conn->executeQuery("SELECT COUNT(*) AS fimviagem FROM registro_ponto WHERE hora_fim = 0"));
+                                                ?>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$result['fimviagem']?></div>
                                             </div>
                                         </div>
                                     </div>
