@@ -113,7 +113,6 @@ switch ($tipo_usuario){
 $usuario->setidEditar($_GET['id']);
 $usuario->setNome($_POST['inputNome']);
 $usuario->setUsuario($_POST['inputUsuario']);
-$usuario->setCadastro($cadastro+1);
 $usuario->setTelefone($_POST['inputTelefone']);
 $usuario->setUsuario($_POST['inputUsuario']);
 $usuario->setEmail($_POST['inputEmail']);
