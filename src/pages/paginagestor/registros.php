@@ -305,6 +305,7 @@ $conn = new Site;
                                                     <th>Horas Extras</th>
                                                 </tr>
 
+                                              
                                                 <?php
                                                 $horas_totais_mensais = 0;
                                                 $selectRegistrosUnicos = $conn->executeQuery("SELECT * FROM registro_ponto rp JOIN usuario us ON rp.fk_usuario = us.usuario_id WHERE us.cadastro = {$_GET['cad']} AND rp.hora_inicio BETWEEN '{$_GET['dtini']}' AND '{$_GET['dtfin']}' ORDER BY rp.hora_inicio");
@@ -425,6 +426,7 @@ $conn = new Site;
                         </div>
                     </div>
                 </div>
+
 
 
                 <!-- Logout Modal-->
