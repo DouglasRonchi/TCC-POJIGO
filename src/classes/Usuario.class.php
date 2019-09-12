@@ -4,7 +4,8 @@ require_once 'Autoload.class.php';
 $login = new Login;
 $login->VerificarLogin();
 
-class Usuario extends Site {
+class Usuario extends Site
+{
 
     protected $id;
     protected $usuario;
@@ -32,7 +33,7 @@ class Usuario extends Site {
     protected $foto_perfil;
     protected $idEditar;
 
-/**
+    /**
      * @return mixed
      */
     public function getidEditar()
@@ -477,10 +478,11 @@ class Usuario extends Site {
      * Função de cadastro de usuários
      * @return true ou false
      */
-    public function cadastrarUsuario(){
+    public function cadastrarUsuario()
+    {
 
         $sql = "INSERT INTO `usuario` (`usuario_id`, `usuario`, `email`, `senha`, `cadastro`, `nome`, `rg`, `cpf`, `endereco`, `estado`, `cidade`, `bairro`, `telefone`, `data_admissao`, `data_nascimento`, `cnh`, `venc_cnh`, `mopp`, `venc_mopp`, `data_cadastro`, `tipo_usuario`, `previlegio`, `online`,`foto_perfil`,`data_foto`) VALUES
-        (DEFAULT, '{$this->getUsuario()}', '{$this->getEmail()}', '{$this->getSenha()}', '{$this->getCadastro()}', '{$this->getNome()}', '{$this->getRg()}', '{$this->getCpf()}', '{$this->getEndereco()}', '{$this->getEstado()}', '{$this->getCidade()}', '{$this->getBairro()}', '{$this->getTelefone()}', '{$this->getDataAdmissao()}', '{$this->getDataNascimento()}', '{$this->getCnh()}', '{$this->getVencimentoCnh()}', '{$this->getMopp()}', '{$this->getVencimentoMopp()}', '".date("Y-m-d H:i:s")."', '{$this->getTipoUsuario()}', {$this->getPrevilegio()}, 1, '{$this->getFotoPerfil()}', NOW());";
+        (DEFAULT, '{$this->getUsuario()}', '{$this->getEmail()}', '{$this->getSenha()}', '{$this->getCadastro()}', '{$this->getNome()}', '{$this->getRg()}', '{$this->getCpf()}', '{$this->getEndereco()}', '{$this->getEstado()}', '{$this->getCidade()}', '{$this->getBairro()}', '{$this->getTelefone()}', '{$this->getDataAdmissao()}', '{$this->getDataNascimento()}', '{$this->getCnh()}', '{$this->getVencimentoCnh()}', '{$this->getMopp()}', '{$this->getVencimentoMopp()}', '" . date("Y-m-d H:i:s") . "', '{$this->getTipoUsuario()}', {$this->getPrevilegio()}, 1, '{$this->getFotoPerfil()}', NOW());";
 
         $this->executeQuery($sql);
     }
@@ -489,96 +491,92 @@ class Usuario extends Site {
      * Função de atualizar de usuários
      * @return true ou false
      */
-    public function atualizarUsuario(){
+    public function atualizarUsuario()
+    {
 
         $sqlUsuario = "UPDATE usuario SET usuario = '{$this->getUsuario()}' WHERE usuario_id = {$_GET['id']}";
         var_dump($sqlUsuario);
-     $this->executeQuery($sqlUsuario);
+        $this->executeQuery($sqlUsuario);
 
-     $sqlEmail = "UPDATE usuario SET email = '{$this->getEmail()}' WHERE usuario_id = {$_GET['id']}";
-     $this->executeQuery($sqlEmail);
+        $sqlEmail = "UPDATE usuario SET email = '{$this->getEmail()}' WHERE usuario_id = {$_GET['id']}";
+        $this->executeQuery($sqlEmail);
 
 
-     $sqlSenha = "UPDATE usuario SET senha = '{$this->getSenha()}' WHERE usuario_id = {$_GET['id']}";
-     $this->executeQuery($sqlSenha);
+        $sqlNome = "UPDATE usuario SET nome = '{$this->getNome()}' WHERE usuario_id = {$_GET['id']}";
+        $this->executeQuery($sqlNome);
 
-     $sqlCadastro = "UPDATE usuario SET cadastro = '{$this->getCadastro()}' WHERE usuario_id = {$_GET['id']}";
-     $this->executeQuery($sqlCadastro);
+        $sqlRg = "UPDATE usuario SET rg = '{$this->getRg()}' WHERE usuario_id = {$_GET['id']}";
+        $this->executeQuery($sqlRg);
 
-     $sqlNome = "UPDATE usuario SET nome = '{$this->getNome()}' WHERE usuario_id = {$_GET['id']}";
-     $this->executeQuery($sqlNome);
+        $sqlCpf = "UPDATE usuario SET cpf = '{$this->getCpf()}' WHERE usuario_id = {$_GET['id']}";
+        $this->executeQuery($sqlCpf);
 
-     $sqlRg = "UPDATE usuario SET rg = '{$this->getRg()}' WHERE usuario_id = {$_GET['id']}";
-     $this->executeQuery($sqlRg);
+        $sqlEndereco = "UPDATE usuario SET endereco = '{$this->getEndereco()}' WHERE usuario_id = {$_GET['id']}";
+        $this->executeQuery($sqlEndereco);
 
-     $sqlCpf = "UPDATE usuario SET cpf = '{$this->getCpf()}' WHERE usuario_id = {$_GET['id']}";
-     $this->executeQuery($sqlCpf);
+        $sqlEstado = "UPDATE usuario SET estado = '{$this->getEstado()}' WHERE usuario_id = {$_GET['id']}";
+        $this->executeQuery($sqlEstado);
 
-     $sqlEndereco = "UPDATE usuario SET endereco = '{$this->getEndereco()}' WHERE usuario_id = {$_GET['id']}";
-     $this->executeQuery($sqlEndereco);
+        $sqlCidade = "UPDATE usuario SET cidade = '{$this->getCidade()}' WHERE usuario_id = {$_GET['id']}";
+        $this->executeQuery($sqlCidade);
 
-     $sqlEstado = "UPDATE usuario SET estado = '{$this->getEstado()}' WHERE usuario_id = {$_GET['id']}";
-     $this->executeQuery($sqlEstado);
+        $sqlBairro = "UPDATE usuario SET bairro = '{$this->getBairro()}' WHERE usuario_id = {$_GET['id']}";
+        $this->executeQuery($sqlBairro);
 
-     $sqlCidade = "UPDATE usuario SET cidade = '{$this->getCidade()}' WHERE usuario_id = {$_GET['id']}";
-     $this->executeQuery($sqlCidade);
+        $sqlTelefone = "UPDATE usuario SET telefone = '{$this->getTelefone()}' WHERE usuario_id = {$_GET['id']}";
+        $this->executeQuery($sqlTelefone);
 
-     $sqlBairro = "UPDATE usuario SET bairro = '{$this->getBairro()}' WHERE usuario_id = {$_GET['id']}";
-     $this->executeQuery($sqlBairro);
+        $sqlDataAdmissao = "UPDATE usuario SET data_admissao = '{$this->getDataAdmissao()}' WHERE usuario_id = {$_GET['id']}";
+        $this->executeQuery($sqlDataAdmissao);
 
-     $sqlTelefone = "UPDATE usuario SET telefone = '{$this->getTelefone()}' WHERE usuario_id = {$_GET['id']}";
-     $this->executeQuery($sqlTelefone);
+        $sqlDataNascimento = "UPDATE usuario SET data_nascimento = '{$this->getDataNascimento()}' WHERE usuario_id = {$_GET['id']}";
+        $this->executeQuery($sqlDataNascimento);
 
-     $sqlDataAdmissao = "UPDATE usuario SET data_admissao = '{$this->getDataAdmissao()}' WHERE usuario_id = {$_GET['id']}";
-     $this->executeQuery($sqlDataAdmissao);
+        $sqlCnh = "UPDATE usuario SET cnh = '{$this->getCnh()}' WHERE usuario_id = {$_GET['id']}";
+        $this->executeQuery($sqlCnh);
 
-     $sqlDataNascimento = "UPDATE usuario SET data_nascimento = '{$this->getDataNascimento()}' WHERE usuario_id = {$_GET['id']}";
-     $this->executeQuery($sqlDataNascimento);
+        $sqlVencCnh = "UPDATE usuario SET venc_cnh = '{$this->getVencimentoCnh()}' WHERE usuario_id = {$_GET['id']}";
+        $this->executeQuery($sqlVencCnh);
 
-     $sqlCnh = "UPDATE usuario SET cnh = '{$this->getCnh()}' WHERE usuario_id = {$_GET['id']}";
-     $this->executeQuery($sqlCnh);
+        $sqlMopp = "UPDATE usuario SET mopp = '{$this->getMopp()}' WHERE usuario_id = {$_GET['id']}";
+        $this->executeQuery($sqlMopp);
 
-     $sqlVencCnh = "UPDATE usuario SET venc_cnh = '{$this->getVencimentoCnh()}' WHERE usuario_id = {$_GET['id']}";
-     $this->executeQuery($sqlVencCnh);
+        $sqlVencMopp = "UPDATE usuario SET venc_mopp = '{$this->getVencimentoMopp()}' WHERE usuario_id = {$_GET['id']}";
+        $this->executeQuery($sqlVencMopp);
 
-     $sqlMopp = "UPDATE usuario SET mopp = '{$this->getMopp()}' WHERE usuario_id = {$_GET['id']}";
-     $this->executeQuery($sqlMopp);
+        $sqlDataCadastro = "UPDATE usuario SET data_cadastro = '{$this->getDataCadastro()}' WHERE usuario_id = {$_GET['id']}";
+        $this->executeQuery($sqlDataCadastro);
 
-     $sqlVencMopp = "UPDATE usuario SET venc_mopp = '{$this->getVencimentoMopp()}' WHERE usuario_id = {$_GET['id']}";
-     $this->executeQuery($sqlVencMopp);
+        $sqlTipoUsuario = "UPDATE usuario SET tipo_usuario = '{$this->getTipoUsuario()}' WHERE usuario_id = {$_GET['id']}";
+        $this->executeQuery($sqlTipoUsuario);
 
-     $sqlDataCadastro = "UPDATE usuario SET data_cadastro = '{$this->getDataCadastro()}' WHERE usuario_id = {$_GET['id']}";
-     $this->executeQuery($sqlDataCadastro);
+        $sqlPrevilegio = "UPDATE usuario SET previlegio = '{$this->getPrevilegio()}' WHERE usuario_id = {$_GET['id']}";
+        $this->executeQuery($sqlPrevilegio);
 
-     $sqlTipoUsuario = "UPDATE usuario SET tipo_usuario = '{$this->getTipoUsuario()}' WHERE usuario_id = {$_GET['id']}";
-     $this->executeQuery($sqlTipoUsuario);
+        $sqlOnline = "UPDATE usuario SET online = 1 WHERE usuario_id = {$_GET['id']}";
+        $this->executeQuery($sqlOnline);
 
-     $sqlPrevilegio = "UPDATE usuario SET previlegio = '{$this->getPrevilegio()}' WHERE usuario_id = {$_GET['id']}";
-     $this->executeQuery($sqlPrevilegio);
+        if ($this->getFotoPerfil() != '') {
+            $sqlFotoPerfil = "UPDATE usuario SET foto_perfil = '{$this->getFotoPerfil()}' WHERE usuario_id = {$_GET['id']}";
+            $this->executeQuery($sqlFotoPerfil);
+        }
 
-     $sqlOnline = "UPDATE usuario SET online = 1 WHERE usuario_id = {$_GET['id']}";
-     $this->executeQuery($sqlOnline);
+        $sqlDataFoto = "UPDATE usuario SET data_foto = '{NOW()}' WHERE usuario_id = {$_GET['id']}";
+        $this->executeQuery($sqlDataFoto);
 
-     $sqlFotoPerfil = "UPDATE usuario SET foto_perfil = '{$this->getFotoPerfil()}' WHERE usuario_id = {$_GET['id']}";
-     $this->executeQuery($sqlFotoPerfil);
+        header('location:../pages/paginagestor/relatorio_usuarios.php');
 
-     $sqlDataFoto = "UPDATE usuario SET data_foto = '{NOW()}' WHERE usuario_id = {$_GET['id']}";
-     $this->executeQuery($sqlDataFoto);
-
-     header('location:../pages/paginagestor/relatorio_usuarios.php');
-
- }
+    }
 
     /**
      * Função para deletar usuários
      * @return true ou false
      */
-    public function deletarUsuario(){
+    public function deletarUsuario()
+    {
 
 
     }
-
-
 
 
 }

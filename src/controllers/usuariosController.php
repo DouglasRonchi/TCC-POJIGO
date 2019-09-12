@@ -32,16 +32,16 @@ if (isset($_POST['btnSalvar'])) {
     }
 
 
-    $usuario->setNome($_POST['inputNome']);
-    $usuario->setUsuario($_POST['inputUsuario']);
+    $usuario->setNome(utf8_decode($_POST['inputNome']));
+    $usuario->setUsuario(utf8_decode($_POST['inputUsuario']));
     $usuario->setCadastro($cadastro + 1);
     $usuario->setTelefone($_POST['inputTelefone']);
-    $usuario->setUsuario($_POST['inputUsuario']);
+    $usuario->setUsuario(utf8_decode($_POST['inputUsuario']));
     $usuario->setEmail($_POST['inputEmail']);
     $usuario->setSenha(hash('sha512', $_POST['inputSenha']));
-    $usuario->setEndereco($_POST['inputEndereco']);
-    $usuario->setBairro($_POST['inputBairro']);
-    $usuario->setCidade($_POST['inputCidade']);
+    $usuario->setEndereco(utf8_decode( $_POST['inputEndereco']));
+    $usuario->setBairro(utf8_decode($_POST['inputBairro']));
+    $usuario->setCidade(utf8_decode($_POST['inputCidade']));
     $usuario->setEstado($_POST['inputEstado']);
     $usuario->setRg($_POST['inputRG']);
     $usuario->setCpf($_POST['inputCPF']);
@@ -113,7 +113,6 @@ switch ($tipo_usuario){
 $usuario->setidEditar($_GET['id']);
 $usuario->setNome($_POST['inputNome']);
 $usuario->setUsuario($_POST['inputUsuario']);
-$usuario->setCadastro($cadastro+1);
 $usuario->setTelefone($_POST['inputTelefone']);
 $usuario->setUsuario($_POST['inputUsuario']);
 $usuario->setEmail($_POST['inputEmail']);

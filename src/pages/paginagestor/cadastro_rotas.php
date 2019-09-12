@@ -7,7 +7,7 @@ $login->VerificarLogin();
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
 
@@ -25,15 +25,81 @@ $login->VerificarLogin();
 
   <!-- Custom styles for this template-->
   <link href="../../../css/sb-admin-2.min.css" rel="stylesheet">
-  <style>
-    #mapa {
-      height:400px;
-      width:400px;
-    }
-  </style>
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #floating-panel {
+            position: absolute;
+            top: 10px;
+            left: 25%;
+            z-index: 5;
+            background-color: #fff;
+            padding: 5px;
+            border: 1px solid #999;
+            text-align: center;
+            font-family: 'Roboto','sans-serif';
+            line-height: 30px;
+            padding-left: 10px;
+        }
+        #right-panel {
+            font-family: 'Roboto','sans-serif';
+            line-height: 30px;
+            padding-left: 10px;
+        }
+
+        #right-panel select, #right-panel input {
+            font-size: 15px;
+        }
+
+        #right-panel select {
+            width: 100%;
+        }
+
+        #right-panel i {
+            font-size: 12px;
+        }
+        #right-panel {
+            height: 100%;
+            float: right;
+            width: 390px;
+            overflow: auto;
+        }
+        #map {
+            margin-right: 400px;
+        }
+        #floating-panel {
+            background: #fff;
+            padding: 5px;
+            font-size: 14px;
+            font-family: Arial;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4);
+            display: none;
+        }
+        @media print {
+            #map {
+                height: 500px;
+                margin: 0;
+            }
+            #right-panel {
+                float: none;
+                width: auto;
+            }
+        }
+    </style>
 </head>
 
 <body id="page-top">
+
 
   <!-- Page Wrapper -->
   <div id="wrapper">
@@ -62,135 +128,12 @@ $login->VerificarLogin();
 
           <!-- chave google api AIzaSyCbqJXX7fEFddatn-vaBp3BtBS-4TJNIbg -->
 
-          <!-- Parâmetro sensor é utilizado somente em dispositivos com GPS -->
-  <!--  <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
-    <script type="text/javascript">
-        function CalculaDistancia() {
-            $('#litResultado').html('Aguarde...');
-            //Instanciar o DistanceMatrixService
-            var service = new google.maps.DistanceMatrixService();
-            //executar o DistanceMatrixService
-            service.getDistanceMatrix(
-              {
-                  //Origem
-                  origins: [$("#txtOrigem").val()],
-                  //Destino
-                  destinations: [$("#txtDestino").val()],
-                  //Modo (DRIVING | WALKING | BICYCLING)
-                  travelMode: google.maps.TravelMode.DRIVING,
-                  //Sistema de medida (METRIC | IMPERIAL)
-                  unitSystem: google.maps.UnitSystem.METRIC
-                  //Vai chamar o callback
-              }, callback);
-        }
-        //Tratar o retorno do DistanceMatrixService
-        function callback(response, status) {
-            //Verificar o Status
-            if (status != google.maps.DistanceMatrixStatus.OK)
-                //Se o status não for "OK"
-                $('#litResultado').html(status);
-            else {
-                //Se o status for OK
-                //Endereço de origem = response.originAddresses
-                //Endereço de destino = response.destinationAddresses
-                //Distância = response.rows[0].elements[0].distance.text
-                //Duração = response.rows[0].elements[0].duration.text
-                $('#litResultado').html("<strong>Origem</strong>: " + response.originAddresses +
-                    "<br /><strong>Destino:</strong> " + response.destinationAddresses +
-                    "<br /><strong>Distância</strong>: " + response.rows[0].elements[0].distance.text +
-                    " <br /><strong>Duração</strong>: " + response.rows[0].elements[0].duration.text
-                    );
-                //Atualizar o mapa
-                $("#map").attr("src", "https://maps.google.com/maps?saddr=" + response.originAddresses + "&daddr=" + response.destinationAddresses + "&output=embed");
-            }
-        }
-    </script>
-    <table width="100%" cellspacing="0" cellpadding="0" border="0">
-        <tbody>
-            <tr>
-                <td>
-                    <label for="txtOrigem"><strong>Endere&ccedil;o de origem</strong></label>
-                    <input type="text" id="txtOrigem" class="field" style="width: 400px" />
-
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="txtDestino"><strong>Endere&ccedil;o de destino</strong></label>
-                    <input type="text" style="width: 400px" class="field" id="txtDestino" />
-
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="button" value="Calcular dist&acirc;ncia" onclick="CalculaDistancia()" class="btnNew" />
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <div><span id="litResultado">&nbsp;</span></div>
-    <div style="padding: 10px 0 0; clear: both">
-        <iframe width="750" scrolling="no" height="350" frameborder="0" id="map" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?saddr=são paulo&daddr=rio de janeiro&output=embed"></iframe>
-      </div> -->
-
-    <div class="map-responsive">
- <table width="100%" cellspacing="0" cellpadding="0" border="0">
-      <tbody>
-        <tr >
-          <td>
-            <label for="txtOrigem"><strong>Origem:</strong></label>
-            <input type="text" id="txtOrigem" class="field" style="width: 400px"/>
-          </td>
-        </tr>
-        
-        <tr>
-          <td>
-            <label for="txtDestino"><strong>Destino:</strong></label>
-            <input type="text" id="txtDestino" class="field" style="width: 398px"/>
-          </td>
-        
-
-        
-          <td>
-            <input type="button" value="Calcular distância" onclick="CalculaDistancia()" class="btnNew" id="txtDestino"/>
-            <input type="text" id="txtDistancia" class="field" style="width: 100px"/>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-      <div id="mapa" style="width: 100%; margin-top: 12px"></div>
-      <script>
-
-        function inicializar() {
-          var coordenadas = {lat: -22.912869, lng: -43.228963};
-
-          var mapa = new google.maps.Map(document.getElementById('mapa'), {
-            zoom: 15,
-            center: coordenadas 
-          });
-
-          var marker = new google.maps.Marker({
-            position: coordenadas,
-            map: mapa,
-            title: 'Meu marcador'
-          });
-        }
-      </script>
-      <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbqJXX7fEFddatn-vaBp3BtBS-4TJNIbg&callback=inicializar">
-    </script>
-  </div> 
 
 
 
 
-  
 
-
-
-
-  </div>
+        </div>
   <!-- /.container-fluid -->
 
 </div>
