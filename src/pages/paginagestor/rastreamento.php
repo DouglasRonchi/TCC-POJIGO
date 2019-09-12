@@ -18,7 +18,7 @@ if (isset($_GET['btnExcluirRota'])) {
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
 

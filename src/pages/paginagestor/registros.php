@@ -5,7 +5,7 @@ $conn = new Site;
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <style>
     table {
         font-family: arial, sans-serif;
