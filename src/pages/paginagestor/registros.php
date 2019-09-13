@@ -30,6 +30,7 @@ if (isset($_GET['userId'])) {
     $resultado = $conn->executeQuery("SELECT hora_inicio, hora_inicio_intervalo, hora_fim_intervalo, inicio_parada_um, fim_parada_um, inicio_parada_dois, fim_parada_dois, hora_fim FROM registro_ponto WHERE fk_usuario = '{$usuario_id}'");
     $user = mysqli_fetch_assoc($resultado);
     echo json_encode($user);
+    die();
 } else {
 
 ?>
@@ -119,9 +120,19 @@ if (isset($_GET['userId'])) {
                             <div class="card-header py-3">
                                 <form action="" method="get" class="form-inline">
                                     <div class="form-group mr-2">
-                                        <label for="cad">Cadastro:</label>
-                                        <input type="number" class="form-control ml-2" name="cad" id="cad"
-                                        value="<?= (isset($_GET['cad'])) ? $_GET['cad'] : ''; ?>">
+                                        <select name="cad" id="cad" class="form-control">
+                                                <option selected="">Cadastro...</option>
+                                                
+                                                <?php
+                                                $selectUsu = $conn->executeQuery("SELECT * FROM usuario");
+                                                $row = mysqli_num_rows($selectUsu);
+                                                while ($usu = mysqli_fetch_assoc($selectUsu)):
+                                                    ?>
+
+                                                <option value="<?= $usu['cadastro'] ?>"><?= $usu['cadastro']?> - <?= $usu["usuario"] ?></option>
+
+                                                <?php endwhile; ?>
+                                            </select>
                                     </div>
                                     <div class="form-group mr-2">
                                         <label for="dtini">Data Inicial:</label>
@@ -189,7 +200,7 @@ if (isset($_GET['userId'])) {
                                                         <td><?= $rows['inicio_parada_dois'] ?></td>
                                                         <td><?= $rows['fim_parada_dois'] ?></td>
                                                         <td><?= $rows['hora_fim'] ?></td>
-                                                        <td><button type="button" class="btn btn-primary" name="btnEditar" id="<?= $Rows["usuario_id"] ?>" data-toggle="modal" data-target="#exampleModal">Editar</button></td>
+                                                        <td><button type="button" class="btn btn-primary" name="btnEditar" id="<?= $rows["usuario_id"] ?>" data-toggle="modal" data-target="#exampleModal">Editar</button></td>
                                                     </tr>
 
                                                 <?php endwhile; ?>
@@ -512,7 +523,7 @@ if (isset($_GET['userId'])) {
       $('.btn[name="btnEditar"]').click(function(event){
         btn = $(event.currentTarget);
         id = btn.attr("id");
-        $.ajax(location["href"] + "?userId=" + id).done(function(data){
+        $.ajax(location["href"] + "&userId=" + id).done(function(data){
           $("#hora_ini").val(data["hora_inicio"]);
           $("#ini_intervalo").val(data["hora_inicio_intervalo"]);
           $("#fim_intervalo").val(data["hora_fim_intervalo"]);

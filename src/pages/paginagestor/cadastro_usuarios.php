@@ -246,7 +246,7 @@ if (isset($_GET['id'])) {
                             <select id="inputTipoUsuario" class="form-control" name="inputTipoUsuario">
                                 <?php 
                                 if (isset($_GET['editar'])) { ?>
-                                <option class="bg-success text-white"  disabled="" selected value="<?php echo $selectUsuariosRows['tipo_usuario']?>"><?php echo $selectUsuariosRows['tipo_usuario'] ?></option>
+                                <option class="bg-success text-white"  disabled="" selected value="<?php echo $selectUsuariosRows['previlegio']?>"><?php echo $selectUsuariosRows['tipo_usuario'] ?></option>
                                 
                                 <option value="1">Administrador</option>
                                 <option value="2">Gestor</option>
