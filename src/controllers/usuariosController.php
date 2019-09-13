@@ -139,6 +139,7 @@ if (isset($_FILES['inputFoto'])){
     move_uploaded_file($_FILES['inputFoto']['tmp_name'],$diretorio.$novo_nome);
 
     $usuario->setFotoPerfil($novo_nome);
+    $_SESSION['foto'] = $novo_nome;
 }
 
 $usuario->atualizarUsuario();

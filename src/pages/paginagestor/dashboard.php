@@ -24,7 +24,11 @@ $login->VerificarLogin();
 
     <!-- Custom styles for this template-->
     <link href="../../../css/sb-admin-2.min.css" rel="stylesheet">
-
+    <style>
+        i:hover {
+            color: #4e73df !important;
+        }
+    </style>
 </head>
 
 <body id="page-top">
