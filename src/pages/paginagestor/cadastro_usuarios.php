@@ -125,8 +125,10 @@ if (isset($_GET['id'])) {
                             <div class="form-group col-md-4">
                                 <label for="inputEstado">Estado</label>
                                 <select id="inputEstado" class="form-control" name="inputEstado">
-                                    <option <?=($selectUsuariosRows['estado'] == '')?'selected':'';?>>Procurar...</option>
-                                    <option <?=($selectUsuariosRows['estado'] == 1)?'selected':'';?> value="1">AC</option>
+                                    <?php if (isset($_GET['editar'])) { ?>
+                                    
+                                    <option <?= ($selectUsuariosRows['estado'] == '')?'selected':'';?>>Procurar...</option>
+                                    <option<?=($selectUsuariosRows['estado'] == 1)?'selected':'';?> value="1">AC</option>
                                     <option <?=($selectUsuariosRows['estado'] == 2)?'selected':'';?> value="2">AL</option>
                                     <option <?=($selectUsuariosRows['estado'] == 3)?'selected':'';?> value="3">AP</option>
                                     <option <?=($selectUsuariosRows['estado'] == 4)?'selected':'';?> value="4">AM</option>
@@ -153,6 +155,39 @@ if (isset($_GET['id'])) {
                                     <option <?=($selectUsuariosRows['estado'] == 25)?'selected':'';?> value="25">SP</option>
                                     <option <?=($selectUsuariosRows['estado'] == 26)?'selected':'';?> value="26">SE</option>
                                     <option <?=($selectUsuariosRows['estado'] == 27)?'selected':'';?> value="27">TO</option>
+
+                                    <?php } else { ?>
+
+                                    <option>Procurar...</option>
+                                    <option value="1">AC</option>
+                                    <option value="2">AL</option>
+                                    <option value="3">AP</option>
+                                    <option value="4">AM</option>
+                                    <option value="5">BA</option>
+                                    <option value="6">CE</option>
+                                    <option value="7">DF</option>
+                                    <option value="8">ES</option>
+                                    <option value="9">GO</option>
+                                    <option value="10">MA</option>
+                                    <option value="11">MT</option>
+                                    <option value="12">MS</option>
+                                    <option value="13">MG</option>
+                                    <option value="14">PA</option>
+                                    <option value="15">PB</option>
+                                    <option value="16">PR</option>
+                                    <option value="17">PE</option>
+                                    <option value="18">PI</option>
+                                    <option value="19">RJ</option>
+                                    <option value="20">RN</option>
+                                    <option value="21">RS</option>
+                                    <option value="22">RO</option>
+                                    <option value="23">RR</option>
+                                    <option value="24">SC</option>
+                                    <option value="25">SP</option>
+                                    <option value="26">SE</option>
+                                    <option value="27">TO</option>
+                                    
+                                    <?php } ?>
                                 </select>
 
                             </div>
@@ -211,7 +246,7 @@ if (isset($_GET['id'])) {
                             <select id="inputTipoUsuario" class="form-control" name="inputTipoUsuario">
                                 <?php 
                                 if (isset($_GET['editar'])) { ?>
-                                <option selected value="<?php echo $selectUsuariosRows['tipo_usuario']?>"><?php echo $selectUsuariosRows['tipo_usuario'] ?></option>
+                                <option class="bg-success text-white"  disabled="" selected value="<?php echo $selectUsuariosRows['tipo_usuario']?>"><?php echo $selectUsuariosRows['tipo_usuario'] ?></option>
                                 
                                 <option value="1">Administrador</option>
                                 <option value="2">Gestor</option>
