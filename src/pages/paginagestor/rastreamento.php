@@ -316,7 +316,7 @@ if (isset($_GET['btnExcluirRota'])) {
                     var routeSegment = i + 1;
                     summaryPanel.innerHTML += '<b>Ponto de Checagem: ' + routeSegment +
                         '</b><br>';
-                    summaryPanel.innerHTML += route.legs[i].start_address + ' to ';
+                    summaryPanel.innerHTML += route.legs[i].start_address + ' para ';
                     summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
                     summaryPanel.innerHTML += route.legs[i].distance.text + '<br><br>';
 
@@ -334,7 +334,8 @@ if (isset($_GET['btnExcluirRota'])) {
                     }
 
                 }
-                summaryPanel.innerHTML += total;
+                total = parseFloat(total.toFixed(2));
+                summaryPanel.innerHTML += "Distância Total da Viagem: "+ total + " Km";
 
             } else {
                 // window.alert('Directions request failed due to ' + status);
