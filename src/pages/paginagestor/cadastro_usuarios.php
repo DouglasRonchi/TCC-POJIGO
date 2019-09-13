@@ -8,10 +8,10 @@ if (isset($_GET['id'])) {
     $selectUsuario = $conn->executeQuery("SELECT * FROM usuario WHERE usuario_id = {$_GET['id']}");
     $selectUsuariosRows = mysqli_fetch_assoc($selectUsuario);
 }
-    
+
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
 
@@ -94,11 +94,11 @@ if (isset($_GET['id'])) {
                                 placeholder="Ex: blabla@blabla.com" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['email'] : ''; ?>">
                             </div>
                             <?php if (!isset($_GET['editar'])): ?>
-                            <div class="form-group col-md-6">
-                                <label for="inputSenha">Senha</label>
-                                <input type="password" class="form-control" id="inputSenha" name="inputSenha"
-                                placeholder="Digite sua senha" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['senha'] : ''; ?>">
-                            </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputSenha">Senha</label>
+                                    <input type="password" class="form-control" id="inputSenha" name="inputSenha"
+                                    placeholder="Digite sua senha" value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['senha'] : ''; ?>">
+                                </div>
                             <?php else: ?>
 
                             <?php endif; ?>
@@ -125,35 +125,36 @@ if (isset($_GET['id'])) {
                             <div class="form-group col-md-4">
                                 <label for="inputEstado">Estado</label>
                                 <select id="inputEstado" class="form-control" name="inputEstado">
-                                    <option selected>Procurar...</option>
-                                    <option value="1">AC</option>
-                                    <option value="2">AL</option>
-                                    <option value="3">AP</option>
-                                    <option value="4">AM</option>
-                                    <option value="5">BA</option>
-                                    <option value="6">CE</option>
-                                    <option value="7">DF</option>
-                                    <option value="8">ES</option>
-                                    <option value="9">GO</option>
-                                    <option value="10">MA</option>
-                                    <option value="11">MT</option>
-                                    <option value="12">MS</option>
-                                    <option value="13">MG</option>
-                                    <option value="14">PA</option>
-                                    <option value="15">PB</option>
-                                    <option value="16">PR</option>
-                                    <option value="17">PE</option>
-                                    <option value="18">PI</option>
-                                    <option value="19">RJ</option>
-                                    <option value="20">RN</option>
-                                    <option value="21">RS</option>
-                                    <option value="22">RO</option>
-                                    <option value="23">RR</option>
-                                    <option value="24">SC</option>
-                                    <option value="25">SP</option>
-                                    <option value="26">SE</option>
-                                    <option value="27">TO</option>
+                                    <option <?=($selectUsuariosRows['estado'] == '')?'selected':'';?>>Procurar...</option>
+                                    <option <?=($selectUsuariosRows['estado'] == 1)?'selected':'';?> value="1">AC</option>
+                                    <option <?=($selectUsuariosRows['estado'] == 2)?'selected':'';?> value="2">AL</option>
+                                    <option <?=($selectUsuariosRows['estado'] == 3)?'selected':'';?> value="3">AP</option>
+                                    <option <?=($selectUsuariosRows['estado'] == 4)?'selected':'';?> value="4">AM</option>
+                                    <option <?=($selectUsuariosRows['estado'] == 5)?'selected':'';?> value="5">BA</option>
+                                    <option <?=($selectUsuariosRows['estado'] == 6)?'selected':'';?> value="6">CE</option>
+                                    <option <?=($selectUsuariosRows['estado'] == 7)?'selected':'';?> value="7">DF</option>
+                                    <option <?=($selectUsuariosRows['estado'] == 8)?'selected':'';?> value="8">ES</option>
+                                    <option <?=($selectUsuariosRows['estado'] == 9)?'selected':'';?> value="9">GO</option>
+                                    <option <?=($selectUsuariosRows['estado'] == 10)?'selected':'';?> value="10">MA</option>
+                                    <option <?=($selectUsuariosRows['estado'] == 11)?'selected':'';?> value="11">MT</option>
+                                    <option <?=($selectUsuariosRows['estado'] == 12)?'selected':'';?> value="12">MS</option>
+                                    <option <?=($selectUsuariosRows['estado'] == 13)?'selected':'';?> value="13">MG</option>
+                                    <option <?=($selectUsuariosRows['estado'] == 14)?'selected':'';?> value="14">PA</option>
+                                    <option <?=($selectUsuariosRows['estado'] == 15)?'selected':'';?> value="15">PB</option>
+                                    <option <?=($selectUsuariosRows['estado'] == 16)?'selected':'';?> value="16">PR</option>
+                                    <option <?=($selectUsuariosRows['estado'] == 17)?'selected':'';?> value="17">PE</option>
+                                    <option <?=($selectUsuariosRows['estado'] == 18)?'selected':'';?> value="18">PI</option>
+                                    <option <?=($selectUsuariosRows['estado'] == 19)?'selected':'';?> value="19">RJ</option>
+                                    <option <?=($selectUsuariosRows['estado'] == 20)?'selected':'';?> value="20">RN</option>
+                                    <option <?=($selectUsuariosRows['estado'] == 21)?'selected':'';?> value="21">RS</option>
+                                    <option <?=($selectUsuariosRows['estado'] == 22)?'selected':'';?> value="22">RO</option>
+                                    <option <?=($selectUsuariosRows['estado'] == 23)?'selected':'';?> value="23">RR</option>
+                                    <option <?=($selectUsuariosRows['estado'] == 24)?'selected':'';?> value="24">SC</option>
+                                    <option <?=($selectUsuariosRows['estado'] == 25)?'selected':'';?> value="25">SP</option>
+                                    <option <?=($selectUsuariosRows['estado'] == 26)?'selected':'';?> value="26">SE</option>
+                                    <option <?=($selectUsuariosRows['estado'] == 27)?'selected':'';?> value="27">TO</option>
                                 </select>
+
                             </div>
                         </div>
 
@@ -208,60 +209,72 @@ if (isset($_GET['id'])) {
                         <div class="form-group">
                             <label for="inputTipoUsuario">Tipo de usuário</label>
                             <select id="inputTipoUsuario" class="form-control" name="inputTipoUsuario">
+                                <?php 
+                                if (isset($_GET['editar'])) { ?>
+                                <option selected value="<?php echo $selectUsuariosRows['tipo_usuario']?>"><?php echo $selectUsuariosRows['tipo_usuario'] ?></option>
+                                
+                                <option value="1">Administrador</option>
+                                <option value="2">Gestor</option>
+                                <option value="3">Motorista</option>
+                                
+                                <?php    
+                                } else {?>
                                 <option selected>Selecione...</option>
                                 <option value="1">Administrador</option>
                                 <option value="2">Gestor</option>
                                 <option value="3">Motorista</option>
-                            </select>
-                        </div>
-                        <?php 
-                        if(isset($_GET['editar'])):
-                            ?>
-                            <button class="btn btn-primary" name="btnAtualizar" type="submit">Atualizar</button>
-                            <?php 
-                        else:
-                            ?>
-                            <button class="btn btn-primary" name="btnSalvar" type="submit">Salvar</button>
-                         <a class="btn btn-secondary" href="dashboard.php" role="button">Voltar</a>
-                            <?php 
-                        endif;
-                        ?>
-                    </form>
-
+                                <?php } ?>
+                        </select>
+                    </select>
                 </div>
-                <!-- /.container-fluid -->
-
-
-            </div>
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
-            <?php include '../menu/footer.php'; ?>
-            <!-- End of Footer -->
+                <?php 
+                if(isset($_GET['editar'])):
+                    ?>
+                    <button class="btn btn-primary" name="btnAtualizar" type="submit">Atualizar</button>
+                    <?php 
+                else:
+                    ?>
+                    <button class="btn btn-primary" name="btnSalvar" type="submit">Salvar</button>
+                    <a class="btn btn-secondary" href="dashboard.php" role="button">Voltar</a>
+                    <?php 
+                endif;
+                ?>
+            </form>
 
         </div>
-        <!-- End of Content Wrapper -->
+        <!-- /.container-fluid -->
+
 
     </div>
-    <!-- End of Page Wrapper -->
+    <!-- End of Main Content -->
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
+    <!-- Footer -->
+    <?php include '../menu/footer.php'; ?>
+    <!-- End of Footer -->
 
-    <!-- Logout Modal-->
-    <?php include '../menu/logoutmodal.php'; ?>
+</div>
+<!-- End of Content Wrapper -->
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="../../../vendor/jquery/jquery.min.js"></script>
-    <script src="../../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</div>
+<!-- End of Page Wrapper -->
 
-    <!-- Core plugin JavaScript-->
-    <script src="../../../vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
 
-    <!-- Custom scripts for all pages-->
-    <script src="../../../js/sb-admin-2.min.js"></script>
+<!-- Logout Modal-->
+<?php include '../menu/logoutmodal.php'; ?>
+
+<!-- Bootstrap core JavaScript-->
+<script src="../../../vendor/jquery/jquery.min.js"></script>
+<script src="../../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="../../../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="../../../js/sb-admin-2.min.js"></script>
 
 </body>
 
