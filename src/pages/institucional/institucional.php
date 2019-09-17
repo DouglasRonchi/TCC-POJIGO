@@ -272,21 +272,21 @@
     <div class="row">
 
         <a href="https://web.facebook.com/Pojigo-101839457873456" target="_blank"
-        class="card col col-sm text-white bg-transparent text-center cardcontatos">
+        class="card col col-sm text-dark bg-transparent text-center cardcontatos">
         <div class="card-body col">
             <img src="../../../img/institucional/inicial_icons/face.png" title="facebook POJIGO" class="mt-2" height="60" width="70">
             <h5 class="mt-1 mt-sm-3">Pagina facebook</h5>
         </div>
     </a>
 
-    <div class="card col col-sm text-white bg-transparent text-center cardcontatos">
+    <div class="card col col-sm text-dark bg-transparent text-center cardcontatos">
         <div class="card-body col">
-            <img src="../../../img/institucional/inicial_icons/contato.png" title="Telefone: 33546588" height="60" width="70">
-            <h5 class="mt-2 mt-sm-4">(47) 33546588</h5>
+            <img src="../../../img/institucional/inicial_icons/contato.png" title="Telefone: 33546588" height="80" width="90">
+            <h5>(47) 33546588</h5>
         </div>
     </div>
 
-    <div class="card col col-sm text-white bg-transparent text-center cardcontatos">
+    <div class="card col col-sm text-dark bg-transparent text-center cardcontatos">
         <div class="card-body col">
             <img src="../../../img/institucional/inicial_icons/whats.png" title="Whats: 99654524" height="70" width="130">
             <h5 class="mt-sm-2">(47) 996545424</h5>
@@ -301,7 +301,7 @@
     <i class="fas fa-angle-up"></i>
 </a>
 
-<footer class="sombra text-center">
+<footer class="text-center">
     <div class="p-4 text-dark">
         <strong>Copyright © Your Website 2019</strong>
     </div>
