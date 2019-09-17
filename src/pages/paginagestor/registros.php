@@ -21,6 +21,8 @@ if (isset($_POST["btnSalvar"])) {
 
     $result = $conn->executeQuery("UPDATE registro_ponto SET hora_inicio = '{$hora_ini}', hora_inicio_intervalo = '{$ini_intervalo}', hora_fim_intervalo = '{$fim_intervalo}', inicio_parada_um = '{$ini_parada_um}', fim_parada_um = '{$fim_parada_um}', inicio_parada_dois = '{$ini_parada_dois}', fim_parada_dois = '{$fim_parada_dois}', hora_fim = '{$hora_fim}' WHERE fk_usuario = {$usuarioId}");
 
+    header('Location: registros.php');
+
 }
 
 
@@ -28,8 +30,8 @@ if (isset($_GET['userId'])) {
     header('Content-type: application/json');
     $usuario_id = $_GET['userId'];
     $resultado = $conn->executeQuery("SELECT hora_inicio, hora_inicio_intervalo, hora_fim_intervalo, inicio_parada_um, fim_parada_um, inicio_parada_dois, fim_parada_dois, hora_fim FROM registro_ponto WHERE fk_usuario = '{$usuario_id}'");
-    $user = mysqli_fetch_assoc($resultado);
-    echo json_encode($user);
+    $usua = mysqli_fetch_assoc($resultado);
+    echo json_encode($usua);
     die();
 } else {
 
@@ -129,7 +131,7 @@ if (isset($_GET['userId'])) {
                                                 while ($usu = mysqli_fetch_assoc($selectUsu)):
                                                     ?>
 
-                                                <option value="<?= $usu['cadastro'] ?>"><?= $usu['cadastro']?> - <?= $usu["usuario"] ?></option>
+                                                <option value="<?= $usu['cadastro'] ?>"><?= $usu['cadastro']?> - <?= $usu["nome"] ?></option>
 
                                                 <?php endwhile; ?>
                                             </select>
@@ -187,7 +189,7 @@ if (isset($_GET['userId'])) {
                                             </tfoot>
                                             <tbody>
                                                 <?php
-                                                $selectRegistros = $conn->executeQuery("SELECT * FROM registro_ponto rp JOIN usuario us ON rp.fk_usuario = us.usuario_id WHERE us.cadastro = {$_GET['cad']} AND hora_inicio BETWEEN '{$_GET['dtini']}' AND '{$_GET['dtfin']}'");
+                                                $selectRegistros = $conn->executeQuery("SELECT * FROM registro_ponto rp JOIN usuario us ON rp.fk_usuario = us.usuario_id WHERE us.cadastro = {$_GET['cad']} AND hora_fim <> 'NULL' AND hora_inicio BETWEEN '{$_GET['dtini']}' AND '{$_GET['dtfin']}'");
                                                 $rows = mysqli_num_rows($selectRegistros);
                                                 while ($rows = mysqli_fetch_assoc($selectRegistros)):
                                                     ?>
@@ -337,7 +339,7 @@ if (isset($_GET['userId'])) {
                                         </tr>
                                         <tr>
                                             <th class="largura10">Nome:</th>
-                                            <td><?= utf8_encode($row['nome']) ?></td>
+                                            <td><?= $row['nome'] ?></td>
                                             <th class="largura10">CPF:</th>
                                             <td><?= utf8_encode($row['cpf']) ?></td>
                                         </tr>
@@ -349,9 +351,9 @@ if (isset($_GET['userId'])) {
                                         </tr>
                                         <tr>
                                             <th>Cidade:</th>
-                                            <td><?= utf8_encode($row['cidade']) ?></td>
+                                            <td><?= $row['cidade'] ?></td>
                                             <th>Bairro:</th>
-                                            <td><?= utf8_encode($row['bairro']) ?></td>
+                                            <td><?= $row['bairro'] ?></td>
                                         </tr>
                                         <tr>
                                             <th>Cargo:</th>
@@ -377,7 +379,7 @@ if (isset($_GET['userId'])) {
 
                                         <?php
                                         $horas_totais_mensais = 0;
-                                        $selectRegistrosUnicos = $conn->executeQuery("SELECT * FROM registro_ponto rp JOIN usuario us ON rp.fk_usuario = us.usuario_id WHERE us.cadastro = {$_GET['cad']} AND rp.hora_inicio BETWEEN '{$_GET['dtini']}' AND '{$_GET['dtfin']}' ORDER BY rp.hora_inicio");
+                                        $selectRegistrosUnicos = $conn->executeQuery("SELECT * FROM registro_ponto rp JOIN usuario us ON rp.fk_usuario = us.usuario_id WHERE us.cadastro = {$_GET['cad']} AND hora_fim <> 'NULL' AND rp.hora_inicio BETWEEN '{$_GET['dtini']}' AND '{$_GET['dtfin']}' ORDER BY rp.hora_inicio");
                                         $rowHoras = mysqli_num_rows($selectRegistrosUnicos);
                                         $horas_mensais_exibicao = 0;
                                         $minutos_mensais_exibicao = 0;
@@ -550,9 +552,7 @@ if (isset($_GET['userId'])) {
     }
 </script>
 
-<?php } ?>
-
-
 </body>
 
 </html>
+<?php } ?>
