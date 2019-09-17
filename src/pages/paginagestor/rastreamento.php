@@ -145,6 +145,29 @@ if (isset($_GET['btnExcluirRota'])) {
                 <!-- DataTales Rastreamento -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
+                        <form action="" method="get">
+                            <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-secondary disabled">
+                                    Filtros
+                                </label>
+                                <label class="btn btn-primary active">
+                                    <input type="checkbox" name="TRIPfinalizadas" id="TRIPfinalizadas" checked>Viagens
+                                    Finalizadas
+                                </label>
+                                <label class="btn btn-primary">
+                                    <input type="checkbox" name="TRIPandamento" id="TRIPandamento" checked>Viagens em
+                                    Andamento
+                                </label>
+                                <label class="btn btn-primary">
+                                    <input type="checkbox" name="TRIPproblema" id="TRIPproblema" checked>Viagens com
+                                    Problema
+                                </label>
+                                <label class="btn btn-primary">
+                                    <button type="submit" class="btn btn-dark btn-sm" name="TRIPfiltrar"
+                                            id="TRIPfiltrar">Filtrar
+                                </label>
+                            </div>
+                        </form>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -179,23 +202,39 @@ if (isset($_GET['btnExcluirRota'])) {
                                 while ($row = mysqli_fetch_assoc($selectRastrear)):
 
                                     $pillCodViagem = '';
+                                    $exibirF = 0;
+                                    $exibirA = 0;
+                                    $exibirP = 0;
                                     if ($row["hora_fim"] == 0 && $row["fk_motivo_parada_um"] != 0) {
-                                        $pillCodViagem = 'text-danger';
+                                        $pillCodViagem = 'spinner-grow spinner-grow-sm text-danger';
+                                        if (isset($_GET['TRIPfiltrar']) && $_GET['TRIPfinalizadas']==1){
+                                            $exibirF = 1;// finalizadas
+                                        }
                                     } elseif ($row["hora_fim"] == 0) {
-                                        $pillCodViagem = 'text-warning';
+                                        $pillCodViagem = 'spinner-grow spinner-grow-sm text-warning';
+                                        if (isset($_GET['TRIPfiltrar']) && $_GET['TRIPandamento']==1){
+                                            $exibirA = 1;// andamento
+                                        }
                                     } else {
-                                        $pillCodViagem = 'text-success';
+                                        $pillCodViagem = 'fa fa-circle text-success';
+                                        if (isset($_GET['TRIPfiltrar']) && $_GET['TRIPproblema']==1){
+                                            $exibirP = 1;// problema
+                                        }
                                     }
-
+                                    if ($exibirF == 1 || $exibirP == 1 || $exibirA == 1){
+                                        continue;
+                                    }
                                     ?>
                                     <tr>
                                         <td><small>
-                                                <i class="fa fa-circle <?= $pillCodViagem ?>" aria-hidden="true"></i>
+                                                <span class="<?= $pillCodViagem ?>" role="status"
+                                                      aria-hidden="true"></span>
                                                 <?= $row["cod_viagem"] ?>
                                             </small>
                                         </td>
                                         <td>
-                                            <button class="btn infoveiculo modalVeiculo" data-frota="<?= $row["frota"] ?>">
+                                            <button class="btn infoveiculo modalVeiculo"
+                                                    data-frota="<?= $row["frota"] ?>">
                                                 <i class="fa fa-truck" aria-hidden="true"></i>
                                             </button>
                                             <small><?= $row["frota"] ?></small>
@@ -228,7 +267,12 @@ if (isset($_GET['btnExcluirRota'])) {
                         </div>
                     </div>
                 </div>
-
+                Legenda: <br>
+                <i class="fa fa-circle text-success" aria-hidden="true"></i><small> Viagem FInalizada</small><br>
+                <span class="spinner-grow spinner-grow-sm text-warning" role="status" aria-hidden="true"></span><small>
+                    Viagem em Andamento</small><br>
+                <span class="spinner-grow spinner-grow-sm text-danger" role="status" aria-hidden="true"></span><small>
+                    Viagem com Problema</small><br>
 
             </div>
             <!-- /.container-fluid -->
@@ -392,7 +436,7 @@ if (isset($_GET['btnExcluirRota'])) {
 
 <script>
     //Recarrega a página a cada 5 minutos
-    setInterval(function() {
+    setInterval(function () {
         window.location.reload();
     }, 300000);
 </script>
