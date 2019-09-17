@@ -178,15 +178,14 @@ if (isset($_GET['btnExcluirRota'])) {
                                 $row = mysqli_num_rows($selectRastrear);
                                 while ($row = mysqli_fetch_assoc($selectRastrear)):
 
-                                    $pillCodViagem='';
-                                    if ($row["hora_fim"]==0 && $row["fk_motivo_parada_um"]!=0){
+                                    $pillCodViagem = '';
+                                    if ($row["hora_fim"] == 0 && $row["fk_motivo_parada_um"] != 0) {
                                         $pillCodViagem = 'text-danger';
-                                    } elseif ($row["hora_fim"]==0){
+                                    } elseif ($row["hora_fim"] == 0) {
                                         $pillCodViagem = 'text-warning';
                                     } else {
                                         $pillCodViagem = 'text-success';
                                     }
-
 
                                     ?>
                                     <tr>
@@ -196,10 +195,10 @@ if (isset($_GET['btnExcluirRota'])) {
                                             </small>
                                         </td>
                                         <td>
-                                            <button class="btn infoveiculo"><i class="fa fa-truck" aria-hidden="true"
-                                                                               data-toggle="modal"
-                                                                               data-target="#modalinfoveiculo"></i>
+                                            <button class="btn infoveiculo" id="modalVeiculo">
+                                                <i class="fa fa-truck" aria-hidden="true"></i>
                                             </button>
+                                            <input type="hidden" id="numFrota" value="<?= $row["frota"] ?>">
                                             <small><?= $row["frota"] ?></small>
                                         </td>
                                         <td><small><?= $row["placa"] ?></small></td>
@@ -357,7 +356,19 @@ if (isset($_GET['btnExcluirRota'])) {
         });
     }
 </script>
-
+<script>
+    $('#modalVeiculo').click(function () {
+        console.log($('#numFrota').val());
+        var dados = {
+            frota: $('#numFrota').val()
+        };
+        $.post('carregarveiculoAjax.php', dados, function (retorna) {
+            //Carregar o conteúdo para o usuário
+            $("#visul_veiculo").html(retorna); //BodyModal
+            $('#modalinfoveiculo').modal('show');
+        })
+    });
+</script>
 
 <!-- Modal -->
 <div class="modal fade" id="modalinfoveiculo" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
@@ -365,21 +376,20 @@ if (isset($_GET['btnExcluirRota'])) {
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Informações do Veículo</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                Informações do Veículo, Frota, Placa, Renavam, Etc...
+                <span id="visul_veiculo"></span>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
             </div>
         </div>
     </div>
 </div>
-
 
 </body>
 
