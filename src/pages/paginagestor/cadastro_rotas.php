@@ -135,7 +135,6 @@ $login->VerificarLogin();
                 $("#map").attr("src", "https://maps.google.com/maps?saddr=" + response.originAddresses + "&daddr=" + response.destinationAddresses + "&output=embed");
               }
             }
-
           </script>
           <form action="../../controllers/rotasController.php" method="post">
             <table width="100%" cellspacing="0" cellpadding="0" border="0">
@@ -214,9 +213,6 @@ $login->VerificarLogin();
               });
             }
           </script>
-
-
-
         </div>
         <!-- /.container-fluid -->
 
