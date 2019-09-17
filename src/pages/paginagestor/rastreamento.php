@@ -195,10 +195,9 @@ if (isset($_GET['btnExcluirRota'])) {
                                             </small>
                                         </td>
                                         <td>
-                                            <button class="btn infoveiculo" id="modalVeiculo">
+                                            <button class="btn infoveiculo modalVeiculo" data-frota="<?= $row["frota"] ?>">
                                                 <i class="fa fa-truck" aria-hidden="true"></i>
                                             </button>
-                                            <input type="hidden" id="numFrota" value="<?= $row["frota"] ?>">
                                             <small><?= $row["frota"] ?></small>
                                         </td>
                                         <td><small><?= $row["placa"] ?></small></td>
@@ -357,15 +356,15 @@ if (isset($_GET['btnExcluirRota'])) {
     }
 </script>
 <script>
-    $('#modalVeiculo').click(function () {
-        console.log($('#numFrota').val());
+    $(".modalVeiculo").click(function () {
+        var dataFrota = $(this).attr("data-frota");
         var dados = {
-            frota: $('#numFrota').val()
+            frota: dataFrota
         };
-        $.post('carregarveiculoAjax.php', dados, function (retorna) {
+        $.post("carregarveiculoAjax.php", dados, function (retorna) {
             //Carregar o conteúdo para o usuário
             $("#visul_veiculo").html(retorna); //BodyModal
-            $('#modalinfoveiculo').modal('show');
+            $("#modalinfoveiculo").modal('show');
         })
     });
 </script>

@@ -13,35 +13,35 @@ $row_veiculo = mysqli_fetch_assoc($query);
 
 $resultado .= '<dl class="row">';
 
-$resultado .= '<dt class="col-sm-3">Frota</dt>';
-$resultado .= '<dd class="col-sm-9">'.$row_veiculo['frota'].'</dd>';
+$resultado .= '<dt class="col-sm-5">Frota</dt>';
+$resultado .= '<dd class="col-sm-7">'.$row_veiculo['frota'].'</dd>';
 
-$resultado .= '<dt class="col-sm-3">Marca</dt>';
-$resultado .= '<dd class="col-sm-9">'.$row_veiculo['marca'].'</dd>';
+$resultado .= '<dt class="col-sm-5">Marca</dt>';
+$resultado .= '<dd class="col-sm-7">'.$row_veiculo['marca'].'</dd>';
 
-$resultado .= '<dt class="col-sm-3">Modelo</dt>';
-$resultado .= '<dd class="col-sm-9">'.$row_veiculo['modelo'].'</dd>';
+$resultado .= '<dt class="col-sm-5">Modelo</dt>';
+$resultado .= '<dd class="col-sm-7">'.$row_veiculo['modelo'].'</dd>';
 
-$resultado .= '<dt class="col-sm-3">Placa</dt>';
-$resultado .= '<dd class="col-sm-9">'.$row_veiculo['placa'].'</dd>';
+$resultado .= '<dt class="col-sm-5">Placa</dt>';
+$resultado .= '<dd class="col-sm-7">'.$row_veiculo['placa'].'</dd>';
 
-$resultado .= '<dt class="col-sm-3">Ano de Fabricação</dt>';
-$resultado .= '<dd class="col-sm-9">'.$row_veiculo['ano_fab'].'</dd>';
+$resultado .= '<dt class="col-sm-5">Ano de Fabricação</dt>';
+$resultado .= '<dd class="col-sm-7">'.$row_veiculo['ano_fab'].'</dd>';
 
-$resultado .= '<dt class="col-sm-3">Ano Modelo</dt>';
-$resultado .= '<dd class="col-sm-9">'.$row_veiculo['ano_mod'].'</dd>';
+$resultado .= '<dt class="col-sm-5">Ano Modelo</dt>';
+$resultado .= '<dd class="col-sm-7">'.$row_veiculo['ano_mod'].'</dd>';
 
-$resultado .= '<dt class="col-sm-3">Chassi</dt>';
-$resultado .= '<dd class="col-sm-9">'.$row_veiculo['chassi'].'</dd>';
+$resultado .= '<dt class="col-sm-5">Chassi</dt>';
+$resultado .= '<dd class="col-sm-7">'.$row_veiculo['chassi'].'</dd>';
 
-$resultado .= '<dt class="col-sm-3">Renavam</dt>';
-$resultado .= '<dd class="col-sm-9">'.$row_veiculo['renavam'].'</dd>';
+$resultado .= '<dt class="col-sm-5">Renavam</dt>';
+$resultado .= '<dd class="col-sm-7">'.$row_veiculo['renavam'].'</dd>';
 
-$resultado .= '<dt class="col-sm-3">Capacidade do Tanque</dt>';
-$resultado .= '<dd class="col-sm-9">'.$row_veiculo['capacidade_tanque'].'</dd>';
+$resultado .= '<dt class="col-sm-5">Capacidade do Tanque</dt>';
+$resultado .= '<dd class="col-sm-7">'.$row_veiculo['capacidade_tanque'].'</dd>';
 
-$resultado .= '<dt class="col-sm-3">Capacidade da Carga</dt>';
-$resultado .= '<dd class="col-sm-9">'.$row_veiculo['capacidade_carga'].'</dd>';
+$resultado .= '<dt class="col-sm-5">Capacidade da Carga</dt>';
+$resultado .= '<dd class="col-sm-7">'.$row_veiculo['capacidade_carga'].'</dd>';
 
 
 $resultado .= '</dl>';
