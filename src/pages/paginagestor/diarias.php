@@ -154,9 +154,9 @@ tr.subtitles th {
                   while ($row = mysqli_fetch_assoc($query)): ?>
                   <tr>
                     <td name="cadastro" id="cadastro"><?=$row['cadastro']?></td>
-                    <td><?=utf8_encode($row['nome'])?></td>
-                    <td><?=utf8_encode($row['quantidade'])?></td>
-                    <td><?=utf8_encode($row['soma'])?></td>
+                    <td><?=$row['nome']?></td>
+                    <td><?=$row['quantidade']?></td>
+                    <td><?=$row['soma']?></td>
                     <td class="text-center"><button class="btn btn-primary" data-toggle="modal"
                       data-target=".bd-modal-ponto">Visualizar</button></td>
                   </tr> <?php
@@ -251,7 +251,7 @@ aria-hidden="true">
                   </tr>
                   <tr>
                     <th class="largura10">Nome:</th>
-                    <td><?=utf8_encode($row['nome'])?></td>
+                    <td><?=$row['nome']?></td>
                     <th class="largura10">CPF:</th>
                     <td><?=utf8_encode($row['cpf'])?></td>
                   </tr>
@@ -263,9 +263,9 @@ aria-hidden="true">
                   </tr>
                   <tr>
                     <th>Cidade:</th>
-                    <td><?=utf8_encode($row['cidade'])?></td>
+                    <td><?=$row['cidade']?></td>
                     <th>Bairro:</th>
-                    <td><?=utf8_encode($row['bairro'])?></td>
+                    <td><?=$row['bairro']?></td>
                   </tr>
                   <tr>
                     <th>Cargo:</th>

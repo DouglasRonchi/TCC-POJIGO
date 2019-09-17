@@ -90,9 +90,9 @@ $login->VerificarLogin();
                                     ?>
                                     <tr>
                                         <td><?= $selectVeiculoRows["frota"] ?></td>
-                                        <td><?= $selectVeiculoRows["placa"] ?></td>
-                                        <td><?= $marca['marca'] ?></td>
-                                        <td><?= $modelo['modelo'] ?></td>
+                                        <td><?= utf8_encode($selectVeiculoRows["placa"]) ?></td>
+                                        <td><?= utf8_encode($marca['marca']) ?></td>
+                                        <td><?= utf8_encode($modelo['modelo']) ?></td>
                                         <td>
                                             <form action="../../controllers/veiculosController.php?id=<?=$selectVeiculoRows["id"]?>" method="post">
                                                 <div class="btn-group btn-block">
