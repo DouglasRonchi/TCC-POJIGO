@@ -390,6 +390,13 @@ if (isset($_GET['btnExcluirRota'])) {
     </div>
 </div>
 
+<script>
+    //Recarrega a página a cada 5 minutos
+    setInterval(function() {
+        window.location.reload();
+    }, 300000);
+</script>
+
 </body>
 
 </html>
