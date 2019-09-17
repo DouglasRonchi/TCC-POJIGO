@@ -115,7 +115,7 @@ if (isset($_GET['btnExcluirRota'])) {
 
                                 $row = mysqli_fetch_all($query);
                                 $i = 1;
-                                while ($i < $rows -1) {
+                                while ($i < $rows - 1) {
                                     $i += 1;
                                     array_push($wayp, $row[$i][3] . "," . $row[$i][4]);
                                 }
@@ -125,7 +125,7 @@ if (isset($_GET['btnExcluirRota'])) {
 
                                 $row = mysqli_fetch_all($query);
                                 $i = 1;
-                                while ($i < $rows -1) {
+                                while ($i < $rows - 1) {
                                     $i += 1;
                                     if ($i % (int)$result['media'] == 0) {
                                         array_push($wayp, $row[$i][3] . "," . $row[$i][4]);
@@ -155,8 +155,7 @@ if (isset($_GET['btnExcluirRota'])) {
                                     <th>Frota</th>
                                     <th>Placa</th>
                                     <th>Hora</th>
-                                    <th>Cidade</th>
-                                    <th>Bairro</th>
+                                    <th>Última Localização</th>
                                     <th>Motorista</th>
                                     <th>Visualizar</th>
                                 </tr>
@@ -167,31 +166,46 @@ if (isset($_GET['btnExcluirRota'])) {
                                     <th>Frota</th>
                                     <th>Placa</th>
                                     <th>Hora</th>
-                                    <th>Cidade</th>
-                                    <th>Bairro</th>
+                                    <th>Última Localização</th>
                                     <th>Motorista</th>
                                     <th>Visualizar</th>
                                 </tr>
                                 </tfoot>
                                 <tbody>
                                 <?php
-                                $selectRastrear = $conn->executeQuery("SELECT vei.frota, vei.placa, coo.hora, coo.latitude, coo.longitude, usu.nome, rp.cod_viagem FROM registro_ponto rp JOIN coordenadas coo ON rp.cod_viagem = coo.fk_cod_viagem JOIN usuario usu ON usu.usuario_id = rp.fk_usuario JOIN veiculos vei ON rp.fk_veiculo = vei.id GROUP BY rp.cod_viagem ORDER BY coo.hora DESC");
+                                setlocale(LC_ALL, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
+                                $selectRastrear = $conn->executeQuery("SELECT vei.frota, vei.placa, coo.hora, coo.latitude, coo.longitude, usu.nome, rp.cod_viagem, rp.hora_fim , rp.fk_motivo_parada_um , goo.road, goo.suburb, goo.city, goo.formatted_address FROM registro_ponto rp JOIN coordenadas coo ON rp.cod_viagem = coo.fk_cod_viagem JOIN usuario usu ON usu.usuario_id = rp.fk_usuario JOIN veiculos vei ON rp.fk_veiculo = vei.id JOIN dados_googleapi goo ON goo.id = coo.fk_dados_google GROUP BY rp.cod_viagem ORDER BY coo.hora DESC");
                                 $row = mysqli_num_rows($selectRastrear);
                                 while ($row = mysqli_fetch_assoc($selectRastrear)):
+
+                                    $pillCodViagem='';
+                                    if ($row["hora_fim"]==0 && $row["fk_motivo_parada_um"]!=0){
+                                        $pillCodViagem = 'text-danger';
+                                    } elseif ($row["hora_fim"]==0){
+                                        $pillCodViagem = 'text-warning';
+                                    } else {
+                                        $pillCodViagem = 'text-success';
+                                    }
+
+
                                     ?>
                                     <tr>
-                                        <td><?= $row["cod_viagem"] ?></td>
+                                        <td><small>
+                                                <i class="fa fa-circle <?= $pillCodViagem ?>" aria-hidden="true"></i>
+                                                <?= $row["cod_viagem"] ?>
+                                            </small>
+                                        </td>
                                         <td>
                                             <button class="btn infoveiculo"><i class="fa fa-truck" aria-hidden="true"
                                                                                data-toggle="modal"
                                                                                data-target="#modalinfoveiculo"></i>
-                                            </button> <?= $row["frota"] ?>
+                                            </button>
+                                            <small><?= $row["frota"] ?></small>
                                         </td>
-                                        <td><?= $row["placa"] ?></td>
-                                        <td><?= $row["hora"] ?></td>
-                                        <td>city</td>
-                                        <td>bairro</td>
-                                        <td><?= $row["nome"] ?></td>
+                                        <td><small><?= $row["placa"] ?></small></td>
+                                        <td><small><?= strftime("%x %R", strtotime($row["hora"])) ?></small></td>
+                                        <td><small><?= $row["formatted_address"] ?></small></td>
+                                        <td><small><?= $row["nome"] ?></small></td>
                                         <td>
                                             <div class="btn-group btn-block">
                                                 <form action="" method="get">
@@ -335,7 +349,7 @@ if (isset($_GET['btnExcluirRota'])) {
 
                 }
                 total = parseFloat(total.toFixed(2));
-                summaryPanel.innerHTML += "Distância Total da Viagem: "+ total + " Km";
+                summaryPanel.innerHTML += "Distância Total da Viagem: " + total + " Km";
 
             } else {
                 // window.alert('Directions request failed due to ' + status);
