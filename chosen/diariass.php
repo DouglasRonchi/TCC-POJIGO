@@ -45,9 +45,9 @@ tr.subtitles th {
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <!-- <link rel="stylesheet" href="../../../chosen/docsupport/style.css"> -->
-  <!-- <link rel="stylesheet" href="../../../chosen/docsupport/prism.css"> -->
-  <link rel="stylesheet" href="../../../chosen/chosen.css">
+  <link rel="stylesheet" href="docsupport/style.css">
+  <link rel="stylesheet" href="docsupport/prism.css">
+  <link rel="stylesheet" href="chosen.css">
 
   <meta http-equiv="Content-Security-Policy" content="default-src &apos;self&apos;; script-src &apos;self&apos; https://ajax.googleapis.com; style-src &apos;self&apos;; img-src &apos;self&apos; data:">
   <title>Pojigo - Diarias</title>
@@ -84,24 +84,14 @@ tr.subtitles th {
               <h6 class="m-0 font-weight-bold"><b>Preencha os dados abaixo e precione <strong class="text-primary">'visualizar'</strong> para ver o relatório de diarias!</b></h6>
               <hr>
               <form action="" method="get" class="form-inline">
-              <div class="side-by-side clearfix mr-2">
-                <div>
-                  <select data-placeholder="Cadastro..." id="cad" name="cad" class="chosen-select">
-                    <option value=""></option> 
-
-                    <?php
-                    $selectUsu = $conn->executeQuery("SELECT * FROM usuario");
-                    $row = mysqli_num_rows($selectUsu);
-                    while ($usu = mysqli_fetch_assoc($selectUsu)):
-                      ?>
-
-                      <option value="<?= $usu['cadastro'] ?>"><?= $usu['cadastro']?> - <?= $usu["nome"] ?></option>
-
-                    <?php endwhile; ?>
-
-                  </select>
-                </div>
-              </div>
+          <select data-placeholder="Choose a Country..." id="cad" name="cad" class="chosen-select" tabindex="2">
+            <option value=""></option>
+          
+            <option value="India">India</option>
+            <option value="Indonesia">Indonesia</option>
+            <option value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
+          </select>
+        </div>
            <div class="form-group mr-2">
                   <label for="dtini">Data Inicial:</label>
                   <input type="date" class="form-control ml-2" name="dtini" id="dtini"
@@ -329,10 +319,10 @@ aria-hidden="true">
   </div>
        
   
-  <script src="../../../chosen/docsupport/jquery-3.2.1.min.js" type="text/javascript"></script>
-  <script src="../../../chosen/chosen.jquery.js" type="text/javascript"></script>
-  <!-- <script src="../../../chosen/docsupport/prism.js" type="text/javascript" charset="utf-8"></script> -->
-  <script src="../../../chosen/docsupport/init.js" type="text/javascript" charset="utf-8"></script>
+  <script src="docsupport/jquery-3.2.1.min.js" type="text/javascript"></script>
+  <script src="chosen.jquery.js" type="text/javascript"></script>
+  <script src="docsupport/prism.js" type="text/javascript" charset="utf-8"></script>
+  <script src="docsupport/init.js" type="text/javascript" charset="utf-8"></script>
   
   <!-- Logout Modal-->
   <?php include '../menu/logoutmodal.php'; ?>
