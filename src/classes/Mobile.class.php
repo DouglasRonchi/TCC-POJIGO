@@ -15,7 +15,7 @@ class Mobile extends Site {
         $novo_codigo = ((int)$result['cod_viagem'])+1;
         $codigo_viagem = $novo_codigo;
         $_SESSION['cod_viagem'] = $codigo_viagem;
-        $this->executeQuery("INSERT INTO registro_ponto (id, fk_usuario, cod_viagem) VALUES (DEFAULT,{$_SESSION['usuario_id']},'{$codigo_viagem}')");
+        $this->executeQuery("INSERT INTO registro_ponto (id, fk_usuario, cod_viagem, quilometragem) VALUES (DEFAULT,{$_SESSION['usuario_id']},'{$codigo_viagem}',0)");
         $_SESSION['id_rota'] = mysqli_insert_id($this->getConn());
     }
 

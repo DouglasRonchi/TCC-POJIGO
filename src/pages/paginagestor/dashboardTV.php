@@ -28,6 +28,9 @@ $login->VerificarLogin();
         i:hover {
             color: #4e73df !important;
         }
+        #dataehora{
+            font-size: 30px;
+        }
     </style>
 </head>
 
@@ -46,9 +49,9 @@ $login->VerificarLogin();
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
+                <div class="text-center mt-3 font-weight-light" id="dataehora"></div>
                 <!-- Page Heading -->
                 <div class="row mt-3">
-
                     <!-- Earnings (Monthly) Card Example -->
                     <div class="col-xl-3 col-md-6 mb-4">
                         <div class="card border-left-primary shadow h-100 py-2">
@@ -126,11 +129,11 @@ $login->VerificarLogin();
 
                     <!-- Pending Requests Card Example -->
                     <div class="col-xl-3 col-md-6 mb-4">
-                        <div class="card border-left-warning shadow h-100 py-2">
+                        <div class="card border-left-danger shadow h-100 py-2">
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Mensagens
+                                        <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Mensagens
                                             de Alerta
                                         </div>
                                         <?php
@@ -150,11 +153,13 @@ $login->VerificarLogin();
                 <hr>
                 <div class="row">
                     <!-- Area Chart -->
-                    <div class="col-xl-8 col-lg-7 mx-auto">
+                    <div class="col-xl-12 col-lg-12 mx-auto">
                         <div class="card shadow mb-4">
                             <!-- Card Header - Dropdown -->
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary">Viagens em Andamento</h6>
+                                <div class="mx-auto">
+                                    <h6 class="m-0 font-weight-bold text-primary">Viagens em Andamento</h6>
+                                </div>
                                 <div class="dropdown no-arrow">
                                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -214,19 +219,20 @@ $login->VerificarLogin();
 
                                                 ?>
                                                 <tr>
-                                                    <td><small>
+                                                    <td>
                                                 <span class="<?= $pillCodViagem ?>" role="status"
                                                       aria-hidden="true"></span>
                                                             <?= $row["cod_viagem"] ?>
-                                                        </small>
+
                                                     </td>
                                                     <td>
-                                                        <small><?= $row["frota"] ?></small>
+                                                        <?= $row["frota"] ?>
                                                     </td>
-                                                    <td><small><?= $row["placa"] ?></small></td>
-                                                    <td><small><?= strftime("%x %R", strtotime($row["hora"])) ?></small></td>
-                                                    <td><small><?= $row["formatted_address"] ?></small></td>
-                                                    <td><small><?= $row["nome"] ?></small></td>
+                                                    <td><?= $row["placa"] ?></td>
+                                                    <td><?= strftime("%x %R", strtotime($row["hora"])) ?>
+                                                    </td>
+                                                    <td><?= $row["formatted_address"] ?></td>
+                                                    <td><?= $row["nome"] ?></td>
 
                                                 </tr>
                                             <?php
@@ -282,13 +288,102 @@ $login->VerificarLogin();
 <!-- Page level plugins -->
 <script src="../../../vendor/chart.js/Chart.min.js"></script>
 
-
+<!--FULLSCREEN-->
 <script>
     function fullScreen(URL) {
         window.open(URL, '', 'fullscreen=yes, scrollbars=no');
     }
 </script>
 
+<!--DATA E HORA-->
+<script>
+    horasdodia();
+    function horasdodia() {
+        let dataehora = document.getElementById('dataehora');
+
+        let data = new Date();
+        let horas = (data.getHours()<10)?`0${data.getHours()}`:data.getHours();
+        let minutos = (data.getMinutes()<10)?`0${data.getMinutes()}`:data.getMinutes();
+        let segundos = (data.getSeconds()<10)?`0${data.getSeconds()}`:data.getSeconds();
+        let dia = (data.getDate()<10)?`0${data.getDate()}`:data.getDate();
+        let diadasemana = (data.getDay());
+        let mes = (data.getMonth());
+        let ano = data.getFullYear();
+
+        switch (mes) {
+            case 0:
+                mes = 'janeiro';
+                break;
+            case 1:
+                mes = 'fevereiro';
+                break;
+            case 2:
+                mes = 'março';
+                break;
+            case 3:
+                mes = 'abril';
+                break;
+            case 4:
+                mes = 'maio';
+                break;
+            case 5:
+                mes = 'junho';
+                break;
+            case 6:
+                mes = 'julho';
+                break;
+            case 7:
+                mes = 'agosto';
+                break;
+            case 8:
+                mes = 'Setembro';
+                break;
+            case 9:
+                mes = 'outubro';
+                break;
+            case 10:
+                mes = 'novembro';
+                break;
+            case 11:
+                mes = 'dezembro';
+                break;
+        }
+
+
+        switch (diadasemana) {
+            case 0:
+                diadasemana = 'Domingo';
+                break;
+            case 1:
+                diadasemana = 'Segunda';
+                break;
+            case 2:
+                diadasemana = 'Terça';
+                break;
+            case 3:
+                diadasemana = 'Quarta';
+                break;
+            case 4:
+                diadasemana = 'Quinta';
+                break;
+            case 5:
+                diadasemana = 'Sexta';
+                break;
+            case 6:
+                diadasemana = 'Sábado';
+                break;
+        }
+
+        doispontos = ((segundos%2)===0)?':':'&nbsp;';
+
+        dataehora.innerHTML = `${diadasemana}, ${dia} de ${mes} de ${ano} | ${horas}${doispontos}${minutos}`;
+
+        setTimeout(horasdodia, 1000);
+
+    }
+</script>
+
+<!--CHART JS-->
 <script>
     // Set new default font family and font color to mimic Bootstrap's default styling
     Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
@@ -409,6 +504,14 @@ $login->VerificarLogin();
         }
     });
 </script>
+
+<script>
+    //Recarrega a página a cada 5 minutos
+    setInterval(function () {
+        window.location.reload();
+    }, 300000);
+</script>
+
 </body>
 
 </html>
