@@ -36,9 +36,6 @@ $login->VerificarLogin();
 <!-- Page Wrapper -->
 <div id="wrapper">
 
-    <!-- Sidebar -->
-    <?php include '../menu/sidebar.php'; ?>
-    <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -46,18 +43,9 @@ $login->VerificarLogin();
         <!-- Main Content -->
         <div id="content">
 
-            <!-- Topbar Navbar -->
-            <?php include '../menu/topbar.php'; ?>
-            <!-- End of Topbar -->
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
-                <div class="text-center">
-                    <a class="btn btn-success btn-sm" href="dashboardTV.php" onclick="fullScreen( this.href );" title="Para TV">
-                        <x class="fa fa-desktop text-decoration-none" aria-hidden="true"></x>
-                    </a>
-                    <hr>
-                </div>
                 <!-- Page Heading -->
                 <div class="row mt-3">
 
@@ -70,6 +58,7 @@ $login->VerificarLogin();
                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Km's
                                             Rodados (Mensal)
                                         </div>
+
 
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">400.585 km</div>
 
@@ -265,10 +254,6 @@ $login->VerificarLogin();
         </div>
         <!-- End of Main Content -->
 
-        <!-- Footer -->
-        <?php include '../menu/footer.php'; ?>
-        <!-- End of Footer -->
-
     </div>
     <!-- End of Content Wrapper -->
 
@@ -296,6 +281,7 @@ $login->VerificarLogin();
 
 <!-- Page level plugins -->
 <script src="../../../vendor/chart.js/Chart.min.js"></script>
+
 
 <script>
     function fullScreen(URL) {
