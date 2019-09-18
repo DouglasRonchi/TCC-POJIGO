@@ -65,5 +65,30 @@ if (isset($_POST['btnSalvarNovo'])) {
     header('Location: ../pages/paginagestor/relatorio_veiculos.php');
 } else if (isset($_POST['btnEditar'])){
     header("Location: ../pages/paginagestor/cadastro_veiculos.php?editar=1&id={$_GET['id']}");
-}
+
+} else if (isset($_POST['btnAtualizar'])) {
+    $veiculo->setId($_POST['id']);
+    $veiculo->setFrota($_POST['inputFrota']);
+    $veiculo->setMarca($_POST['inputMarca']);
+    $veiculo->setModelo($_POST['inputModelo']); //id do modelo
+    $veiculo->setPlaca($_POST['inputPlaca']);
+    $veiculo->setChassi($_POST['inputChassi']);
+    $veiculo->setRenavam($_POST['inputRenavam']);
+    $veiculo->setAnoFabricacao($_POST['inputDataDeFabricacao']);
+    $veiculo->setAnoModelo($_POST['inputAnoModelo']);
+    $veiculo->setCapacidadeCarga($_POST['inputCapacidadeDeCarga']);
+    $veiculo->setCapacidadeTanque($_POST['inputCapacidadeDeTanque']);
+
+
+    $veiculo->atualizarVeiculo();
+
+    $conn->setAlerta(
+        'success',
+        'Veículo '.$veiculo->getFrota().' atualizado com sucesso',
+        '<img class="img-fluid" src="'.$conn->path('img/icons/success.png').'">',
+        $_SESSION['usuario_id']
+    );
+
+    header('Location: ../pages/paginagestor/relatorio_veiculos.php');
+} 
 

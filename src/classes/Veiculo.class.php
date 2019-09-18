@@ -26,7 +26,11 @@ class Veiculo extends Site
     {
         return $this->id;
     }
-
+    public function setId($id)
+{
+    $this->id = $id;
+    return $this;
+}
     /**
      * @return mixed
      */
@@ -221,7 +225,7 @@ class Veiculo extends Site
     {
 
         $sql = "INSERT INTO `veiculos` (id, frota, fk_modelo, placa, chassi, renavam, capacidade_tanque, ano_fab, ano_mod, capacidade_carga) VALUES
-             (DEFAULT, '{$this->getFrota()}', '{$this->getModelo()}', '{$this->getPlaca()}', '{$this->getChassi()}', '{$this->getRenavam()}', '{$this->getCapacidadeTanque()}', '{$this->getAnoFabricacao()}', '{$this->getAnoModelo()}', '{$this->getCapacidadeCarga()}')";
+        (DEFAULT, '{$this->getFrota()}', '{$this->getModelo()}', '{$this->getPlaca()}', '{$this->getChassi()}', '{$this->getRenavam()}', '{$this->getCapacidadeTanque()}', '{$this->getAnoFabricacao()}', '{$this->getAnoModelo()}', '{$this->getCapacidadeCarga()}')";
 
         $this->executeQuery($sql);
 
@@ -235,6 +239,40 @@ class Veiculo extends Site
     public function atualizarVeiculo()
     {
 
+        $sqlfrota = "UPDATE veiculos SET frota = '{$this->getFrota()}' WHERE id = {$this->getId()}";
+        $this->executeQuery($sqlfrota);
+        
+        $sqlmarca = "UPDATE marca_veiculo SET marca = '{$this->getMarca()}' WHERE id = {$this->getId()}";
+        $this->executeQuery($sqlmarca);
+
+        $sqlmodelo = "UPDATE modelo_veiculo SET modelo = '{$this->getModelo()}' WHERE id = {$this->getId()}";
+        $this->executeQuery($sqlmodelo);
+
+        $sqlplaca = "UPDATE veiculos SET placa = '{$this->getPlaca()}' WHERE id = {$this->getId()}";
+        $this->executeQuery($sqlplaca);
+
+        $sqlchassi = "UPDATE veiculos SET chassi = '{$this->getChassi()}' WHERE id = {$this->getId()}";
+        $this->executeQuery($sqlchassi);
+
+        $sqlrenavam = "UPDATE veiculos SET renavam = '{$this->getRenavam()}' WHERE id = {$this->getId()}";
+        $this->executeQuery($sqlrenavam);
+
+
+        $sqlano_fab = "UPDATE veiculos SET ano_fab = '{$this->getAnoFabricacao()}' WHERE id = {$this->getId()}";
+        $this->executeQuery($sqlano_fab);
+
+        $sqlano_mod = "UPDATE veiculos SET ano_mod = '{$this->getAnoModelo()}' WHERE id = {$this->getId()}";
+        $this->executeQuery($sqlano_mod);
+
+
+        $sqlcapacidade_carga = "UPDATE veiculos SET capacidade_carga = '{$this->getCapacidadeCarga()}' WHERE id = {$this->getId()}";
+        $this->executeQuery($sqlcapacidade_carga);
+
+
+        $sqlcapacidade_tanque = "UPDATE veiculos SET capacidade_tanque = '{$this->getCapacidadeTanque()}' WHERE id = {$this->getId()}";
+        $this->executeQuery($sqlcapacidade_tanque);
+
+        header('Location:../pages/paginagestor/relatorio_veiculos.php');
 
     }
 
