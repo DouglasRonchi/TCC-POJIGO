@@ -495,7 +495,6 @@ class Usuario extends Site
     {
 
         $sqlUsuario = "UPDATE usuario SET usuario = '{$this->getUsuario()}' WHERE usuario_id = {$_GET['id']}";
-        var_dump($sqlUsuario);
         $this->executeQuery($sqlUsuario);
 
         $sqlEmail = "UPDATE usuario SET email = '{$this->getEmail()}' WHERE usuario_id = {$_GET['id']}";
@@ -564,7 +563,7 @@ class Usuario extends Site
         $sqlDataFoto = "UPDATE usuario SET data_foto = '{NOW()}' WHERE usuario_id = {$_GET['id']}";
         $this->executeQuery($sqlDataFoto);
 
-        header('location:../pages/paginagestor/relatorio_usuarios.php');
+        header('Location:../pages/paginagestor/relatorio_usuarios.php');
 
     }
 

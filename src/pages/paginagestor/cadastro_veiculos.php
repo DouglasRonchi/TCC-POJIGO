@@ -4,6 +4,7 @@ $conn = New Site;
 $login = new Login;
 $login->VerificarLogin();
 $veiculo = New Veiculo;
+
 if(isset($_GET['id'])){
     $selectVeiculo = $conn->executeQuery("SELECT * FROM veiculos WHERE id = {$_GET['id']}");
     $selectVeiculoRows = mysqli_fetch_assoc($selectVeiculo);
@@ -15,10 +16,9 @@ if(isset($_GET['id'])){
             $fk_marca = $modeloRow['fk_marca'];
             $idModelo = $modeloRow['id'];
             $modeloModelo = $modeloRow['modelo'];
+
         }
     }
-
-
 
 }
 ?>
@@ -114,6 +114,8 @@ if(isset($_GET['id'])){
 
                         </div>
 
+                        <input type="hidden" name="id" value="<?= $_GET['id'] ?>">
+
                         <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label for="inputPlaca">Placa</label>
@@ -164,56 +166,60 @@ if(isset($_GET['id'])){
                                 value="<?= (isset($_GET['editar']))? $selectVeiculoRows['capacidade_tanque'] :''; ?>">
                             </div>
                         </div>
-
-                        <button type="submit" name="btnSalvarNovo" class="btn btn-primary">Salvar</button>
                         <?php
                         if (isset($_GET['id'])) :?>
-                        <a class="btn btn-secondary" href="relatorio_veiculos.php" role="button">Voltar</a>
-                       <?php endif; ?> 
-                    </form>
+                        <button type="submit" name="btnAtualizar" class="btn btn-primary">Atualizar</button>
+                    <?php else: ?> 
+                        <button type="submit" name="btnSalvarNovo" class="btn btn-primary">Salvar</button>
+                    <?php endif; ?> 
+                    <?php
+                    if (isset($_GET['id'])) :?>
+                    <a class="btn btn-secondary" href="relatorio_veiculos.php" role="button">Voltar</a>
+                <?php endif; ?> 
+            </form>
 
-
-                </div>
-                <!-- /.container-fluid -->
-
-            </div>
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
-            <?php include '../menu/footer.php'; ?>
-            <!-- End of Footer -->
 
         </div>
-        <!-- End of Content Wrapper -->
+        <!-- /.container-fluid -->
 
     </div>
-    <!-- End of Page Wrapper -->
+    <!-- End of Main Content -->
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
+    <!-- Footer -->
+    <?php include '../menu/footer.php'; ?>
+    <!-- End of Footer -->
 
-    <!-- Logout Modal-->
-    <?php include '../menu/logoutmodal.php'; ?>
+</div>
+<!-- End of Content Wrapper -->
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="../../../vendor/jquery/jquery.min.js"></script>
-    <script src="../../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</div>
+<!-- End of Page Wrapper -->
 
-    <!-- Core plugin JavaScript-->
-    <script src="../../../vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
 
-    <!-- Custom scripts for all pages-->
-    <script src="../../../js/sb-admin-2.min.js"></script>
+<!-- Logout Modal-->
+<?php include '../menu/logoutmodal.php'; ?>
 
-    <!-- Script Ajax para selecionar a marca e modelo de veiculos -->
+<!-- Bootstrap core JavaScript-->
+<script src="../../../vendor/jquery/jquery.min.js"></script>
+<script src="../../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <script>
+<!-- Core plugin JavaScript-->
+<script src="../../../vendor/jquery-easing/jquery.easing.min.js"></script>
 
-        $(document).ready(function () {
-            $('#inputMarca').change(function () {
-                let id = $('#inputMarca').val();
+<!-- Custom scripts for all pages-->
+<script src="../../../js/sb-admin-2.min.js"></script>
+
+<!-- Script Ajax para selecionar a marca e modelo de veiculos -->
+
+<script>
+
+    $(document).ready(function () {
+        $('#inputMarca').change(function () {
+            let id = $('#inputMarca').val();
 
             // console.log(id);
 
@@ -237,9 +243,9 @@ if(isset($_GET['id'])){
 
         });
 
-        });
+    });
 
-    </script>
+</script>
 
 </body>
 
