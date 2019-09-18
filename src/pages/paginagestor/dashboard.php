@@ -70,8 +70,10 @@ $login->VerificarLogin();
                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Km's
                                             Rodados (Mensal)
                                         </div>
-
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">400.585 km</div>
+                                        <?php
+                                        $result = mysqli_fetch_assoc($conn->executeQuery("SELECT quilometragem FROM registro_ponto WHERE MONTH(hora_inicio) = (SELECT MONTH(hora_inicio) FROM registro_ponto ORDER BY MONTH(hora_inicio) DESC LIMIT 1) ORDER BY MONTH(hora_inicio) DESC"));
+                                        ?>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$result['quilometragem']." Km"?></div>
 
                                     </div>
                                     <div class="col-auto">
