@@ -146,25 +146,25 @@ if (isset($_GET['btnExcluirRota'])) {
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
                         <form action="" method="get">
-                            <div class="btn-group" data-toggle="buttons">
+                            <div class="btn-group">
                                 <label class="btn btn-secondary disabled">
                                     Filtros
                                 </label>
                                 <label class="btn btn-primary active">
-                                    <input type="checkbox" name="TRIPfinalizadas" id="TRIPfinalizadas" checked>Viagens
+                                    <input type="checkbox" name="TRIPfinalizadas" id="TRIPfinalizadas" value="1" <?= (isset($_GET['TRIPfinalizadas']))? 'checked' : '' ;?>>Viagens
                                     Finalizadas
                                 </label>
                                 <label class="btn btn-primary">
-                                    <input type="checkbox" name="TRIPandamento" id="TRIPandamento" checked>Viagens em
+                                    <input type="checkbox" name="TRIPandamento" id="TRIPandamento" value="1" <?= (isset($_GET['TRIPandamento']))? 'checked' : '' ;?>>Viagens em
                                     Andamento
                                 </label>
                                 <label class="btn btn-primary">
-                                    <input type="checkbox" name="TRIPproblema" id="TRIPproblema" checked>Viagens com
+                                    <input type="checkbox" name="TRIPproblema" id="TRIPproblema" value="1" <?= (isset($_GET['TRIPproblema']))? 'checked' : '' ;?>>Viagens com
                                     Problema
                                 </label>
                                 <label class="btn btn-primary">
                                     <button type="submit" class="btn btn-dark btn-sm" name="TRIPfiltrar"
-                                            id="TRIPfiltrar">Filtrar
+                                            id="TRIPfiltrar">Filtrar</button>
                                 </label>
                             </div>
                         </form>
@@ -202,28 +202,23 @@ if (isset($_GET['btnExcluirRota'])) {
                                 while ($row = mysqli_fetch_assoc($selectRastrear)):
 
                                     $pillCodViagem = '';
-                                    $exibirF = 0;
-                                    $exibirA = 0;
-                                    $exibirP = 0;
                                     if ($row["hora_fim"] == 0 && $row["fk_motivo_parada_um"] != 0) {
                                         $pillCodViagem = 'spinner-grow spinner-grow-sm text-danger';
-                                        if (isset($_GET['TRIPfiltrar']) && $_GET['TRIPfinalizadas']==1){
-                                            $exibirF = 1;// finalizadas
+                                        if (isset($_GET['TRIPfiltrar']) && !isset($_GET['TRIPproblema'])){
+                                            continue;
                                         }
                                     } elseif ($row["hora_fim"] == 0) {
                                         $pillCodViagem = 'spinner-grow spinner-grow-sm text-warning';
-                                        if (isset($_GET['TRIPfiltrar']) && $_GET['TRIPandamento']==1){
-                                            $exibirA = 1;// andamento
+                                        if (isset($_GET['TRIPfiltrar']) && !isset($_GET['TRIPandamento'])){
+                                            continue;
                                         }
                                     } else {
                                         $pillCodViagem = 'fa fa-circle text-success';
-                                        if (isset($_GET['TRIPfiltrar']) && $_GET['TRIPproblema']==1){
-                                            $exibirP = 1;// problema
+                                        if (isset($_GET['TRIPfiltrar']) && !isset($_GET['TRIPfinalizadas'])){
+                                            continue;
                                         }
                                     }
-                                    if ($exibirF == 1 || $exibirP == 1 || $exibirA == 1){
-                                        continue;
-                                    }
+
                                     ?>
                                     <tr>
                                         <td><small>
