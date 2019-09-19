@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8c934103-8016-4184-8805-c6d5a3b60100" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/paginagestor/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/paginagestor/dashboardTV.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/dashboardTV.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,7 +11,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/chosen/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -159,7 +159,8 @@
       <workItem from="1568374494269" duration="11882000" />
       <workItem from="1568633286296" duration="610000" />
       <workItem from="1568718835575" duration="13047000" />
-      <workItem from="1568805599165" duration="11652000" />
+      <workItem from="1568805599165" duration="11832000" />
+      <workItem from="1568892184514" duration="251000" />
     </task>
     <servers />
   </component>
