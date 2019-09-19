@@ -97,15 +97,25 @@ $login->VerificarLogin();
                                         <td><?= $selectUsersRows["cpf"] ?></td>
                                         <td><?= $selectUsersRows["rg"] ?></td>
                                         <td><?= $selectUsersRows["tipo_usuario"] ?></td>
-                                       <td>
-                                            <form action="../../controllers/usuariosController.php?id=<?=$selectUsersRows["usuario_id"]?>" method="post">
-                                                <div class="btn-group btn-block">
-                                                    <button class="btn btn-sm btn-primary" name="btnEditar">Editar</button>
-                                                    <button class="btn btn-sm btn-danger" name="btnExcluir" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir
-                                                    </button>
-                                                </div>
+                                        <td>
+                                            <?php
+                                            if ($_SESSION['usuario'] == $selectUsersRows["usuario"] || $selectUsersRows["previlegio"] == 3):
+                                                ?>
+                                                <form action="../../controllers/usuariosController.php?id=<?= $selectUsersRows["usuario_id"] ?>"
+                                                      method="post">
+                                                    <div class="btn-group btn-block">
+                                                        <button class="btn btn-sm btn-primary" name="btnEditar">Editar
+                                                        </button>
+                                                        <button class="btn btn-sm btn-danger" name="btnExcluir"
+                                                                onclick="return confirm('Tem certeza que deseja excluir?')">
+                                                            Excluir
+                                                        </button>
+                                                    </div>
 
-                                            </form>
+                                                </form>
+                                            <?php
+                                            endif;
+                                            ?>
                                         </td>
                                     </tr>
                                 <?php endwhile; ?>
@@ -157,7 +167,7 @@ $login->VerificarLogin();
 <!-- Page level custom scripts -->
 <script src="../../../js/demo/datatables-demo.js"></script>
 
-<?php include_once '../../include/configdatatable.php'?>
+<?php include_once '../../include/configdatatable.php' ?>
 
 </body>
 
