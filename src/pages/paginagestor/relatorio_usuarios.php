@@ -92,11 +92,11 @@ $login->VerificarLogin();
                                 while ($selectUsersRows = mysqli_fetch_assoc($selectUsers)):
                                     ?>
                                     <tr>
-                                        <td><?= $selectUsersRows["cadastro"] ?></td>
-                                        <td><?= $selectUsersRows["nome"] ?></td>
-                                        <td><?= $selectUsersRows["cpf"] ?></td>
-                                        <td><?= $selectUsersRows["rg"] ?></td>
-                                        <td><?= $selectUsersRows["tipo_usuario"] ?></td>
+                                        <td <?=($_SESSION['usuario'] == $selectUsersRows["usuario"])? 'style="color: red !important"' : '' ; ?> ><?= $selectUsersRows["cadastro"] ?></td>
+                                        <td <?=($_SESSION['usuario'] == $selectUsersRows["usuario"])? 'style="color: black !important"' : '' ; ?> ><?= $selectUsersRows["nome"] ?></td>
+                                        <td <?=($_SESSION['usuario'] == $selectUsersRows["usuario"])? 'style="color: black !important"' : '' ; ?> ><?= $selectUsersRows["cpf"] ?></td>
+                                        <td <?=($_SESSION['usuario'] == $selectUsersRows["usuario"])? 'style="color: black !important"' : '' ; ?> ><?= $selectUsersRows["rg"] ?></td>
+                                        <td <?=($_SESSION['usuario'] == $selectUsersRows["usuario"])? 'style="color: black !important"' : '' ; ?> ><?= $selectUsersRows["tipo_usuario"] ?></td>
                                         <td>
                                             <?php
                                             if ($_SESSION['usuario'] == $selectUsersRows["usuario"] || $selectUsersRows["previlegio"] == 3):

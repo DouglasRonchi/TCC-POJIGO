@@ -66,7 +66,7 @@ if (isset($_GET['id'])) {
                             <label for="inputNome">Nome</label>
                             <input type="text" class="form-control" id="inputNome" name="inputNome"
                                    placeholder="Digite o seu nome completo."
-                                   value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['nome'] : ''; ?>">
+                                   value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['nome'] : ''; ?>" required>
                         </div>
 
                         <?php
@@ -87,14 +87,14 @@ if (isset($_GET['id'])) {
                             <label for="inputUsuario">Usuário</label>
                             <input type="text" class="form-control" id="inputUsuario" name="inputUsuario"
                                    placeholder="Digite seu nome para usuário"
-                                   value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['usuario'] : ''; ?>">
+                                   value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['usuario'] : ''; ?>" required>
                         </div>
 
                         <div class="form-group col-md-6">
                             <label for="inputTelefone">Telefone</label>
                             <input type="text" class="form-control" id="inputTelefone" name="inputTelefone"
                                    placeholder=""
-                                   value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['telefone'] : ''; ?>">
+                                   value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['telefone'] : ''; ?>" required>
                         </div>
                     </div>
 
@@ -103,14 +103,14 @@ if (isset($_GET['id'])) {
                             <label for="inputEmail">E-mail</label>
                             <input type="text" class="form-control" id="inputEmail" name="inputEmail"
                                    placeholder="Ex: blabla@blabla.com"
-                                   value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['email'] : ''; ?>">
+                                   value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['email'] : ''; ?>" required>
                         </div>
                         <?php if (!isset($_GET['editar'])): ?>
                             <div class="form-group col-md-6">
                                 <label for="inputSenha">Senha</label>
                                 <input type="password" class="form-control" id="inputSenha" name="inputSenha"
                                        placeholder="Digite sua senha"
-                                       value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['senha'] : ''; ?>">
+                                       value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['senha'] : ''; ?>" required>
                             </div>
                         <?php else: ?>
 
@@ -121,26 +121,26 @@ if (isset($_GET['id'])) {
                         <label for="inputEndereco">Endereço</label>
                         <input type="text" class="form-control" id="inputEndereco" name="inputEndereco"
                                placeholder="Ex: Rua Blumenau, 123"
-                               value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['endereco'] : ''; ?>">
+                               value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['endereco'] : ''; ?>" required>
                     </div>
 
                     <div class="form-group">
                         <label for="inputBairro">Bairro</label>
                         <input type="text" class="form-control" id="inputBairro" name="inputBairro"
                                placeholder="Ex: Velha"
-                               value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['bairro'] : ''; ?>">
+                               value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['bairro'] : ''; ?>" required>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputCidade">Cidade</label>
                             <input type="text" class="form-control" id="inputCidade" name="inputCidade"
-                                   value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['cidade'] : ''; ?>">
+                                   value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['cidade'] : ''; ?>" required>
                         </div>
 
                         <div class="form-group col-md-4">
                             <label for="inputEstado">Estado</label>
-                            <select id="inputEstado" class="form-control" name="inputEstado">
+                            <select id="inputEstado" class="form-control" name="inputEstado" required>
                                 <?php if (isset($_GET['editar'])) { ?>
 
                                     <option <?= ($selectUsuariosRows['estado'] == '') ? 'selected' : ''; ?>>
@@ -268,13 +268,13 @@ if (isset($_GET['id'])) {
                         <div class="form-group col-md-6">
                             <label for="inputRG">RG</label>
                             <input type="number" class="form-control" id="inputRG" name="inputRG" placeholder=""
-                                   value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['rg'] : ''; ?>" ,>
+                                   value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['rg'] : ''; ?>" required>
                         </div>
 
                         <div class="form-group col-md-6">
                             <label for="inputCPF">CPF</label>
                             <input type="text" class="form-control" id="inputCPF" name="inputCPF" placeholder=""
-                                   value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['cpf'] : ''; ?>">
+                                   value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['cpf'] : ''; ?>" required>
                         </div>
                     </div>
 
@@ -283,13 +283,13 @@ if (isset($_GET['id'])) {
                             <label for="inputNascimento">Data de Nascimento</label>
                             <input type="date" data-mask="00/00/0000" maxlength="10" autocomplete="off"
                                    class="form-control data-mask" id="inputNascimento" name="inputNascimento"
-                                   value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['data_nascimento'] : ''; ?>">
+                                   value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['data_nascimento'] : ''; ?>" required>
                         </div>
 
                         <div class="form-group col-md-6">
                             <label for="inputAdmissao">Data de Admissão</label>
                             <input type="date" class="form-control" id="inputAdmissao" name="inputAdmissao"
-                                   value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['data_admissao'] : ''; ?>">
+                                   value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['data_admissao'] : ''; ?>" required>
                         </div>
                     </div>
 
@@ -323,7 +323,7 @@ if (isset($_GET['id'])) {
 
                     <div class="form-group">
                         <label for="inputTipoUsuario">Tipo de usuário</label>
-                        <select id="inputTipoUsuario" class="form-control" name="inputTipoUsuario">
+                        <select id="inputTipoUsuario" class="form-control" name="inputTipoUsuario" required>
                             <?php
                             if (isset($_GET['editar'])) { ?>
                                 <option class="bg-success text-white" selected
