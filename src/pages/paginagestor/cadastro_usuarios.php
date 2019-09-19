@@ -281,8 +281,7 @@ if (isset($_GET['id'])) {
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputNascimento">Data de Nascimento</label>
-                            <input type="date" data-mask="00/00/0000" maxlength="10" autocomplete="off"
-                                   class="form-control data-mask" id="inputNascimento" name="inputNascimento"
+                            <input type="date" class="form-control data-mask" id="inputNascimento" name="inputNascimento"
                                    value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['data_nascimento'] : ''; ?>" required>
                         </div>
 

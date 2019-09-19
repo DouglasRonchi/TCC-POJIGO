@@ -129,14 +129,7 @@ if (isset($_GET['userId'])) {
               </div>
             </div>
 
-        <!--   $('.botao_ajax_modal').click(function() {
 
-          var id = $(this).getAttr('data-id');
-
-          $.ajax({});
-        });
-      -->
-      <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <form action="cnhemopp.php" method="POST">
           <div class="modal-dialog" role="document">
@@ -261,6 +254,4 @@ if (isset($_GET['userId'])) {
 </body>
 
 </html>
-<?php
-}
-?>
+<?php } ?>
