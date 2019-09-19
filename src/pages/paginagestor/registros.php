@@ -7,33 +7,25 @@ $login->VerificarLogin();
 
 if (isset($_POST["btnSalvar"])) {
 
-    $hora_ini = $_POST["hora_ini"];
-    $ini_intervalo = $_POST["ini_intervalo"];
-    $fim_intervalo = $_POST["fim_intervalo"];
-    $ini_parada_um = $_POST["ini_parada_um"];
-    $fim_parada_um = $_POST["fim_parada_um"];
-    $ini_parada_dois = $_POST["ini_parada_dois"];
-    $fim_parada_dois = $_POST["fim_parada_dois"];
-    $hora_fim = $_POST["hora_fim"];
-    $usuarioId = $_POST["UsuarioId"];
+    $id = $_POST['Id'];
+    $cad = $_POST['cad'];
+    $hora_ini = $_POST['hora_ini'];
+    $ini_intervalo = $_POST['ini_intervalo'];
+    $fim_intervalo = $_POST['fim_intervalo'];
+    $ini_parada_um = $_POST['ini_parada_um'];
+    $fim_parada_um = $_POST['fim_parada_um'];
+    $ini_parada_dois = $_POST['ini_parada_dois'];
+    $fim_parada_dois = $_POST['fim_parada_dois'];
+    $hora_fim = $_POST['hora_fim'];
+    $usuarioId = $_POST['UsuarioId'];
 
 
 
-    $result = $conn->executeQuery("UPDATE registro_ponto SET hora_inicio = '{$hora_ini}', hora_inicio_intervalo = '{$ini_intervalo}', hora_fim_intervalo = '{$fim_intervalo}', inicio_parada_um = '{$ini_parada_um}', fim_parada_um = '{$fim_parada_um}', inicio_parada_dois = '{$ini_parada_dois}', fim_parada_dois = '{$fim_parada_dois}', hora_fim = '{$hora_fim}' WHERE fk_usuario = {$usuarioId}");
+    $result = $conn->executeQuery("UPDATE registro_ponto SET hora_inicio = '{$hora_ini}', hora_inicio_intervalo = '{$ini_intervalo}', hora_fim_intervalo = '{$fim_intervalo}', inicio_parada_um = '{$ini_parada_um}', fim_parada_um = '{$fim_parada_um}', inicio_parada_dois = '{$ini_parada_dois}', fim_parada_dois = '{$fim_parada_dois}', hora_fim = '{$hora_fim}' WHERE id = '{$id}'");
 
-    header('Location: registros.php');
+    header('Location: registros.php?cad='.$_GET['cad'].'&dtini='.$_GET['dtini'].'&dtfin='.$_GET['dtfin'].'');
 
 }
-
-
-if (isset($_GET['userId'])) {
-    header('Content-type: application/json');
-    $usuario_id = $_GET['userId'];
-    $resultado = $conn->executeQuery("SELECT hora_inicio, hora_inicio_intervalo, hora_fim_intervalo, inicio_parada_um, fim_parada_um, inicio_parada_dois, fim_parada_dois, hora_fim FROM registro_ponto WHERE fk_usuario = '{$usuario_id}'");
-    $usua = mysqli_fetch_assoc($resultado);
-    echo json_encode($usua);
-    die();
-} else {
 
 ?>
 <!DOCTYPE html>
@@ -65,6 +57,9 @@ if (isset($_GET['userId'])) {
 
     tr.subtitles th {
         text-align: center;
+    }
+    .input {
+        width: 300px;
     }
 
 </style>
@@ -123,18 +118,18 @@ if (isset($_GET['userId'])) {
                                 <form action="" method="get" class="form-inline">
                                     <div class="form-group mr-2">
                                         <select name="cad" id="cad" class="form-control">
-                                                <option selected="">Cadastro...</option>
-                                                
-                                                <?php
-                                                $selectUsu = $conn->executeQuery("SELECT * FROM usuario");
-                                                $row = mysqli_num_rows($selectUsu);
-                                                while ($usu = mysqli_fetch_assoc($selectUsu)):
-                                                    ?>
+                                            <option selected="">Cadastro...</option>
+
+                                            <?php
+                                            $selectUsu = $conn->executeQuery("SELECT * FROM usuario");
+                                            $row = mysqli_num_rows($selectUsu);
+                                            while ($usu = mysqli_fetch_assoc($selectUsu)):
+                                                ?>
 
                                                 <option value="<?= $usu['cadastro'] ?>"><?= $usu['cadastro']?> - <?= $usu["nome"] ?></option>
 
-                                                <?php endwhile; ?>
-                                            </select>
+                                            <?php endwhile; ?>
+                                        </select>
                                     </div>
                                     <div class="form-group mr-2">
                                         <label for="dtini">Data Inicial:</label>
@@ -189,6 +184,7 @@ if (isset($_GET['userId'])) {
                                             </tfoot>
                                             <tbody>
                                                 <?php
+                                                $idEditar = 0;
                                                 $selectRegistros = $conn->executeQuery("SELECT * FROM registro_ponto rp JOIN usuario us ON rp.fk_usuario = us.usuario_id WHERE us.cadastro = {$_GET['cad']} AND hora_fim <> 'NULL' AND hora_inicio BETWEEN '{$_GET['dtini']}' AND '{$_GET['dtfin']}'");
                                                 $rows = mysqli_num_rows($selectRegistros);
                                                 while ($rows = mysqli_fetch_assoc($selectRegistros)):
@@ -202,7 +198,9 @@ if (isset($_GET['userId'])) {
                                                         <td><?= $rows['inicio_parada_dois'] ?></td>
                                                         <td><?= $rows['fim_parada_dois'] ?></td>
                                                         <td><?= $rows['hora_fim'] ?></td>
-                                                        <td><button type="button" class="btn btn-primary" name="btnEditar" id="<?= $rows["usuario_id"] ?>" data-toggle="modal" data-target="#exampleModal">Editar</button></td>
+                                                        <td>
+                                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-id="<?= $rows['id'] ?>" data-inicio="<?= $rows['hora_inicio'] ?>" data-ini_inter="<?= $rows['hora_inicio_intervalo'] ?>" data-fim_inter="<?= $rows['hora_fim_intervalo'] ?>" data-ini_para_um="<?= $rows['inicio_parada_um'] ?>" data-fim_para_um="<?= $rows['fim_parada_um'] ?>" data-ini_para_dois="<?= $rows['inicio_parada_dois'] ?>" data-fim_para_dois="<?= $rows['fim_parada_dois'] ?>" data-fim="<?= $rows['hora_fim'] ?>">Editar</button>
+                                                        </td>
                                                     </tr>
 
                                                 <?php endwhile; ?>
@@ -225,7 +223,7 @@ if (isset($_GET['userId'])) {
 
                 </div>
                 <!-- End of Main Content -->
-                
+
                 <!-- Footer -->
                 <?php include '../menu/footer.php'; ?>
                 <!-- End of Footer -->
@@ -243,18 +241,17 @@ if (isset($_GET['userId'])) {
 
 
         <!-- Modal Editar -->
-        <div class="modal fade bd-example-modal-xl" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <form action="cnhemopp.php" method="POST">
-                <div class="modal-dialog modal-xl" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Alterações</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                   <div class="card-body">
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+          <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Alterações</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form method="POST">
+                <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
@@ -283,30 +280,28 @@ if (isset($_GET['userId'])) {
                             </tfoot>
                             <tbody>
                                 <tr>
-                                    <td><input type="" class="form-control" id="hora_ini" name="hora_ini"></td>
-                                    <td><input type="" class="form-control" id="ini_intervalo" name="ini_intervalo"></td>
-                                    <td><input type="" class="form-control" id="fim_intervalo" name="fim_intervalo"></td>
-                                    <td><input type="" class="form-control" id="ini_parada_um" name="ini_parada_um"></td>
-                                    <td><input type="" class="form-control" id="fim_parada_um" name="fim_parada_um"></td>
-                                    <td><input type="" class="form-control" id="ini_parada_dois" name="ini_parada_dois"></td>
-                                    <td><input type="" class="form-control" id="fim_parada_dois" name="fim_parada_dois"></td>
-                                    <td><input type="" class="form-control" id="hora_fim" name="hora_fim"></td>
-                                    <input type="hidden" class="form-control" id="UsuarioId" name="UsuarioId">                      
+                                    <td><input style="width: 175px" class="form-control" id="hora_ini" name="hora_ini"></td>
+                                    <td><input class="form-control" id="ini_intervalo" name="ini_intervalo"></td>
+                                    <td><input class="form-control" id="fim_intervalo" name="fim_intervalo"></td>
+                                    <td><input class="form-control" id="ini_parada_um" name="ini_parada_um"></td>
+                                    <td><input class="form-control" id="fim_parada_um" name="fim_parada_um"></td>
+                                    <td><input class="form-control" id="ini_parada_dois" name="ini_parada_dois"></td>
+                                    <td><input class="form-control" id="fim_parada_dois" name="fim_parada_dois"></td>
+                                    <td><input style="width: 175px" class="form-control" id="hora_fim" name="hora_fim"></td>
+                                    <input type="hidden" class="form-control" id="Id" name="Id">
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-
             </div>
-
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
               <button type="submit" class="btn btn-primary" name="btnSalvar" id="btnSalvar">Salvar</button>
-
           </div>
-      </div>
+      </form>
   </div>
+</div>
 </form>
 </div>
 
@@ -521,23 +516,32 @@ if (isset($_GET['userId'])) {
 
     <?php include_once '../../include/configdatatable.php' ?>
 
-    <script>
-      $('.btn[name="btnEditar"]').click(function(event){
-        btn = $(event.currentTarget);
-        id = btn.attr("id");
-        $.ajax(location["href"] + "&userId=" + id).done(function(data){
-          $("#hora_ini").val(data["hora_inicio"]);
-          $("#ini_intervalo").val(data["hora_inicio_intervalo"]);
-          $("#fim_intervalo").val(data["hora_fim_intervalo"]);
-          $("#ini_parada_um").val(data["inicio_parada_um"]);
-          $("#fim_parada_um").val(data["fim_parada_um"]);
-          $("#ini_parada_dois").val(data["inicio_parada_dois"]);
-          $("#fim_parada_dois").val(data["fim_parada_dois"]);
-          $("#hora_fim").val(data["hora_fim"]);
-          $("#UsuarioId").val(id);
-      })
-    });
-</script>
+    <script type="text/javascript">
+        $('#exampleModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var recipientId = button.data('id')
+  var recipientinicio = button.data('inicio')
+  var recipientini_inter = button.data('ini_inter')
+  var recipientfim_inter = button.data('fim_inter') // Extract info from data-* attributes
+  var recipientini_para_um = button.data('ini_para_um') // Extract info from data-* attributes
+  var recipientfim_para_um = button.data('fim_para_um') // Extract info from data-* attributes
+  var recipientini_para_dois = button.data('ini_para_dois') // Extract info from data-* attributes
+  var recipientfim_para_dois = button.data('fim_para_dois') // Extract info from data-* attributes
+  var recipientfim = button.data('fim') // Extract info from data-* attributes
+
+  var modal = $(this)
+  // modal.find('.modal-title').text('Alterações' + recipient)
+  modal.find('#Id').val(recipientId)
+  modal.find('#hora_ini').val(recipientinicio)
+  modal.find('#ini_intervalo').val(recipientini_inter)
+  modal.find('#fim_intervalo').val(recipientfim_inter)
+  modal.find('#ini_parada_um').val(recipientini_para_um)
+  modal.find('#fim_parada_um').val(recipientfim_para_um)
+  modal.find('#ini_parada_dois').val(recipientini_para_dois)
+  modal.find('#fim_parada_dois').val(recipientfim_para_dois)
+  modal.find('#hora_fim').val(recipientfim)
+})
+</script>                      
 <script>
     function imprimirDiv(div) {
         var impressao = document.getElementById(div).innerHTML;
@@ -555,4 +559,3 @@ if (isset($_GET['userId'])) {
 </body>
 
 </html>
-<?php } ?>
