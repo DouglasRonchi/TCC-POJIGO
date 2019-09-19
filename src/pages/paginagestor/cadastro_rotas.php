@@ -25,117 +25,117 @@ $login->VerificarLogin();
 
   <!-- Custom styles for this template-->
   <link href="../../../css/sb-admin-2.min.css" rel="stylesheet">
-    <style>
+  <style>
         /* Always set the map height explicitly to define the size of the div
-         * element that contains the map. */
+        * element that contains the map. */
         #map {
-            height: 100%;
+          height: 100%;
         }
         /* Optional: Makes the sample page fill the window. */
         html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
+          height: 100%;
+          margin: 0;
+          padding: 0;
         }
         #floating-panel {
-            position: absolute;
-            top: 10px;
-            left: 25%;
-            z-index: 5;
-            background-color: #fff;
-            padding: 5px;
-            border: 1px solid #999;
-            text-align: center;
-            font-family: 'Roboto','sans-serif';
-            line-height: 30px;
-            padding-left: 10px;
+          position: absolute;
+          top: 10px;
+          left: 25%;
+          z-index: 5;
+          background-color: #fff;
+          padding: 5px;
+          border: 1px solid #999;
+          text-align: center;
+          font-family: 'Roboto','sans-serif';
+          line-height: 30px;
+          padding-left: 10px;
         }
         #right-panel {
-            font-family: 'Roboto','sans-serif';
-            line-height: 30px;
-            padding-left: 10px;
+          font-family: 'Roboto','sans-serif';
+          line-height: 30px;
+          padding-left: 10px;
         }
 
         #right-panel select, #right-panel input {
-            font-size: 15px;
+          font-size: 15px;
         }
 
         #right-panel select {
-            width: 100%;
+          width: 100%;
         }
 
         #right-panel i {
-            font-size: 12px;
+          font-size: 12px;
         }
         #right-panel {
-            height: 100%;
-            float: right;
-            width: 390px;
-            overflow: auto;
+          height: 100%;
+          float: right;
+          width: 390px;
+          overflow: auto;
         }
         #map {
-            margin-right: 400px;
+          margin-right: 400px;
         }
         #floating-panel {
-            background: #fff;
-            padding: 5px;
-            font-size: 14px;
-            font-family: Arial;
-            border: 1px solid #ccc;
-            box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4);
-            display: none;
+          background: #fff;
+          padding: 5px;
+          font-size: 14px;
+          font-family: Arial;
+          border: 1px solid #ccc;
+          box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4);
+          display: none;
         }
         @media print {
-            #map {
-                height: 500px;
-                margin: 0;
-            }
-            #right-panel {
-                float: none;
-                width: auto;
-            }
+          #map {
+            height: 500px;
+            margin: 0;
+          }
+          #right-panel {
+            float: none;
+            width: auto;
+          }
         }
-    </style>
-</head>
+      </style>
+    </head>
 
-<body id="page-top">
-
-
-  <!-- Page Wrapper -->
-  <div id="wrapper">
-
-    <!-- Sidebar -->
-    <?php include '../menu/sidebar.php'; ?>
-    <!-- End of Sidebar -->
-
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
-
-      <!-- Main Content -->
-      <div id="content">
-
-        <!-- Topbar Navbar -->
-        <?php include '../menu/topbar.php'; ?>
-        <!-- End of Topbar -->
-
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
+    <body id="page-top">
 
 
+      <!-- Page Wrapper -->
+      <div id="wrapper">
 
-          <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">Cadastro de Rotas</h1>
+        <!-- Sidebar -->
+        <?php include '../menu/sidebar.php'; ?>
+        <!-- End of Sidebar -->
 
-          <!-- Parâmetro sensor é utilizado somente em dispositivos com GPS -->
-    <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
-    <script type="text/javascript">
-        function CalculaDistancia() {
-            $('#litResultado').html('Aguarde...');
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+          <!-- Main Content -->
+          <div id="content">
+
+            <!-- Topbar Navbar -->
+            <?php include '../menu/topbar.php'; ?>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+
+
+              <!-- Page Heading -->
+              <h1 class="h3 mb-4 text-gray-800">Cadastro de Rotas</h1>
+
+              <!-- Parâmetro sensor é utilizado somente em dispositivos com GPS -->
+              <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+              <script type="text/javascript">
+                function CalculaDistancia() {
+                  $('#litResultado').html('Aguarde...');
             //Instanciar o DistanceMatrixService
             var service = new google.maps.DistanceMatrixService();
             //executar o DistanceMatrixService
             service.getDistanceMatrix(
-              {
+            {
                   //Origem
                   origins: [$("#txtOrigem option:selected").text()],
                   //Destino
@@ -145,97 +145,130 @@ $login->VerificarLogin();
                   //Sistema de medida (METRIC | IMPERIAL)
                   unitSystem: google.maps.UnitSystem.METRIC
                   //Vai chamar o callback
-              }, callback);
-        }
+                }, callback);
+          }
+
+
         //Tratar o retorno do DistanceMatrixService
         function callback(response, status) {
             //Verificar o Status
             if (status != google.maps.DistanceMatrixStatus.OK)
                 //Se o status não for "OK"
-                $('#litResultado').html(status);
-            else {
+              $('#litResultado').html(status);
+              else {
                 //Se o status for OK
                 //Endereço de origem = response.originAddresses
                 //Endereço de destino = response.destinationAddresses
                 //Distância = response.rows[0].elements[0].distance.text
                 //Duração = response.rows[0].elements[0].duration.text
                 $('#litResultado').html("<strong>Origem</strong>: " + response.originAddresses +
-                    "<br /><strong>Destino:</strong> " + response.destinationAddresses +
-                    "<br /><strong>Distância</strong>: " + response.rows[0].elements[0].distance.text +
-                    " <br /><strong>Duração</strong>: " + response.rows[0].elements[0].duration.text
-                    );
+                  "<br /><strong>Destino:</strong> " + response.destinationAddresses +
+                  "<br /><strong>Distância</strong>: " + response.rows[0].elements[0].distance.text +
+                  " <br /><strong>Duração</strong>: " + response.rows[0].elements[0].duration.text
+                  );
                 //Atualizar o mapa
                 $("#map").attr("src", "https://maps.google.com/maps?saddr=" + response.originAddresses + "&daddr=" + response.destinationAddresses + "&output=embed");
+              }
             }
-        }
-    </script>
-    <form action="../../controllers/rotasController.php" method="post">
-    <table width="100%" cellspacing="0" cellpadding="0" border="0">
-        <tbody>
-            <tr>
-                <td>
-            <label for="txtOrigem"><strong>Endereço de origem</strong></label>
+
+          </script>
+          <form action="../../controllers/rotasController.php" method="post">
+            <table width="100%" cellspacing="0" cellpadding="0" border="0">
+              <tbody>
+                <tr>
+                  <td>
+                    <label for="txtOrigem"><strong>Endereço de origem</strong></label>
                     <select style="width: 400px" class="field" id="txtOrigem" name="origem">
                       <?php
-                        $dados = $conn->executeQuery("SELECT * FROM cidades");
-                        while($cidade = mysqli_fetch_assoc($dados)) {
-                      ?>
+                      $dados = $conn->executeQuery("SELECT * FROM cidades");
+                      while($cidade = mysqli_fetch_assoc($dados)) {
+                        ?>
                         <option value="<?=$cidade['id']?>"><?= $cidade['nome_cidade'] ?></option>
                       <?php }?>
                     </select>
-                </td>
-            </tr>
-            <tr>
-                <td>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
                     <label for="txtDestino"><strong>Endereço de destino</strong></label>
                     <select style="width: 400px" class="field" id="txtDestino" name="destino">
                       <?php
-                        $dados = $conn->executeQuery("SELECT * FROM cidades");
-                        while($cidade = mysqli_fetch_assoc($dados)) {
-                      ?>
+                      $dados = $conn->executeQuery("SELECT * FROM cidades");
+                      while($cidade = mysqli_fetch_assoc($dados)) {
+                        ?>
                         <option value="<?=$cidade['id']?>"><?= $cidade['nome_cidade'] ?></option>
                       <?php }?>
                     </select>
 
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="button" value="Calcular dist&acirc;ncia" onclick="CalculaDistancia()" class="btnNew" />
-                </td>
-                <td>
-                    <input type="submit" value="Salvar Rotas" class="btnNew" name="salvar"" />
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    </form>
-    <div><span id="litResultado">&nbsp;</span></div>
-    <div style="padding: 10px 0 0; clear: both">
-        <iframe width="750" scrolling="no" height="350" frameborder="0" id="map" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?saddr=são paulo&daddr=rio de janeiro&output=embed"></iframe>
-      </div>
-      <script>
+                  </td>
+                </tr>
 
-        function inicializar() {
-          var coordenadas = {lat: -22.912869, lng: -43.228963};
+                <tr>
+                  <tr>
+                    <td>
+                      <input type="button" value="Calcular distancia" onclick="CalculaDistancia()" class="btnNew" />
+                    </td> 
+                    <td>
+                      <button onclick="funcao()">Salvar rota</button>
+                      <p id="demo"></p>
+                      <script>
+                        function funcao()
+                        {
+                          var x;
+//recebemos o valor do botão pressionado ok ou cancelar em uma variavel
+var r=confirm("Deseja salvar?");
+if (r==true)
+{
+  x="você pressionou OK!";
+}
+else
+{
+  x="Você pressionou Cancelar!";
+}
+document.getElementById("demo").innerHTML=x;
+}
+</script> 
+</td>
+</tr>
 
-          var mapa = new google.maps.Map(document.getElementById('mapa'), {
-            zoom: 15,
-            center: coordenadas
-          });
+      <!--                           
+        <td>                               
+          <input type="button" value="Salvar Rota" class="btnNew" onclick="Salvar()"/>
+        </td>
+      </tr>-->
 
-          var marker = new google.maps.Marker({
-            position: coordenadas,
-            map: mapa,
-            title: 'Meu marcador'
-          });
-        }
-      </script>
-      <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbqJXX7fEFddatn-vaBp3BtBS-4TJNIbg&callback=inicializar">
-    </script>
-        </div>
-  <!-- /.container-fluid -->
+
+
+
+    </tbody>
+  </table>
+</form>
+<div><span id="litResultado">&nbsp;</span></div>
+<div style="padding: 10px 0 0; clear: both">
+  <iframe width="750" scrolling="no" height="350" frameborder="0" id="map" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?saddr=são paulo&daddr=rio de janeiro&output=embed"></iframe>
+</div>
+<script>
+
+  function inicializar() {
+    var coordenadas = {lat: -22.912869, lng: -43.228963};
+
+    var mapa = new google.maps.Map(document.getElementById('mapa'), {
+      zoom: 15,
+      center: coordenadas
+    });
+
+    var marker = new google.maps.Marker({
+      position: coordenadas,
+      map: mapa,
+      title: 'Meu marcador'
+    });
+  }
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbqJXX7fEFddatn-vaBp3BtBS-4TJNIbg&callback=inicializar">
+</script>
+</div>
+<!-- /.container-fluid -->
 
 </div>
 <!-- End of Main Content -->
