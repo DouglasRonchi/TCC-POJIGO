@@ -5,29 +5,41 @@ $veiculo = New Veiculo;
 
 
 if (isset($_POST['btnSalvarNovo'])) {
-    $veiculo->setFrota($_POST['inputFrota']);
-    $veiculo->setMarca($_POST['inputMarca']);
-    $veiculo->setModelo($_POST['inputModelo']); //id do modelo
-    $veiculo->setPlaca($_POST['inputPlaca']);
-    $veiculo->setChassi($_POST['inputChassi']);
-    $veiculo->setRenavam($_POST['inputRenavam']);
-    $veiculo->setAnoFabricacao($_POST['inputDataDeFabricacao']);
-    $veiculo->setAnoModelo($_POST['inputAnoModelo']);
-    $veiculo->setCapacidadeCarga($_POST['inputCapacidadeDeCarga']);
-    $veiculo->setCapacidadeTanque($_POST['inputCapacidadeDeTanque']);
+
+    $result = $conn->executeQuery("SELECT * FROM veiculos WHERE frota = {$_POST['inputFrota']}");
+    if (mysqli_num_rows($result) > 0) {
+        //esta frota já existe
+        $conn->setAlerta(
+            'danger',
+            'Veículo ' . $veiculo->getFrota() . ' já existe!',
+            '<img class="img-fluid" src="' . $conn->path('img/icons/error.png') . '">',
+            $_SESSION['usuario_id']
+        );
+        header('Location: ../pages/paginagestor/relatorio_veiculos.php');
+    } else {
+        $veiculo->setFrota($_POST['inputFrota']);
+        $veiculo->setMarca($_POST['inputMarca']);
+        $veiculo->setModelo($_POST['inputModelo']); //id do modelo
+        $veiculo->setPlaca($_POST['inputPlaca']);
+        $veiculo->setChassi($_POST['inputChassi']);
+        $veiculo->setRenavam($_POST['inputRenavam']);
+        $veiculo->setAnoFabricacao($_POST['inputDataDeFabricacao']);
+        $veiculo->setAnoModelo($_POST['inputAnoModelo']);
+        $veiculo->setCapacidadeCarga($_POST['inputCapacidadeDeCarga']);
+        $veiculo->setCapacidadeTanque($_POST['inputCapacidadeDeTanque']);
 
 
-    $veiculo->cadastrarVeiculo();
+        $veiculo->cadastrarVeiculo();
 
-    $conn->setAlerta(
-        'success',
-        'Veículo '.$veiculo->getFrota().' cadastrado com sucesso',
-        '<img class="img-fluid" src="'.$conn->path('img/icons/success.png').'">',
-        $_SESSION['usuario_id']
-    );
+        $conn->setAlerta(
+            'success',
+            'Veículo ' . $veiculo->getFrota() . ' cadastrado com sucesso',
+            '<img class="img-fluid" src="' . $conn->path('img/icons/success.png') . '">',
+            $_SESSION['usuario_id']
+        );
 
-    header('Location: ../pages/paginagestor');
-
+        header('Location: ../pages/paginagestor/relatorio_veiculos.php');
+    }
 } else if (isset($_POST['btnMarcaeModelo'])) {
     $marca = $_POST['inputMarca'];
     $modelo = $_POST['inputModelo'];
@@ -37,7 +49,7 @@ if (isset($_POST['btnSalvarNovo'])) {
     $rows = mysqli_num_rows($query);
     $result = mysqli_fetch_assoc($query);
 
-    if ($rows == 1){
+    if ($rows == 1) {
         //Marca Já Existe
         $fk_marca = $result['id'];
         $conn->executeQuery("INSERT INTO modelo_veiculo (id, modelo, fk_marca) VALUES (DEFAULT,'{$modelo}','{$fk_marca}')");
@@ -50,20 +62,20 @@ if (isset($_POST['btnSalvarNovo'])) {
 
     header('Location: ../pages/paginagestor/cadastro_veiculos.php');
 
-} else if (isset($_POST['btnExcluir'])){
+} else if (isset($_POST['btnExcluir'])) {
     $idFrota = $_GET['id'];
 
     $conn->setAlerta(
         'success',
-        'Veículo '.$veiculo->getFrotaById($idFrota).' excluido com sucesso',
-        '<img class="img-fluid" src="'.$conn->path('img/icons/success.png').'">',
+        'Veículo ' . $veiculo->getFrotaById($idFrota) . ' excluido com sucesso',
+        '<img class="img-fluid" src="' . $conn->path('img/icons/success.png') . '">',
         $_SESSION['usuario_id']
     );
 
     $conn->executeQuery("DELETE FROM veiculos WHERE id = {$idFrota}");
 
     header('Location: ../pages/paginagestor/relatorio_veiculos.php');
-} else if (isset($_POST['btnEditar'])){
+} else if (isset($_POST['btnEditar'])) {
     header("Location: ../pages/paginagestor/cadastro_veiculos.php?editar=1&id={$_GET['id']}");
 
 } else if (isset($_POST['btnAtualizar'])) {
@@ -84,8 +96,8 @@ if (isset($_POST['btnSalvarNovo'])) {
 
     $conn->setAlerta(
         'success',
-        'Veículo '.$veiculo->getFrota().' atualizado com sucesso',
-        '<img class="img-fluid" src="'.$conn->path('img/icons/success.png').'">',
+        'Veículo ' . $veiculo->getFrota() . ' atualizado com sucesso',
+        '<img class="img-fluid" src="' . $conn->path('img/icons/success.png') . '">',
         $_SESSION['usuario_id']
     );
 
