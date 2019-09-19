@@ -151,24 +151,39 @@ if (isset($_GET['btnExcluirRota'])) {
                                     Filtros
                                 </label>
                                 <label class="btn btn-primary active">
-                                    <input type="checkbox" name="TRIPfinalizadas" id="TRIPfinalizadas" value="1" <?= (isset($_GET['TRIPfinalizadas']))? 'checked' : '' ;?>>Viagens
+                                    <input type="checkbox" name="TRIPfinalizadas" id="TRIPfinalizadas"
+                                           value="1" <?= (isset($_GET['TRIPfinalizadas'])) ? 'checked' : ''; ?>>Viagens
                                     Finalizadas
                                 </label>
                                 <label class="btn btn-primary">
-                                    <input type="checkbox" name="TRIPandamento" id="TRIPandamento" value="1" <?= (isset($_GET['TRIPandamento']))? 'checked' : '' ;?>>Viagens em
+                                    <input type="checkbox" name="TRIPandamento" id="TRIPandamento"
+                                           value="1" <?= (isset($_GET['TRIPandamento'])) ? 'checked' : ''; ?>>Viagens em
                                     Andamento
                                 </label>
                                 <label class="btn btn-primary">
-                                    <input type="checkbox" name="TRIPproblema" id="TRIPproblema" value="1" <?= (isset($_GET['TRIPproblema']))? 'checked' : '' ;?>>Viagens com
+                                    <input type="checkbox" name="TRIPproblema" id="TRIPproblema"
+                                           value="1" <?= (isset($_GET['TRIPproblema'])) ? 'checked' : ''; ?>>Viagens com
                                     Problema
                                 </label>
                                 <label class="btn btn-primary">
                                     <button type="submit" class="btn btn-dark btn-sm" name="TRIPfiltrar"
-                                            id="TRIPfiltrar">Filtrar</button>
+                                            id="TRIPfiltrar">Filtrar
+                                    </button>
                                 </label>
                             </div>
                         </form>
+                        <div>
+                            Legenda: <br>
+                            <i class="fa fa-circle text-success" aria-hidden="true"></i><small> Viagem
+                                Finalizada</small><br>
+                            <span class="spinner-grow spinner-grow-sm text-warning" role="status" aria-hidden="true"></span><small>
+                                Viagem em Andamento</small><br>
+                            <span class="spinner-grow spinner-grow-sm text-danger" role="status"
+                                  aria-hidden="true"></span><small>
+                                Viagem com Problema</small><br>
+                        </div>
                     </div>
+
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -204,17 +219,17 @@ if (isset($_GET['btnExcluirRota'])) {
                                     $pillCodViagem = '';
                                     if ($row["hora_fim"] == 0 && $row["fk_motivo_parada_um"] != 0) {
                                         $pillCodViagem = 'spinner-grow spinner-grow-sm text-danger';
-                                        if (isset($_GET['TRIPfiltrar']) && !isset($_GET['TRIPproblema'])){
+                                        if (isset($_GET['TRIPfiltrar']) && !isset($_GET['TRIPproblema'])) {
                                             continue;
                                         }
                                     } elseif ($row["hora_fim"] == 0) {
                                         $pillCodViagem = 'spinner-grow spinner-grow-sm text-warning';
-                                        if (isset($_GET['TRIPfiltrar']) && !isset($_GET['TRIPandamento'])){
+                                        if (isset($_GET['TRIPfiltrar']) && !isset($_GET['TRIPandamento'])) {
                                             continue;
                                         }
                                     } else {
                                         $pillCodViagem = 'fa fa-circle text-success';
-                                        if (isset($_GET['TRIPfiltrar']) && !isset($_GET['TRIPfinalizadas'])){
+                                        if (isset($_GET['TRIPfiltrar']) && !isset($_GET['TRIPfinalizadas'])) {
                                             continue;
                                         }
                                     }
@@ -262,12 +277,6 @@ if (isset($_GET['btnExcluirRota'])) {
                         </div>
                     </div>
                 </div>
-                Legenda: <br>
-                <i class="fa fa-circle text-success" aria-hidden="true"></i><small> Viagem FInalizada</small><br>
-                <span class="spinner-grow spinner-grow-sm text-warning" role="status" aria-hidden="true"></span><small>
-                    Viagem em Andamento</small><br>
-                <span class="spinner-grow spinner-grow-sm text-danger" role="status" aria-hidden="true"></span><small>
-                    Viagem com Problema</small><br>
 
             </div>
             <!-- /.container-fluid -->
