@@ -154,14 +154,14 @@ if(isset($_GET['id'])){
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputCapacidadeDeCarga">Capacidade de Carga</label>
-                                <input type="number" class="form-control" id="inputCapacidadeDeCarga"
+                                <input type="text" class="form-control" id="inputCapacidadeDeCarga"
                                 name="inputCapacidadeDeCarga"
                                 value="<?= (isset($_GET['editar']))? $selectVeiculoRows['capacidade_carga'] :''; ?>">
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label for="inputCapacidadeDeTanque">Capacidade de Tanque</label>
-                                <input type="number" class="form-control" id="inputCapacidadeDeTanque"
+                                <input type="text" class="form-control" id="inputCapacidadeDeTanque"
                                 name="inputCapacidadeDeTanque"
                                 value="<?= (isset($_GET['editar']))? $selectVeiculoRows['capacidade_tanque'] :''; ?>">
                             </div>
@@ -246,6 +246,16 @@ if(isset($_GET['id'])){
     });
 
 </script>
+
+    <script src="../../../js/jquery.mask.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('#inputPlaca').mask('AAA-0000');
+            $('#inputCapacidadeDeCarga').mask('000.000.000 Kg', {reverse: true});
+            $('#inputCapacidadeDeTanque').mask('000.000.000 L', {reverse: true});
+        });
+    </script>
 
 </body>
 
