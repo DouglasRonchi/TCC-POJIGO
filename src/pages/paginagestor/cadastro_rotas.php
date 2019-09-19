@@ -137,9 +137,9 @@ $login->VerificarLogin();
             service.getDistanceMatrix(
               {
                   //Origem
-                  origins: [$("#txtOrigem").val()],
+                  origins: [$("#txtOrigem option:selected").text()],
                   //Destino
-                  destinations: [$("#txtDestino").val()],
+                  destinations: [$("#txtDestino option:selected").text()],
                   //Modo (DRIVING | WALKING | BICYCLING)
                   travelMode: google.maps.TravelMode.DRIVING,
                   //Sistema de medida (METRIC | IMPERIAL)
@@ -174,14 +174,28 @@ $login->VerificarLogin();
         <tbody>
             <tr>
                 <td>
-                    <label for="txtOrigem"><strong>Endere&ccedil;o de origem</strong></label>
-                    <input type="text" id="txtOrigem" class="field" name="origem" style="width: 400px" />
+            <label for="txtOrigem"><strong>Endereço de origem</strong></label>
+                    <select style="width: 400px" class="field" id="txtOrigem" name="origem">
+                      <?php
+                        $dados = $conn->executeQuery("SELECT * FROM cidades");
+                        while($cidade = mysqli_fetch_assoc($dados)) {
+                      ?>
+                        <option value="<?=$cidade['id']?>"><?= $cidade['nome_cidade'] ?></option>
+                      <?php }?>
+                    </select>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <label for="txtDestino"><strong>Endere&ccedil;o de destino</strong></label>
-                    <input type="text" style="width: 400px" class="field" id="txtDestino" name="destino" />
+                    <label for="txtDestino"><strong>Endereço de destino</strong></label>
+                    <select style="width: 400px" class="field" id="txtDestino" name="destino">
+                      <?php
+                        $dados = $conn->executeQuery("SELECT * FROM cidades");
+                        while($cidade = mysqli_fetch_assoc($dados)) {
+                      ?>
+                        <option value="<?=$cidade['id']?>"><?= $cidade['nome_cidade'] ?></option>
+                      <?php }?>
+                    </select>
 
                 </td>
             </tr>
