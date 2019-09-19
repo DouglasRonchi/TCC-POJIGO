@@ -254,6 +254,8 @@ if(isset($_GET['id'])){
             $('#inputPlaca').mask('AAA-0000');
             $('#inputCapacidadeDeCarga').mask('000.000.000 Kg', {reverse: true});
             $('#inputCapacidadeDeTanque').mask('000.000.000 L', {reverse: true});
+            $('#inputAnoModelo').mask('0000');
+            $('#inputDataDeFabricacao').mask('0000');
         });
     </script>
 
