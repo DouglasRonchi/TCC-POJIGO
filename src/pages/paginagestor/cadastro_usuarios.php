@@ -92,7 +92,7 @@ if (isset($_GET['id'])) {
 
                         <div class="form-group col-md-6">
                             <label for="inputTelefone">Telefone</label>
-                            <input type="number" class="form-control" id="inputTelefone" name="inputTelefone"
+                            <input type="text" class="form-control" id="inputTelefone" name="inputTelefone"
                                    placeholder=""
                                    value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['telefone'] : ''; ?>">
                         </div>
@@ -273,7 +273,7 @@ if (isset($_GET['id'])) {
 
                         <div class="form-group col-md-6">
                             <label for="inputCPF">CPF</label>
-                            <input type="number" class="form-control" id="inputCPF" name="inputCPF" placeholder=""
+                            <input type="text" class="form-control" id="inputCPF" name="inputCPF" placeholder=""
                                    value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['cpf'] : ''; ?>">
                         </div>
                     </div>
