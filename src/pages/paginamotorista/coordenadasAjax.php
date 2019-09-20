@@ -7,7 +7,7 @@ $conn = New Site;
 $lat = $_POST['lat'];
 $lon = $_POST['lon'];
 
-$cod_viagem = $_GET['codViagem'];
+$cod_viagem = $_POST['codViagem'];
 
 //Testing:
 //$lat = -26.8833551;
