@@ -25,64 +25,100 @@ $return = (array)json_decode($return);
 $results = (array)$return['results'][0];
 
 //==PLACE_ID=======================================================
-$place_id = (array)$results['place_id'];
-$place_id = (string)$place_id[0];
-
+if (isset($results['place_id'])) {
+    $place_id = (array)$results['place_id'];
+    $place_id = (string)$place_id[0];
+} else {
+    $place_id = '';
+}
 //==GLOBAL_CODE=======================================================
 if (isset($results['plus_code'])) {
     $global_code = (array)$results['plus_code'];
     $global_code = (string)$global_code['global_code'];
+} else {
+    $global_code = '';
 }
 //==LATITUDE=======================================================
-$latitude = (array)$results['geometry'];
-$latitude = (array)$latitude['location'];
-$latitude = $latitude['lat'];
-
+if (isset($results['geometry'])) {
+    $latitude = (array)$results['geometry'];
+    $latitude = (array)$latitude['location'];
+    $latitude = $latitude['lat'];
+} else {
+    $latitude = '';
+}
 //==LONGITUDE=======================================================
-$longitude = (array)$results['geometry'];
-$longitude = (array)$longitude['location'];
-$longitude = $longitude['lng'];
-
+if (isset($results['geometry'])) {
+    $longitude = (array)$results['geometry'];
+    $longitude = (array)$longitude['location'];
+    $longitude = $longitude['lng'];
+} else {
+    $longitude = '';
+}
 //==STREET_NUMBER=======================================================
-$street_number = (array)$results['address_components'][0];
-$street_number = $street_number['short_name'];
-
+if (isset($results['address_components'][0])) {
+    $street_number = (array)$results['address_components'][0];
+    $street_number = $street_number['short_name'];
+} else {
+    $street_number = '';
+}
 //==RUA=======================================================
-$address_components = (array)$results['address_components'][1];
-$road = $address_components['short_name'];
-
+if (isset($results['address_components'][1])) {
+    $address_components = (array)$results['address_components'][1];
+    $road = $address_components['short_name'];
+} else {
+    $road = '';
+}
 //==BAIRRO=======================================================
-$address_components = (array)$results['address_components'][2];
-$suburb = $address_components['short_name'];
-
+if (isset($results['address_components'][2])) {
+    $address_components = (array)$results['address_components'][2];
+    $suburb = $address_components['short_name'];
+} else {
+    $suburb = '';
+}
 //==CIDADE=======================================================
-$address_components = (array)$results['address_components'][3];
-$city = $address_components['long_name'];
-
+if (isset($results['address_components'][3])) {
+    $address_components = (array)$results['address_components'][3];
+    $city = $address_components['long_name'];
+} else {
+    $city = '';
+}
 //==ESTADO=======================================================
-$address_components = (array)$results['address_components'][4];
-$state = $address_components['long_name'];
-
+if (isset($results['address_components'][4])) {
+    $address_components = (array)$results['address_components'][4];
+    $state = $address_components['long_name'];
+} else {
+    $state = '';
+}
 //==PAIS=======================================================
-$address_components = (array)$results['address_components'][5];
-$country = $address_components['short_name'];
-
+if (isset($results['address_components'][5])) {
+    $address_components = (array)$results['address_components'][5];
+    $country = $address_components['short_name'];
+} else {
+    $country = '';
+}
 //==ZIP-CODE=======================================================
-$address_components = (array)$results['address_components'][6];
-$zip_code = $address_components['short_name'];
-
+if (isset($results['address_components'][6])) {
+    $address_components = (array)$results['address_components'][6];
+    $zip_code = $address_components['short_name'];
+} else {
+    $zip_code = '';
+}
 //==ZIP-CODE=======================================================
-$formatted_address = (array)$results['formatted_address'];
-$formatted_address = $formatted_address[0];
-
+if (isset($results['formatted_address'])) {
+    $formatted_address = (array)$results['formatted_address'];
+    $formatted_address = $formatted_address[0];
+} else {
+    $formatted_address = '';
+}
 //==INSERT INTO DB=======================================================
 
 $ultimaPosicao = $conn->executeQuery("SELECT hora FROM coordenadas WHERE fk_cod_viagem = {$cod_viagem} ORDER BY hora DESC LIMIT 1");
 $ultimaPosicao = mysqli_fetch_assoc($ultimaPosicao);
 $hora = $ultimaPosicao['hora'];
 
-$conn->executeQuery("INSERT INTO dados_googleapi (id, place_id, lat, lon, street_number, road, suburb, city, state, country, zipcode, formatted_address) VALUES (DEFAULT,'{$place_id}','{$lat}','{$lon}','{$street_number}','{$road}','{$suburb}','{$city}','{$state}','{$country}','{$zip_code}','{$formatted_address}')");
+$conn->executeQuery("INSERT INTO dados_googleapi (id, place_id, global_code, lat, lon, street_number, road, suburb, city, state, country, zipcode, formatted_address) VALUES (DEFAULT,'{$place_id}','{$global_code}','{$lat}','{$lon}','{$street_number}','{$road}','{$suburb}','{$city}','{$state}','{$country}','{$zip_code}','{$formatted_address}')");
 $last_id = mysqli_insert_id($conn->getConn());
+
 
 if (isset($results['plus_code'])) {
     $conn->executeQuery("UPDATE dados_googleapi SET global_code = {$global_code} WHERE id = '{$last_id}'");
