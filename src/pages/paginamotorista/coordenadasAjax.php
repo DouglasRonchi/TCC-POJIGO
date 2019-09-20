@@ -29,9 +29,10 @@ $place_id = (array)$results['place_id'];
 $place_id = (string)$place_id[0];
 
 //==GLOBAL_CODE=======================================================
+if (isset($results['plus_code'])){
 $global_code = (array)$results['plus_code'];
 $global_code = (string)$global_code['global_code'];
-
+}
 //==LATITUDE=======================================================
 $latitude = (array)$results['geometry'];
 $latitude = (array)$latitude['location'];
