@@ -54,42 +54,75 @@ $login->VerificarLogin();
           <!-- Page Heading -->
           <h1 class="h3 mb-4 text-gray-800">Relatório de Rotas</h1>
 
-
-
-
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <tr>
+                   <th>Rota</th>
+                    <th>Visualizar</th>
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                   <th>Rota</th>
+                    <th>Visualizar</th>
+                  </tr>
+                </tfoot>
+                <tbody>
+                  <?php
+                  $selectNome_rota = $conn->executeQuery("SELECT * FROM rotas");
+                  $selectNome_rotaRows = mysqli_num_rows($selectNome_rota);
+                  while ($selectNome_rotaRows = mysqli_fetch_assoc($selectNome_rota)):
+                    ?>
+                    <tr>
+                      <td <?=($_SESSION['nome_rota'] == $selectNome_rotaRows["nome_rota"])? 'style="color: red !important"' : '' ; ?> ><?= $selectNome_rotaRows[""] ?></td>
+                                      
+                  </tr>
+                <?php endwhile; ?>
+              </tbody>
+            </table>
+          </div>
         </div>
-        <!-- /.container-fluid -->
-
       </div>
-      <!-- End of Main Content -->
 
-      <!-- Footer -->
-      <?php include '../menu/footer.php'; ?>      
-      <!-- End of Footer -->
+
+
+
 
     </div>
-    <!-- End of Content Wrapper -->
+    <!-- /.container-fluid -->
 
   </div>
-  <!-- End of Page Wrapper -->
+  <!-- End of Main Content -->
 
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
+  <!-- Footer -->
+  <?php include '../menu/footer.php'; ?>      
+  <!-- End of Footer -->
 
-  <!-- Logout Modal-->
-  <?php include '../menu/logoutmodal.php'; ?>
+</div>
+<!-- End of Content Wrapper -->
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="../../../vendor/jquery/jquery.min.js"></script>
-  <script src="../../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</div>
+<!-- End of Page Wrapper -->
 
-  <!-- Core plugin JavaScript-->
-  <script src="../../../vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+  <i class="fas fa-angle-up"></i>
+</a>
 
-  <!-- Custom scripts for all pages-->
-  <script src="../../../js/sb-admin-2.min.js"></script>
+<!-- Logout Modal-->
+<?php include '../menu/logoutmodal.php'; ?>
+
+<!-- Bootstrap core JavaScript-->
+<script src="../../../vendor/jquery/jquery.min.js"></script>
+<script src="../../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="../../../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="../../../js/sb-admin-2.min.js"></script>
 
 </body>
 

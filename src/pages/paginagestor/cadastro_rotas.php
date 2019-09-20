@@ -25,67 +25,8 @@ $login->VerificarLogin();
 
   <!-- Custom styles for this template-->
   <link href="../../../css/sb-admin-2.min.css" rel="stylesheet">
-  <style>
-        /* Always set the map height explicitly to define the size of the div
-        * element that contains the map. */
-        #map {
-          height: 100%;
-        }
-        /* Optional: Makes the sample page fill the window. */
-        html, body {
-          height: 100%;
-          margin: 0;
-          padding: 0;
-        }
-        #floating-panel {
-          position: absolute;
-          top: 10px;
-          left: 25%;
-          z-index: 5;
-          background-color: #fff;
-          padding: 5px;
-          border: 1px solid #999;
-          text-align: center;
-          font-family: 'Roboto','sans-serif';
-          line-height: 30px;
-          padding-left: 10px;
-        }
-        #right-panel {
-          font-family: 'Roboto','sans-serif';
-          line-height: 30px;
-          padding-left: 10px;
-        }
 
-        #right-panel select, #right-panel input {
-          font-size: 15px;
-        }
-
-        #right-panel select {
-          width: 100%;
-        }
-
-        #right-panel i {
-          font-size: 12px;
-        }
-        #right-panel {
-          height: 100%;
-          float: right;
-          width: 390px;
-          overflow: auto;
-        }
-        #map {
-          margin-right: 400px;
-        }
-        #floating-panel {
-          background: #fff;
-          padding: 5px;
-          font-size: 14px;
-          font-family: Arial;
-          border: 1px solid #ccc;
-          box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4);
-          display: none;
-        }
-        @media print {
+       <!-- @media print {
           #map {
             height: 500px;
             margin: 0;
@@ -94,37 +35,61 @@ $login->VerificarLogin();
             float: none;
             width: auto;
           }
-        }
-      </style>
-    </head>
+        }-->
 
-    <body id="page-top">
+        <style>
+          #map {
+            height: 450px;
+            float: left;
+            width: 100%;
+          }
 
+          #directions-panel {
+            color: #000000;
+            margin-top: 10px;
+            background-color: rgba(191, 186, 167, 0.56);
+            padding: 10px;
+            overflow: scroll;
+            height: 174px;
+          }
+        </style>
 
-      <!-- Page Wrapper -->
-      <div id="wrapper">
+      </head>
 
-        <!-- Sidebar -->
-        <?php include '../menu/sidebar.php'; ?>
-        <!-- End of Sidebar -->
-
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
-
-          <!-- Main Content -->
-          <div id="content">
-
-            <!-- Topbar Navbar -->
-            <?php include '../menu/topbar.php'; ?>
-            <!-- End of Topbar -->
-
-            <!-- Begin Page Content -->
-            <div class="container-fluid">
+      <body id="page-top">
 
 
+        <!-- Page Wrapper -->
+        <div id="wrapper">
 
-              <!-- Page Heading -->
-              <h1 class="h3 mb-4 text-gray-800">Cadastro de Rotas</h1>
+          <!-- Sidebar -->
+          <?php include '../menu/sidebar.php'; ?>
+          <!-- End of Sidebar -->
+
+          <!-- Content Wrapper -->
+          <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+              <!-- Topbar Navbar -->
+              <?php include '../menu/topbar.php'; ?>
+              <!-- End of Topbar -->
+
+              <!-- Begin Page Content -->
+              <div class="container-fluid">
+
+
+
+                <!-- Page Heading -->
+                <h1 class="h3 mb-4 text-gray-800">Cadastro de Rotas</h1>
+
+                <!--mapa ok-->
+                <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbqJXX7fEFddatn-vaBp3BtBS-4TJNIbg&callback=callback">
+              </script>
+
+
 
               <!-- Parâmetro sensor é utilizado somente em dispositivos com GPS -->
               <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
@@ -199,107 +164,92 @@ $login->VerificarLogin();
                         <option value="<?=$cidade['id']?>"><?= $cidade['nome_cidade'] ?></option>
                       <?php }?>
                     </select>
+                    
+                    <input type="button" value="Calcular distância" onclick="CalculaDistancia()" class="btnNew btn btn-secondary mr-2"/>
 
+                    <button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#exampleModal">
+                      Salvar rota
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                            <button type="submit" class="btn btn-primary" onclick="funcao()">Salvar</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </td>
                 </tr>
+              </tbody>
+            </table>
+          </form>
 
-                <tr>
-                  <tr>
-                    <td>
-                      <input type="button" value="Calcular distancia" onclick="CalculaDistancia()" class="btnNew" />
-                    </td> 
-                    <td>
-                      <button onclick="funcao()">Salvar rota</button>
-                      <p id="demo"></p>
-                      <script>
-                        function funcao()
-                        {
-                          var x;
-//recebemos o valor do botão pressionado ok ou cancelar em uma variavel
-var r=confirm("Deseja salvar?");
-if (r==true)
-{
-  x="você pressionou OK!";
-}
-else
-{
-  x="Você pressionou Cancelar!";
-}
-document.getElementById("demo").innerHTML=x;
-}
-</script> 
-</td>
-</tr>
+          <div><span id="litResultado">&nbsp;</span></div>
+          <div>
+            <iframe  id="map" src="https://maps.google.com/maps?saddr=&daddr=&output=embed"></iframe>
+          </div>
 
-      <!--                           
-        <td>                               
-          <input type="button" value="Salvar Rota" class="btnNew" onclick="Salvar()"/>
-        </td>
-      </tr>-->
+          <script>
+
+            function inicializar() {
+              var coordenadas = {lat: -22.912869, lng: -43.228963};
+
+              var mapa = new google.maps.Map(document.getElementById('mapa'), {
+                zoom: 15,
+                center: coordenadas
+              });
+
+              var marker = new google.maps.Marker({
+                position: coordenadas,
+                map: mapa,
+                title: 'Meu marcador'
+              });
+            }
+          </script>
 
 
 
+        </div>
+        <!-- /.container-fluid -->
 
-    </tbody>
-  </table>
-</form>
-<div><span id="litResultado">&nbsp;</span></div>
-<div style="padding: 10px 0 0; clear: both">
-  <iframe width="750" scrolling="no" height="350" frameborder="0" id="map" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?saddr=são paulo&daddr=rio de janeiro&output=embed"></iframe>
-</div>
-<script>
+      </div>
+      <!-- End of Main Content -->
 
-  function inicializar() {
-    var coordenadas = {lat: -22.912869, lng: -43.228963};
+      <!-- Footer -->
+      <?php include '../menu/footer.php'; ?>      
+      <!-- End of Footer -->
 
-    var mapa = new google.maps.Map(document.getElementById('mapa'), {
-      zoom: 15,
-      center: coordenadas
-    });
+    </div>
+    <!-- End of Content Wrapper -->
 
-    var marker = new google.maps.Marker({
-      position: coordenadas,
-      map: mapa,
-      title: 'Meu marcador'
-    });
-  }
-</script>
-<script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbqJXX7fEFddatn-vaBp3BtBS-4TJNIbg&callback=inicializar">
-</script>
-</div>
-<!-- /.container-fluid -->
+  </div>
+  <!-- End of Page Wrapper -->
 
-</div>
-<!-- End of Main Content -->
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
 
-<!-- Footer -->
-<?php include '../menu/footer.php'; ?>      
-<!-- End of Footer -->
+  <!-- Logout Modal-->
+  <?php include '../menu/logoutmodal.php'; ?>
 
-</div>
-<!-- End of Content Wrapper -->
+  <!-- Bootstrap core JavaScript-->
+  <script src="../../../vendor/jquery/jquery.min.js"></script>
+  <script src="../../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-</div>
-<!-- End of Page Wrapper -->
+  <!-- Core plugin JavaScript-->
+  <script src="../../../vendor/jquery-easing/jquery.easing.min.js"></script>
 
-<!-- Scroll to Top Button-->
-<a class="scroll-to-top rounded" href="#page-top">
-  <i class="fas fa-angle-up"></i>
-</a>
-
-<!-- Logout Modal-->
-<?php include '../menu/logoutmodal.php'; ?>
-
-<!-- Bootstrap core JavaScript-->
-<script src="../../../vendor/jquery/jquery.min.js"></script>
-<script src="../../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-<!-- Core plugin JavaScript-->
-<script src="../../../vendor/jquery-easing/jquery.easing.min.js"></script>
-
-<!-- Custom scripts for all pages-->
-<script src="../../../js/sb-admin-2.min.js"></script>
+  <!-- Custom scripts for all pages-->
+  <script src="../../../js/sb-admin-2.min.js"></script>
 
 </body>
 
