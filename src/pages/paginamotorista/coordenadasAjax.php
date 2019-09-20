@@ -173,7 +173,7 @@ $route = $json['routes'][0];
 
 //Loop through the "legs" in our route and add up the distances.
 $totalDistance = 0;
-foreach ($route['legs'] as $leg) {
+foreach ((array)$route['legs'] as $leg) {
     $totalDistance = $totalDistance + $leg['distance']['value'];
 }
 
