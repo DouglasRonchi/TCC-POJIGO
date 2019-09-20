@@ -3,7 +3,7 @@
 require_once '../../classes/Autoload.class.php';
 $conn = New Site;
 
-//Receive data
+////Receive data
 $lat = $_POST['lat'];
 $lon = $_POST['lon'];
 
@@ -165,6 +165,7 @@ curl_close($curl);
 //Decode the JSON data we received.
 $json = json_decode(trim($res), true);
 
+var_dump($json); //Testar se volta km no array ================================================================
 
 //Automatically select the first route that Google gave us.
 $route = $json['routes'][0];
@@ -189,5 +190,5 @@ $query = $conn->executeQuery("UPDATE registro_ponto SET quilometragem = $totalDi
 
 //var_dump((float)$totalDistance);
 echo $totalDistance;
-echo "-------------------------------";
+//echo "-------------------------------";
 //echo $query;
