@@ -91,7 +91,7 @@ $conn->executeQuery("UPDATE coordenadas SET fk_dados_google = {$last_id} WHERE h
 
 $query = $conn->executeQuery("SELECT latitude,longitude FROM coordenadas WHERE fk_cod_viagem = {$cod_viagem} ORDER BY hora DESC LIMIT 1");
 
-if (mysqli_num_rows($query) != 0) {
+//if (mysqli_num_rows($query) != 0) {
     $result = mysqli_fetch_assoc($query);
 
 //Our starting point / origin. Change this if you wish.
@@ -149,4 +149,4 @@ if (mysqli_num_rows($query) != 0) {
 
     $query = $conn->executeQuery("UPDATE registro_ponto SET quilometragem = $totalDistance WHERE cod_viagem = {$cod_viagem}");
 
-}
+//}
