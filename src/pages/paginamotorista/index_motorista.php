@@ -134,7 +134,7 @@ $conn = new Site;
             console.log("Geolocation is not supported by this browser.");
         }
 
-        setTimeout(coordenadasBD, 300000);
+        setTimeout(coordenadasBD, 10000);
 
         function onSuccess(position) {
             console.log(position.coords.latitude);
@@ -144,9 +144,9 @@ $conn = new Site;
             let lon = position.coords.longitude;
 
             $.ajax({
-                url: 'coordenadasAjax.php?codViagem='.<?=$_GET['codViagem']?>.'',
+                url: 'coordenadasAjax.php',
                 type: 'POST',
-                data: {lat: lat, lon: lon},
+                data: {lat: lat, lon: lon, codViagem: <?=$_GET['codViagem']?>},
                 success: function (data) {
 
                 },
