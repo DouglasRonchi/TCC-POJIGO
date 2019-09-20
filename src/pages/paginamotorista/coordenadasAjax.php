@@ -149,4 +149,5 @@ $query = $conn->executeQuery("SELECT latitude,longitude FROM coordenadas WHERE f
 
     $query = $conn->executeQuery("UPDATE registro_ponto SET quilometragem = $totalDistance WHERE cod_viagem = {$cod_viagem}");
 
+    echo $totalDistance;
 //}

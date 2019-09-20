@@ -148,7 +148,7 @@ $conn = new Site;
                 type: 'POST',
                 data: {lat: lat, lon: lon, codViagem: <?=$_GET['codViagem']?>},
                 success: function (data) {
-
+                    console.log(data);
                 },
                 error: function (data) {
 
