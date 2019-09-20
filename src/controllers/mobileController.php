@@ -21,7 +21,7 @@ if (isset($_POST['btnFrotaOk'])) {
 } else if (isset($_POST['btnInicioViagem'])) {
     $id_rota = $_SESSION['id_rota'];
     $conn->executeQuery("UPDATE registro_ponto SET hora_inicio = NOW() WHERE id = {$id_rota}");
-    header('Location: ../pages/paginamotorista/index_motorista.php');
+    header('Location: ../pages/paginamotorista/index_motorista.php?idRota='.$_SESSION['id_rota'].'&codViagem='.$_SESSION['cod_viagem'].'');
 } else if (isset($_POST['btnInicioIntervalo'])) {
     $id_rota = $_SESSION['id_rota'];
     $conn->executeQuery("UPDATE registro_ponto SET hora_inicio_intervalo = NOW() WHERE id = {$id_rota}");

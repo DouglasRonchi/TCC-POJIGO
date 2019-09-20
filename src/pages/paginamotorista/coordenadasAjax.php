@@ -7,14 +7,14 @@ $conn = New Site;
 $lat = $_POST['lat'];
 $lon = $_POST['lon'];
 
-$cod_viagem = $_SESSION['cod_viagem'];
+$cod_viagem = $_GET['codViagem'];
 
 //Testing:
 //$lat = -26.8833551;
 //$lon = -49.1390603;
 //$cod_viagem = 17;
 
-$conn->executeQuery("INSERT INTO coordenadas (id, fk_cod_viagem, hora, latitude, longitude) VALUES (DEFAULT,'{$_SESSION['cod_viagem']}',NOW(),'{$lat}','{$lon}')");
+$conn->executeQuery("INSERT INTO coordenadas (id, fk_cod_viagem, hora, latitude, longitude) VALUES (DEFAULT,'{$cod_viagem}',NOW(),'{$lat}','{$lon}')");
 
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_URL, 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' . $lat . ',' . $lon . '&key=AIzaSyCbqJXX7fEFddatn-vaBp3BtBS-4TJNIbg');
@@ -145,7 +145,8 @@ if (mysqli_num_rows($query) != 0) {
     $query = $conn->executeQuery("SELECT rp.quilometragem, coo.hora FROM registro_ponto rp JOIN coordenadas coo ON coo.fk_cod_viagem = rp.cod_viagem WHERE cod_viagem = {$cod_viagem} ORDER BY coo.hora DESC LIMIT 1");
     $result = mysqli_fetch_assoc($query);
 
-    $totalDistance = $result['quilometragem'] + $totalDistance;
+    $totalDistance = (float)$result['quilometragem'] + $totalDistance;
+
     $query = $conn->executeQuery("UPDATE registro_ponto SET quilometragem = $totalDistance WHERE cod_viagem = {$cod_viagem}");
 
 }
