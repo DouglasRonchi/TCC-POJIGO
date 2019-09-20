@@ -144,7 +144,7 @@ $conn = new Site;
             let lon = position.coords.longitude;
 
             $.ajax({
-                url: 'coordenadasAjax.php',
+                url: 'coordenadasAjax.php?codViagem='.<?=$_GET['codViagem']?>.'',
                 type: 'POST',
                 data: {lat: lat, lon: lon},
                 success: function (data) {
