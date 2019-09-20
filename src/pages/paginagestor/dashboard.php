@@ -238,7 +238,10 @@ $login->VerificarLogin();
                                                     </td>
                                                     <td><small><?= $row["placa"] ?></small></td>
                                                     <td><small><?= strftime("%x %R", strtotime($row["hora"])) ?></small></td>
-                                                    <td><small><?= $row["formatted_address"] ?></small></td>
+                                                    <td><small><?php
+                                                            $result = mysqli_fetch_assoc($conn->executeQuery("SELECT coo.fk_cod_viagem, coo.hora, goo.formatted_address FROM coordenadas coo JOIN dados_googleapi goo ON goo.id = coo.fk_dados_google WHERE fk_cod_viagem = {$row["cod_viagem"]} ORDER BY coo.hora DESC LIMIT 1"));
+                                                            echo $result['formatted_address'];
+                                                            ?></small></td>
                                                     <td><small><?= $row["nome"] ?></small></td>
 
                                                 </tr>
