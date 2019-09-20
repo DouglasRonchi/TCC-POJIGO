@@ -29,9 +29,9 @@ $place_id = (array)$results['place_id'];
 $place_id = (string)$place_id[0];
 
 //==GLOBAL_CODE=======================================================
-if (isset($results['plus_code'])){
-$global_code = (array)$results['plus_code'];
-$global_code = (string)$global_code['global_code'];
+if (isset($results['plus_code'])) {
+    $global_code = (array)$results['plus_code'];
+    $global_code = (string)$global_code['global_code'];
 }
 //==LATITUDE=======================================================
 $latitude = (array)$results['geometry'];
@@ -81,8 +81,12 @@ $ultimaPosicao = $conn->executeQuery("SELECT hora FROM coordenadas WHERE fk_cod_
 $ultimaPosicao = mysqli_fetch_assoc($ultimaPosicao);
 $hora = $ultimaPosicao['hora'];
 
-$conn->executeQuery("INSERT INTO dados_googleapi (id, place_id, global_code, lat, lon, street_number, road, suburb, city, state, country, zipcode, formatted_address) VALUES (DEFAULT,'{$place_id}','{$global_code}','{$lat}','{$lon}','{$street_number}','{$road}','{$suburb}','{$city}','{$state}','{$country}','{$zip_code}','{$formatted_address}')");
+$conn->executeQuery("INSERT INTO dados_googleapi (id, place_id, lat, lon, street_number, road, suburb, city, state, country, zipcode, formatted_address) VALUES (DEFAULT,'{$place_id}','{$lat}','{$lon}','{$street_number}','{$road}','{$suburb}','{$city}','{$state}','{$country}','{$zip_code}','{$formatted_address}')");
 $last_id = mysqli_insert_id($conn->getConn());
+
+if (isset($results['plus_code'])) {
+    $conn->executeQuery("UPDATE dados_googleapi SET global_code = {$global_code} WHERE id = '{$last_id}'");
+}
 
 $conn->executeQuery("UPDATE coordenadas SET fk_dados_google = {$last_id} WHERE hora = '{$hora}'");
 
@@ -93,62 +97,62 @@ $conn->executeQuery("UPDATE coordenadas SET fk_dados_google = {$last_id} WHERE h
 $query = $conn->executeQuery("SELECT latitude,longitude FROM coordenadas WHERE fk_cod_viagem = {$cod_viagem} ORDER BY hora DESC LIMIT 1");
 
 //if (mysqli_num_rows($query) != 0) {
-    $result = mysqli_fetch_assoc($query);
+$result = mysqli_fetch_assoc($query);
 
 //Our starting point / origin. Change this if you wish.
-    $start = $result['latitude'] . "," . $result['longitude'];
+$start = $result['latitude'] . "," . $result['longitude'];
 
 //Our end point / destination. Change this if you wish.
-    $destination = $lat . "," . $lon;
+$destination = $lat . "," . $lon;
 
 //The Google Directions API URL. Do not change this.
-    $apiUrl = 'https://maps.googleapis.com/maps/api/directions/json';
+$apiUrl = 'https://maps.googleapis.com/maps/api/directions/json';
 
 //Construct the URL that we will visit with cURL.
-    $url = $apiUrl . '?key=AIzaSyCbqJXX7fEFddatn-vaBp3BtBS-4TJNIbg&' . 'origin=' . $start . '&destination=' . $destination;
+$url = $apiUrl . '?key=AIzaSyCbqJXX7fEFddatn-vaBp3BtBS-4TJNIbg&' . 'origin=' . $start . '&destination=' . $destination;
 
 //Initiate cURL.
-    $curl = curl_init($url);
+$curl = curl_init($url);
 
 //Tell cURL that we want to return the data.
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($curl, CURLOPT_HEADER, false);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($curl, CURLOPT_HEADER, false);
 
 //Execute the request.
-    $res = curl_exec($curl);
+$res = curl_exec($curl);
 
 //If something went wrong with the request.
-    if (curl_errno($curl)) {
-        throw new Exception(curl_error($curl));
-    }
+if (curl_errno($curl)) {
+    throw new Exception(curl_error($curl));
+}
 
 //Close the cURL handle.
-    curl_close($curl);
+curl_close($curl);
 
 //Decode the JSON data we received.
-    $json = json_decode(trim($res), true);
+$json = json_decode(trim($res), true);
 
 
 //Automatically select the first route that Google gave us.
-    $route = $json['routes'][0];
+$route = $json['routes'][0];
 
 //Loop through the "legs" in our route and add up the distances.
-    $totalDistance = 0;
-    foreach ($route['legs'] as $leg) {
-        $totalDistance = $totalDistance + $leg['distance']['value'];
-    }
+$totalDistance = 0;
+foreach ($route['legs'] as $leg) {
+    $totalDistance = $totalDistance + $leg['distance']['value'];
+}
 
 //Divide by 1000 to get the distance in KM.
-    $totalDistance = round($totalDistance / 1000);
+$totalDistance = round($totalDistance / 1000);
 
 //Print out the result.
 
-    $query = $conn->executeQuery("SELECT rp.quilometragem, coo.hora FROM registro_ponto rp JOIN coordenadas coo ON coo.fk_cod_viagem = rp.cod_viagem WHERE cod_viagem = {$cod_viagem} ORDER BY coo.hora DESC LIMIT 1");
-    $result = mysqli_fetch_assoc($query);
+$query = $conn->executeQuery("SELECT rp.quilometragem, coo.hora FROM registro_ponto rp JOIN coordenadas coo ON coo.fk_cod_viagem = rp.cod_viagem WHERE cod_viagem = {$cod_viagem} ORDER BY coo.hora DESC LIMIT 1");
+$result = mysqli_fetch_assoc($query);
 
-    $totalDistance = (float)$result['quilometragem'] + $totalDistance;
+$totalDistance = (float)$result['quilometragem'] + $totalDistance;
 
-    $query = $conn->executeQuery("UPDATE registro_ponto SET quilometragem = $totalDistance WHERE cod_viagem = {$cod_viagem}");
+$query = $conn->executeQuery("UPDATE registro_ponto SET quilometragem = $totalDistance WHERE cod_viagem = {$cod_viagem}");
 
-    echo $totalDistance;
+echo $totalDistance;
 //}
