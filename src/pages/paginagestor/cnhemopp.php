@@ -2,6 +2,7 @@
 require_once '../../classes/Autoload.class.php';
 $conn = new Site;
 $login = new Login;
+$usuario = new Usuario;
 $login->VerificarLogin();
 
 if (isset($_POST["btnsalvar"])) {
@@ -10,7 +11,16 @@ if (isset($_POST["btnsalvar"])) {
   $usuarioId = $_POST["UsuarioId"];
 
   $result = $conn->executeQuery("UPDATE usuario SET venc_cnh = '{$cnh}', venc_mopp = '{$mopp}' WHERE usuario_id = {$usuarioId}");
+
+$conn->setAlerta(
+  'success',
+  'CNH ' . $usuario->getCnh() . 'MOPP' . $usuario->getMopp()  . ' atualizado com sucesso',
+  '<img class="img-fluid" src="' . $conn->path('img/icons/success.png') . '">',
+  $_SESSION['usuario_id']
+);
 }
+
+
 
 if (isset($_GET['userId'])) {
   header('Content-type: application/json');
@@ -130,75 +140,75 @@ if (isset($_GET['userId'])) {
             </div>
 
 
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <form action="cnhemopp.php" method="POST">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Alterações</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <form action="cnhemopp.php" method="POST">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Alterações</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
 
-                <label>Vencimento CNH</label>
-                <input type="date" class="form-control" id="VenciCNH" name="VenciCNH">
-                <br>
-                <br>
-                <label>Vencimento MOPP</label>
-                <input type="date" class="form-control" id="VenciMOPP" name="VenciMOPP">
-                <input type="hidden" class="form-control" id="UsuarioId" name="UsuarioId">
+                      <label>Vencimento CNH</label>
+                      <input type="date" class="form-control" id="VenciCNH" name="VenciCNH">
+                      <br>
+                      <br>
+                      <label>Vencimento MOPP</label>
+                      <input type="date" class="form-control" id="VenciMOPP" name="VenciMOPP">
+                      <input type="hidden" class="form-control" id="UsuarioId" name="UsuarioId">
 
-              </div>
+                    </div>
 
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                <button type="submit" class="btn btn-primary" name="btnsalvar" id="btnsalvar">Salvar</button>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                      <button type="submit" class="btn btn-primary" name="btnsalvar" id="btnsalvar">Salvar</button>
 
-              </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
             </div>
+
           </div>
-        </form>
+          <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+
       </div>
+      <!-- End of Content Wrapper -->
 
     </div>
-    <!-- /.container-fluid -->
+    <!-- End of Page Wrapper -->
 
-  </div>
-  <!-- End of Main Content -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
 
-</div>
-<!-- End of Content Wrapper -->
-
-</div>
-<!-- End of Page Wrapper -->
-
-<!-- Scroll to Top Button-->
-<a class="scroll-to-top rounded" href="#page-top">
-  <i class="fas fa-angle-up"></i>
-</a>
-
-<!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Pronto para partir?</h5>
-        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">×</span>
-        </button>
-      </div>
-      <div class="modal-body">Selecione "Sair" abaixo se você estiver pronto para encerrar sua sessão atual.</div>
-      <div class="modal-footer">
-        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-        <a class="btn btn-primary" href="login.html">Sair</a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Pronto para partir?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Selecione "Sair" abaixo se você estiver pronto para encerrar sua sessão atual.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+            <a class="btn btn-primary" href="login.html">Sair</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-</div>
-<!-- /.container-fluid -->
+  <!-- /.container-fluid -->
 
 </div>
 <!-- End of Main Content -->
@@ -241,15 +251,15 @@ if (isset($_GET['userId'])) {
 
 
 <script>
-  $('.btn[name="btnEditar"]').click(function(event){
-    btn = $(event.currentTarget);
-    id = btn.attr("id");
-    $.ajax(location["href"] + "?userId=" + id).done(function(data){
-      $("#VenciCNH").val(data["venc_cnh"]);
-      $("#VenciMOPP").val(data["venc_mopp"]);
-      $("#UsuarioId").val(id);
-    })
-  });
+$('.btn[name="btnEditar"]').click(function(event){
+  btn = $(event.currentTarget);
+  id = btn.attr("id");
+  $.ajax(location["href"] + "?userId=" + id).done(function(data){
+    $("#VenciCNH").val(data["venc_cnh"]);
+    $("#VenciMOPP").val(data["venc_mopp"]);
+    $("#UsuarioId").val(id);
+  })
+});
 </script>
 </body>
 
