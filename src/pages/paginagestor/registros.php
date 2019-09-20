@@ -501,6 +501,19 @@ if (isset($_POST["btnSalvar"])) {
     <script src="../../../vendor/jquery/jquery.min.js"></script>
     <script src="../../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+<script>
+    function imprimirDiv(div) {
+        var impressao = document.getElementById(div).innerHTML;
+        var original = document.body.innerHTML;
+
+        document.body.innerHTML = impressao;
+
+        window.print();
+
+        document.body.innerHTML = original;
+        location.reload();
+    }
+</script>
     <!-- Core plugin JavaScript-->
     <script src="../../../vendor/jquery-easing/jquery.easing.min.js"></script>
 
@@ -542,19 +555,6 @@ if (isset($_POST["btnSalvar"])) {
   modal.find('#hora_fim').val(recipientfim)
 })
 </script>                      
-<script>
-    function imprimirDiv(div) {
-        var impressao = document.getElementById(div).innerHTML;
-        var original = document.body.innerHTML;
-
-        document.body.innerHTML = impressao;
-
-        window.print();
-
-        document.body.innerHTML = original;
-        location.reload();
-    }
-</script>
 
 </body>
 
