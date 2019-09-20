@@ -144,7 +144,7 @@ if (isset($_GET['btnExcluirRota'])) {
 
                 <!-- DataTales Rastreamento -->
                 <div class="card shadow mb-4">
-                    <div class="card-header py-3">
+                    <div class="card-header py-3 text-center">
                         <form action="" method="get">
                             <div class="btn-group">
                                 <label class="btn btn-secondary disabled">
@@ -251,7 +251,10 @@ if (isset($_GET['btnExcluirRota'])) {
                                         </td>
                                         <td><small><?= $row["placa"] ?></small></td>
                                         <td><small><?= strftime("%x %R", strtotime($row["hora"])) ?></small></td>
-                                        <td><small><?= $row["formatted_address"] ?></small></td>
+                                        <td><small><?php
+                                                $result = mysqli_fetch_assoc($conn->executeQuery("SELECT coo.fk_cod_viagem, coo.hora, goo.formatted_address FROM coordenadas coo JOIN dados_googleapi goo ON goo.id = coo.fk_dados_google WHERE fk_cod_viagem = {$row["cod_viagem"]} ORDER BY coo.hora DESC LIMIT 1"));
+                                                echo $result['formatted_address'];
+                                                ?></small></td>
                                         <td><small><?= $row["nome"] ?></small></td>
                                         <td>
                                             <div class="btn-group btn-block">
