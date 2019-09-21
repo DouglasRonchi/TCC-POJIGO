@@ -76,7 +76,7 @@ $login->VerificarLogin();
                   while ($selectNome_rotaRows = mysqli_fetch_assoc($selectNome_rota)):
                     ?>
                     <tr>
-                      <td <?=($_SESSION['nome_rota'] == $selectNome_rotaRows["nome_rota"])? 'style="color: red !important"' : '' ; ?> ><?= $selectNome_rotaRows[""] ?></td>
+                      <td><?= $selectNome_rotaRows["nome_rota"] ?></td>
                                       
                   </tr>
                 <?php endwhile; ?>
