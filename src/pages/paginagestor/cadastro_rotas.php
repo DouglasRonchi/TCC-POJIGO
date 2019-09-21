@@ -86,13 +86,10 @@ $login->VerificarLogin();
 
                 <!--mapa ok-->
                 <script async defer
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbqJXX7fEFddatn-vaBp3BtBS-4TJNIbg&callback=callback">
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbqJXX7fEFddatn-vaBp3BtBS-4TJNIbg&callback=callback&sensor=false">
               </script>
 
-
-
               <!-- Parâmetro sensor é utilizado somente em dispositivos com GPS -->
-              <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
               <script type="text/javascript">
                 function CalculaDistancia() {
                   $('#litResultado').html('Aguarde...');
