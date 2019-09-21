@@ -494,73 +494,73 @@ class Usuario extends Site
     public function atualizarUsuario()
     {
 
-        $sqlUsuario = "UPDATE usuario SET usuario = '{$this->getUsuario()}' WHERE usuario_id = {$_GET['id']}";
+        $sqlUsuario = "UPDATE usuario SET usuario = '{$this->getUsuario()}' WHERE usuario_id = {$this->getidEditar()}";
         $this->executeQuery($sqlUsuario);
 
-        $sqlEmail = "UPDATE usuario SET email = '{$this->getEmail()}' WHERE usuario_id = {$_GET['id']}";
+        $sqlEmail = "UPDATE usuario SET email = '{$this->getEmail()}' WHERE usuario_id = {$this->getidEditar()}";
         $this->executeQuery($sqlEmail);
 
 
-        $sqlNome = "UPDATE usuario SET nome = '{$this->getNome()}' WHERE usuario_id = {$_GET['id']}";
+        $sqlNome = "UPDATE usuario SET nome = '{$this->getNome()}' WHERE usuario_id = {$this->getidEditar()}";
         $this->executeQuery($sqlNome);
 
-        $sqlRg = "UPDATE usuario SET rg = '{$this->getRg()}' WHERE usuario_id = {$_GET['id']}";
+        $sqlRg = "UPDATE usuario SET rg = '{$this->getRg()}' WHERE usuario_id = {$this->getidEditar()}";
         $this->executeQuery($sqlRg);
 
-        $sqlCpf = "UPDATE usuario SET cpf = '{$this->getCpf()}' WHERE usuario_id = {$_GET['id']}";
+        $sqlCpf = "UPDATE usuario SET cpf = '{$this->getCpf()}' WHERE usuario_id = {$this->getidEditar()}";
         $this->executeQuery($sqlCpf);
 
-        $sqlEndereco = "UPDATE usuario SET endereco = '{$this->getEndereco()}' WHERE usuario_id = {$_GET['id']}";
+        $sqlEndereco = "UPDATE usuario SET endereco = '{$this->getEndereco()}' WHERE usuario_id = {$this->getidEditar()}";
         $this->executeQuery($sqlEndereco);
 
-        $sqlEstado = "UPDATE usuario SET estado = '{$this->getEstado()}' WHERE usuario_id = {$_GET['id']}";
+        $sqlEstado = "UPDATE usuario SET estado = '{$this->getEstado()}' WHERE usuario_id = {$this->getidEditar()}";
         $this->executeQuery($sqlEstado);
 
-        $sqlCidade = "UPDATE usuario SET cidade = '{$this->getCidade()}' WHERE usuario_id = {$_GET['id']}";
+        $sqlCidade = "UPDATE usuario SET cidade = '{$this->getCidade()}' WHERE usuario_id = {$this->getidEditar()}";
         $this->executeQuery($sqlCidade);
 
-        $sqlBairro = "UPDATE usuario SET bairro = '{$this->getBairro()}' WHERE usuario_id = {$_GET['id']}";
+        $sqlBairro = "UPDATE usuario SET bairro = '{$this->getBairro()}' WHERE usuario_id = {$this->getidEditar()}";
         $this->executeQuery($sqlBairro);
 
-        $sqlTelefone = "UPDATE usuario SET telefone = '{$this->getTelefone()}' WHERE usuario_id = {$_GET['id']}";
+        $sqlTelefone = "UPDATE usuario SET telefone = '{$this->getTelefone()}' WHERE usuario_id = {$this->getidEditar()}";
         $this->executeQuery($sqlTelefone);
 
-        $sqlDataAdmissao = "UPDATE usuario SET data_admissao = '{$this->getDataAdmissao()}' WHERE usuario_id = {$_GET['id']}";
+        $sqlDataAdmissao = "UPDATE usuario SET data_admissao = '{$this->getDataAdmissao()}' WHERE usuario_id = {$this->getidEditar()}";
         $this->executeQuery($sqlDataAdmissao);
 
-        $sqlDataNascimento = "UPDATE usuario SET data_nascimento = '{$this->getDataNascimento()}' WHERE usuario_id = {$_GET['id']}";
+        $sqlDataNascimento = "UPDATE usuario SET data_nascimento = '{$this->getDataNascimento()}' WHERE usuario_id = {$this->getidEditar()}";
         $this->executeQuery($sqlDataNascimento);
 
-        $sqlCnh = "UPDATE usuario SET cnh = '{$this->getCnh()}' WHERE usuario_id = {$_GET['id']}";
+        $sqlCnh = "UPDATE usuario SET cnh = '{$this->getCnh()}' WHERE usuario_id = {$this->getidEditar()}";
         $this->executeQuery($sqlCnh);
 
-        $sqlVencCnh = "UPDATE usuario SET venc_cnh = '{$this->getVencimentoCnh()}' WHERE usuario_id = {$_GET['id']}";
+        $sqlVencCnh = "UPDATE usuario SET venc_cnh = '{$this->getVencimentoCnh()}' WHERE usuario_id = {$this->getidEditar()}";
         $this->executeQuery($sqlVencCnh);
 
-        $sqlMopp = "UPDATE usuario SET mopp = '{$this->getMopp()}' WHERE usuario_id = {$_GET['id']}";
+        $sqlMopp = "UPDATE usuario SET mopp = '{$this->getMopp()}' WHERE usuario_id = {$this->getidEditar()}";
         $this->executeQuery($sqlMopp);
 
-        $sqlVencMopp = "UPDATE usuario SET venc_mopp = '{$this->getVencimentoMopp()}' WHERE usuario_id = {$_GET['id']}";
+        $sqlVencMopp = "UPDATE usuario SET venc_mopp = '{$this->getVencimentoMopp()}' WHERE usuario_id = {$this->getidEditar()}";
         $this->executeQuery($sqlVencMopp);
 
-        $sqlDataCadastro = "UPDATE usuario SET data_cadastro = '{$this->getDataCadastro()}' WHERE usuario_id = {$_GET['id']}";
+        $sqlDataCadastro = "UPDATE usuario SET data_cadastro = '{$this->getDataCadastro()}' WHERE usuario_id = {$this->getidEditar()}";
         $this->executeQuery($sqlDataCadastro);
 
-        $sqlTipoUsuario = "UPDATE usuario SET tipo_usuario = '{$this->getTipoUsuario()}' WHERE usuario_id = {$_GET['id']}";
+        $sqlTipoUsuario = "UPDATE usuario SET tipo_usuario = '{$this->getTipoUsuario()}' WHERE usuario_id = {$this->getidEditar()}";
         $this->executeQuery($sqlTipoUsuario);
 
-        $sqlPrevilegio = "UPDATE usuario SET previlegio = '{$this->getPrevilegio()}' WHERE usuario_id = {$_GET['id']}";
+        $sqlPrevilegio = "UPDATE usuario SET previlegio = '{$this->getPrevilegio()}' WHERE usuario_id = {$this->getidEditar()}";
         $this->executeQuery($sqlPrevilegio);
 
-        $sqlOnline = "UPDATE usuario SET online = 1 WHERE usuario_id = {$_GET['id']}";
+        $sqlOnline = "UPDATE usuario SET online = 1 WHERE usuario_id = {$this->getidEditar()}";
         $this->executeQuery($sqlOnline);
 
         if ($this->getFotoPerfil() != '') {
-            $sqlFotoPerfil = "UPDATE usuario SET foto_perfil = '{$this->getFotoPerfil()}' WHERE usuario_id = {$_GET['id']}";
+            $sqlFotoPerfil = "UPDATE usuario SET foto_perfil = '{$this->getFotoPerfil()}' WHERE usuario_id = {$this->getidEditar()}";
             $this->executeQuery($sqlFotoPerfil);
         }
 
-        $sqlDataFoto = "UPDATE usuario SET data_foto = '{NOW()}' WHERE usuario_id = {$_GET['id']}";
+        $sqlDataFoto = "UPDATE usuario SET data_foto = '{NOW()}' WHERE usuario_id = {$this->getidEditar()}";
         $this->executeQuery($sqlDataFoto);
 
         header('Location:../pages/paginagestor/relatorio_usuarios.php');

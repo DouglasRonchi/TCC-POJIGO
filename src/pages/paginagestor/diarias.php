@@ -8,34 +8,34 @@ $login->VerificarLogin();
 <!DOCTYPE html>
 <html lang="pt-br">
 <style>
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
 
-td,
-th {
-  border: 1px solid #333;
-  text-align: left;
-  padding: 8px;
-}
+  td,
+  th {
+    border: 1px solid #333;
+    text-align: left;
+    padding: 8px;
+  }
 
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
 
-.largura10 {
-  width: 10%;
-}
+  .largura10 {
+    width: 10%;
+  }
 
-.largura02 {
-  width: 0.4%;
-}
+  .largura02 {
+    width: 0.4%;
+  }
 
-tr.subtitles th {
-  text-align: center;
-}
+  tr.subtitles th {
+    text-align: center;
+  }
 </style>
 
 <head>
@@ -49,7 +49,7 @@ tr.subtitles th {
   <!-- <link rel="stylesheet" href="../../../chosen/docsupport/prism.css"> -->
   <link rel="stylesheet" href="../../../chosen/chosen.css">
 
-  <meta http-equiv="Content-Security-Policy" content="default-src &apos;self&apos;; script-src &apos;self&apos; https://ajax.googleapis.com; style-src &apos;self&apos;; img-src &apos;self&apos; data:">
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src &apos;self&apos;; script-src &apos;self&apos; https://ajax.googleapis.com; style-src &apos;self&apos;; img-src &apos;self&apos; data:"> -->
   <title>Pojigo - Diarias</title>
   <!-- Custom fonts for this template-->
   <link href="../../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -88,15 +88,7 @@ tr.subtitles th {
                     <select data-placeholder="Cadastro..." id="cad" name="cad" class="chosen-select">
                       <option value=""></option> 
 
-                      <?php
-                      $selectUsu = $conn->executeQuery("SELECT * FROM usuario");
-                      $row = mysqli_num_rows($selectUsu);
-                      while ($usu = mysqli_fetch_assoc($selectUsu)):
-                        ?>
-
-                        <option value="<?= $usu['cadastro'] ?>"><?= $usu['cadastro']?> - <?= $usu["nome"] ?></option>
-
-                      <?php endwhile; ?>
+                      <?php  require_once 'select.php'; ?>
 
                     </select>
                   </div>
@@ -118,7 +110,11 @@ tr.subtitles th {
 
 
             <?php if (isset($_GET['cad']) && isset($_GET['dtini']) && isset($_GET['dtfin']) && $_GET['cad'] != '' && $_GET['dtini'] != '' && $_GET['dtfin'] != ''): ?>
+            <?php setlocale(LC_ALL, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese'); ?>
 
+            <h6 class="mt-3 ml-3 font-weight-bold text-primary">Mostrando resultados do
+              cadastro <?= $_GET['cad'] ?> desde <?= strftime("%x", strtotime($_GET['dtini'])) ?>
+              até <?= strftime("%x", strtotime($_GET['dtfin'])) ?>.</h6>
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -131,216 +127,208 @@ tr.subtitles th {
                         <th>Relatório</th>
                       </tr>
                     </thead>
-                    <tfoot>
-                      <tr>
-                        <th>Cadastro</th>
-                        <th>Nome</th>
-                        <th>Quantidade</th>
-                        <th>valor</th>
-                        <th>Relatório</th>
-                      </tr>
-                    </tfoot>
-                    <tbody> <?php
-                    if (isset($_GET['cad'])) {
+                    <tbody>
+                      <?php
                       $sql = "SELECT COUNT(rp.fk_diaria) as quantidade, SUM(dia.valor) as soma, rp.fk_usuario, usu.cadastro, usu.nome FROM registro_ponto rp JOIN diarias dia ON dia.id = rp.fk_diaria JOIN usuario usu on usu.usuario_id = rp.fk_usuario WHERE usu.cadastro = {$_GET['cad']} AND hora_inicio BETWEEN '{$_GET['dtini']}' AND '{$_GET['dtfin']}'";
 
-                    } else {
-                      $sql = "SELECT COUNT(rp.fk_diaria) as quantidade, SUM(dia.valor) as soma, rp.fk_usuario, usu.cadastro, usu.nome FROM registro_ponto rp JOIN diarias dia ON dia.id = rp.fk_diaria JOIN usuario usu on usu.usuario_id = rp.fk_usuario WHERE previlegio = 3 GROUP BY fk_usuario";
-                    }
-
-                    $query = $conn->executeQuery($sql);
-                    $row = mysqli_num_rows($query);
-                    while ($row = mysqli_fetch_assoc($query)): ?>
-                    <tr>
-                      <td name="cadastro" id="cadastro"><?=$row['cadastro']?></td>
-                      <td><?=$row['nome']?></td>
-                      <td><?=$row['quantidade']?></td>
-                      <td><?=$row['soma']?></td>
-                      <td class="text-center"><button class="btn btn-primary" data-toggle="modal"
-                        data-target=".bd-modal-ponto">Visualizar</button></td>
-                        </tr> <?php
-                      endwhile;
-                      ?>
-                    </tbody>
-                  </table>
+                      $query = $conn->executeQuery($sql);
+                      $row = mysqli_num_rows($query);
+                      while ($row = mysqli_fetch_assoc($query)): ?>
+                      <tr>
+                        <td name="cadastro" id="cadastro"><?=$row['cadastro']?></td>
+                        <td><?=$row['nome']?></td>
+                        <td><?=$row['quantidade']?></td>
+                        <td><?=$row['soma']?></td>
+                        <td class="text-center"><button class="btn btn-primary" data-toggle="modal"
+                          data-target=".bd-modal-ponto">Visualizar</button></td>
+                        </tr>
+                        <?php endwhile; ?>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th>Cadastro</th>
+                          <th>Nome</th>
+                          <th>Quantidade</th>
+                          <th>valor</th>
+                          <th>Relatório</th>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
                 </div>
+                <?php endif;?>
               </div>
-            <?php endif;?>
+            </div>
+            <!-- /.container-fluid -->
+          </div>
+          <!-- End of Main Content -->
+        </div>
+        <!-- End of Content Wrapper -->
+      </div>
+      <!-- End of Page Wrapper -->
+
+      <!-- Footer -->
+      <?php include '../menu/footer.php'; ?>
+      <!-- End of Footer -->
+
+      <!-- Logout Modal-->
+      <?php include '../menu/logoutmodal.php'; ?>
+      <!-- Logout Modal-->
+
+      <!-- Scroll to Top Button-->
+      <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+      </a>
+
+      <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Pronto para partir?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Selecione "Sair" abaixo se você estiver pronto para terminar sua sessão atual.
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+            <a class="btn btn-primary" href="login.html">Sair</a>
           </div>
         </div>
-        <!-- /.container-fluid -->
       </div>
-      <!-- End of Main Content -->
     </div>
-    <!-- End of Content Wrapper -->
-  </div>
-  <!-- End of Page Wrapper -->
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
-</div>
-<!-- /.container-fluid -->
-</div>
-<!-- End of Main Content -->
-<!-- Footer --> <?php include '../menu/footer.php'; ?>
-<!-- End of Footer -->
-</div>
-<!-- End of Content Wrapper -->
-</div>
-<!-- End of Page Wrapper -->
-<!-- Scroll to Top Button-->
-<a class="scroll-to-top rounded" href="#page-top">
-  <i class="fas fa-angle-up"></i>
-</a>
-<!-- Logout Modal--> <?php include '../menu/logoutmodal.php'; ?>
-<!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-aria-hidden="true">
-<div class="modal-dialog" role="document">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h5 class="modal-title" id="exampleModalLabel">Pronto para partir?</h5>
-      <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">×</span>
-      </button>
-    </div>
-    <div class="modal-body">Selecione "Sair" abaixo se você estiver pronto para terminar sua sessão atual.
-    </div>
-    <div class="modal-footer">
-      <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-      <a class="btn btn-primary" href="login.html">Sair</a>
-    </div>
-  </div>
-</div>
-</div>
-</div>
-<!-- End of Content Wrapper -->
-</div>
-<!-- End of Page Wrapper -->
-<!-- Scroll to Top Button-->
-<a class="scroll-to-top rounded" href="#page-top">
-  <i class="fas fa-angle-up"></i>
-</a>
 
-<!-- Modal de Registro de Diárias -->
-<div class="modal fade bd-modal-ponto" id="div" tabindex="-1" role="dialog" aria-labelledby="pontoLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl">
-    <div class="modal-content">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="conteudo m-3">
-            <button type="button" title="Fechar" class="close" data-dismiss="modal" aria-label="Fechar">
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <div class="text-center">
-              <h3>Relatório de Diárias</h3>
-            </div>
-            <button class="btn btn-info" title="Imprimir" onclick="imprimirDiv('printableArea')"><i class="fas fa-print"></i></button>
-            <?php
-            if (isset($_GET['cad'])) :
-              $selectRegistrosModal = $conn->executeQuery("SELECT * FROM usuario WHERE cadastro = {$_GET['cad']}");?>
-              <?php
-              $row = mysqli_num_rows($selectRegistrosModal);
-              while ($row = mysqli_fetch_assoc($selectRegistrosModal)):?>
-              <div id="printableArea" class="mt-3">
-                <table>
-                  <tr>
-                    <th class="largura10 text-center" colspan="4">Dados do Colaborador</th>
-                  </tr>
-                  <tr>
-                    <th class="largura10">Nome:</th>
-                    <td><?=$row['nome']?></td>
-                    <th class="largura10">CPF:</th>
-                    <td><?=utf8_encode($row['cpf'])?></td>
-                  </tr>
-                  <tr>
-                    <th>Cadastro:</th>
-                    <td><?=utf8_encode($row['cadastro'])?></td>
-                    <th>RG:</th>
-                    <td><?=utf8_encode($row['rg'])?></td>
-                  </tr>
-                  <tr>
-                    <th>Cidade:</th>
-                    <td><?=$row['cidade']?></td>
-                    <th>Bairro:</th>
-                    <td><?=$row['bairro']?></td>
-                  </tr>
-                  <tr>
-                    <th>Cargo:</th>
-                    <td><?=utf8_encode($row['tipo_usuario'])?></td>
-                    <th>Obs:</th>
-                    <td></td>
-                  </tr>
-                </table>
-              <?php endwhile;?>
-              <table class="mt-1">
-                <tr>
-                  <th class="largura10 text-center" colspan="10">Relatório de Diárias</th>
-                </tr>
-                <tr class="subtitles">
-                  <th colspan="2">Dia</th>
-                  <th>Entrada</th>
-                  <th>Tipo Diária</th>
-                  <th>Saída</th>
-                  <th>Valor Diaria</th>
-                </tr>
+    <!-- Modal de Registro de Diárias -->
+    <div class="modal fade bd-modal-ponto" id="div" tabindex="-1" role="dialog" aria-labelledby="pontoLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="conteudo m-3">
+                <button type="button" title="Fechar" class="close" data-dismiss="modal" aria-label="Fechar">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="text-center">
+                  <h3>Relatório de Diárias</h3>
+                </div>
+                <button class="btn btn-info" title="Imprimir" onclick="imprimirDiv('printableArea')"><i class="fas fa-print"></i></button>
                 <?php
-                $selectRegistrosUnicos = $conn->executeQuery("SELECT SUM(dia.valor) as soma, rp.hora_inicio, rp.hora_fim, dia.nome as nome FROM registro_ponto rp JOIN usuario us ON us.usuario_id = rp.fk_usuario JOIN diarias dia on dia.id = rp.fk_diaria WHERE us.cadastro = {$_GET['cad']} GROUP BY rp.hora_inicio");
-
-                $rowHoras = mysqli_num_rows($selectRegistrosUnicos);
-                while ($rowHoras = mysqli_fetch_assoc($selectRegistrosUnicos)):?>
-                <tr class="subtitles">
-                  <th class="largura02">
+                if (isset($_GET['cad'])) :
+                $selectRegistrosModal = $conn->executeQuery("SELECT * FROM usuario WHERE cadastro = {$_GET['cad']}");?>
+                <?php
+                $row = mysqli_num_rows($selectRegistrosModal);
+                while ($row = mysqli_fetch_assoc($selectRegistrosModal)):?>
+                <div id="printableArea" class="mt-3">
+                  <table>
+                    <tr>
+                      <th class="largura10 text-center" colspan="4">Dados do Colaborador</th>
+                    </tr>
+                    <tr>
+                      <th class="largura10">Nome:</th>
+                      <td><?=$row['nome']?></td>
+                      <th class="largura10">CPF:</th>
+                      <td><?=utf8_encode($row['cpf'])?></td>
+                    </tr>
+                    <tr>
+                      <th>Cadastro:</th>
+                      <td><?=utf8_encode($row['cadastro'])?></td>
+                      <th>RG:</th>
+                      <td><?=utf8_encode($row['rg'])?></td>
+                    </tr>
+                    <tr>
+                      <th>Cidade:</th>
+                      <td><?=$row['cidade']?></td>
+                      <th>Bairro:</th>
+                      <td><?=$row['bairro']?></td>
+                    </tr>
+                    <tr>
+                      <th>Cargo:</th>
+                      <td><?=utf8_encode($row['tipo_usuario'])?></td>
+                      <th>Obs:</th>
+                      <td></td>
+                    </tr>
+                  </table>
+                  <?php endwhile;?>
+                  <table class="mt-1">
+                    <tr>
+                      <th class="largura10 text-center" colspan="10">Relatório de Diárias</th>
+                    </tr>
+                    <tr class="subtitles">
+                      <th colspan="2">Dia</th>
+                      <th>Entrada</th>
+                      <th>Tipo Diária</th>
+                      <th>Saída</th>
+                      <th>Valor Diaria</th>
+                    </tr>
                     <?php
-                    setlocale(LC_ALL, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
-                    echo ucfirst( utf8_encode( strftime("%A", strtotime($rowHoras['hora_inicio']))))?>
-                  </th>
-                  <th class="largura02">
-                    <?php echo strftime("%d", strtotime($rowHoras['hora_inicio']))?>
-                  </th>
-                  <th><?=strftime("%R", strtotime($rowHoras['hora_inicio']))?></th>
-                  <th><?=utf8_encode($rowHoras['nome'])?></th>
-                  <th><?=strftime("%R", strtotime($rowHoras['hora_fim']))?></th>
-                  <th><?=$rowHoras['soma']?></th>
-                </tr>
-              <?php endwhile; ?>
-              <tr class="subtitles">
-                <th colspan="4"></th>
-                <th>Valor Total</th>
-                <?php
-                $sqlSoma = $conn->executeQuery ("SELECT COUNT(rp.fk_diaria) as quantidade, SUM(dia.valor) as soma FROM registro_ponto rp JOIN diarias dia ON dia.id = rp.fk_diaria JOIN usuario usu on usu.usuario_id = rp.fk_usuario WHERE usu.cadastro = {$_GET['cad']} AND hora_inicio BETWEEN '{$_GET['dtini']}' AND '{$_GET['dtfin']}'");
-                $rowSoma = mysqli_num_rows($sqlSoma);
-                while($soma = mysqli_fetch_assoc($sqlSoma)):?>
-                <th><?=$soma['soma']?></th>
-              </tr>
-            </table>
-            <br>
-            <div class="text-center"> ______________________<br> Assinatura </div>
+                    $selectRegistrosUnicos = $conn->executeQuery("SELECT SUM(dia.valor) as soma, rp.hora_inicio, rp.hora_fim, dia.nome as nome FROM registro_ponto rp JOIN usuario us ON us.usuario_id = rp.fk_usuario JOIN diarias dia on dia.id = rp.fk_diaria WHERE us.cadastro = {$_GET['cad']} GROUP BY rp.hora_inicio");
+
+                    $rowHoras = mysqli_num_rows($selectRegistrosUnicos);
+                    while ($rowHoras = mysqli_fetch_assoc($selectRegistrosUnicos)):?>
+                    <tr class="subtitles">
+                      <th class="largura02">
+                        <?php
+                        setlocale(LC_ALL, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
+                        echo ucfirst( utf8_encode( strftime("%A", strtotime($rowHoras['hora_inicio']))))?>
+                      </th>
+                      <th class="largura02">
+                        <?php echo strftime("%d", strtotime($rowHoras['hora_inicio']))?>
+                      </th>
+                      <th><?=strftime("%R", strtotime($rowHoras['hora_inicio']))?></th>
+                      <th><?=utf8_encode($rowHoras['nome'])?></th>
+                      <th><?=strftime("%R", strtotime($rowHoras['hora_fim']))?></th>
+                      <th><?=$rowHoras['soma']?></th>
+                    </tr>
+                    <?php endwhile; ?>
+                    <tr class="subtitles">
+                      <th colspan="4"></th>
+                      <th>Valor Total</th>
+                      <?php
+                      $sqlSoma = $conn->executeQuery ("SELECT COUNT(rp.fk_diaria) as quantidade, SUM(dia.valor) as soma FROM registro_ponto rp JOIN diarias dia ON dia.id = rp.fk_diaria JOIN usuario usu on usu.usuario_id = rp.fk_usuario WHERE usu.cadastro = {$_GET['cad']} AND hora_inicio BETWEEN '{$_GET['dtini']}' AND '{$_GET['dtfin']}'");
+                      $rowSoma = mysqli_num_rows($sqlSoma);
+                      while($soma = mysqli_fetch_assoc($sqlSoma)):?>
+                      <th><?=$soma['soma']?></th>
+                    </tr>
+                  </table>
+                  <br>
+                  <div class="text-center"> ______________________<br> Assinatura </div>
+                </div>
+                <?php endwhile;?>
+                <?php endif;?>
+                <button type="button" title="Fechar" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+              </div>
+            </div>
           </div>
-        <?php endwhile;?>
-      <?php endif;?>
-      <button type="button" title="Fechar" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-</div>
-</div>
-</div>
 
-<script src="../../../chosen/docsupport/jquery-3.2.1.min.js" type="text/javascript"></script>
-<script src="../../../chosen/chosen.jquery.js" type="text/javascript"></script>
-<!-- <script src="../../../chosen/docsupport/prism.js" type="text/javascript" charset="utf-8"></script> -->
-<script src="../../../chosen/docsupport/init.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../../chosen/docsupport/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="../../../chosen/chosen.jquery.js" type="text/javascript"></script>
+    <!-- <script src="../../../chosen/docsupport/prism.js" type="text/javascript" charset="utf-8"></script> -->
+    <script src="../../../chosen/docsupport/init.js" type="text/javascript" charset="utf-8"></script>
 
-<!-- Logout Modal-->
-<?php include '../menu/logoutmodal.php'; ?>
-<!-- Bootstrap core JavaScript-->
-<script src="../../../vendor/jquery/jquery.min.js"></script>
-<script src="../../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Logout Modal-->
+    <?php include '../menu/logoutmodal.php'; ?>
+    <!-- Bootstrap core JavaScript-->
+    <script src="../../../vendor/jquery/jquery.min.js"></script>
+    <script src="../../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="../../../vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="../../../js/sb-admin-2.min.js"></script>
+    <!-- Page level plugins -->
+    <script src="../../../vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="../../../vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="../../../js/demo/datatables-demo.js"></script>
 
-<script>
-    function imprimirDiv(div) {
+    <?php include_once '../../include/configdatatable.php';?>
+
+    <script>
+      function imprimirDiv(div) {
         var impressao = document.getElementById(div).innerHTML;
         var original = document.body.innerHTML;
 
@@ -350,21 +338,8 @@ aria-hidden="true">
 
         document.body.innerHTML = original;
         location.reload();
-    }
-</script>
+      }
+    </script>
 
-<!-- Core plugin JavaScript-->
-<script src="../../../vendor/jquery-easing/jquery.easing.min.js"></script>
-<!-- Custom scripts for all pages-->
-<script src="../../../js/sb-admin-2.min.js"></script>
-<!-- Page level plugins -->
-<script src="../../../vendor/datatables/jquery.dataTables.min.js"></script>
-<script src="../../../vendor/datatables/dataTables.bootstrap4.min.js"></script>
-<!-- Page level custom scripts -->
-<script src="../../../js/demo/datatables-demo.js"></script>
-
-
-<?php include_once '../../include/configdatatable.php';?>
-
-</body>
-</html>
+  </body>
+  </html>
