@@ -153,7 +153,6 @@
 <br><br><br><br><br id="rastreamento"><br><br><br>
 
 <center>
-    <!-- <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example"> -->
 
         <div class="col-12">
             <h4 class="text-center mb-4 titlegif">RASTREAMENTO</h4>
@@ -188,24 +187,20 @@
             Avisos sobre vencimento de CNH e MOPP serão enviados aos motoristas e gestores.</strong></h5>
             <a class="btn btn-primary btngif" href="../../../login.php" role="button">EXPERIMENTE AGORA</a>
         </div>
-    </div>
 
     <br id="quemsomos"><br><br><br><br>
 
-    <div class="container-fluid pt-5 divfotos bg-indigo">
-        <h2 class="card-title text-center text-white mb-5 titleperfil">QUEM SOMOS ?</h2>
+<div class="container-fluid pt-5 divfotos bg-indigo">
+    <h2 class="card-title text-center text-white mb-5 titleperfil">QUEM SOMOS ?</h2>
 
         <div class="row pt-3 pb-5 rowperfil">
 
-            <div class="card col-lg col-sm-10 border-0 divperfil">
-                <img class="rounded-circle mt-2 col foto" title="Douglas" src="../../../img/institucional/perfil/douglas.png"
-                alt="Imagem de capa do card">
-                <div class="card-body text-center">
-                    <h4 class="card-title text-white nomeperfil">Douglas Ronchi</h4>
-                    <a href="https://www.linkedin.com/in/douglas-ronchi-7b5a2b134?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BIB6XpEfMSHqmMjokcZRiCw%3D%3D"
-                    target="_blank">
-                    <img class="btn btn-light btnperfil" src="../../../img/institucional/inicial_icons/in.png" height="33"
-                    width="100">
+        <div class="card col-lg col-sm-10 border-0 divperfil">
+            <img class="rounded-circle mt-2 col foto" title="Douglas" src="../../../img/institucional/perfil/douglas.png" alt="Imagem de capa do card">
+            <div class="card-body text-center">
+                <h4 class="card-title text-white nomeperfil">Douglas Ronchi</h4>
+                <a href="https://www.linkedin.com/in/douglas-ronchi-7b5a2b134?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BIB6XpEfMSHqmMjokcZRiCw%3D%3D" target="_blank">
+                <img class="btn btn-light btnperfil" src="../../../img/institucional/inicial_icons/in.png" height="33" width="100">
                 </a>
             </div>
         </div>
@@ -227,74 +222,57 @@
             alt="Imagem de capa do card">
             <div class="card-body text-center">
                 <h4 class="card-title text-white nomeperfil">Geovane Duarte</h4>
-                <a href="https://www.linkedin.com/in/geovane-duarte-da-silva-989b16189"
-                target="_blank">
-                <img class="btn btn-light btnperfil" src="../../../img/institucional/inicial_icons/in.png" height="33"
-                width="100">
-            </a>
+                <a href="https://www.linkedin.com/in/geovane-duarte-da-silva-989b16189" target="_blank">
+                <img class="btn btn-light btnperfil" src="../../../img/institucional/inicial_icons/in.png" height="33" width="100">
+                </a>
+            </div>
+        </div>
+
+        <div class="card col-lg col-sm-10 border-0 divperfil">
+            <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/dauana.jpg" alt="Imagem de capa do card" title="Dauana">
+            <div class="card-body text-center">
+                <h4 class="card-title text-white nomeperfil">Dauana Severo</h4>
+                <a href="https://www.linkedin.com/in/dauana-severo-bb152a18a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BaWjt6wBpRle6nhDbEtZ0nQ%3D%3D" target="_blank">
+                <img class="btn btn-light btnperfil" src="../../../img/institucional/inicial_icons/in.png" height="33" width="100">
+                </a>
+            </div>
+        </div>
+
+        <div class="card col-lg col-sm-10 border-0 divperfil">
+            <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/jonas.png" alt="Imagem de capa do card" title="Jonas">
+            <div class="card-body text-center">
+                <h4 class="card-title text-white nomeperfil">Jonas Antunes</h4>
+                <a href="https://www.linkedin.com/in/jonas-antunes-049197187?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B7FBba2MVRt6sC%2F4fQ26CUA%3D%3D" target="_blank">
+                <img class="btn btn-light btnperfil" src="../../../img/institucional/inicial_icons/in.png" height="33" width="100">
+                </a>
+            </div>
         </div>
     </div>
-
-    <div class="card col-lg col-sm-10 border-0 divperfil">
-        <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/dauana.jpg"
-        alt="Imagem de capa do card" title="Dauana">
-        <div class="card-body text-center">
-            <h4 class="card-title text-white nomeperfil">Dauana Severo</h4>
-            <a href="https://www.linkedin.com/in/dauana-severo-bb152a18a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BaWjt6wBpRle6nhDbEtZ0nQ%3D%3D"
-            target="_blank">
-            <img class="btn btn-light btnperfil" src="../../../img/institucional/inicial_icons/in.png" height="33"
-            width="100">
-        </a>
-    </div>
-</div>
-
-<div class="card col-lg col-sm-10 border-0 divperfil">
-    <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/jonas.png"
-    alt="Imagem de capa do card" title="Jonas">
-    <div class="card-body text-center">
-        <h4 class="card-title text-white nomeperfil">Jonas Antunes</h4>
-        <a href="https://www.linkedin.com/in/jonas-antunes-049197187?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B7FBba2MVRt6sC%2F4fQ26CUA%3D%3D"
-        target="_blank">
-        <img class="btn btn-light btnperfil" src="../../../img/institucional/inicial_icons/in.png" height="33"
-        width="100">
-    </a>
-</div>
-</div>
-</div>
 </div>
 
 </center>
 
-<br><br><br><br><br>
+<br><br><br><br><br><br><br><br>
 
-<div id="faleconosco" class="container-fluid contatos">
-
-    <div class="row">
-
-        <a href="https://web.facebook.com/Pojigo-101839457873456" target="_blank"
-        class="card col col-sm text-dark bg-transparent text-center cardcontatos">
-        <div class="card-body col">
-            <img src="../../../img/institucional/inicial_icons/face.png" title="facebook POJIGO" class="mt-2" height="60" width="70">
-            <h5 class="mt-1 mt-sm-3">Pagina facebook</h5>
-        </div>
-    </a>
-
-    <div class="card col col-sm text-dark bg-transparent text-center cardcontatos">
-        <div class="card-body col">
-            <img src="../../../img/institucional/inicial_icons/contato.png" title="Telefone: 33546588" height="80" width="90">
-            <h5>(47) 33546588</h5>
-        </div>
+<div>
+    <div>
+        <a class="gadgets" href="https://web.facebook.com/Pojigo-101839457873456" style="position: fixed; top: 555px;" target="_blank">
+        <img border="0" heigth="38" src="../../../img/institucional/inicial_icons/faceboock.png" title="Siga-nos no face" width="38" /></a>
     </div>
-
-    <div class="card col col-sm text-dark bg-transparent text-center cardcontatos">
-        <div class="card-body col">
-            <img src="../../../img/institucional/inicial_icons/whats.png" title="Whats: 99654524" height="70" width="130">
-            <h5 class="mt-sm-2">(47) 996545424</h5>
-        </div>
+    <div>
+        <a class="gadgets" href="Siga-nos no Insta" style="position: fixed; top: 603px;" target="_blank">
+        <img border="0" heigth="39" src="../../../img/institucional/inicial_icons/insta.png" title="Siga-nos no Insta" width="39" /></a>
     </div>
+    <div>
+        <a class="gadgets" href="Whats:(47) 996545424" style="position: fixed; top: 650px;" target="_blank">
+        <img border="0" heigth="38" src="../../../img/institucional/inicial_icons/whatsapp.png" title="Whats:(47) 996545424" width="38" /></a>
+    </div>
+    <div>
+        <a class="gadgets" href="https://www.youtube.com/channel/UCusMR_Z4ozLqcf__GpBgehg" style="position: fixed; top: 700px;" target="_blank">
+        <img border="0" heigth="38" src="../../../img/institucional/inicial_icons/youtube.png" title="Pojigo Entra21" width="38" /></a>
+    </div>
+</div>
 
-</div>
-</div>
 
 <!-- Scroll to Top Button-->
 <a class="scroll-to-top rounded scroltop" href="#page-top">
@@ -320,7 +298,7 @@
             $('.navbar').css("background-color", "rgba(0, 0, 0, 0.8)");
         } else {
             $('.navbar').css("background-color", "transparent");
-        }
+        }   
     }
 
     // When the user clicks on the button, scroll to the top of the document
