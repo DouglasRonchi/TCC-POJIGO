@@ -28,8 +28,20 @@ $login->VerificarLogin();
 
   <style>
     #map {
-      max-width: 100%;
+      width: 100%;
       height: 100%;
+    }
+
+    .content-heading {
+      height: 10%!important;
+    }
+
+    .content-form {
+      height: 85%!important;
+    }
+
+    .content-form .form-row .form-group {
+      width: 100%;
     }
   </style>
 </head>
@@ -45,20 +57,15 @@ $login->VerificarLogin();
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
+      <!-- Topbar Navbar -->
+      <?php include '../menu/topbar.php'; ?>
+      <!-- End of Topbar -->
+
       <!-- Main Content -->
       <div id="content">
 
-        <!-- Topbar Navbar -->
-        <?php include '../menu/topbar.php'; ?>
-        <!-- End of Topbar -->
-
         <!-- Begin Page Content -->
-        <div class="container-fluid">
-
-
-
-          <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">Cadastro de Rotas</h1>
+        <div class="container-fluid h-100">
 
           <!--mapa ok-->
           <script async defer
@@ -110,144 +117,118 @@ $login->VerificarLogin();
             }
           </script>
 
-
-          <form action="../../controllers/cidadeController.php" method="post">
-
-           <div class="row">
-            <div class="form-group col-md-6">
-              <label for="inputNome_cidade"><strong>Inserir nova cidade</strong></label>
-              <input type="text" class="field" id="inputNome_cidade" name="inputNome_cidade"
-              placeholder="Digite o nome da cidade." required>
-
-              <button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#CidadeModal">Salvar cidade</button>
-              <div class="modal fade" id="CidadeModal" tabindex="-1" role="dialog" aria-labelledby="CidadeModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                      <button type="submit" name="salvar" class="btn btn-primary">Salvar</button>
-                    </div>
-                  </div>
-                </div>
-              </div> 
+          <div class="row content-heading mb-3">
+            <!-- Page Heading -->
+            <div class="col-md-12">
+              <h1 class="h3 text-gray-800">Cadastro de Rotas</h1>
             </div>
-          </div>                   
-
-        </form>
-        <form action="../../controllers/rotasController.php" method="post">
-
-         <div class="row">
-          <div class="form-group col-md-6">
-            <label for="txtOrigem"><strong>Endereço de origem</strong></label>
-            <select style="width: 400px" class="field" id="txtOrigem" name="origem">
-              <?php
-              $dados = $conn->executeQuery("SELECT * FROM cidades");
-              while($cidade = mysqli_fetch_assoc($dados)) {
-                ?>
-                <option value="<?=$cidade['id']?>"><?= $cidade['nome_cidade'] ?></option>
-              <?php }?>
-            </select>
           </div>
-        </div>
-
-        <div class="row">
-          <div class="form-group col-md-12">
-            <label for="txtDestino"><strong>Endereço de destino</strong></label>
-            <select style="width: 400px" class="field" id="txtDestino" name="destino">
-              <?php
-              $dados = $conn->executeQuery("SELECT * FROM cidades");
-              while($cidade = mysqli_fetch_assoc($dados)) {
-                ?>
-                <option value="<?=$cidade['id']?>"><?= $cidade['nome_cidade'] ?></option>
-              <?php }?>
-            </select>
-
-            <input type="button" value="Calcular distância" onclick="CalculaDistancia()" class="btnNew btn btn-secondary mr-2"/>
-
-            <button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#exampleModal">
-              Salvar rota
-            </button>
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    <button type="submit" name="salvar" class="btn btn-primary">Salvar</button>
-                  </div>
+          <div class="row content-form">
+            <form class="col-md-4" action="../../controllers/rotasController.php" method="post">
+                <div class="form-group">
+                  <label for="txtOrigem"><strong>Endereço de origem</strong></label>
+                  <select class="field form-control" id="txtOrigem" name="origem">
+                    <?php
+                    $dados = $conn->executeQuery("SELECT * FROM cidades");
+                    while($cidade = mysqli_fetch_assoc($dados)) {
+                      ?>
+                      <option value="<?=$cidade['id']?>"><?= $cidade['nome_cidade'] ?></option>
+                    <?php }?>
+                  </select>
                 </div>
+                <div class="form-group">
+                  <label for="txtDestino"><strong>Endereço de destino</strong></label>
+                  <select class="field form-control" id="txtDestino" name="destino">
+                    <?php
+                    $dados = $conn->executeQuery("SELECT * FROM cidades");
+                    while($cidade = mysqli_fetch_assoc($dados)) {
+                      ?>
+                      <option value="<?=$cidade['id']?>"><?= $cidade['nome_cidade'] ?></option>
+                    <?php }?>
+                  </select>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                          <button type="submit" name="salvar" class="btn btn-primary">Salvar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
               </div>
+
+                <div class="form-group">
+                  <input type="button" value="Calcular distância" onclick="CalculaDistancia()" class="btnNew btn btn-secondary mr-2"/>
+                  <button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#exampleModal">
+                    Salvar rota
+                  </button>
+              </div>
+              <div><span id="litResultado">&nbsp;</span></div>
+            </form>
+            <div class="googlemaps col-md-8">
+              <iframe  id="map" src="https://maps.google.com/maps?saddr=&daddr=&output=embed"></iframe>
             </div>
           </div>
+          
+
+          <script>
+
+            function inicializar() {
+              var coordenadas = {lat: -22.912869, lng: -43.228963};
+
+              var mapa = new google.maps.Map(document.getElementById('mapa'), {
+                zoom: 15,
+                center: coordenadas
+              });
+
+              var marker = new google.maps.Marker({
+                position: coordenadas,
+                map: mapa,
+                title: 'Meu marcador'
+              });
+            }
+          </script>
         </div>
-      </form>
+        <!-- /.container-fluid -->
 
-
-      <div><span id="litResultado">&nbsp;</span></div>
-      <div class="googlemaps">
-        <iframe  id="map" src="https://maps.google.com/maps?saddr=&daddr=&output=embed"></iframe>
       </div>
+      <!-- End of Main Content -->
 
-      <script>
+      <!-- Footer -->
+      <?php include '../menu/footer.php'; ?>      
+      <!-- End of Footer -->
 
-        function inicializar() {
-          var coordenadas = {lat: -22.912869, lng: -43.228963};
-
-          var mapa = new google.maps.Map(document.getElementById('mapa'), {
-            zoom: 15,
-            center: coordenadas
-          });
-
-          var marker = new google.maps.Marker({
-            position: coordenadas,
-            map: mapa,
-            title: 'Meu marcador'
-          });
-        }
-      </script>
     </div>
-    <!-- /.container-fluid -->
+    <!-- End of Content Wrapper -->
 
   </div>
-  <!-- End of Main Content -->
+  <!-- End of Page Wrapper -->
 
-  <!-- Footer -->
-  <?php include '../menu/footer.php'; ?>      
-  <!-- End of Footer -->
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
 
-</div>
-<!-- End of Content Wrapper -->
+  <!-- Logout Modal-->
+  <?php include '../menu/logoutmodal.php'; ?>
 
-</div>
-<!-- End of Page Wrapper -->
+  <!-- Bootstrap core JavaScript-->
+  <script src="../../../vendor/jquery/jquery.min.js"></script>
+  <script src="../../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<!-- Scroll to Top Button-->
-<a class="scroll-to-top rounded" href="#page-top">
-  <i class="fas fa-angle-up"></i>
-</a>
+  <!-- Core plugin JavaScript-->
+  <script src="../../../vendor/jquery-easing/jquery.easing.min.js"></script>
 
-<!-- Logout Modal-->
-<?php include '../menu/logoutmodal.php'; ?>
-
-<!-- Bootstrap core JavaScript-->
-<script src="../../../vendor/jquery/jquery.min.js"></script>
-<script src="../../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-<!-- Core plugin JavaScript-->
-<script src="../../../vendor/jquery-easing/jquery.easing.min.js"></script>
-
-<!-- Custom scripts for all pages-->
-<script src="../../../js/sb-admin-2.min.js"></script>
+  <!-- Custom scripts for all pages-->
+  <script src="../../../js/sb-admin-2.min.js"></script>
 
 </body>
 
