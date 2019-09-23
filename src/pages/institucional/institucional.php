@@ -103,7 +103,7 @@
         <center>
             <h1>CONECTANDO O VEÍCULO AO SEU NEGÓCIO</h1>
             <p>VOCÊ NÃO PRECISA TER UM GERENTE DE FROTAS PARA UTILIZAR O POJIGO.<br>
-                SIMPLES DE USAR, ATRAVÉS DE UM CONJUNTO COMPLETO DE PRODUTOS:<br>
+                SIMPLES DE USAR, ATRAVÉS DE UM CONJUNTO COMPLETO DE FUNÇÕES:<br>
                 RASTREAMENTO, MONITORAMENTO, CONTROLE DE CNH E MOPP,<br>
                 GERENCIAMENTO DE ENTREGAS E SERVIÇOS.<br>
                 <strong>TUDO INTEGRADO EM UMA ÚNICA PLATAFORMA.</strong>
@@ -112,7 +112,7 @@
 
         <br><br><br>
 
- 
+
         <div class="row rowcard">
             <div class="card col-lg col-sm-12 m-lg-2 mb-3 text-center sombra" id="card" style="width: 18rem;">
                 <div class="col mt-4"><img class="imgcard" src="../../../img/institucional/monitoramento1.png" title="MONITORAMENTO"></div>
@@ -154,140 +154,157 @@
 
 <center>
 
-        <div class="col-12">
-            <h4 class="text-center mb-4 titlegif">RASTREAMENTO</h4>
-            <div class="mb-5">
-                <img class="sombra gif" title="RASTREAMENTO" style="border-radius: 15px;" src="../../../img/institucional/rastreagif.gif">
-            </div>
-            <h5 class="mb-5 text-center descricao"><strong>Rastreie suas frotas para uma melhor precisão em suas entregas.</strong></h5>
-            <a class="btn btn-primary btngif" href="../../../login.php" role="button">EXPERIMENTE AGORA</a>
+    <div class="col-12">
+        <h4 class="text-center mb-4 titlegif">RASTREAMENTO</h4>
+        <div class="mb-5">
+            <img class="sombra gif" title="RASTREAMENTO" style="border-radius: 15px;" src="../../../img/institucional/rastreagif.gif">
         </div>
+        <h5 class="mb-5 text-center descricao"><strong>Rastreie suas frotas para uma melhor precisão em suas entregas.</strong></h5>
+        <a class="btn btn-primary btngif" href="../../../login.php" role="button">EXPERIMENTE AGORA</a>
+    </div>
 
-        <br><br><br id="monitoramento"><br><br><br>
+    <br><br><br id="monitoramento"><br><br><br>
 
-        <div class="col-12">
-            <h4 class="text-center mb-4 titlegif">MONITORAMENTO</h4>
-            <div class="mb-5">
-                <img class="sombra gif" style="border-radius: 15px;" title="MONITORAMENTO" src="../../../img/institucional/monitorgif.gif"
-                width="600" height="350">
-            </div>
-            <h5 class="mb-5 text-center descricao"><strong>Monitore seus motoristas, tenha controle e relatórios de horários, diárias entre outros.</strong></h5>
-            <a class="btn btn-primary btngif" href="../../../login.php" role="button">EXPERIMENTE AGORA</a>
+    <div class="col-12">
+        <h4 class="text-center mb-4 titlegif">MONITORAMENTO</h4>
+        <div class="mb-5">
+            <img class="sombra gif" style="border-radius: 15px;" title="MONITORAMENTO" src="../../../img/institucional/monitorgif.gif"
+            width="600" height="350">
         </div>
+        <h5 class="mb-5 text-center descricao"><strong>Monitore seus motoristas, tenha controle e relatórios de horários, diárias entre outros.</strong></h5>
+        <a class="btn btn-primary btngif" href="../../../login.php" role="button">EXPERIMENTE AGORA</a>
+    </div>
 
-        <br><br><br id="cnhemopp"><br><br><br>
+    <br><br><br id="cnhemopp"><br><br><br>
 
-        <div class="col-12">
-            <h4 class="text-center mb-4 titlegif">CNH E MOPP</h4>
-            <div class="mb-5">
-                <img class="sombra gif" style="border-radius: 15px;" title="CNH E MOPP" src="../../../img/institucional/cnhgif.gif" width="600"
-                height="350">
-            </div>
-            <h5 class="mb-5 text-center descricao"><strong>Garanta a segurança em sua empresa.
-            Avisos sobre vencimento de CNH e MOPP serão enviados aos motoristas e gestores.</strong></h5>
-            <a class="btn btn-primary btngif" href="../../../login.php" role="button">EXPERIMENTE AGORA</a>
+    <div class="col-12">
+        <h4 class="text-center mb-4 titlegif">CNH E MOPP</h4>
+        <div class="mb-5">
+            <img class="sombra gif" style="border-radius: 15px;" title="CNH E MOPP" src="../../../img/institucional/cnhgif.gif" width="600"
+            height="350">
         </div>
+        <h5 class="mb-5 text-center descricao"><strong>Garanta a segurança em sua empresa.
+        Avisos sobre vencimento de CNH e MOPP serão enviados aos motoristas e gestores.</strong></h5>
+        <a class="btn btn-primary btngif" href="../../../login.php" role="button">EXPERIMENTE AGORA</a>
+    </div>
 
     <br id="quemsomos"><br><br><br><br>
 
-<div class="container-fluid pt-5 divfotos bg-indigo">
-    <h2 class="card-title text-center text-white mb-5 titleperfil">QUEM SOMOS ?</h2>
+    <div class="container-fluid pt-5 divfotos bg-indigo">
+        <h2 class="card-title text-center text-white mb-5 titleperfil">QUEM SOMOS ?</h2>
 
         <div class="row pt-3 pb-5 rowperfil">
 
-        <div class="card col-lg col-sm-10 border-0 divperfil">
-            <img class="rounded-circle mt-2 col foto" title="Douglas" src="../../../img/institucional/perfil/douglas.png" alt="Imagem de capa do card">
-            <div class="card-body text-center">
-                <h4 class="card-title text-white nomeperfil">Douglas Ronchi</h4>
-                <a href="https://www.linkedin.com/in/douglas-ronchi-7b5a2b134?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BIB6XpEfMSHqmMjokcZRiCw%3D%3D" target="_blank">
-                <img class="btn btn-light btnperfil" src="../../../img/institucional/inicial_icons/in.png" height="33" width="100">
-                </a>
+            <div class="card col-lg col-sm-10 border-0 divperfil">
+                <img class="rounded-circle mt-2 col foto" title="Douglas" src="../../../img/institucional/perfil/douglas.png" alt="Imagem de capa do card">
+                <div class="card-body text-center">
+                    <h4 class="card-title text-white nomeperfil">Douglas Ronchi</h4>
+                    <a href="https://www.linkedin.com/in/douglas-ronchi-7b5a2b134?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BIB6XpEfMSHqmMjokcZRiCw%3D%3D" target="_blank">
+                        <img class="btn btn-light btnperfil" src="../../../img/institucional/inicial_icons/in.png" height="33" width="100">
+                    </a>
+                </div>
             </div>
-        </div>
 
-        <div class="card col-lg col-sm-10 border-0 divperfil">
-            <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/paloma.jpg" title="Paloma" 
-            alt="Imagem de capa do card">
-            <div class="card-body text-center">
-                <h4 class="card-title text-white nomeperfil">Paloma Teply</h4>
-                <a href="https://www.linkedin.com/in/paloma-teply-b25970190" target="_blank">
-                    <img class="btn btn-light btnperfil" src="../../../img/institucional/inicial_icons/in.png" height="33"
-                    width="100">
-                </a>
+            <div class="card col-lg col-sm-10 border-0 divperfil">
+                <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/paloma.jpg" title="Paloma" 
+                alt="Imagem de capa do card">
+                <div class="card-body text-center">
+                    <h4 class="card-title text-white nomeperfil">Paloma Teply</h4>
+                    <a href="https://www.linkedin.com/in/paloma-teply-b25970190" target="_blank">
+                        <img class="btn btn-light btnperfil" src="../../../img/institucional/inicial_icons/in.png" height="33"
+                        width="100">
+                    </a>
+                </div>
             </div>
-        </div>
 
-        <div class="card col-lg col-sm-10 border-0 divperfil">
-            <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/giovane.jpg" title="Geovane" 
-            alt="Imagem de capa do card">
-            <div class="card-body text-center">
-                <h4 class="card-title text-white nomeperfil">Geovane Duarte</h4>
-                <a href="https://www.linkedin.com/in/geovane-duarte-da-silva-989b16189" target="_blank">
-                <img class="btn btn-light btnperfil" src="../../../img/institucional/inicial_icons/in.png" height="33" width="100">
-                </a>
+            <div class="card col-lg col-sm-10 border-0 divperfil">
+                <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/giovane.jpg" title="Geovane" 
+                alt="Imagem de capa do card">
+                <div class="card-body text-center">
+                    <h4 class="card-title text-white nomeperfil">Geovane Duarte</h4>
+                    <a href="https://www.linkedin.com/in/geovane-duarte-da-silva-989b16189" target="_blank">
+                        <img class="btn btn-light btnperfil" src="../../../img/institucional/inicial_icons/in.png" height="33" width="100">
+                    </a>
+                </div>
             </div>
-        </div>
 
-        <div class="card col-lg col-sm-10 border-0 divperfil">
-            <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/dauana.jpg" alt="Imagem de capa do card" title="Dauana">
-            <div class="card-body text-center">
-                <h4 class="card-title text-white nomeperfil">Dauana Severo</h4>
-                <a href="https://www.linkedin.com/in/dauana-severo-bb152a18a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BaWjt6wBpRle6nhDbEtZ0nQ%3D%3D" target="_blank">
-                <img class="btn btn-light btnperfil" src="../../../img/institucional/inicial_icons/in.png" height="33" width="100">
-                </a>
+            <div class="card col-lg col-sm-10 border-0 divperfil">
+                <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/dauana.jpg" alt="Imagem de capa do card" title="Dauana">
+                <div class="card-body text-center">
+                    <h4 class="card-title text-white nomeperfil">Dauana Severo</h4>
+                    <a href="https://www.linkedin.com/in/dauana-severo-bb152a18a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BaWjt6wBpRle6nhDbEtZ0nQ%3D%3D" target="_blank">
+                        <img class="btn btn-light btnperfil" src="../../../img/institucional/inicial_icons/in.png" height="33" width="100">
+                    </a>
+                </div>
             </div>
-        </div>
 
-        <div class="card col-lg col-sm-10 border-0 divperfil">
-            <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/jonas.png" alt="Imagem de capa do card" title="Jonas">
-            <div class="card-body text-center">
-                <h4 class="card-title text-white nomeperfil">Jonas Antunes</h4>
-                <a href="https://www.linkedin.com/in/jonas-antunes-049197187?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B7FBba2MVRt6sC%2F4fQ26CUA%3D%3D" target="_blank">
-                <img class="btn btn-light btnperfil" src="../../../img/institucional/inicial_icons/in.png" height="33" width="100">
-                </a>
+            <div class="card col-lg col-sm-10 border-0 divperfil">
+                <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/jonas.png" alt="Imagem de capa do card" title="Jonas">
+                <div class="card-body text-center">
+                    <h4 class="card-title text-white nomeperfil">Jonas Antunes</h4>
+                    <a href="https://www.linkedin.com/in/jonas-antunes-049197187?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B7FBba2MVRt6sC%2F4fQ26CUA%3D%3D" target="_blank">
+                        <img class="btn btn-light btnperfil" src="../../../img/institucional/inicial_icons/in.png" height="33" width="100">
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 </center>
 
 <br><br><br><br><br><br><br><br>
 
-<div>
-    <div>
-        <a class="gadgets" href="https://web.facebook.com/Pojigo-101839457873456" style="position: fixed; top: 555px;" target="_blank">
-        <img border="0" heigth="38" src="../../../img/institucional/inicial_icons/faceboock.png" title="Siga-nos no face" width="38" /></a>
+<div class="contatos">
+    <div class="cardgadgets bg-dark">
+        <a class="gadgets" href="https://web.facebook.com/Pojigo-101839457873456" style="position: fixed; top: 560px;" target="_blank">
+        <img class="imgface" border="0" heigth="38" src="../../../img/institucional/inicial_icons/faceboock.png" title="Siga-nos no face" width="38" /></a>
     </div>
-    <div>
-        <a class="gadgets" href="Siga-nos no Insta" style="position: fixed; top: 603px;" target="_blank">
-        <img border="0" heigth="39" src="../../../img/institucional/inicial_icons/insta.png" title="Siga-nos no Insta" width="39" /></a>
+    <div class="cardgadgets">
+        <a class="gadgets" href="https://www.instagram.com/pojigoentra21" style="position: fixed; top: 605px;" target="_blank">
+        <img class="imginsta" border="0" heigth="39" src="../../../img/institucional/inicial_icons/insta.png" title="Siga-nos no Insta" width="39" /></a>
     </div>
-    <div>
-        <a class="gadgets" href="Whats:(47) 996545424" style="position: fixed; top: 650px;" target="_blank">
-        <img border="0" heigth="38" src="../../../img/institucional/inicial_icons/whatsapp.png" title="Whats:(47) 996545424" width="38" /></a>
+    <div class="cardgadgets">
+        <a class="gadgets" data-toggle="modal" data-target=".bd-example-modal-sm" href="Whats:(47) 984380116" style="position: fixed; top: 650px;" target="_blank">
+        <img class="imgwhats" border="0" heigth="38" src="../../../img/institucional/inicial_icons/whatsapp.png" title="Whats:(47) 996545424" width="38" /></a>
     </div>
-    <div>
-        <a class="gadgets" href="https://www.youtube.com/channel/UCusMR_Z4ozLqcf__GpBgehg" style="position: fixed; top: 700px;" target="_blank">
-        <img border="0" heigth="38" src="../../../img/institucional/inicial_icons/youtube.png" title="Pojigo Entra21" width="38" /></a>
+    <div class="cardgadgets">
+        <a class="gadgets" href="https://www.youtube.com/channel/UCusMR_Z4ozLqcf__GpBgehg" style="position: fixed; top: 695px;" target="_blank">
+        <img class="imgyoutube" border="0" heigth="38" src="../../../img/institucional/inicial_icons/youtube.png" title="Pojigo Entra21" width="38" /></a>
     </div>
 </div>
 
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Small modal</button> -->
 
-<!-- Scroll to Top Button-->
-<a class="scroll-to-top rounded scroltop" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-</a>
+<!-- Small modal -->
+<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+        <div class="card modal-content" style="background-image: linear-gradient(rgb(0, 130, 255), rgb(0, 50, 255));">
+    <small><button type="button" class="close col-2 mt-2" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span></button></small>
+            <img height="200" width="200" src="../../../img/institucional/inicial_icons/qrPojigoWhats.png" class=" sombra rounded qrWhats ml-5" alt="...">
+            <div class="card-body text-center" style="font-family: arial; color: white;">
+                <h5 class="card-title">Whatsapp add+</h5>
+                <p style="font-size: 14px;">Leia nosso Vcard ou adicione o nº abaixo</p>
+                <input class="text-center" type="text" name="whatsapp" value="(47) 984380116" disabled="" style="border-radius: 5px;">
+            </div>
+        </div>
+  </div>
+</div>
 
-<footer class="text-center">
-    <div class="p-4 text-dark">
-        <strong>Copyright © Your Website 2019</strong>
-    </div>
-</footer>
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded scroltop" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+
+        <footer class="text-center">
+            <div class="p-4 text-dark">
+                <strong>Copyright © Pojigo.tk 2019</strong>
+            </div>
+        </footer>
 
 
 
-<script type="text/javascript">
+        <script type="text/javascript">
     // When the user scrolls down 20px from the top of the document, show the button
     window.onscroll = function () {
         scrollFunction()
@@ -297,8 +314,13 @@
         if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
             $('.navbar').css("background-color", "rgba(0, 0, 0, 0.8)");
         } else {
-            $('.navbar').css("background-color", "transparent");
-        }   
+            $('.navbar').css("background-color", "rgba(0, 0, 0, 0.0)");
+        }
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            $('.contatos').css("top", "550");
+        } else {
+            $('.contatos').css("top", "450");
+        }  
     }
 
     // When the user clicks on the button, scroll to the top of the document

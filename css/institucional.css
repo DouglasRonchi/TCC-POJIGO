@@ -35,15 +35,21 @@ body{background-color: rgb(245, 245, 245);}
 
 .gadgets {
   margin-left: 2px;
-  -webkit-transition: 0.3s ease-in;
-  -moz-transition: 0.3s ease-in;
-  -o-transition: 0.3s ease-in;
-  transition: 0.3s ease-in; 
+  -webkit-transition: 0.1s ease-in;
+  -moz-transition: 0.1s ease-in;
+  -o-transition: 0.1s ease-in;
+  transition: 0.1s ease-in; 
 }
 .gadgets:hover {
   margin-left: 10px;
-  height: 80px;
-
+}
+.imgface .imgwhats .imgyoutube {
+  height: 38px;
+  width: 38px;
+}
+.imginsta {
+  height: 39px;
+  width: 39px;    
 }
 
 
@@ -168,15 +174,28 @@ footer{
 
   .gadgets {
     margin-left: 2px;
-    -webkit-transition: 0.3s ease-in;
-    -moz-transition: 0.3s ease-in;
-    -o-transition: 0.3s ease-in;
-    transition: 0.3s ease-in; 
   }
-  .gadgets:hover {
-    margin-left: 10px;
+  .imgface {
+  height: 42px;
+  width: 42px;
   }
-
+  .imginsta {
+    height: 43px;
+    width: 43px;    
+  }
+  .imgwhats {
+    height: 42px;
+    width: 42px;     
+  }
+  .qrWhats {
+    height: 30px;
+    width: 80px;
+    /*box-shadow: 1px 1px 1px 1px rgba();*/
+  }
+  .imgyoutube {
+    height: 42px;
+    width: 42px;    
+  }
   
   .rowcard {
     margin-left: 60px;
@@ -272,17 +291,24 @@ footer{
 
   .gadgets {
   margin-left: 2px;
-  -webkit-transition: 0.3s ease-in;
-  -moz-transition: 0.3s ease-in;
-  -o-transition: 0.3s ease-in;
-  transition: 0.3s ease-in; 
+  margin-bottom: 10px;
   }
-  .gadgets:hover {
-    margin-left: 10px;
-    height: 80px;
-
+  .imgface {
+  height: 45px;
+  width: 45px;
   }
-
+  .imginsta {
+    height: 46px;
+    width: 46px;    
+  }
+  .imgwhats {
+    height: 45px;
+    width: 45px;     
+  }
+  .imgyoutube {
+    height: 45px;
+    width: 45px;    
+  }
 
   .titlecard {
     font-size: 35px;
