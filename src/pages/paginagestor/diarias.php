@@ -138,7 +138,7 @@ $login->VerificarLogin();
                         <td name="cadastro" id="cadastro"><?=$row['cadastro']?></td>
                         <td><?=$row['nome']?></td>
                         <td><?=$row['quantidade']?></td>
-                        <td><?=$row['soma']?></td>
+                        <td>R&#36; <?=$row['soma']?></td>
                         <td class="text-center"><button class="btn btn-primary" data-toggle="modal"
                           data-target=".bd-modal-ponto">Visualizar</button></td>
                         </tr>
@@ -289,7 +289,7 @@ $login->VerificarLogin();
                       $sqlSoma = $conn->executeQuery ("SELECT COUNT(rp.fk_diaria) as quantidade, SUM(dia.valor) as soma FROM registro_ponto rp JOIN diarias dia ON dia.id = rp.fk_diaria JOIN usuario usu on usu.usuario_id = rp.fk_usuario WHERE usu.cadastro = {$_GET['cad']} AND hora_inicio BETWEEN '{$_GET['dtini']}' AND '{$_GET['dtfin']}'");
                       $rowSoma = mysqli_num_rows($sqlSoma);
                       while($soma = mysqli_fetch_assoc($sqlSoma)):?>
-                      <th><?=$soma['soma']?></th>
+                      <th>R&#36; <?=$soma['soma']?></th>
                     </tr>
                   </table>
                   <br>
