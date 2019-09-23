@@ -24,7 +24,7 @@ $result = $conn->executeQuery("UPDATE registro_ponto SET hora_inicio = '{$hora_i
 
 $conn->setAlerta(
 'success',
-'Registro '.$_GET['cad'].' atualizado com sucesso',
+'Registro Ponto cad: '.$_GET['cad'].' atualizado com sucesso',
 '<img class="img-fluid" src="'.$conn->path('img/icons/success.png').'">',
 $_SESSION['usuario_id']
 ); 
@@ -176,15 +176,15 @@ header('Location: registros.php?cad='.$_GET['cad'].'&dtini='.$_GET['dtini'].'&dt
                       ?>
                       <tr>
                         <td><?= $rows['hora_inicio'] ?></td>
-                        <td><?= $rows['hora_inicio_intervalo'] ?></td>
-                        <td><?= $rows['hora_fim_intervalo'] ?></td>
-                        <td><?= $rows['inicio_parada_um'] ?></td>
-                        <td><?= $rows['fim_parada_um'] ?></td>
-                        <td><?= $rows['inicio_parada_dois'] ?></td>
-                        <td><?= $rows['fim_parada_dois'] ?></td>
+                        <td><?= strftime("%R", strtotime($rows['hora_inicio_intervalo'])) ?></td>
+                        <td><?= strftime("%R", strtotime($rows['hora_fim_intervalo'])) ?></td>
+                        <td><?= strftime("%R", strtotime($rows['inicio_parada_um'])) ?></td>
+                        <td><?= strftime("%R", strtotime($rows['fim_parada_um'])) ?></td>
+                        <td><?= strftime("%R", strtotime($rows['inicio_parada_dois'])) ?></td>
+                        <td><?= strftime("%R", strtotime($rows['fim_parada_dois'])) ?></td>
                         <td><?= $rows['hora_fim'] ?></td>
                         <td>
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-id="<?= $rows['id'] ?>" data-inicio="<?= $rows['hora_inicio'] ?>" data-ini_inter="<?= $rows['hora_inicio_intervalo'] ?>" data-fim_inter="<?= $rows['hora_fim_intervalo'] ?>" data-ini_para_um="<?= $rows['inicio_parada_um'] ?>" data-fim_para_um="<?= $rows['fim_parada_um'] ?>" data-ini_para_dois="<?= $rows['inicio_parada_dois'] ?>" data-fim_para_dois="<?= $rows['fim_parada_dois'] ?>" data-fim="<?= $rows['hora_fim'] ?>">Editar</button>
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-id="<?= $rows['id'] ?>" data-inicio="<?= $rows['hora_inicio'] ?>" data-ini_inter="<?= strftime("%R", strtotime($rows['hora_inicio_intervalo'])) ?>" data-fim_inter="<?= strftime("%R", strtotime($rows['hora_fim_intervalo'])) ?>" data-ini_para_um="<?= strftime("%R", strtotime($rows['inicio_parada_um'])) ?>" data-fim_para_um="<?= strftime("%R", strtotime($rows['fim_parada_um'])) ?>" data-ini_para_dois="<?= strftime("%R", strtotime($rows['inicio_parada_dois'])) ?>" data-fim_para_dois="<?= strftime("%R", strtotime($rows['fim_parada_dois'])) ?>" data-fim="<?= $rows['hora_fim'] ?>">Editar</button>
                         </td>
                       </tr>
 
@@ -279,14 +279,14 @@ header('Location: registros.php?cad='.$_GET['cad'].'&dtini='.$_GET['dtini'].'&dt
                   </thead>
                   <tbody>
                     <tr>
-                      <td><input style="width: 175px" class="form-control" id="hora_ini" name="hora_ini"></td>
-                      <td><input class="form-control" id="ini_intervalo" name="ini_intervalo"></td>
-                      <td><input class="form-control" id="fim_intervalo" name="fim_intervalo"></td>
-                      <td><input class="form-control" id="ini_parada_um" name="ini_parada_um"></td>
-                      <td><input class="form-control" id="fim_parada_um" name="fim_parada_um"></td>
-                      <td><input class="form-control" id="ini_parada_dois" name="ini_parada_dois"></td>
-                      <td><input class="form-control" id="fim_parada_dois" name="fim_parada_dois"></td>
-                      <td><input style="width: 175px" class="form-control" id="hora_fim" name="hora_fim"></td>
+                      <td><input style="width: 175px" class="form-control" id="hora_ini" name="hora_ini" maxlength="19"></td>
+                      <td><input class="form-control" id="ini_intervalo" name="ini_intervalo" maxlength="5"></td>
+                      <td><input class="form-control" id="fim_intervalo" name="fim_intervalo" maxlength="8"></td>
+                      <td><input class="form-control" id="ini_parada_um" name="ini_parada_um" maxlength="8"></td>
+                      <td><input class="form-control" id="fim_parada_um" name="fim_parada_um" maxlength="8"></td>
+                      <td><input class="form-control" id="ini_parada_dois" name="ini_parada_dois" maxlength="8"></td>
+                      <td><input class="form-control" id="fim_parada_dois" name="fim_parada_dois" maxlength="8"></td>
+                      <td><input style="width: 175px" class="form-control" id="hora_fim" name="hora_fim" maxlength="19"></td>
                       <input type="hidden" class="form-control" id="Id" name="Id">
                     </tr>
                   </tbody>

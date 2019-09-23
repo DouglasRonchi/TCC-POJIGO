@@ -267,7 +267,7 @@ if (isset($_GET['id'])) {
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputRG">RG</label>
-                            <input type="number" class="form-control" id="inputRG" name="inputRG" placeholder=""
+                            <input type="text" class="form-control" id="inputRG" name="inputRG" placeholder=""
                                    value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['rg'] : ''; ?>" required>
                         </div>
 
@@ -281,7 +281,7 @@ if (isset($_GET['id'])) {
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputNascimento">Data de Nascimento</label>
-                            <input type="date" class="form-control data-mask" id="inputNascimento" name="inputNascimento"
+                            <input type="date" class="form-control" id="inputNascimento" name="inputNascimento"
                                    value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['data_nascimento'] : ''; ?>" required>
                         </div>
 
@@ -295,7 +295,7 @@ if (isset($_GET['id'])) {
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputCNH">CNH</label>
-                            <input type="number" class="form-control" id="inputCNH" name="inputCNH" placeholder=""
+                            <input type="text" class="form-control" id="inputCNH" name="inputCNH" placeholder=""
                                    value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['cnh'] : ''; ?>">
                         </div>
 
@@ -398,6 +398,8 @@ if (isset($_GET['id'])) {
     $(document).ready(function(){
         $('#inputTelefone').mask('(00) 0 0000-0000');
         $('#inputCPF').mask('000.000.000-00', {reverse: true});
+        $('#inputCNH').mask('00000000000', {placeholder: "00000000000"});
+        $('#inputRG').mask('000.000.000-0', {reverse: true});
     });
 </script>
 
