@@ -66,7 +66,7 @@ if (isset($_GET['id'])) {
                             <label for="inputNome">Nome</label>
                             <input type="text" class="form-control" id="inputNome" name="inputNome"
                                    placeholder="Digite o seu nome completo."
-                                   value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['nome'] : ''; ?>" required>
+                                   value="<?= (isset($_GET['editar'])) ? utf8_encode($selectUsuariosRows['nome']) : ''; ?>" required>
                         </div>
 
                         <div class="form-group col-md-6">
@@ -82,7 +82,7 @@ if (isset($_GET['id'])) {
                             <label for="inputUsuario">Usuário</label>
                             <input type="text" class="form-control" id="inputUsuario" name="inputUsuario"
                                    placeholder="Digite seu nome para usuário"
-                                   value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['usuario'] : ''; ?>" required>
+                                   value="<?= (isset($_GET['editar'])) ? utf8_encode($selectUsuariosRows['usuario']) : ''; ?>" required>
                         </div>
 
                         <div class="form-group col-md-6">
@@ -116,21 +116,21 @@ if (isset($_GET['id'])) {
                         <label for="inputEndereco">Endereço</label>
                         <input type="text" class="form-control" id="inputEndereco" name="inputEndereco"
                                placeholder="Ex: Rua Blumenau, 123"
-                               value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['endereco'] : ''; ?>" required>
+                               value="<?= (isset($_GET['editar'])) ? utf8_encode($selectUsuariosRows['endereco']) : ''; ?>" required>
                     </div>
 
                     <div class="form-group">
                         <label for="inputBairro">Bairro</label>
                         <input type="text" class="form-control" id="inputBairro" name="inputBairro"
                                placeholder="Ex: Velha"
-                               value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['bairro'] : ''; ?>" required>
+                               value="<?= (isset($_GET['editar'])) ? utf8_encode($selectUsuariosRows['bairro']) : ''; ?>" required>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputCidade">Cidade</label>
                             <input type="text" class="form-control" id="inputCidade" name="inputCidade"
-                                   value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['cidade'] : ''; ?>" required>
+                                   value="<?= (isset($_GET['editar'])) ? utf8_encode($selectUsuariosRows['cidade']) : ''; ?>" required>
                         </div>
 
                         <div class="form-group col-md-4">

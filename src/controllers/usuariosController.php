@@ -146,7 +146,7 @@ $usuario->atualizarUsuario();
 
     $conn->setAlerta(
         'success',
-        'Usuário '.$usuario->getNome().' atualizado com sucesso',
+        'Usuário '.utf8_encode($usuario->getNome()).' atualizado com sucesso',
         '<img class="img-fluid" src="'.$conn->path('img/icons/success.png').'">',
         $_SESSION['usuario_id']
     );
