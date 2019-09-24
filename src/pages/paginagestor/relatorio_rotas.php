@@ -19,11 +19,15 @@ $login->VerificarLogin();
   <title>Pojigo - Relatório Rotas</title>
 
   <!-- Custom fonts for this template-->
-  <link href="../../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="../../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
 
-  <!-- Custom styles for this template-->
-  <link href="../../../css/sb-admin-2.min.css" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="../../../css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this page -->
+    <link href="../../../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -54,30 +58,54 @@ $login->VerificarLogin();
           <!-- Page Heading -->
           <h1 class="h3 mb-4 text-gray-800">Relatório de Rotas</h1>
 
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                  <tr>
-                   <th>Rota</th>
-                    <th>Visualizar</th>
-                  </tr>
-                </thead>
-                <tfoot>
-                  <tr>
-                   <th>Rota</th>
-                    <th>Visualizar</th>
-                  </tr>
-                </tfoot>
-                <tbody>
-                  <?php
-                  $selectNome_rota = $conn->executeQuery("SELECT * FROM rotas");
-                  $selectNome_rotaRows = mysqli_num_rows($selectNome_rota);
-                  while ($selectNome_rotaRows = mysqli_fetch_assoc($selectNome_rota)):
-                    ?>
+
+
+
+
+
+          <!-- DataTales Example -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">Tabela Rotas</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered table-striped table-hover" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
                     <tr>
-                      <td><?= $selectNome_rotaRows["nome_rota"] ?></td>
-                                      
+                      <th>Rotas</th>
+                      <th style="width: 10%">Editar/Excluir</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>Rotas</th>
+                      <th>Editar/Excluir</th>
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                    <?php
+                    $selectNome_rota = $conn->executeQuery("SELECT * FROM rotas");
+                    $selectNome_rotaRows = mysqli_num_rows($selectNome_rota);
+                    while ($selectNome_rotaRows = mysqli_fetch_assoc($selectNome_rota)):
+                      ?>
+                      <tr>
+                        <td><?= $selectNome_rotaRows["nome_rota"] ?></td>
+
+                        <td>
+
+                          <form action="../../controllers/rotasController.php" method="post">
+                            <input type="hidden" name="idRota" value="<?=$selectNome_rotaRows["id"]?>">
+                            <button class="btn btn-sm btn-primary submit" type="submit"
+                            name="btnEditarRota">Editar
+                          </button>
+                          <button class="btn btn-sm btn-danger" value="Excluir"
+                          name="btnExcluirRota" type="submit"
+                          onclick="return confirm('Tem certeza que deseja excluir a rota?')">
+                          &times;
+                        </button>
+                      </form>
+                    </td>              
                   </tr>
                 <?php endwhile; ?>
               </tbody>
@@ -89,16 +117,15 @@ $login->VerificarLogin();
 
 
 
+</div>
+<!-- /.container-fluid -->
 
-    </div>
-    <!-- /.container-fluid -->
+</div>
+<!-- End of Main Content -->
 
-  </div>
-  <!-- End of Main Content -->
-
-  <!-- Footer -->
-  <?php include '../menu/footer.php'; ?>      
-  <!-- End of Footer -->
+<!-- Footer -->
+<?php include '../menu/footer.php'; ?>      
+<!-- End of Footer -->
 
 </div>
 <!-- End of Content Wrapper -->
@@ -123,6 +150,15 @@ $login->VerificarLogin();
 
 <!-- Custom scripts for all pages-->
 <script src="../../../js/sb-admin-2.min.js"></script>
+
+<!-- Page level plugins -->
+<script src="../../../vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="../../../vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+<!-- Page level custom scripts -->
+<script src="../../../js/demo/datatables-demo.js"></script>
+
+<?php include_once '../../include/configdatatable.php' ?>
 
 </body>
 

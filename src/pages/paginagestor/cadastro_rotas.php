@@ -82,9 +82,9 @@ $login->VerificarLogin();
             service.getDistanceMatrix(
             {
                   //Origem
-                  origins: [$("#txtOrigem option:selected").text()],
+                  origins: [$("#txtOrigem").val()],
                   //Destino
-                  destinations: [$("#txtDestino option:selected").text()],
+                  destinations: [$("#txtDestino").val()],
                   //Modo (DRIVING | WALKING | BICYCLING)
                   travelMode: google.maps.TravelMode.DRIVING,
                   //Sistema de medida (METRIC | IMPERIAL)
@@ -125,111 +125,119 @@ $login->VerificarLogin();
           </div>
           <div class="row content-form">
             <form class="col-md-4" action="../../controllers/rotasController.php" method="post">
-                <div class="form-group">
-                  <label for="txtOrigem"><strong>Endereço de origem</strong></label>
-                  <select class="field form-control" id="txtOrigem" name="origem">
-                    <?php
-                    $dados = $conn->executeQuery("SELECT * FROM cidades");
-                    while($cidade = mysqli_fetch_assoc($dados)) {
-                      ?>
-                      <option value="<?=$cidade['id']?>"><?= $cidade['nome_cidade'] ?></option>
-                    <?php }?>
-                  </select>
+
+              <?php 
+              if (isset($_GET['id'])){
+                $query = $conn->executeQuery("SELECT ci.nome_cidade AS origem, ci2.nome_cidade AS destino FROM rotas ro JOIN cidades ci ON ci.id = ro.fk_cidade_origem JOIN cidades ci2 ON ci2.id = ro.fk_cidade_destino WHERE ro.id = {$_GET['id']}");
+                $result = mysqli_fetch_assoc($query);
+              }
+              ?>
+
+
+              <div class="form-group">
+                <label for="txtOrigem"><strong>Endereço de origem</strong></label>
+                <input  type="text" class="field form-control" id="txtOrigem" name="origem" value="<?= (isset($_GET['id']))? $result['origem'] : '' ; ?>">
+
+              </div>
+
+              <div class="form-group">
+                <label for="txtDestino"><strong>Endereço de destino</strong></label>
+                <input type="text" class="field form-control" id="txtDestino" name="destino" value="<?= (isset($_GET['id']))? $result['destino'] : '' ; ?>">
+
+
+              </div>
+
+              <div class="form-group">
+                <input type="button" value="Calcular distância" onclick="CalculaDistancia()" id="calcdist" class="btnNew btn btn-secondary mr-2"/>
+
+                <?php
+                if (isset($_GET['id'])):
+                  ?>
+                  <input type="hidden" name="id" value="<?=$_GET['id']?>">
+                  <button type="submit" name="atualizar" class="btn btn-primary mr-2">Atualizar Rota</button>
+                  <?php else: ?>
+
+                    <button type="submit" name="salvar" class="btn btn-primary mr-2" onclick="return confirm('Tem certeza que deseja salvar a rota?')">Salvar Rota</button>
+
+                  <?php endif; ?>
+
                 </div>
-                <div class="form-group">
-                  <label for="txtDestino"><strong>Endereço de destino</strong></label>
-                  <select class="field form-control" id="txtDestino" name="destino">
-                    <?php
-                    $dados = $conn->executeQuery("SELECT * FROM cidades");
-                    while($cidade = mysqli_fetch_assoc($dados)) {
-                      ?>
-                      <option value="<?=$cidade['id']?>"><?= $cidade['nome_cidade'] ?></option>
-                    <?php }?>
-                  </select>
-
-                  <!-- Modal -->
-                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                          <button type="submit" name="salvar" class="btn btn-primary">Salvar</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <div><span id="litResultado">&nbsp;</span></div>
+              </form>
+              <div class="googlemaps col-md-8">
+                <iframe  id="map" src="https://maps.google.com/maps?saddr=&daddr=&output=embed"></iframe>
               </div>
-
-                <div class="form-group">
-                  <input type="button" value="Calcular distância" onclick="CalculaDistancia()" class="btnNew btn btn-secondary mr-2"/>
-                  <button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#exampleModal">
-                    Salvar rota
-                  </button>
-              </div>
-              <div><span id="litResultado">&nbsp;</span></div>
-            </form>
-            <div class="googlemaps col-md-8">
-              <iframe  id="map" src="https://maps.google.com/maps?saddr=&daddr=&output=embed"></iframe>
             </div>
+
+            <script>
+
+              function inicializar() {
+                var coordenadas = {lat: -22.912869, lng: -43.228963};
+
+                var mapa = new google.maps.Map(document.getElementById('mapa'), {
+                  zoom: 15,
+                  center: coordenadas
+                });
+
+                var marker = new google.maps.Marker({
+                  position: coordenadas,
+                  map: mapa,
+                  title: 'Meu marcador'
+                });
+              }
+            </script>
           </div>
-          
+          <!-- /.container-fluid -->
 
-          <script>
-
-            function inicializar() {
-              var coordenadas = {lat: -22.912869, lng: -43.228963};
-
-              var mapa = new google.maps.Map(document.getElementById('mapa'), {
-                zoom: 15,
-                center: coordenadas
-              });
-
-              var marker = new google.maps.Marker({
-                position: coordenadas,
-                map: mapa,
-                title: 'Meu marcador'
-              });
-            }
-          </script>
         </div>
-        <!-- /.container-fluid -->
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <?php include '../menu/footer.php'; ?>      
+        <!-- End of Footer -->
 
       </div>
-      <!-- End of Main Content -->
-
-      <!-- Footer -->
-      <?php include '../menu/footer.php'; ?>      
-      <!-- End of Footer -->
+      <!-- End of Content Wrapper -->
 
     </div>
-    <!-- End of Content Wrapper -->
+    <!-- End of Page Wrapper -->
 
-  </div>
-  <!-- End of Page Wrapper -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
 
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
+    <!-- Logout Modal-->
+    <?php include '../menu/logoutmodal.php'; ?>
 
-  <!-- Logout Modal-->
-  <?php include '../menu/logoutmodal.php'; ?>
+    <!-- Bootstrap core JavaScript-->
+    <script src="../../../vendor/jquery/jquery.min.js"></script>
+    <script src="../../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="../../../vendor/jquery/jquery.min.js"></script>
-  <script src="../../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="../../../vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Core plugin JavaScript-->
-  <script src="../../../vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="../../../js/sb-admin-2.min.js"></script>
 
-  <!-- Custom scripts for all pages-->
-  <script src="../../../js/sb-admin-2.min.js"></script>
 
-</body>
+    <?php if (isset($_GET['id'])) :  
+      ?>
+      <script type="text/javascript">
+        $(document).ready(function () {
+          function sleep() {
+            $('#calcdist').trigger('click');            
+          }
+        
+        setTimeout(sleep,1000);
 
-</html>
+        });
+
+      </script>
+
+    <?php endif; ?>
+
+
+  </body>
+
+  </html>
