@@ -175,28 +175,21 @@ footer{
   .gadgets {
     margin-left: 2px;
   }
-  .imgface {
-  height: 42px;
-  width: 42px;
+  .imgface .imgwhats .imgyoutube {
+  height: 52px;
+  width: 52px;
   }
   .imginsta {
-    height: 43px;
-    width: 43px;    
-  }
-  .imgwhats {
-    height: 42px;
-    width: 42px;     
+    height: 53px;
+    width: 53px;    
   }
   .qrWhats {
     height: 30px;
     width: 80px;
     /*box-shadow: 1px 1px 1px 1px rgba();*/
   }
-  .imgyoutube {
-    height: 42px;
-    width: 42px;    
-  }
-  
+
+
   .rowcard {
     margin-left: 60px;
     margin-right: 60px;
@@ -293,22 +286,15 @@ footer{
   margin-left: 2px;
   margin-bottom: 10px;
   }
-  .imgface {
-  height: 45px;
-  width: 45px;
+  .imgface .imgwhats .imgyoutube {
+  height: 55px;
+  width: 55px;
   }
   .imginsta {
-    height: 46px;
-    width: 46px;    
+    height: 56px;
+    width: 56px;    
   }
-  .imgwhats {
-    height: 45px;
-    width: 45px;     
-  }
-  .imgyoutube {
-    height: 45px;
-    width: 45px;    
-  }
+
 
   .titlecard {
     font-size: 35px;

@@ -1,16 +1,3 @@
-<!doctype html>
-<html lang="pt-br">
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS -->
- <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-</head>
 <style type="text/css">
   #feche:hover {
     color: red;
@@ -19,7 +6,6 @@
     font-size: 30px;
   }
 </style>
-<body>
 
 
   <!-- Modal -->
@@ -48,11 +34,11 @@
 
           <!-- The social media icon bar -->
           <div class="icon-bar text-center iconesico">
-            <a href="#" class="facebook mr-3"><i class="fa fa-facebook" target="_blank"></i></a> 
-            <a href="#" class="twitter mr-3"><i class="fa fa-twitter" target="_blank"></i></a> 
-            <a href="#" class="google mr-3"><i class="fa fa-google" target="_blank"></i></a> 
-            <a href="https://www.linkedin.com/in/douglas-ronchi-7b5a2b134" target="_blank" class="linkedin mr-3"><i class="fa fa-linkedin"></i></a>
-            <a href="#" class="youtube"><i class="fa fa-youtube" target="_blank"></i></a> 
+            <a href="https://www.facebook.com/douglas.ronchi" class="facebook mr-3" target="_blank"><i class="fa fa-facebook"></i></a> 
+            <a href="https://twitter.com/douglasronchi" class="twitter mr-3" target="_blank"><i class="fa fa-twitter"></i></a> 
+            <a href="https://www.instagram.com/douglasronchi" class="instagram mr-3" target="_blank"><i class="fab fa-instagram"></i></a> 
+            <a href="https://github.com/DouglasRonchi" class="github mr-3" target="_blank"><i class="fab fa-github"></i></a> 
+            <a href="https://www.linkedin.com/in/douglas-ronchi-7b5a2b134" class="linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
           </div>
 
         </div>
@@ -89,11 +75,11 @@
 
           <!-- The social media icon bar -->
           <div class="icon-bar text-center iconesico">
-            <a href="#" class="facebook mr-3"><i class="fa fa-facebook" target="_blank"></i></a> 
-            <a href="#" class="twitter mr-3"><i class="fa fa-twitter" target="_blank"></i></a> 
-            <a href="#" class="google mr-3"><i class="fa fa-google" target="_blank"></i></a> 
-            <a href="https://www.linkedin.com/in/paloma-teply-b25970190" class="linkedin mr-3" target="_blank"><i class="fa fa-linkedin"></i></a>
-            <a href="#" class="youtube"><i class="fa fa-youtube" target="_blank"></i></a> 
+            <a href="https://www.facebook.com/paloma.teply" class="facebook mr-3" target="_blank"><i class="fa fa-facebook"></i></a> 
+            <a href="https://twitter.com/TeplyPaloma" class="twitter mr-3" target="_blank"><i class="fa fa-twitter"></i></a> 
+            <a href="https://www.instagram.com/teply.p" class="instagram mr-3" target="_blank"><i class="fab fa-instagram"></i></a> 
+            <a href="https://github.com/Paloma-teply" class="github mr-3" target="_blank"><i class="fab fa-github"></i></a> 
+            <a href="https://www.linkedin.com/in/paloma-teply-b25970190" class="linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
           </div>
 
         </div>
@@ -130,11 +116,11 @@
 
           <!-- The social media icon bar -->
           <div class="icon-bar text-center iconesico">
-            <a href="#" class="facebook mr-3"><i class="fa fa-facebook" target="_blank"></i></a> 
-            <a href="#" class="twitter mr-3"><i class="fa fa-twitter" target="_blank"></i></a> 
-            <a href="#" class="google mr-3"><i class="fa fa-google" target="_blank"></i></a> 
-            <a href="https://www.linkedin.com/in/geovane-duarte-da-silva-989b16189" class="linkedin mr-3" target="_blank"><i class="fa fa-linkedin"></i></a>
-            <a href="#" class="youtube"><i class="fa fa-youtube" target="_blank"></i></a> 
+            <a href="https://www.facebook.com/geovane.duarte.7359" class="facebook mr-3" target="_blank"><i class="fa fa-facebook"></i></a> 
+            <a href="" class="twitter mr-3" target="_blank"><i class="fa fa-twitter"></i></a> 
+            <a href="" class="instagram mr-3" target="_blank"><i class="fab fa-instagram"></i></a> 
+            <a href="https://github.com/Geovane22" class="github mr-3" target="_blank"><i class="fab fa-github"></i></a> 
+            <a href="https://www.linkedin.com/in/geovane-duarte-da-silva-989b16189" class="linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
           </div>
 
         </div>
@@ -171,11 +157,11 @@
 
           <!-- The social media icon bar -->
           <div class="icon-bar text-center iconesico">
-            <a href="#" class="facebook mr-3"><i class="fa fa-facebook" target="_blank"></i></a> 
-            <a href="#" class="twitter mr-3"><i class="fa fa-twitter" target="_blank"></i></a> 
-            <a href="#" class="google mr-3"><i class="fa fa-google" target="_blank"></i></a> 
-            <a href="https://www.linkedin.com/in/dauana-severo-bb152a18a" class="linkedin mr-3" target="_blank"><i class="fa fa-linkedin"></i></a>
-            <a href="#" class="youtube"><i class="fa fa-youtube" target="_blank"></i></a> 
+            <a href="https://www.facebook.com/dauana.severo" class="facebook mr-3" target="_blank"><i class="fa fa-facebook"></i></a> 
+            <a href="" class="twitter mr-3" target="_blank"><i class="fa fa-twitter"></i></a> 
+            <a href="https://www.instagram.com/dauanasvro" class="instagram mr-3" target="_blank"><i class="fab fa-instagram"></i></a> 
+            <a href="https://github.com/dauanaana" class="github mr-3" target="_blank"><i class="fab fa-github"></i></a> 
+            <a href="https://www.linkedin.com/in/dauana-severo-bb152a18a" class="linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
           </div>
 
         </div>
@@ -212,11 +198,11 @@
 
           <!-- The social media icon bar -->
           <div class="icon-bar text-center iconesico">
-            <a href="#" class="facebook mr-3"><i class="fa fa-facebook" target="_blank"></i></a> 
-            <a href="#" class="twitter mr-3"><i class="fa fa-twitter" target="_blank"></i></a> 
-            <a href="#" class="google mr-3"><i class="fa fa-google" target="_blank"></i></a> 
-            <a href="https://www.linkedin.com/in/jonas-antunes-049197187" class="linkedin mr-3" target="_blank"><i class="fa fa-linkedin"></i></a>
-            <a href="#" class="youtube"><i class="fa fa-youtube" target="_blank"></i></a> 
+            <a href="https://www.facebook.com/people/Jonas-Antunes/100012847776542" class="facebook mr-3" target="_blank"><i class="fa fa-facebook"></i></a> 
+            <a href="https://twitter.com/JonasAn14960845" class="twitter mr-3" target="_blank"><i class="fa fa-twitter"></i></a> 
+            <a href="https://www.instagram.com/jonas.antunes4955" class="instagram mr-3" target="_blank"><i class="fab fa-instagram"></i></a> 
+            <a href="https://github.com/Jonas4955" class="github mr-3" target="_blank"><i class="fab fa-github"></i></a> 
+            <a href="https://www.linkedin.com/in/jonas-antunes-049197187" class="linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
           </div>
 
         </div>
@@ -226,12 +212,3 @@
       </div>
     </div>
   </div>
-
-
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</body>
-</html>
