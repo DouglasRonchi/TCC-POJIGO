@@ -69,17 +69,12 @@ if (isset($_GET['id'])) {
                                    value="<?= (isset($_GET['editar'])) ? $selectUsuariosRows['nome'] : ''; ?>" required>
                         </div>
 
-                        <?php
-                        if (isset($_GET['editar']) && $selectUsuariosRows['previlegio']!=3):
-                        ?>
                         <div class="form-group col-md-6">
                             <label for="inputFoto">Foto de Perfil</label>
                             <input type="file" class="form-control-file" name="inputFoto" id="inputFoto"
                                    value="arquivos[]">
                         </div>
-                        <?php
-                        endif;
-                        ?>
+
 
                     </div>
                     <div class="form-row">

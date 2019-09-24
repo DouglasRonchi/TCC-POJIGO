@@ -111,14 +111,14 @@ switch ($tipo_usuario){
     }
 
 $usuario->setidEditar($_GET['id']);
-$usuario->setNome($_POST['inputNome']);
+$usuario->setNome(utf8_decode($_POST['inputNome']));
 $usuario->setUsuario($_POST['inputUsuario']);
 $usuario->setTelefone($_POST['inputTelefone']);
-$usuario->setUsuario($_POST['inputUsuario']);
-$usuario->setEmail($_POST['inputEmail']);
-$usuario->setEndereco($_POST['inputEndereco']);
-$usuario->setBairro($_POST['inputBairro']);
-$usuario->setCidade($_POST['inputCidade']);
+$usuario->setUsuario(utf8_decode($_POST['inputUsuario']));
+$usuario->setEmail(utf8_decode($_POST['inputEmail']));
+$usuario->setEndereco(utf8_decode($_POST['inputEndereco']));
+$usuario->setBairro(utf8_decode($_POST['inputBairro']));
+$usuario->setCidade(utf8_decode($_POST['inputCidade']));
 $usuario->setEstado($_POST['inputEstado']);
 $usuario->setRg($_POST['inputRG']);
 $usuario->setCpf($_POST['inputCPF']);

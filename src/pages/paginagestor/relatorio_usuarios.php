@@ -93,7 +93,7 @@ $login->VerificarLogin();
                                     ?>
                                     <tr>
                                         <td <?=($_SESSION['usuario'] == $selectUsersRows["usuario"])? 'style="color: red !important"' : '' ; ?> ><?= $selectUsersRows["cadastro"] ?></td>
-                                        <td <?=($_SESSION['usuario'] == $selectUsersRows["usuario"])? 'style="color: black !important"' : '' ; ?> ><?= $selectUsersRows["nome"] ?></td>
+                                        <td <?=($_SESSION['usuario'] == $selectUsersRows["usuario"])? 'style="color: black !important"' : '' ; ?> ><?= utf8_encode($selectUsersRows["nome"]) ?></td>
                                         <td <?=($_SESSION['usuario'] == $selectUsersRows["usuario"])? 'style="color: black !important"' : '' ; ?> ><?= $selectUsersRows["cpf"] ?></td>
                                         <td <?=($_SESSION['usuario'] == $selectUsersRows["usuario"])? 'style="color: black !important"' : '' ; ?> ><?= $selectUsersRows["rg"] ?></td>
                                         <td <?=($_SESSION['usuario'] == $selectUsersRows["usuario"])? 'style="color: black !important"' : '' ; ?> ><?= $selectUsersRows["tipo_usuario"] ?></td>
