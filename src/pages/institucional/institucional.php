@@ -1,3 +1,20 @@
+<?php
+// verificar se o dispositivo é móvel ou desktop
+$iphone = strpos($_SERVER['HTTP_USER_AGENT'],"iPhone");
+$ipad = strpos($_SERVER['HTTP_USER_AGENT'],"iPad");
+$android = strpos($_SERVER['HTTP_USER_AGENT'],"Android");
+$palmpre = strpos($_SERVER['HTTP_USER_AGENT'],"webOS");
+$berry = strpos($_SERVER['HTTP_USER_AGENT'],"BlackBerry");
+$ipod = strpos($_SERVER['HTTP_USER_AGENT'],"iPod");
+$symbian = strpos($_SERVER['HTTP_USER_AGENT'],"Symbian");
+$windowsphone = strpos($_SERVER['HTTP_USER_AGENT'],"Windows Phone");
+ 
+if ($iphone || $ipad || $android || $palmpre || $ipod || $berry || $symbian || $windowsphone == true) {
+   $dispositivo = "mobile";
+}
+
+else { $dispositivo = "computador";}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -289,8 +306,14 @@
         </div>
   </div>
 </div>
+<?php if ($dispositivo == "computador") {?>
 
 <?php include 'Modal.php'; ?>
+
+<?php } elseif($dispositivo == "mobile") { ?> 
+<br>
+<?php } ?>
+
 
         <!-- Scroll to Top Button-->
         <a class="scroll-to-top rounded scroltop" href="#page-top">
