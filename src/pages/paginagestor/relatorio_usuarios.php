@@ -99,7 +99,7 @@ $login->VerificarLogin();
                                         <td <?=($_SESSION['usuario'] == $selectUsersRows["usuario"])? 'style="color: black !important"' : '' ; ?> ><?= $selectUsersRows["tipo_usuario"] ?></td>
                                         <td>
                                             <?php
-                                            if ($_SESSION['usuario'] == $selectUsersRows["usuario"] || $selectUsersRows["previlegio"] == 3):
+                                            if ($_SESSION['usuario'] == $selectUsersRows["usuario"] || $selectUsersRows["previlegio"] != 1):
                                                 ?>
                                                 <form action="../../controllers/usuariosController.php?id=<?= $selectUsersRows["usuario_id"] ?>"
                                                       method="post">
