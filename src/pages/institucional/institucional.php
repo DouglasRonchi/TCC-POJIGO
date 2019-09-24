@@ -199,9 +199,9 @@
                 <img class="rounded-circle mt-2 col foto" title="Douglas" src="../../../img/institucional/perfil/douglas.png" alt="Imagem de capa do card">
                 <div class="card-body text-center">
                     <h4 class="card-title text-white nomeperfil">Douglas Ronchi</h4>
-                    <a href="https://www.linkedin.com/in/douglas-ronchi-7b5a2b134?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BIB6XpEfMSHqmMjokcZRiCw%3D%3D" target="_blank">
-                        <img class="btn btn-light btnperfil" src="../../../img/institucional/inicial_icons/in.png" height="33" width="100">
-                    </a>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalDouglas">
+                        Conheça
+                    </button>
                 </div>
             </div>
 
@@ -210,10 +210,9 @@
                 alt="Imagem de capa do card">
                 <div class="card-body text-center">
                     <h4 class="card-title text-white nomeperfil">Paloma Teply</h4>
-                    <a href="https://www.linkedin.com/in/paloma-teply-b25970190" target="_blank">
-                        <img class="btn btn-light btnperfil" src="../../../img/institucional/inicial_icons/in.png" height="33"
-                        width="100">
-                    </a>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalPaloma">
+                        Conheça
+                    </button>
                 </div>
             </div>
 
@@ -222,9 +221,9 @@
                 alt="Imagem de capa do card">
                 <div class="card-body text-center">
                     <h4 class="card-title text-white nomeperfil">Geovane Duarte</h4>
-                    <a href="https://www.linkedin.com/in/geovane-duarte-da-silva-989b16189" target="_blank">
-                        <img class="btn btn-light btnperfil" src="../../../img/institucional/inicial_icons/in.png" height="33" width="100">
-                    </a>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalGeovane">
+                        Conheça
+                    </button>
                 </div>
             </div>
 
@@ -232,9 +231,9 @@
                 <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/dauana.jpg" alt="Imagem de capa do card" title="Dauana">
                 <div class="card-body text-center">
                     <h4 class="card-title text-white nomeperfil">Dauana Severo</h4>
-                    <a href="https://www.linkedin.com/in/dauana-severo-bb152a18a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BaWjt6wBpRle6nhDbEtZ0nQ%3D%3D" target="_blank">
-                        <img class="btn btn-light btnperfil" src="../../../img/institucional/inicial_icons/in.png" height="33" width="100">
-                    </a>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalDauana">
+                        Conheça
+                    </button>
                 </div>
             </div>
 
@@ -242,9 +241,9 @@
                 <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/jonas.png" alt="Imagem de capa do card" title="Jonas">
                 <div class="card-body text-center">
                     <h4 class="card-title text-white nomeperfil">Jonas Antunes</h4>
-                    <a href="https://www.linkedin.com/in/jonas-antunes-049197187?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B7FBba2MVRt6sC%2F4fQ26CUA%3D%3D" target="_blank">
-                        <img class="btn btn-light btnperfil" src="../../../img/institucional/inicial_icons/in.png" height="33" width="100">
-                    </a>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalJonas">
+                        Conheça
+                    </button>
                 </div>
             </div>
         </div>
@@ -290,6 +289,8 @@
         </div>
   </div>
 </div>
+
+<?php include 'Modal.php'; ?>
 
         <!-- Scroll to Top Button-->
         <a class="scroll-to-top rounded scroltop" href="#page-top">
