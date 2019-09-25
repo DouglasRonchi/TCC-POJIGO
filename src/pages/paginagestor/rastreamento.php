@@ -42,22 +42,6 @@ if (isset($_GET['btnExcluirRota'])) {
     <link href="../../../css/rastreamento.css" rel="stylesheet">
     <!-- Custom styles for this page -->
     <link href="../../../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-    <style>
-        #map {
-            height: 450px;
-            float: left;
-            width: 100%;
-        }
-
-        #directions-panel {
-            color: #000000;
-            margin-top: 10px;
-            background-color: rgba(191, 186, 167, 0.56);
-            padding: 10px;
-            overflow: scroll;
-            height: 174px;
-        }
-    </style>
 </head>
 
 <body id="page-top">
@@ -83,15 +67,13 @@ if (isset($_GET['btnExcluirRota'])) {
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <h1 class="h3 mb-4 text-gray-800">Rastreamentos</h1>
+                <strong><h1 class="h3 mb-4">Rastreamentos</h1></strong>
                 <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                    </div>
                     <div class="card-body">
-                        <div id="map"></div>
-                        <h2>Informações da rota:</h2>
-                        <div id="directions-panel">
-                            <span class="font-weight-light">Selecione uma viagem para ver as informações...</span>
+                        <div id="map" class="mb-3" style="border-radius: 15px;box-shadow: 1px 1px 10px 2px rgba(0,0,0,0.3)"></div>
+                        <h2>Informações da Rota</h2>
+                        <div id="directions-panel" style="border-radius: 10px;box-shadow:1px 1px 12px -3px ; background-color: rgb(203, 223, 245);">
+                            <span class="font-weight ">Selecione uma viagem para ver as informações...</span>
                         </div>
                         <?php
                         if (isset($_GET['cdv'])) {
@@ -147,26 +129,24 @@ if (isset($_GET['btnExcluirRota'])) {
                     <div class="card-header py-3 text-center">
                         <form action="" method="get">
                             <div class="btn-group">
-                                <label class="btn btn-secondary disabled">
-                                    Filtros
-                                </label>
-                                <label class="btn btn-primary active">
-                                    <input type="checkbox" name="TRIPfinalizadas" id="TRIPfinalizadas"
-                                           value="1" <?= (isset($_GET['TRIPfinalizadas'])) ? 'checked' : ''; ?>>Viagens
+                                
+                                <label class="btn btn-primary  pt-0">
+                                    <input type="radio" class="mr-2 mt-3" name="TRIPfinalizadas" id="TRIPfinalizadas"
+                                           value="1" <?= (isset($_GET['TRIPfinalizadas'])) ? 'checked' : ''; ?>>
                                     Finalizadas
                                 </label>
-                                <label class="btn btn-primary">
-                                    <input type="checkbox" name="TRIPandamento" id="TRIPandamento"
-                                           value="1" <?= (isset($_GET['TRIPandamento'])) ? 'checked' : ''; ?>>Viagens em
+                                <label class="btn btn-primary pt-0">
+                                    <input type="radio" class="mr-2 mt-3" name="TRIPandamento" id="TRIPandamento"
+                                           value="1" <?= (isset($_GET['TRIPandamento'])) ? 'checked' : ''; ?>>Em
                                     Andamento
                                 </label>
-                                <label class="btn btn-primary">
-                                    <input type="checkbox" name="TRIPproblema" id="TRIPproblema"
-                                           value="1" <?= (isset($_GET['TRIPproblema'])) ? 'checked' : ''; ?>>Viagens com
+                                <label class="btn btn-primary pt-0">
+                                    <input type="radio" class="mr-2 mt-3" name="TRIPproblema" id="TRIPproblema"
+                                           value="1" <?= (isset($_GET['TRIPproblema'])) ? 'checked' : ''; ?>>Com
                                     Problema
                                 </label>
                                 <label class="btn btn-primary">
-                                    <button type="submit" class="btn btn-dark btn-sm" name="TRIPfiltrar"
+                                    <button type="submit" class="btn btn-dark  btn-sm" name="TRIPfiltrar"
                                             id="TRIPfiltrar">Filtrar
                                     </button>
                                 </label>

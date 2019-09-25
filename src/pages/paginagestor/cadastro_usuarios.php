@@ -30,6 +30,8 @@ if (isset($_GET['id'])) {
 
     <!-- Custom styles for this template-->
     <link href="../../../css/sb-admin-2.min.css" rel="stylesheet">
+      <!-- stylo geral -->
+  <link rel="stylesheet" type="text/css" href="../../../css/estilo.css">
 
 </head>
 
@@ -56,7 +58,7 @@ if (isset($_GET['id'])) {
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <h1 class="h3 mb-4 text-gray-800">Cadastro de Usuários</h1>
+                <h1 class="mb-4">Cadastro de Usuários</h1>
 
 
                 <form action="../../controllers/usuariosController.php<?= (isset($_GET['editar'])) ? "?id=" . $_GET['id'] : ''; ?>"
