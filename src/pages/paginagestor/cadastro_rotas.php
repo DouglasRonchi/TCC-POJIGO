@@ -102,10 +102,16 @@ $login->VerificarLogin();
               $('#litResultado').html(status);
               else {
                 //Se o status for OK
-                //Endereço de origem = response.originAddresses
-                //Endereço de destino = response.destinationAddresses
-                //Distância = response.rows[0].elements[0].distance.text
-                //Duração = response.rows[0].elements[0].duration.text
+                $origem = response.originAddresses;
+                $destino = response.destinationAddresses;
+                $origem = $origem[0].split(",");
+                $destino = $destino[0].split(",");
+
+
+                $('#txtOrigem').val($origem[0]);
+                $('#txtDestino').val($destino[0]);
+
+
                 $('#litResultado').html("<strong>Origem</strong>: " + response.originAddresses +
                   "<br /><strong>Destino:</strong> " + response.destinationAddresses +
                   "<br /><strong>Distância</strong>: " + response.rows[0].elements[0].distance.text +
@@ -117,127 +123,272 @@ $login->VerificarLogin();
             }
           </script>
 
-          <div class="row content-heading mb-3">
-            <!-- Page Heading -->
-            <div class="col-md-12">
-              <h1 class="h3 text-gray-800">Cadastro de Rotas</h1>
-            </div>
-          </div>
-          <div class="row content-form">
-            <form class="col-md-4" action="../../controllers/rotasController.php" method="post">
-
-              <?php 
-              if (isset($_GET['id'])){
-                $query = $conn->executeQuery("SELECT ci.nome_cidade AS origem, ci2.nome_cidade AS destino FROM rotas ro JOIN cidades ci ON ci.id = ro.fk_cidade_origem JOIN cidades ci2 ON ci2.id = ro.fk_cidade_destino WHERE ro.id = {$_GET['id']}");
-                $result = mysqli_fetch_assoc($query);
-              }
-              ?>
 
 
-              <div class="form-group">
-                <label for="txtOrigem"><strong>Endereço de origem</strong></label>
-                <input  type="text" class="field form-control" id="txtOrigem" name="origem" value="<?= (isset($_GET['id']))? $result['origem'] : '' ; ?>">
+          <!-- Auto complete -->
 
-              </div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbqJXX7fEFddatn-vaBp3BtBS-4TJNIbg&libraries=places&callback=initAutocomplete"
+        async defer></script>
 
-              <div class="form-group">
-                <label for="txtDestino"><strong>Endereço de destino</strong></label>
-                <input type="text" class="field form-control" id="txtDestino" name="destino" value="<?= (isset($_GET['id']))? $result['destino'] : '' ; ?>">
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbqJXX7fEFddatn-vaBp3BtBS-4TJNIbg&libraries=places&callback=initAutocomplete2"
+        async defer></script>
 
+          <script>
 
-              </div>
+            var placeSearch, autocomplete;
 
-              <div class="form-group">
-                <input type="button" value="Calcular distância" onclick="CalculaDistancia()" id="calcdist" class="btnNew btn btn-secondary mr-2"/>
+            var componentForm = {
+              street_number: 'short_name',
+              route: 'long_name',
+              locality: 'long_name',
+              administrative_area_level_1: 'short_name',
+              country: 'long_name',
+              postal_code: 'short_name'
+            };
 
-                <?php
-                if (isset($_GET['id'])):
-                  ?>
-                  <input type="hidden" name="id" value="<?=$_GET['id']?>">
-                  <button type="submit" name="atualizar" class="btn btn-primary mr-2">Atualizar Rota</button>
-                  <?php else: ?>
+            function initAutocomplete() {
+            // Create the autocomplete object, restricting the search predictions to
+            // geographical location types.
+            autocomplete = new google.maps.places.Autocomplete(
+              document.getElementById('txtOrigem'), {types: ['geocode']});
 
-                    <button type="submit" name="salvar" class="btn btn-primary mr-2" onclick="return confirm('Tem certeza que deseja salvar a rota?')">Salvar Rota</button>
+          // Avoid paying for data that you don't need by restricting the set of
+          // place fields that are returned to just the address components.
+          autocomplete.setFields(['address_component']);
 
-                  <?php endif; ?>
+          // When the user selects an address from the drop-down, populate the
+          // address fields in the form.
+          autocomplete.addListener('place_changed', fillInAddress);
+        }
 
-                </div>
-                <div><span id="litResultado">&nbsp;</span></div>
-              </form>
-              <div class="googlemaps col-md-8">
-                <iframe  id="map" src="https://maps.google.com/maps?saddr=&daddr=&output=embed"></iframe>
-              </div>
-            </div>
+        function fillInAddress() {
+          // Get the place details from the autocomplete object.
+          var place = autocomplete.getPlace();
 
-            <script>
-
-              function inicializar() {
-                var coordenadas = {lat: -22.912869, lng: -43.228963};
-
-                var mapa = new google.maps.Map(document.getElementById('mapa'), {
-                  zoom: 15,
-                  center: coordenadas
-                });
-
-                var marker = new google.maps.Marker({
-                  position: coordenadas,
-                  map: mapa,
-                  title: 'Meu marcador'
-                });
-              }
-            </script>
-          </div>
-          <!-- /.container-fluid -->
-
-        </div>
-        <!-- End of Main Content -->
-
-        <!-- Footer -->
-        <?php include '../menu/footer.php'; ?>      
-        <!-- End of Footer -->
-
-      </div>
-      <!-- End of Content Wrapper -->
-
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <?php include '../menu/logoutmodal.php'; ?>
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="../../../vendor/jquery/jquery.min.js"></script>
-    <script src="../../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="../../../vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="../../../js/sb-admin-2.min.js"></script>
-
-
-    <?php if (isset($_GET['id'])) :  
-      ?>
-      <script type="text/javascript">
-        $(document).ready(function () {
-          function sleep() {
-            $('#calcdist').trigger('click');            
+          for (var component in componentForm) {
+            document.getElementById(component).value = '';
+            document.getElementById(component).disabled = false;
           }
-        
-        setTimeout(sleep,1000);
 
-        });
+          // Get each component of the address from the place details,
+          // and then fill-in the corresponding field on the form.
+          for (var i = 0; i < place.address_components.length; i++) {
+            var addressType = place.address_components[i].types[0];
+            if (componentForm[addressType]) {
+              var val = place.address_components[i][componentForm[addressType]];
+              document.getElementById(addressType).value = val;
+            }
+          }
+        }
 
+        // Bias the autocomplete object to the user's geographical location,
+        // as supplied by the browser's 'navigator.geolocation' object.
+        function geolocate() {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+              var geolocation = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+              };
+              var circle = new google.maps.Circle(
+                {center: geolocation, radius: position.coords.accuracy});
+              autocomplete.setBounds(circle.getBounds());
+            });
+          }
+        }
       </script>
 
-    <?php endif; ?>
+
+<script>
+
+            var placeSearch, autocomplete;
+
+            var componentForm = {
+              street_number: 'short_name',
+              route: 'long_name',
+              locality: 'long_name',
+              administrative_area_level_1: 'short_name',
+              country: 'long_name',
+              postal_code: 'short_name'
+            };
+
+            function initAutocomplete2() {
+            // Create the autocomplete object, restricting the search predictions to
+            // geographical location types.
+            autocomplete = new google.maps.places.Autocomplete(
+              document.getElementById('txtDestino'), {types: ['geocode']});
+
+          // Avoid paying for data that you don't need by restricting the set of
+          // place fields that are returned to just the address components.
+          autocomplete.setFields(['address_component']);
+
+          // When the user selects an address from the drop-down, populate the
+          // address fields in the form.
+          autocomplete.addListener('place_changed', fillInAddress);
+        }
+
+        function fillInAddress() {
+          // Get the place details from the autocomplete object.
+          var place = autocomplete.getPlace();
+
+          for (var component in componentForm) {
+            document.getElementById(component).value = '';
+            document.getElementById(component).disabled = false;
+          }
+
+          // Get each component of the address from the place details,
+          // and then fill-in the corresponding field on the form.
+          for (var i = 0; i < place.address_components.length; i++) {
+            var addressType = place.address_components[i].types[0];
+            if (componentForm[addressType]) {
+              var val = place.address_components[i][componentForm[addressType]];
+              document.getElementById(addressType).value = val;
+            }
+          }
+        }
+
+        // Bias the autocomplete object to the user's geographical location,
+        // as supplied by the browser's 'navigator.geolocation' object.
+        function geolocate() {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+              var geolocation = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+              };
+              var circle = new google.maps.Circle(
+                {center: geolocation, radius: position.coords.accuracy});
+              autocomplete.setBounds(circle.getBounds());
+            });
+          }
+        }
+      </script>
 
 
-  </body>
 
-  </html>
+
+      <div class="row content-heading mb-3">
+        <!-- Page Heading -->
+        <div class="col-md-12">
+          <h1 class="h3 text-gray-800">Cadastro de Rotas</h1>
+        </div>
+      </div>
+      <div class="row content-form">
+        <form class="col-md-4" action="../../controllers/rotasController.php" method="post">
+
+
+        <?php 
+        if (isset($_GET['id'])){
+          $query = $conn->executeQuery("SELECT ci.nome_cidade AS origem, ci2.nome_cidade AS destino FROM rotas ro JOIN cidades ci ON ci.id = ro.fk_cidade_origem JOIN cidades ci2 ON ci2.id = ro.fk_cidade_destino WHERE ro.id = {$_GET['id']}");
+          $result = mysqli_fetch_assoc($query);
+        }
+        ?>
+
+
+        <div class="form-group">
+          <label for="txtOrigem"><strong>Endereço de origem</strong></label>
+          <input  type="text" class="field form-control" id="txtOrigem" name="origem" value="<?= (isset($_GET['id']))? $result['origem'] : '' ; ?>">
+
+        </div>
+
+        <div class="form-group">
+          <label for="txtDestino"><strong>Endereço de destino</strong></label>
+          <input type="text" class="field form-control" id="txtDestino" name="destino" value="<?= (isset($_GET['id']))? $result['destino'] : '' ; ?>">
+
+
+        </div>
+
+        <div class="form-group">
+          <input type="button" value="Calcular distância" onclick="CalculaDistancia()" id="calcdist" class="btnNew btn btn-secondary mr-2"/>
+
+          <?php
+          if (isset($_GET['id'])):
+            ?>
+            <input type="hidden" name="id" value="<?=$_GET['id']?>">
+            <button type="submit" name="atualizar" class="btn btn-primary mr-2">Atualizar Rota</button>
+            <?php else: ?>
+
+              <button type="submit" name="salvar" class="btn btn-primary mr-2" onclick="return confirm('Tem certeza que deseja salvar a rota?')">Salvar Rota</button>
+
+            <?php endif; ?>
+
+          </div>
+          <div><span id="litResultado">&nbsp;</span></div>
+        </form>
+        <div class="googlemaps col-md-8">
+          <iframe  id="map" src="https://maps.google.com/maps?saddr=&daddr=&output=embed"></iframe>
+        </div>
+      </div>
+
+      <script>
+
+        function inicializar() {
+          var coordenadas = {lat: -22.912869, lng: -43.228963};
+
+          var mapa = new google.maps.Map(document.getElementById('mapa'), {
+            zoom: 15,
+            center: coordenadas
+          });
+
+          var marker = new google.maps.Marker({
+            position: coordenadas,
+            map: mapa,
+            title: 'Meu marcador'
+          });
+        }
+      </script>
+    </div>
+    <!-- /.container-fluid -->
+
+  </div>
+  <!-- End of Main Content -->
+
+  <!-- Footer -->
+  <?php include '../menu/footer.php'; ?>      
+  <!-- End of Footer -->
+
+</div>
+<!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+  <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<?php include '../menu/logoutmodal.php'; ?>
+
+<!-- Bootstrap core JavaScript-->
+<script src="../../../vendor/jquery/jquery.min.js"></script>
+<script src="../../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="../../../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="../../../js/sb-admin-2.min.js"></script>
+
+
+<?php if (isset($_GET['id'])) :  
+  ?>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      function sleep() {
+        $('#calcdist').trigger('click');            
+      }
+
+      setTimeout(sleep,1000);
+
+    });
+
+  </script>
+
+<?php endif; ?>
+
+
+</body>
+
+</html>
