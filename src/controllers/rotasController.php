@@ -2,8 +2,8 @@
 require_once '../classes/Autoload.class.php';
 $conn = New Site;
 
-$origem = $_POST['origem'];
-$destino = $_POST['destino'];
+$origem = utf8_decode($_POST['origem']);
+$destino = utf8_decode($_POST['destino']);
 
 
 $query = $conn->executeQuery("SELECT * FROM cidades WHERE nome_cidade= '{$origem}'");
@@ -49,18 +49,28 @@ if (isset($_POST['salvar'])) {
 
 	if ($nome_rota == $nome_rota_nova){
 		//ja existe não salvar
+		$conn->setAlerta(
+		'danger',
+		'Rota já existe.',
+		'<img class="img-fluid" src="'.$conn->path('img/icons/error.png').'">',
+		$_SESSION['usuario_id']
+	);
 	} else {
 
 		$sql = "INSERT INTO rotas (`nome_rota`, `fk_cidade_origem`, `fk_cidade_destino`) VALUES ('{$cidade_origem} X {$cidade_destino}', '{$id_origem}', '{$id_destino}')";
 		$conn->executeQuery($sql);
-	}
 
-	$conn->setAlerta(
+$conn->setAlerta(
 		'success',
 		'Rota cadastrada com sucesso',
 		'<img class="img-fluid" src="'.$conn->path('img/icons/success.png').'">',
 		$_SESSION['usuario_id']
 	);
+
+
+	}
+
+
 
 	header('Location: ../pages/paginagestor/relatorio_rotas.php');
 

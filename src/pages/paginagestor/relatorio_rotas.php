@@ -91,7 +91,7 @@ $login->VerificarLogin();
                     while ($selectNome_rotaRows = mysqli_fetch_assoc($selectNome_rota)):
                       ?>
                       <tr>
-                        <td><?= $selectNome_rotaRows["nome_rota"] ?></td>
+                        <td><?= utf8_encode($selectNome_rotaRows["nome_rota"]) ?></td>
 
                         <td>
 

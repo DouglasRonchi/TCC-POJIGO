@@ -9,6 +9,10 @@ $lon = $_POST['lon'];
 
 $cod_viagem = $_POST['codViagem'];
 
+$query = $conn->executeQuery("SELECT latitude,longitude FROM coordenadas WHERE fk_cod_viagem = {$cod_viagem} ORDER BY hora DESC LIMIT 1");
+
+$result = mysqli_fetch_assoc($query);
+
 //Testing:
 //$lat = -29.92417511;
 //$lon = -50.85625158;
@@ -127,11 +131,6 @@ $conn->executeQuery("UPDATE coordenadas SET fk_dados_google = {$last_id} WHERE h
 
 //=================Somar Distancias Para obter a distancia total
 
-
-$query = $conn->executeQuery("SELECT latitude,longitude FROM coordenadas WHERE fk_cod_viagem = {$cod_viagem} ORDER BY hora DESC LIMIT 1");
-
-$result = mysqli_fetch_assoc($query);
-
 //Our starting point / origin. Change this if you wish.
 $start = $result['latitude'] . "," . $result['longitude'];
 
@@ -165,7 +164,7 @@ curl_close($curl);
 //Decode the JSON data we received.
 $json = json_decode(trim($res), true);
 
-var_dump($json); //Testar se volta km no array ================================================================
+// var_dump($json); //Testar se volta km no array ================================================================
 
 //Automatically select the first route that Google gave us.
 $route = $json['routes'][0];
