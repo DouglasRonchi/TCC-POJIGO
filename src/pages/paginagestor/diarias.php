@@ -80,7 +80,7 @@ $login->VerificarLogin();
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold"><b>Preencha os dados abaixo e precione <strong class="text-primary">'visualizar'</strong> para ver o relatório de diarias!</b></h6>
+              <h6 class="m-0 font-weight-bold"><b>Preencha os dados abaixo e pressione <strong class="text-primary">'visualizar'</strong> para ver o relatório de diárias!</b></h6>
               <hr>
               <form action="" method="get" class="form-inline">
                 <div class="side-by-side clearfix mr-2">
