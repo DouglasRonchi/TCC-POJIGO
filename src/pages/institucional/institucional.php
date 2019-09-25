@@ -30,6 +30,11 @@ else { $dispositivo = "computador";}
 
     <title>Pojigo - Início</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Favicon icon site -->
+    <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.ico"/>
+
 </head>
 
 <body id="page-top" class="sidebar-toggled">
@@ -216,9 +221,20 @@ else { $dispositivo = "computador";}
                 <img class="rounded-circle mt-2 col foto" title="Douglas" src="../../../img/institucional/perfil/douglas.png" alt="Imagem de capa do card">
                 <div class="card-body text-center">
                     <h4 class="card-title text-white nomeperfil">Douglas Ronchi</h4>
+                    <?php if ($dispositivo == "computador") { ?>
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalDouglas">
                         Conheça
                     </button>
+                <?php } elseif ($dispoditivo == "mobile") {?>
+                    <!-- The social media icon bar -->
+                    <div class="icon-bar text-center iconesico">
+                        <a href="https://www.facebook.com/douglas.ronchi" class="facebook mr-3" target="_blank"><i class="fa fa-facebook"></i></a> 
+                        <a href="https://twitter.com/douglasronchi" class="twitter mr-3" target="_blank"><i class="fa fa-twitter"></i></a> 
+                        <a href="https://www.instagram.com/douglasronchi" class="instagram mr-3" target="_blank"><i class="fab fa-instagram"></i></a> 
+                        <a href="https://github.com/DouglasRonchi" class="github mr-3" target="_blank"><i class="fab fa-github"></i></a> 
+                        <a href="https://www.linkedin.com/in/douglas-ronchi-7b5a2b134" class="linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                <?php } ?>
                 </div>
             </div>
 
@@ -227,9 +243,20 @@ else { $dispositivo = "computador";}
                 alt="Imagem de capa do card">
                 <div class="card-body text-center">
                     <h4 class="card-title text-white nomeperfil">Paloma Teply</h4>
+                    <?php if ($dispositivo == "computador") { ?>
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalPaloma">
                         Conheça
                     </button>
+                <?php } elseif ($dispoditivo == "mobile") {?>
+                    <!-- The social media icon bar -->
+                    <div class="icon-bar text-center iconesico">
+                       <a href="https://www.facebook.com/paloma.teply" class="facebook mr-3" target="_blank"><i class="fa fa-facebook"></i></a> 
+                       <a href="https://twitter.com/TeplyPaloma" class="twitter mr-3" target="_blank"><i class="fa fa-twitter"></i></a> 
+                       <a href="https://www.instagram.com/teply.p" class="instagram mr-3" target="_blank"><i class="fab fa-instagram"></i></a> 
+                       <a href="https://github.com/Paloma-teply" class="github mr-3" target="_blank"><i class="fab fa-github"></i></a> 
+                       <a href="https://www.linkedin.com/in/paloma-teply-b25970190" class="linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
+                   </div>
+               <?php } ?>
                 </div>
             </div>
 
@@ -238,9 +265,20 @@ else { $dispositivo = "computador";}
                 alt="Imagem de capa do card">
                 <div class="card-body text-center">
                     <h4 class="card-title text-white nomeperfil">Geovane Duarte</h4>
+                    <?php if ($dispositivo == "computador") { ?>
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalGeovane">
                         Conheça
                     </button>
+                <?php } elseif ($dispoditivo == "mobile") {?>
+                    <!-- The social media icon bar -->
+                    <div class="icon-bar text-center iconesico">
+                       <a href="https://www.facebook.com/geovane.duarte.7359" class="facebook mr-3" target="_blank"><i class="fa fa-facebook"></i></a> 
+                       <a href="" class="twitter mr-3" target="_blank"><i class="fa fa-twitter"></i></a> 
+                       <a href="" class="instagram mr-3" target="_blank"><i class="fab fa-instagram"></i></a> 
+                       <a href="https://github.com/Geovane22" class="github mr-3" target="_blank"><i class="fab fa-github"></i></a> 
+                       <a href="https://www.linkedin.com/in/geovane-duarte-da-silva-3bb387194" class="linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
+                   </div>
+               <?php } ?>
                 </div>
             </div>
 
@@ -248,9 +286,20 @@ else { $dispositivo = "computador";}
                 <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/dauana.jpg" alt="Imagem de capa do card" title="Dauana">
                 <div class="card-body text-center">
                     <h4 class="card-title text-white nomeperfil">Dauana Severo</h4>
+                    <?php if ($dispositivo == "computador") { ?>
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalDauana">
                         Conheça
                     </button>
+                <?php } elseif ($dispoditivo == "mobile") {?>
+                    <!-- The social media icon bar -->
+                    <div class="icon-bar text-center iconesico">
+                       <a href="https://www.facebook.com/dauana.severo" class="facebook mr-3" target="_blank"><i class="fa fa-facebook"></i></a> 
+                       <a href="" class="twitter mr-3" target="_blank"><i class="fa fa-twitter"></i></a> 
+                       <a href="https://www.instagram.com/dauanasvro" class="instagram mr-3" target="_blank"><i class="fab fa-instagram"></i></a> 
+                       <a href="https://github.com/dauanaana" class="github mr-3" target="_blank"><i class="fab fa-github"></i></a> 
+                       <a href="https://www.linkedin.com/in/dauana-severo-bb152a18a" class="linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
+                   </div>
+               <?php } ?>
                 </div>
             </div>
 
@@ -258,9 +307,20 @@ else { $dispositivo = "computador";}
                 <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/jonas.png" alt="Imagem de capa do card" title="Jonas">
                 <div class="card-body text-center">
                     <h4 class="card-title text-white nomeperfil">Jonas Antunes</h4>
+                    <?php if ($dispositivo == "computador") { ?>
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalJonas">
                         Conheça
                     </button>
+                <?php } elseif ($dispoditivo == "mobile") {?>
+                    <!-- The social media icon bar -->
+                    <div class="icon-bar text-center iconesico">
+                        <a href="https://www.facebook.com/people/Jonas-Antunes/100012847776542" class="facebook mr-3" target="_blank"><i class="fa fa-facebook"></i></a> 
+                        <a href="https://twitter.com/JonasAn14960845" class="twitter mr-3" target="_blank"><i class="fa fa-twitter"></i></a> 
+                        <a href="https://www.instagram.com/jonas.antunes4955" class="instagram mr-3" target="_blank"><i class="fab fa-instagram"></i></a> 
+                        <a href="https://github.com/Jonas4955" class="github mr-3" target="_blank"><i class="fab fa-github"></i></a> 
+                        <a href="https://www.linkedin.com/in/jonas-antunes-049197187" class="linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                <?php } ?>
                 </div>
             </div>
         </div>
@@ -271,21 +331,21 @@ else { $dispositivo = "computador";}
 <br><br><br><br><br><br><br><br>
 
 <div class="contatos">
-    <div class="cardgadgets bg-dark">
-        <a class="gadgets" href="https://web.facebook.com/Pojigo-101839457873456" style="position: fixed; top: 560px;" target="_blank">
-        <img class="imgface" border="0" heigth="38" src="../../../img/institucional/inicial_icons/faceboock.png" title="Siga-nos no face" width="38" /></a>
+    <div class="cardgadgets">
+        <a class="gadgets gadface" href="https://web.facebook.com/Pojigo-101839457873456" target="_blank">
+        <img class="imgface" border="0" src="../../../img/institucional/inicial_icons/faceboock.png" title="Siga-nos no face" /></a>
     </div>
     <div class="cardgadgets">
-        <a class="gadgets" href="https://www.instagram.com/pojigoentra21" style="position: fixed; top: 605px;" target="_blank">
-        <img class="imginsta" border="0" heigth="39" src="../../../img/institucional/inicial_icons/insta.png" title="Siga-nos no Insta" width="39" /></a>
+        <a class="gadgets gedinsta" href="https://www.instagram.com/pojigoentra21" target="_blank">
+        <img class="imginsta" border="0" src="../../../img/institucional/inicial_icons/insta.png" title="Siga-nos no Insta" /></a>
     </div>
     <div class="cardgadgets">
-        <a class="gadgets" data-toggle="modal" data-target=".bd-example-modal-sm" href="Whats:(47) 984380116" style="position: fixed; top: 650px;" target="_blank">
-        <img class="imgwhats" border="0" heigth="38" src="../../../img/institucional/inicial_icons/whatsapp.png" title="Whats:(47) 996545424" width="38" /></a>
+        <a class="gadgets gedwhats" data-toggle="modal" data-target=".bd-example-modal-sm" href="Whats:(47) 984380116" target="_blank">
+        <img class="imgwhats" border="0" src="../../../img/institucional/inicial_icons/whatsapp.png" title="Whats:(47) 996545424" /></a>
     </div>
     <div class="cardgadgets">
-        <a class="gadgets" href="https://www.youtube.com/channel/UCusMR_Z4ozLqcf__GpBgehg" style="position: fixed; top: 695px;" target="_blank">
-        <img class="imgyoutube" border="0" heigth="38" src="../../../img/institucional/inicial_icons/youtube.png" title="Pojigo Entra21" width="38" /></a>
+        <a class="gadgets gedyoutube" href="https://www.youtube.com/channel/UCusMR_Z4ozLqcf__GpBgehg" target="_blank">
+        <img class="imgyoutube" border="0" src="../../../img/institucional/inicial_icons/youtube.png" title="Pojigo Entra21" /></a>
     </div>
 </div>
 
@@ -306,13 +366,13 @@ else { $dispositivo = "computador";}
         </div>
   </div>
 </div>
-<?php if ($dispositivo == "computador") {?>
+<?php if ($dispositivo == "computador") {
+    
+    include 'Modal.php'; 
+ 
+} ?>
 
-<?php include 'Modal.php'; ?>
 
-<?php } elseif($dispositivo == "mobile") { ?> 
-<br>
-<?php } ?>
 
 
         <!-- Scroll to Top Button-->
@@ -340,10 +400,16 @@ else { $dispositivo = "computador";}
         } else {
             $('.navbar').css("background-color", "rgba(0, 0, 0, 0.0)");
         }
-        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-            $('.contatos').css("top", "550");
+        if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
+            $('.gadface').css("display", "block");
+            $('.gedinsta').css("display", "block");
+            $('.gedwhats').css("display", "block");
+            $('.gedyoutube').css("display", "block");
         } else {
-            $('.contatos').css("top", "450");
+            $('.gadface').css("display", "none");
+            $('.gedinsta').css("display", "none");
+            $('.gedwhats').css("display", "none");
+            $('.gedyoutube').css("display", "none");
         }  
     }
 

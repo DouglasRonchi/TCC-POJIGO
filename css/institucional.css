@@ -35,6 +35,7 @@ body{background-color: rgb(245, 245, 245);}
 
 .gadgets {
   margin-left: 2px;
+  position: fixed;
   -webkit-transition: 0.1s ease-in;
   -moz-transition: 0.1s ease-in;
   -o-transition: 0.1s ease-in;
@@ -43,13 +44,33 @@ body{background-color: rgb(245, 245, 245);}
 .gadgets:hover {
   margin-left: 10px;
 }
-.imgface .imgwhats .imgyoutube {
+.imgface {
   height: 38px;
   width: 38px;
 }
 .imginsta {
   height: 39px;
   width: 39px;    
+}
+.imgwhats {
+  height: 38px;
+  width: 38px; 
+}
+.imgyoutube {
+  height: 38px;
+  width: 38px; 
+}
+.gadface {
+  top: 370px;
+}
+.gedinsta {
+  top: 415px;
+}
+.gedwhats {
+  top: 460px;
+}
+.gedyoutube {
+  top: 505px;
 }
 
 
@@ -175,13 +196,24 @@ footer{
   .gadgets {
     margin-left: 2px;
   }
-  .imgface .imgwhats .imgyoutube {
-  height: 52px;
-  width: 52px;
+  .imgface {
+    height: 38px;
+    width: 38px;
+    margin-bottom: 
   }
   .imginsta {
-    height: 53px;
-    width: 53px;    
+    height: 39px;
+    width: 39px;    
+  }
+  .imgwhats {
+    height: 38px;
+    width: 38px;
+    margin-bottom:  
+  }
+  .imgyoutube {
+    height: 38px;
+    width: 38px;
+    margin-bottom:  
   }
   .qrWhats {
     height: 30px;
@@ -282,17 +314,31 @@ footer{
   }
 
 
+  .cardgadgets {
+    margin-bottom: 10px;
+  }
   .gadgets {
   margin-left: 2px;
   margin-bottom: 10px;
   }
-  .imgface .imgwhats .imgyoutube {
-  height: 55px;
-  width: 55px;
+  .imgface {
+    height: 58px;
+    width: 58px;
+    margin-bottom: 15px;
   }
   .imginsta {
-    height: 56px;
-    width: 56px;    
+    height: 59px;
+    width: 59px;
+    margin-bottom: 15px;    
+  }
+  .imgwhats {
+    height: 58px;
+    width: 58px; 
+    margin-bottom: 15px;
+  }
+  .imgyoutube {
+    height: 58px;
+    width: 58px; 
   }
 
 
