@@ -71,9 +71,9 @@ $login->VerificarLogin();
                                             Rodados (Mensal)
                                         </div>
                                         <?php
-                                        $result = mysqli_fetch_assoc($conn->executeQuery("SELECT quilometragem FROM registro_ponto WHERE MONTH(hora_inicio) = (SELECT MONTH(hora_inicio) FROM registro_ponto ORDER BY MONTH(hora_inicio) DESC LIMIT 1) ORDER BY MONTH(hora_inicio) DESC"));
+                                        $result = mysqli_fetch_assoc($conn->executeQuery("SELECT SUM(quilometragem) AS total FROM registro_ponto WHERE MONTH(hora_inicio) = (SELECT MONTH(hora_inicio) FROM registro_ponto ORDER BY MONTH(hora_inicio) DESC LIMIT 1) ORDER BY MONTH(hora_inicio) DESC"));
                                         ?>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$result['quilometragem']." Km"?></div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$result['total']." Km"?></div>
 
                                     </div>
                                     <div class="col-auto">
@@ -97,7 +97,7 @@ $login->VerificarLogin();
 
 
                                         <?php
-                                        $result = mysqli_fetch_assoc($conn->executeQuery("SELECT COUNT(*) AS total FROM registro_ponto WHERE MONTH(hora_inicio) = (SELECT MONTH(hora_inicio) FROM registro_ponto ORDER BY MONTH(hora_inicio) DESC LIMIT 1) ORDER BY MONTH(hora_inicio) DESC"));
+                                        $result = mysqli_fetch_assoc($conn->executeQuery("SELECT COUNT(*) AS total FROM registro_ponto"));
                                         ?>
 
                                         <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $result['total'] ?></div>
@@ -212,7 +212,7 @@ $login->VerificarLogin();
                                             <tbody>
                                             <?php
                                             setlocale(LC_ALL, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
-                                            $selectRastrear = $conn->executeQuery("SELECT vei.frota, vei.placa, coo.hora, coo.latitude, coo.longitude, usu.nome, rp.cod_viagem, rp.hora_fim , rp.fk_motivo_parada_um , goo.road, goo.suburb, goo.city, goo.formatted_address FROM registro_ponto rp JOIN coordenadas coo ON rp.cod_viagem = coo.fk_cod_viagem JOIN usuario usu ON usu.usuario_id = rp.fk_usuario JOIN veiculos vei ON rp.fk_veiculo = vei.id JOIN dados_googleapi goo ON goo.id = coo.fk_dados_google WHERE rp.hora_fim = 0 GROUP BY rp.cod_viagem ORDER BY coo.hora DESC");
+                                            $selectRastrear = $conn->executeQuery("SELECT vei.frota, vei.placa, coo.hora, coo.latitude, coo.longitude, usu.nome, rp.cod_viagem, rp.hora_fim , rp.fk_motivo_parada_um , goo.road, goo.suburb, goo.city, goo.formatted_address FROM registro_ponto rp LEFT JOIN coordenadas coo ON rp.cod_viagem = coo.fk_cod_viagem LEFT JOIN usuario usu ON usu.usuario_id = rp.fk_usuario LEFT JOIN veiculos vei ON rp.fk_veiculo = vei.id LEFT JOIN dados_googleapi goo ON goo.id = coo.fk_dados_google WHERE rp.hora_fim = 0 GROUP BY rp.cod_viagem ORDER BY coo.hora DESC");
                                             $row = mysqli_num_rows($selectRastrear);
                                             while ($row = mysqli_fetch_assoc($selectRastrear)):
 
