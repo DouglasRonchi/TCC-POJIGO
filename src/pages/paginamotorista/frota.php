@@ -26,8 +26,8 @@
 		</header>
 
 		<div class="row">
-			
-			<div class="col-11 mx-auto btn-block shadow-lg p-3">
+            <a href="index.php" class="btn-sm btn-danger text-decoration-none">Voltar</a>
+            <div class="col-11 mx-auto btn-block shadow-lg p-3">
 				<form name="form" action="../../controllers/mobileController.php" method="post">
 					<input readonly class="textview text-center mb-1" name="textview" id="txtarea" style="width: 100%;height: 50px" placeholder="Frota..."></input>
 

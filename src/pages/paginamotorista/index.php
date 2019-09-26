@@ -7,11 +7,11 @@ $mobile = New Mobile;
 $diaria = New Diarias;
 $login->VerificarLogin();
 
-if ($_SESSION['previlegio']==3 && !isset($_SESSION['motoristalogado'])){
+if ($_SESSION['previlegio'] == 3 && !isset($_SESSION['motoristalogado'])) {
     $_SESSION['motoristalogado'] = true;
     $mobile->startRegistro();
 }
-if (isset($_GET['fim']) && $_GET['fim']==true){
+if (isset($_GET['fim']) && $_GET['fim'] == true) {
     $query = $conn->executeQuery("SELECT * FROM registro_ponto WHERE id = {$_SESSION['id_rota']}");
     $diaria->pagarDiaria($query);
     session_destroy();
@@ -42,8 +42,20 @@ if (isset($_GET['fim']) && $_GET['fim']==true){
             <img class="p-2 mx-auto d-block" src="../../../img/logoc.png">
         </div>
     </header>
-
     <div class="row mt-4">
+        <?php
+        if (isset($_SESSION['erro'])): ?>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                Não pode iniciar viagem sem Rota E/OU Frota!
+            </div>
+        <?php
+        endif;
+        unset($_SESSION["erro"]);
+        ?>
+
         <div class="col-12 mx-auto d-block shadow-lg">
             <div class="text-light text-center mt-4">
                 <h2>Bem vindo!</h2>
@@ -55,13 +67,21 @@ if (isset($_GET['fim']) && $_GET['fim']==true){
                 <a href="rotas.php" class="btn btn-dark p-3 font-weight-bold">Rota</a>
                 <a href="frota.php" class="btn btn-dark p-3 font-weight-bold">Frota</a>
                 <form action="../../controllers/mobileController.php" method="post">
-                <button type="submit" name="btnInicioViagem" class="btn btn-success btn-block p-3 font-weight-bold">Começar</button>
+                    <button type="submit" name="btnInicioViagem" class="btn btn-success btn-block p-3 font-weight-bold">
+                        Começar
+                    </button>
                 </form>
             </div>
+            <form action="../../controllers/mobileController.php" method="post">
+                <div class="text-center">
+                    <button class="btn-sm btn-danger"
+                            onclick="return confirm('Tem certeza que deseja sair? Isto apagará todo seu registro até agora!')"
+                            name="logoutMobile">sair
+                    </button>
+                </div>
+            </form>
+
         </div>
-        <form action="../../controllers/mobileController.php" method="post">
-            <button class="btn-sm btn-danger" onclick="return confirm('Tem certeza que deseja sair? Isto apagará todo seu registro até agora!')" name="logoutMobile">sair</button>
-        </form>
     </div>
 
 

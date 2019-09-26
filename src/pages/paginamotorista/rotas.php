@@ -29,9 +29,10 @@ $conn = New Site;
 		</header>
 
 		<div class="row">
-			<div class="col-12 mx-auto d-block shadow-lg pt-4 mt-3">
+            <a href="index.php" class="btn-sm btn-danger text-decoration-none">Voltar</a>
+            <div class="col-12 mx-auto d-block shadow-lg pt-4 mt-3">
 				<div class="btn-group-vertical p-5 btn-block" role="group">
-                <form action="../../controllers/mobileController.php" method="post">
+                    <form action="../../controllers/mobileController.php" method="post">
                     <div class="input-group mb-4">
                         <select class="custom-select" id="inputRota" name="inputRota">
                             <option selected>Rota:</option>
@@ -40,7 +41,7 @@ $conn = New Site;
                             $selectRotaRows = mysqli_num_rows($selectRota);
                             while ($selectRotaRows = mysqli_fetch_assoc($selectRota)):
                             ?>
-                            <option value="<?=$selectRotaRows['id']?>"><?=$selectRotaRows['nome_rota']?></option>
+                            <option value="<?=$selectRotaRows['id']?>"><?=utf8_encode($selectRotaRows['nome_rota'])?></option>
                             <?php
                             endwhile;
                             ?>

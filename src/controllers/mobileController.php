@@ -20,8 +20,17 @@ if (isset($_POST['btnFrotaOk'])) {
     header('Location: ../pages/paginamotorista/index.php');
 } else if (isset($_POST['btnInicioViagem'])) {
     $id_rota = $_SESSION['id_rota'];
-    $conn->executeQuery("UPDATE registro_ponto SET hora_inicio = NOW() WHERE id = {$id_rota}");
-    header('Location: ../pages/paginamotorista/index_motorista.php?idRota='.$_SESSION['id_rota'].'&codViagem='.$_SESSION['cod_viagem'].'');
+
+    $result = mysqli_fetch_assoc($conn->executeQuery("SELECT * FROM registro_ponto WHERE fk_rota = {$id_rota}"));
+    if ($result['fk_rota'] == 0 || $result['fk_veiculo'] == 0) {
+        $_SESSION['erro'] = true;
+        header('Location: ../pages/paginamotorista/index.php');
+
+    } else {
+        $conn->executeQuery("UPDATE registro_ponto SET hora_inicio = NOW() WHERE id = {$id_rota}");
+        header('Location: ../pages/paginamotorista/index_motorista.php?idRota=' . $_SESSION['id_rota'] . '&codViagem=' . $_SESSION['cod_viagem'] . '');
+    }
+
 } else if (isset($_POST['btnInicioIntervalo'])) {
     $id_rota = $_SESSION['id_rota'];
     $conn->executeQuery("UPDATE registro_ponto SET hora_inicio_intervalo = NOW() WHERE id = {$id_rota}");
@@ -37,45 +46,16 @@ if (isset($_POST['btnFrotaOk'])) {
     //calcular quilometragem total
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     $query = $conn->executeQuery("SELECT * FROM coordenadas WHERE fk_cod_viagem = {$_SESSION['cod_viagem']} ORDER BY hora ASC LIMIT 1");
     $selectUsersRows = mysqli_num_rows($query);
-    while ($selectUsersRows = mysqli_fetch_assoc($query)){
+    while ($selectUsersRows = mysqli_fetch_assoc($query)) {
         $pontoInicial = $row['latitude'] . "," . $row['longitude'];
     }
     $query = $conn->executeQuery("SELECT * FROM coordenadas WHERE fk_cod_viagem = {$_SESSION['cod_viagem']} ORDER BY hora DESC LIMIT 1");
     $selectUsersRows = mysqli_num_rows($query);
-    while ($selectUsersRows = mysqli_fetch_assoc($query)){
+    while ($selectUsersRows = mysqli_fetch_assoc($query)) {
         $pontoFinal = $row['latitude'] . "," . $row['longitude'];
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     header('Location: ../pages/paginamotorista/index.php?fim=true');

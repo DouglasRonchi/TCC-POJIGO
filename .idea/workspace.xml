@@ -3,9 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="8c934103-8016-4184-8805-c6d5a3b60100" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chosen/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/chosen/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/paginagestor/rastreamento.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/rastreamento.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/paginamotorista/index_motorista.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginamotorista/index_motorista.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/mobileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/mobileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/paginagestor/dashboardTV.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/dashboardTV.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/paginamotorista/frota.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginamotorista/frota.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/paginamotorista/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginamotorista/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/paginamotorista/intervalo.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginamotorista/intervalo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/paginamotorista/parada.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginamotorista/parada.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/paginamotorista/rotas.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginamotorista/rotas.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -171,7 +175,7 @@
       <workItem from="1568978230252" duration="12061000" />
       <workItem from="1569362019579" duration="1683000" />
       <workItem from="1569412813971" duration="1587000" />
-      <workItem from="1569497827140" duration="5930000" />
+      <workItem from="1569497827140" duration="7828000" />
     </task>
     <servers />
   </component>

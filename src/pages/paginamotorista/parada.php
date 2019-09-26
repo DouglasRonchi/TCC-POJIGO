@@ -37,7 +37,7 @@
             <div class="btn-group-vertical mx-auto d-block p-5" role="group"
                  aria-label="Button group with nested dropdown">
                 <form action="../../controllers/mobileController.php" method="post">
-                    <div class="display-4 text-center text-white mb-2">Contador</div>
+                    <div id="showtm" class="display-4 text-center text-white mb-2">Contador</div>
                     <button type="submit" name="btnFimParada<?=(isset($_GET['n']))?'1':'2';?>" class="btn btn-dark btn-block p-3 font-weight-bold">Fim
                         Parada
                     </button>
@@ -67,5 +67,65 @@
 <script src="../../../js/sb-admin-2.min.js"></script>
 
 <script src="../../../js/funcoesMobile.js"></script>
+
+<script>
+    //Cronometro
+    // Here set the minutes, seconds, and tenths-of-second when you want the chronometer to stop
+    // If all these values are set to 0, the chronometer not stop automatically
+    var stmints = 0;
+    var stseconds = 0;
+    var stzecsec = 0;
+
+    // function to be executed when the chronometer stops
+    // function toAutoStop() {
+    //  alert('You stopped the chronometer');
+    // }
+
+    // the initial tenths-of-second, seconds, and minutes
+    var zecsec = 0;
+    var seconds = 0;
+    var mints = 0;
+    var hours = 0;
+
+    var startchron = 0;
+
+    function chronometer() {
+        if (startchron === 1) {
+            zecsec += 1; // set tenths of a second
+
+            // set seconds
+            if (zecsec > 9) {
+                zecsec = 0;
+                seconds += 1;
+            }
+
+            // set minutes
+            if (seconds > 59) {
+                seconds = 0;
+                mints += 1;
+            }
+
+            if (mints > 59) {
+                mints = 0;
+                hours += 1;
+            }
+
+            // adds data in #showtm
+            document.getElementById('showtm').innerHTML = hours + ' : ' + mints + ' : ' + seconds + '<sub>' + zecsec + '</sub>';
+            // if the chronometer reaches to the values for stop, calls whenChrStop(), else, auto-calls chronometer()
+            setTimeout("chronometer()", 100);
+        }
+    }
+
+    function startChr() {
+        startchron = 1;
+        chronometer();
+    } // starts the chronometer
+
+    startChr();
+
+
+</script>
+
 </body>
 </html>

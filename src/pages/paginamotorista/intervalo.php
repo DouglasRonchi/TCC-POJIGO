@@ -115,7 +115,7 @@
                 hours += 1;
             }
 
-            if (mints >= 15) {
+            if (mints >= 30) {
                 if (seconds % 2 === 0){
                     document.body.style.background = 'red';
                 } else {
