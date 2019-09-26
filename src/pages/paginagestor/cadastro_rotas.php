@@ -30,6 +30,8 @@ $login->VerificarLogin();
     #map {
       width: 100%;
       height: 100%;
+      border-radius: 14px;
+      border: none;
     }
 
     .content-heading {
