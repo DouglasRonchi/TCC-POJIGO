@@ -51,6 +51,8 @@ $login->VerificarLogin();
 
   <!-- <meta http-equiv="Content-Security-Policy" content="default-src &apos;self&apos;; script-src &apos;self&apos; https://ajax.googleapis.com; style-src &apos;self&apos;; img-src &apos;self&apos; data:"> -->
   <title>Pojigo - Diarias</title>
+   <!-- stylo geral -->
+  <link rel="stylesheet" type="text/css" href="../../../css/estilo.css">
   <!-- Custom fonts for this template-->
   <link href="../../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link
@@ -76,11 +78,15 @@ $login->VerificarLogin();
         <!-- Begin Page Content -->
         <div class="container-fluid">
           <!-- Page Heading -->
-          <h1 class="mb-4 text-gray-800 text-center">Diárias</h1>
+          <h1 class="mb-4">Diárias</h1>
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
+<<<<<<< HEAD
+              <h6 class="m-0"><b>Preencha os dados abaixo e precione <strong class="text-primary">'visualizar'</strong> para ver o relatório de diarias!</b></h6>
+=======
               <h6 class="m-0 font-weight-bold"><b>Preencha os dados abaixo e pressione <strong class="text-primary">'visualizar'</strong> para ver o relatório de diárias!</b></h6>
+>>>>>>> f10293c86abefc7959ce6a9eaed8167d14058554
               <hr>
               <form action="" method="get" class="form-inline">
                 <div class="side-by-side clearfix mr-2">

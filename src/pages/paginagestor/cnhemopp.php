@@ -12,12 +12,12 @@ if (isset($_POST["btnsalvar"])) {
 
   $result = $conn->executeQuery("UPDATE usuario SET venc_cnh = '{$cnh}', venc_mopp = '{$mopp}' WHERE usuario_id = {$usuarioId}");
 
-$conn->setAlerta(
-  'success',
-  'CNH ' . $usuario->getCnh() . 'MOPP' . $usuario->getMopp()  . ' atualizado com sucesso',
-  '<img class="img-fluid" src="' . $conn->path('img/icons/success.png') . '">',
-  $_SESSION['usuario_id']
-);
+  $conn->setAlerta(
+    'success',
+    'CNH ' . $usuario->getCnh() . 'MOPP' . $usuario->getMopp()  . ' atualizado com sucesso',
+    '<img class="img-fluid" src="' . $conn->path('img/icons/success.png') . '">',
+    $_SESSION['usuario_id']
+  );
 }
 
 
@@ -48,7 +48,8 @@ if (isset($_GET['userId'])) {
     <link href="../../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
     rel="stylesheet">
-
+    <!-- stylo geral -->
+    <link rel="stylesheet" type="text/css" href="../../../css/estilo.css">
     <!-- Custom styles for this template-->
     <link href="../../../css/sb-admin-2.min.css" rel="stylesheet">
 
@@ -81,7 +82,7 @@ if (isset($_GET['userId'])) {
           <div class="container-fluid">
 
             <!-- Page Heading -->
-            <h1 class="h3 mb-4 text-gray-800"><center>CNH & MOPP</center></h1>
+            <h1 class=" mb-4 "><center>CNH & MOPP</center></h1>
 
             <!-- DataTales Example -->
 

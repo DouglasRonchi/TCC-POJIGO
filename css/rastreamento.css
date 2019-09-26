@@ -1,3 +1,21 @@
-.infoveiculo:hover{
-    color: #1cc88a !important;
-}
+    h1,h2{
+    	text-align: center;
+    	color: black;
+    }
+    #map {
+    	height: 450px;
+    	float: left;
+    	width: 100%;
+    }
+
+    #directions-panel {
+    	color: #000000;
+    	margin-top: 10px;
+    	background-color: rgba(191, 186, 167, 0.56);
+    	padding: 10px;
+    	overflow: scroll;
+    	height: 174px;
+    }
+    .infoveiculo:hover{
+    	color: #1cc88a !important;
+    }

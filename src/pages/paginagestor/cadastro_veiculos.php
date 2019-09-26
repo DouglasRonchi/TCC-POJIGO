@@ -42,7 +42,8 @@ if(isset($_GET['id'])){
 
     <!-- Custom styles for this template-->
     <link href="../../../css/sb-admin-2.min.css" rel="stylesheet">
-
+    <!-- stylo geral -->
+    <link rel="stylesheet" type="text/css" href="../../../css/estilo.css">
 </head>
 
 <body id="page-top">
@@ -68,7 +69,7 @@ if(isset($_GET['id'])){
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Cadastro de Veículos</h1>
+                    <h1 class=" mb-4 ">Cadastro de Veículos</h1>
 
                     <form action="../../controllers/veiculosController.php" method="post">
                         <div class="form-row">
@@ -247,17 +248,17 @@ if(isset($_GET['id'])){
 
 </script>
 
-    <script src="../../../js/jquery.mask.js"></script>
+<script src="../../../js/jquery.mask.js"></script>
 
-    <script>
-        $(document).ready(function(){
-            $('#inputPlaca').mask('AAA-0000');
-            $('#inputCapacidadeDeCarga').mask('000.000.000 Kg', {reverse: true});
-            $('#inputCapacidadeDeTanque').mask('000.000.000 L', {reverse: true});
-            $('#inputAnoModelo').mask('0000');
-            $('#inputDataDeFabricacao').mask('0000');
-        });
-    </script>
+<script>
+    $(document).ready(function(){
+        $('#inputPlaca').mask('AAA-0000');
+        $('#inputCapacidadeDeCarga').mask('000.000.000 Kg', {reverse: true});
+        $('#inputCapacidadeDeTanque').mask('000.000.000 L', {reverse: true});
+        $('#inputAnoModelo').mask('0000');
+        $('#inputDataDeFabricacao').mask('0000');
+    });
+</script>
 
 </body>
 
