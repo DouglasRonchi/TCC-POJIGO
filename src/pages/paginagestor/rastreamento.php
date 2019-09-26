@@ -118,7 +118,7 @@ if (isset($_GET['btnExcluirRota'])) {
                                 $i = 1;
                                 while ($i < $rows - 1) {
                                     $i += 1;
-                                    if ($i % (int)$result['media'] == 0) {
+                                    if ($i % ceil($result['media']) == 0) {
                                         array_push($wayp, $row[$i][3] . "," . $row[$i][4]);
                                     }
                                 }
@@ -343,6 +343,10 @@ if (isset($_GET['btnExcluirRota'])) {
                 });
             }
         }
+        console.log(infos.dataset.start);
+        console.log(infos.dataset.end);
+        console.log(waypts);
+
         directionsService.route({
             origin: infos.dataset.start, //Primeira Coordenada
             destination: infos.dataset.end, //Última Coordenada

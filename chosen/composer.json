@@ -32,6 +32,7 @@
   "minimum-stability": "stable",
   "homepage": "https://harvesthq.github.io/chosen/",
   "require": {
-    "ext-mysqli": "*"
+    "ext-mysqli": "*",
+    "ext-json": "*"
   }
 }
