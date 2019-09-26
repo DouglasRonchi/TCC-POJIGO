@@ -4,7 +4,6 @@ require_once '../../classes/Autoload.class.php';
 $conn = new Site;
 $login = new Login;
 $login->VerificarLogin();
-
 if (isset($_GET['btnExcluirRota'])) {
     $conn->executeQuery("DELETE FROM registro_ponto WHERE cod_viagem = {$_GET['cdv']}");
     $conn->executeQuery("DELETE FROM coordenadas WHERE fk_cod_viagem = {$_GET['cdv']}");
@@ -15,7 +14,6 @@ if (isset($_GET['btnExcluirRota'])) {
         $_SESSION['usuario_id']
     );
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -42,6 +40,21 @@ if (isset($_GET['btnExcluirRota'])) {
     <link href="../../../css/rastreamento.css" rel="stylesheet">
     <!-- Custom styles for this page -->
     <link href="../../../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <style>
+        #map {
+            height: 450px;
+            float: left;
+            width: 100%;
+        }
+        #directions-panel {
+            color: #000000;
+            margin-top: 10px;
+            background-color: rgba(191, 186, 167, 0.56);
+            padding: 10px;
+            overflow: scroll;
+            height: 174px;
+        }
+    </style>
 </head>
 
 <body id="page-top">
@@ -67,34 +80,31 @@ if (isset($_GET['btnExcluirRota'])) {
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <strong><h1 class="h3 mb-4">Rastreamentos</h1></strong>
+                <h1 class="h3 mb-4 text-gray-800">Rastreamentos</h1>
                 <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                    </div>
                     <div class="card-body">
-                        <div id="map" class="mb-3" style="border-radius: 15px;box-shadow: 1px 1px 10px 2px rgba(0,0,0,0.3)"></div>
-                        <h2>Informações da Rota</h2>
-                        <div id="directions-panel" style="border-radius: 10px;box-shadow:1px 1px 12px -3px ; background-color: rgb(203, 223, 245);">
-                            <span class="font-weight ">Selecione uma viagem para ver as informações...</span>
+                        <div id="map"></div>
+                        <h2>Informações da rota:</h2>
+                        <div id="directions-panel">
+                            <span class="font-weight-light">Selecione uma viagem para ver as informações...</span>
                         </div>
                         <?php
                         if (isset($_GET['cdv'])) {
                             $query = $conn->executeQuery("SELECT * FROM coordenadas WHERE fk_cod_viagem = {$_GET['cdv']} ORDER BY hora ASC");
                             $row = mysqli_fetch_assoc($query);
                             $startPosition = $row['latitude'] . "," . $row['longitude'];
-
                             $query = $conn->executeQuery("SELECT * FROM coordenadas WHERE fk_cod_viagem = {$_GET['cdv']} ORDER BY hora DESC");
                             $row = mysqli_fetch_assoc($query);
                             $endPosition = $row['latitude'] . "," . $row['longitude'];
-
                             $wayp = array();
                             $query = $conn->executeQuery("SELECT * FROM coordenadas WHERE fk_cod_viagem = {$_GET['cdv']}");
-
                             $queryMediaTotal = $conn->executeQuery("SELECT * FROM coordenadas WHERE fk_cod_viagem = {$_GET['cdv']}");
                             $rows = mysqli_num_rows($queryMediaTotal);
-
                             if ($rows < 23) {
                                 $queryMediaMenor = $conn->executeQuery("SELECT COUNT(*)/{$rows} AS media FROM coordenadas WHERE fk_cod_viagem = {$_GET['cdv']}");
                                 $result = mysqli_fetch_assoc($queryMediaMenor);
-
                                 $row = mysqli_fetch_all($query);
                                 $i = 1;
                                 while ($i < $rows - 1) {
@@ -104,20 +114,17 @@ if (isset($_GET['btnExcluirRota'])) {
                             } else {
                                 $queryMedia = $conn->executeQuery("SELECT COUNT(*)/23 AS media FROM coordenadas WHERE fk_cod_viagem = {$_GET['cdv']}");
                                 $result = mysqli_fetch_assoc($queryMedia);
-
                                 $row = mysqli_fetch_all($query);
                                 $i = 1;
                                 while ($i < $rows - 1) {
                                     $i += 1;
-                                    if ($i % (int)$result['media'] == 0) {
+                                    if ($i % ceil($result['media']) == 0) {
                                         array_push($wayp, $row[$i][3] . "," . $row[$i][4]);
                                     }
                                 }
                             }
-
                             $jsonwayp = json_encode($wayp);
                         }
-
                         ?>
                         <div id="infos" data-start="<?= $startPosition ?>" data-end="<?= $endPosition ?>"
                              data-wayp='<?= $jsonwayp ?>'></div>
@@ -129,24 +136,26 @@ if (isset($_GET['btnExcluirRota'])) {
                     <div class="card-header py-3 text-center">
                         <form action="" method="get">
                             <div class="btn-group">
-                                
-                                <label class="btn btn-primary  pt-0">
-                                    <input type="radio" class="mr-2 mt-3" name="TRIPfinalizadas" id="TRIPfinalizadas"
-                                           value="1" <?= (isset($_GET['TRIPfinalizadas'])) ? 'checked' : ''; ?>>
+                                <label class="btn btn-secondary disabled">
+                                    Filtros
+                                </label>
+                                <label class="btn btn-primary active">
+                                    <input type="checkbox" name="TRIPfinalizadas" id="TRIPfinalizadas"
+                                           value="1" <?= (isset($_GET['TRIPfinalizadas'])) ? 'checked' : ''; ?>>Viagens
                                     Finalizadas
                                 </label>
-                                <label class="btn btn-primary pt-0">
-                                    <input type="radio" class="mr-2 mt-3" name="TRIPandamento" id="TRIPandamento"
-                                           value="1" <?= (isset($_GET['TRIPandamento'])) ? 'checked' : ''; ?>>Em
+                                <label class="btn btn-primary">
+                                    <input type="checkbox" name="TRIPandamento" id="TRIPandamento"
+                                           value="1" <?= (isset($_GET['TRIPandamento'])) ? 'checked' : ''; ?>>Viagens em
                                     Andamento
                                 </label>
-                                <label class="btn btn-primary pt-0">
-                                    <input type="radio" class="mr-2 mt-3" name="TRIPproblema" id="TRIPproblema"
-                                           value="1" <?= (isset($_GET['TRIPproblema'])) ? 'checked' : ''; ?>>Com
+                                <label class="btn btn-primary">
+                                    <input type="checkbox" name="TRIPproblema" id="TRIPproblema"
+                                           value="1" <?= (isset($_GET['TRIPproblema'])) ? 'checked' : ''; ?>>Viagens com
                                     Problema
                                 </label>
                                 <label class="btn btn-primary">
-                                    <button type="submit" class="btn btn-dark  btn-sm" name="TRIPfiltrar"
+                                    <button type="submit" class="btn btn-dark btn-sm" name="TRIPfiltrar"
                                             id="TRIPfiltrar">Filtrar
                                     </button>
                                 </label>
@@ -192,10 +201,9 @@ if (isset($_GET['btnExcluirRota'])) {
                                 <tbody>
                                 <?php
                                 setlocale(LC_ALL, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
-                                $selectRastrear = $conn->executeQuery("SELECT vei.frota, vei.placa, coo.hora, coo.latitude, coo.longitude, usu.nome, rp.cod_viagem, rp.hora_fim , rp.fk_motivo_parada_um , goo.road, goo.suburb, goo.city, goo.formatted_address FROM registro_ponto rp JOIN coordenadas coo ON rp.cod_viagem = coo.fk_cod_viagem JOIN usuario usu ON usu.usuario_id = rp.fk_usuario JOIN veiculos vei ON rp.fk_veiculo = vei.id JOIN dados_googleapi goo ON goo.id = coo.fk_dados_google GROUP BY rp.cod_viagem ORDER BY coo.hora DESC");
+                                $selectRastrear = $conn->executeQuery("SELECT vei.frota, vei.placa, coo.hora, coo.latitude, coo.longitude, usu.nome, rp.cod_viagem, rp.hora_fim , rp.fk_motivo_parada_um , goo.road, goo.suburb, goo.city, goo.formatted_address FROM registro_ponto rp LEFT JOIN coordenadas coo ON rp.cod_viagem = coo.fk_cod_viagem LEFT JOIN usuario usu ON usu.usuario_id = rp.fk_usuario LEFT JOIN veiculos vei ON rp.fk_veiculo = vei.id LEFT JOIN dados_googleapi goo ON goo.id = coo.fk_dados_google GROUP BY rp.cod_viagem ORDER BY coo.hora DESC");
                                 $row = mysqli_num_rows($selectRastrear);
                                 while ($row = mysqli_fetch_assoc($selectRastrear)):
-
                                     $pillCodViagem = '';
                                     if ($row["hora_fim"] == 0 && $row["fk_motivo_parada_um"] != 0) {
                                         $pillCodViagem = 'spinner-grow spinner-grow-sm text-danger';
@@ -213,7 +221,6 @@ if (isset($_GET['btnExcluirRota'])) {
                                             continue;
                                         }
                                     }
-
                                     ?>
                                     <tr>
                                         <td><small>
@@ -232,7 +239,7 @@ if (isset($_GET['btnExcluirRota'])) {
                                         <td><small><?= $row["placa"] ?></small></td>
                                         <td><small><?= strftime("%x %R", strtotime($row["hora"])) ?></small></td>
                                         <td><small><?php
-                                                $result = mysqli_fetch_assoc($conn->executeQuery("SELECT coo.fk_cod_viagem, coo.hora, goo.formatted_address FROM coordenadas coo JOIN dados_googleapi goo ON goo.id = coo.fk_dados_google WHERE fk_cod_viagem = {$row["cod_viagem"]} ORDER BY coo.hora DESC LIMIT 1"));
+                                                $result = mysqli_fetch_assoc($conn->executeQuery("SELECT coo.fk_cod_viagem, coo.hora, goo.formatted_address FROM coordenadas coo LEFT JOIN dados_googleapi goo ON goo.id = coo.fk_dados_google WHERE fk_cod_viagem = {$row["cod_viagem"]} ORDER BY coo.hora DESC LIMIT 1"));
                                                 echo $result['formatted_address'];
                                                 ?></small></td>
                                         <td><small><?= $row["nome"] ?></small></td>
@@ -320,7 +327,6 @@ if (isset($_GET['btnExcluirRota'])) {
         directionsDisplay.setMap(map);
         calculateAndDisplayRoute(directionsService, directionsDisplay);
     }
-
     function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         var infos = document.querySelector('#infos');
         // console.log(infos.dataset.start); //inicio
@@ -328,7 +334,6 @@ if (isset($_GET['btnExcluirRota'])) {
         // console.log(infos.dataset.wayp); //waypoints
         var waypts = [];
         var ObjWaypts = JSON.parse(infos.dataset.wayp);
-
         for (var item in ObjWaypts) {
             ObjWaypts.hasOwnProperty(item);
             {
@@ -338,6 +343,9 @@ if (isset($_GET['btnExcluirRota'])) {
                 });
             }
         }
+        console.log(infos.dataset.start);
+        console.log(infos.dataset.end);
+        console.log(waypts);
 
         directionsService.route({
             origin: infos.dataset.start, //Primeira Coordenada
@@ -349,7 +357,6 @@ if (isset($_GET['btnExcluirRota'])) {
             if (status === 'OK') {
                 directionsDisplay.setDirections(response);
                 var route = response.routes[0];
-
                 // console.log(parseFloat(response.routes[0].legs[0].distance.text));
                 var summaryPanel = document.getElementById('directions-panel');
                 summaryPanel.innerHTML = '';
@@ -362,7 +369,6 @@ if (isset($_GET['btnExcluirRota'])) {
                     summaryPanel.innerHTML += route.legs[i].start_address + ' para ';
                     summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
                     summaryPanel.innerHTML += route.legs[i].distance.text + '<br><br>';
-
                     var str = route.legs[i].distance.text;
                     // console.log(str);
                     var n = str.indexOf("km");
@@ -375,11 +381,9 @@ if (isset($_GET['btnExcluirRota'])) {
                         total += parseFloat(route.legs[i].distance.text);
                         // console.log("Kms");
                     }
-
                 }
                 total = parseFloat(total.toFixed(2));
                 summaryPanel.innerHTML += "Distância Total da Viagem: " + total + " Km";
-
             } else {
                 // window.alert('Directions request failed due to ' + status);
             }

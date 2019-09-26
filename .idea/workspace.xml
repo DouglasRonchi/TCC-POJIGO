@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8c934103-8016-4184-8805-c6d5a3b60100" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/paginagestor/diarias.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/diarias.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chosen/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/chosen/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/paginagestor/rastreamento.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/rastreamento.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/paginamotorista/index_motorista.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginamotorista/index_motorista.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -103,7 +105,12 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@351ec2d1" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@1e465f47" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@1e465f47" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@29c670f9" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
           </expand>
           <select />
@@ -163,7 +170,8 @@
       <workItem from="1568892184514" duration="7733000" />
       <workItem from="1568978230252" duration="12061000" />
       <workItem from="1569362019579" duration="1683000" />
-      <workItem from="1569412813971" duration="990000" />
+      <workItem from="1569412813971" duration="1587000" />
+      <workItem from="1569497827140" duration="5930000" />
     </task>
     <servers />
   </component>
