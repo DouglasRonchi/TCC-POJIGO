@@ -314,31 +314,37 @@ footer{
   }
 
 
-  .cardgadgets {
-    margin-bottom: 10px;
-  }
+
   .gadgets {
   margin-left: 2px;
-  margin-bottom: 10px;
   }
   .imgface {
-    height: 58px;
-    width: 58px;
-    margin-bottom: 15px;
+    height: 78px;
+    width: 78px;
   }
   .imginsta {
-    height: 59px;
-    width: 59px;
-    margin-bottom: 15px;    
+    height: 79px;
+    width: 79px;  
   }
   .imgwhats {
-    height: 58px;
-    width: 58px; 
-    margin-bottom: 15px;
+    height: 78px;
+    width: 78px; 
   }
   .imgyoutube {
-    height: 58px;
-    width: 58px; 
+    height: 78px;
+    width: 78px; 
+  }
+  .gadface {
+    top: 770px;
+  }
+  .gedinsta {
+    top: 870px;
+  }
+  .gedwhats {
+    top: 970px;
+  }
+  .gedyoutube {
+    top: 1070px;
   }
 
 

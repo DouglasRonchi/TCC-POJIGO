@@ -10,6 +10,11 @@ if (isset($_POST["btnsalvar"])) {
   $mopp = $_POST["VenciMOPP"];
   $usuarioId = $_POST["UsuarioId"];
 
+if ($cnh < date ('Y-m-d') || $mopp < date('Y-m-d')) {
+
+  echo  "<script>alert('Data de vencimento não pode ser menor que a data atual e que o vencimento já registrado !!');</script>";  
+
+} else {
   $result = $conn->executeQuery("UPDATE usuario SET venc_cnh = '{$cnh}', venc_mopp = '{$mopp}' WHERE usuario_id = {$usuarioId}");
 
   $conn->setAlerta(
@@ -18,6 +23,9 @@ if (isset($_POST["btnsalvar"])) {
     '<img class="img-fluid" src="' . $conn->path('img/icons/success.png') . '">',
     $_SESSION['usuario_id']
   );
+
+  header('Location: cnhemopp.php');
+}
 }
 
 
@@ -92,7 +100,7 @@ if (isset($_GET['userId'])) {
               </div>
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <table class="table table-bordered table-striped table-hover" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                       <tr>
                         <th>CADASTRO</th>
@@ -105,18 +113,6 @@ if (isset($_GET['userId'])) {
                         <th></th>
                       </tr>
                     </thead>
-                    <tfoot>
-                      <tr>
-                        <th>CADASTRO</th>
-                        <th>NOME</th>
-                        <th>CPF</th>
-                        <th>CNH</th>
-                        <th>VENCIMENTO CNH</th>
-                        <th>MOPP</th>
-                        <th>VENCIMENTO MOPP</th>
-                        <th></th>
-                      </tr>
-                    </tfoot>
                     <tbody>
                       <?php
                       $selectUsers = $conn->executeQuery("SELECT * FROM usuario");
@@ -135,6 +131,18 @@ if (isset($_GET['userId'])) {
                         </tr>
                       <?php endwhile; ?>
                     </tbody>
+                    <tfoot>
+                      <tr>
+                        <th>CADASTRO</th>
+                        <th>NOME</th>
+                        <th>CPF</th>
+                        <th>CNH</th>
+                        <th>VENCIMENTO CNH</th>
+                        <th>MOPP</th>
+                        <th>VENCIMENTO MOPP</th>
+                        <th></th>
+                      </tr>
+                    </tfoot>
                   </table>
                 </div>
               </div>
