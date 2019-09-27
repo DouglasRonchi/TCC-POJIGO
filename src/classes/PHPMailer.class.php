@@ -19,8 +19,6 @@
  */
 require_once 'Autoload.class.php';
 
-$login = new Login;
-$login->VerificarLogin();
 /**
  * PHPMailer - PHP email creation and transport class.
  *

@@ -1,3 +1,28 @@
+<?php
+require_once 'src/classes/Autoload.class.php';
+$conn = new Site;
+$login = new Login;
+
+if (!isset($_GET['token'])){
+    //exige um token
+    header("Location: index.php");
+}else{
+    $result = mysqli_fetch_assoc($conn->executeQuery("SELECT email,token_recuperacao FROM usuario WHERE token_recuperacao = '{$_GET['token']}'"));
+    $email = $result['email'];
+    if (!$_GET['token'] == $result['token_recuperacao']){
+        header("Location: index.php");
+    } else if (isset($_POST['inputNewPassword'])){
+
+        $conn->executeQuery("UPDATE usuario SET senha = {$_POST['inputNewPassword']} WHERE email = {$email}");
+
+    }
+
+}
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -21,7 +46,7 @@
 </head>
 <body>
 
-<form action="#" class="login-form">
+<form action="#" class="login-form" method="post">
     <div class="text-center logologin">
         <h1>POJIGO</h1>
         <small>Rotas & Registros</small>
