@@ -14,8 +14,7 @@ $login->VerificarLogin();
     width: 100%;
   }
 
-  td,
-  th {
+  .tdth {
     border: 1px solid #333;
     text-align: left;
     padding: 8px;
@@ -82,11 +81,8 @@ $login->VerificarLogin();
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-<<<<<<< HEAD
+
               <h6 class="m-0"><b>Preencha os dados abaixo e precione <strong class="text-primary">'visualizar'</strong> para ver o relatório de diarias!</b></h6>
-=======
-              <h6 class="m-0 font-weight-bold"><b>Preencha os dados abaixo e pressione <strong class="text-primary">'visualizar'</strong> para ver o relatório de diárias!</b></h6>
->>>>>>> f10293c86abefc7959ce6a9eaed8167d14058554
               <hr>
               <form action="" method="get" class="form-inline">
                 <div class="side-by-side clearfix mr-2">
@@ -126,11 +122,11 @@ $login->VerificarLogin();
                   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                       <tr>
-                        <th>Cadastro</th>
-                        <th>Nome</th>
-                        <th>Quantidade</th>
-                        <th>valor</th>
-                        <th>Relatório</th>
+                        <th class="tdth">Cadastro</th>
+                        <th class="tdth">Nome</th>
+                        <th class="tdth">Quantidade</th>
+                        <th class="tdth">valor</th>
+                        <th class="tdth">Relatório</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -141,22 +137,22 @@ $login->VerificarLogin();
                       $row = mysqli_num_rows($query);
                       while ($row = mysqli_fetch_assoc($query)): ?>
                       <tr>
-                        <td name="cadastro" id="cadastro"><?=$row['cadastro']?></td>
-                        <td><?=$row['nome']?></td>
-                        <td><?=$row['quantidade']?></td>
-                        <td>R&#36; <?=$row['soma']?></td>
-                        <td class="text-center"><button class="btn btn-primary" data-toggle="modal"
+                        <td class="tdth" name="cadastro" id="cadastro"><?=$row['cadastro']?></td>
+                        <td class="tdth"><?=$row['nome']?></td>
+                        <td class="tdth"><?=$row['quantidade']?></td>
+                        <td class="tdth">R&#36; <?=$row['soma']?></td>
+                        <td class="tdth" class="text-center"><button class="btn btn-primary" data-toggle="modal"
                           data-target=".bd-modal-ponto">Visualizar</button></td>
                         </tr>
                         <?php endwhile; ?>
                       </tbody>
                       <tfoot>
                         <tr>
-                          <th>Cadastro</th>
-                          <th>Nome</th>
-                          <th>Quantidade</th>
-                          <th>valor</th>
-                          <th>Relatório</th>
+                          <th class="tdth">Cadastro</th>
+                          <th class="tdth">Nome</th>
+                          <th class="tdth">Quantidade</th>
+                          <th class="tdth">valor</th>
+                          <th class="tdth">Relatório</th>
                         </tr>
                       </tfoot>
                     </table>
@@ -229,44 +225,44 @@ $login->VerificarLogin();
                 <div id="printableArea" class="mt-3">
                   <table>
                     <tr>
-                      <th class="largura10 text-center" colspan="4">Dados do Colaborador</th>
+                      <th class="tdth" class="largura10 text-center" colspan="4">Dados do Colaborador</th>
                     </tr>
                     <tr>
-                      <th class="largura10">Nome:</th>
-                      <td><?=$row['nome']?></td>
-                      <th class="largura10">CPF:</th>
-                      <td><?=utf8_encode($row['cpf'])?></td>
+                      <th class="tdth" class="largura10">Nome:</th>
+                      <td class="tdth"><?=utf8_encode($row['nome'])?></td>
+                      <th class="tdth" class="largura10">CPF:</th>
+                      <td class="tdth"><?=utf8_encode($row['cpf'])?></td>
                     </tr>
                     <tr>
-                      <th>Cadastro:</th>
-                      <td><?=utf8_encode($row['cadastro'])?></td>
-                      <th>RG:</th>
-                      <td><?=utf8_encode($row['rg'])?></td>
+                      <th class="tdth">Cadastro:</th>
+                      <td class="tdth"><?=utf8_encode($row['cadastro'])?></td>
+                      <th class="tdth">RG:</th>
+                      <td class="tdth"><?=utf8_encode($row['rg'])?></td>
                     </tr>
                     <tr>
-                      <th>Cidade:</th>
-                      <td><?=$row['cidade']?></td>
-                      <th>Bairro:</th>
-                      <td><?=$row['bairro']?></td>
+                      <th class="tdth">Cidade:</th>
+                      <td class="tdth"><?=utf8_encode($row['cidade'])?></td>
+                      <th class="tdth">Bairro:</th>
+                      <td class="tdth"><?=utf8_encode($row['bairro'])?></td>
                     </tr>
                     <tr>
-                      <th>Cargo:</th>
-                      <td><?=utf8_encode($row['tipo_usuario'])?></td>
-                      <th>Obs:</th>
-                      <td></td>
+                      <th class="tdth">Cargo:</th>
+                      <td class="tdth"><?=utf8_encode($row['tipo_usuario'])?></td>
+                      <th class="tdth">Obs:</th>
+                      <td class="tdth"></td>
                     </tr>
                   </table>
                   <?php endwhile;?>
                   <table class="mt-1">
                     <tr>
-                      <th class="largura10 text-center" colspan="10">Relatório de Diárias</th>
+                      <th class="tdth" class="largura10 text-center" colspan="10">Relatório de Diárias</th>
                     </tr>
                     <tr class="subtitles">
-                      <th colspan="2">Dia</th>
-                      <th>Entrada</th>
-                      <th>Tipo Diária</th>
-                      <th>Saída</th>
-                      <th>Valor Diaria</th>
+                      <th class="tdth" colspan="2">Dia</th>
+                      <th class="tdth">Entrada</th>
+                      <th class="tdth">Tipo Diária</th>
+                      <th class="tdth">Saída</th>
+                      <th class="tdth">Valor Diaria</th>
                     </tr>
                     <?php
                     $selectRegistrosUnicos = $conn->executeQuery("SELECT SUM(dia.valor) as soma, rp.hora_inicio, rp.hora_fim, dia.nome as nome FROM registro_ponto rp JOIN usuario us ON us.usuario_id = rp.fk_usuario JOIN diarias dia on dia.id = rp.fk_diaria WHERE us.cadastro = {$_GET['cad']} GROUP BY rp.hora_inicio");
@@ -274,28 +270,28 @@ $login->VerificarLogin();
                     $rowHoras = mysqli_num_rows($selectRegistrosUnicos);
                     while ($rowHoras = mysqli_fetch_assoc($selectRegistrosUnicos)):?>
                     <tr class="subtitles">
-                      <th class="largura02">
+                      <th class="tdth" class="largura02">
                         <?php
                         setlocale(LC_ALL, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
                         echo ucfirst( utf8_encode( strftime("%A", strtotime($rowHoras['hora_inicio']))))?>
                       </th>
-                      <th class="largura02">
+                      <th class="tdth" class="largura02">
                         <?php echo strftime("%d", strtotime($rowHoras['hora_inicio']))?>
                       </th>
-                      <th><?=strftime("%R", strtotime($rowHoras['hora_inicio']))?></th>
-                      <th><?=utf8_encode($rowHoras['nome'])?></th>
-                      <th><?=strftime("%R", strtotime($rowHoras['hora_fim']))?></th>
-                      <th><?=$rowHoras['soma']?></th>
+                      <th class="tdth"><?=strftime("%R", strtotime($rowHoras['hora_inicio']))?></th>
+                      <th class="tdth"><?=utf8_encode($rowHoras['nome'])?></th>
+                      <th class="tdth"><?=strftime("%R", strtotime($rowHoras['hora_fim']))?></th>
+                      <th class="tdth"><?=$rowHoras['soma']?></th>
                     </tr>
                     <?php endwhile; ?>
                     <tr class="subtitles">
-                      <th colspan="4"></th>
-                      <th>Valor Total</th>
+                      <th class="tdth" colspan="4"></th>
+                      <th class="tdth">Valor Total</th>
                       <?php
                       $sqlSoma = $conn->executeQuery ("SELECT COUNT(rp.fk_diaria) as quantidade, SUM(dia.valor) as soma FROM registro_ponto rp JOIN diarias dia ON dia.id = rp.fk_diaria JOIN usuario usu on usu.usuario_id = rp.fk_usuario WHERE usu.cadastro = {$_GET['cad']} AND hora_inicio BETWEEN '{$_GET['dtini']}' AND '{$_GET['dtfin']}'");
                       $rowSoma = mysqli_num_rows($sqlSoma);
                       while($soma = mysqli_fetch_assoc($sqlSoma)):?>
-                      <th>R&#36; <?=$soma['soma']?></th>
+                      <th class="tdth">R&#36; <?=$soma['soma']?></th>
                     </tr>
                   </table>
                   <br>

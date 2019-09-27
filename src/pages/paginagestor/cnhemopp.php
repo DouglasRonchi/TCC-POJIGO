@@ -5,12 +5,14 @@ $login = new Login;
 $usuario = new Usuario;
 $login->VerificarLogin();
 
-if (isset($_POST["btnsalvar"])) {
-  $cnh = $_POST["VenciCNH"];
-  $mopp = $_POST["VenciMOPP"];
-  $usuarioId = $_POST["UsuarioId"];
 
-if ($cnh < date ('Y-m-d') || $mopp < date('Y-m-d')) {
+if (isset($_POST["btnsalvar"])) {
+$cnh = $_POST["VenciCNH"];
+$mopp = $_POST["VenciMOPP"];
+$usuarioId = $_POST["UsuarioId"]; 
+
+
+if (($cnh < date ('Y-m-d')) || ($cnh < $Rows["venc_cnh"]) || ($mopp < date('Y-m-d')) || ($mopp < $Rows["venc_mopp"])) {
 
   echo  "<script>alert('Data de vencimento não pode ser menor que a data atual e que o vencimento já registrado !!');</script>";  
 
@@ -27,7 +29,6 @@ if ($cnh < date ('Y-m-d') || $mopp < date('Y-m-d')) {
   header('Location: cnhemopp.php');
 }
 }
-
 
 
 if (isset($_GET['userId'])) {
@@ -91,12 +92,11 @@ if (isset($_GET['userId'])) {
 
             <!-- Page Heading -->
             <h1 class=" mb-4 "><center>CNH & MOPP</center></h1>
-
             <!-- DataTales Example -->
 
             <div class="card shadow mb-4">
               <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary"></h6>
+                <h6 class="m-0 font-weight-bold text-primary">Tabela de Vencimentos CNH e MOPP</h6>
               </div>
               <div class="card-body">
                 <div class="table-responsive">

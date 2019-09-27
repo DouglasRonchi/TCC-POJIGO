@@ -44,7 +44,7 @@ table {
   width: 100%;
 }
 
-td, th {
+.tdth {
   border: 1px solid #333;
   text-align: left;
   padding: 8px;
@@ -158,15 +158,15 @@ tr.subtitles th {
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                       <thead>
                         <tr>
-                          <th>Inicio de Jornada</th>
-                          <th>Inicio de Intervalo</th>
-                          <th>Fim de Intervalo</th>
-                          <th>Inicio de Parada 1</th>
-                          <th>Fim de Parada 1</th>
-                          <th>Inicio de Parada 2</th>
-                          <th>Fim de Parada 2</th>
-                          <th>Fim de Jornada</th>
-                          <th></th>
+                          <th class="tdth">Inicio de Jornada</th>
+                          <th class="tdth">Inicio de Intervalo</th>
+                          <th class="tdth">Fim de Intervalo</th>
+                          <th class="tdth">Inicio de Parada 1</th>
+                          <th class="tdth">Fim de Parada 1</th>
+                          <th class="tdth">Inicio de Parada 2</th>
+                          <th class="tdth">Fim de Parada 2</th>
+                          <th class="tdth">Fim de Jornada</th>
+                          <th class="tdth"></th>
                         </tr>
                       </thead>
                       <tbody>
@@ -177,15 +177,15 @@ tr.subtitles th {
                         while ($rows = mysqli_fetch_assoc($selectRegistros)):
                           ?>
                           <tr>
-                            <td><?= $rows['hora_inicio'] ?></td>
-                            <td><?= strftime("%R", strtotime($rows['hora_inicio_intervalo'])) ?></td>
-                            <td><?= strftime("%R", strtotime($rows['hora_fim_intervalo'])) ?></td>
-                            <td><?= strftime("%R", strtotime($rows['inicio_parada_um'])) ?></td>
-                            <td><?= strftime("%R", strtotime($rows['fim_parada_um'])) ?></td>
-                            <td><?= strftime("%R", strtotime($rows['inicio_parada_dois'])) ?></td>
-                            <td><?= strftime("%R", strtotime($rows['fim_parada_dois'])) ?></td>
-                            <td><?= $rows['hora_fim'] ?></td>
-                            <td>
+                            <td class="tdth"><?= $rows['hora_inicio'] ?></td>
+                            <td class="tdth"><?= strftime("%R", strtotime($rows['hora_inicio_intervalo'])) ?></td>
+                            <td class="tdth"><?= strftime("%R", strtotime($rows['hora_fim_intervalo'])) ?></td>
+                            <td class="tdth"><?= strftime("%R", strtotime($rows['inicio_parada_um'])) ?></td>
+                            <td class="tdth"><?= strftime("%R", strtotime($rows['fim_parada_um'])) ?></td>
+                            <td class="tdth"><?= strftime("%R", strtotime($rows['inicio_parada_dois'])) ?></td>
+                            <td class="tdth"><?= strftime("%R", strtotime($rows['fim_parada_dois'])) ?></td>
+                            <td class="tdth"><?= $rows['hora_fim'] ?></td>
+                            <td class="tdth">
                               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-id="<?= $rows['id'] ?>" data-inicio="<?= $rows['hora_inicio'] ?>" data-ini_inter="<?= strftime("%R", strtotime($rows['hora_inicio_intervalo'])) ?>" data-fim_inter="<?= strftime("%R", strtotime($rows['hora_fim_intervalo'])) ?>" data-ini_para_um="<?= strftime("%R", strtotime($rows['inicio_parada_um'])) ?>" data-fim_para_um="<?= strftime("%R", strtotime($rows['fim_parada_um'])) ?>" data-ini_para_dois="<?= strftime("%R", strtotime($rows['inicio_parada_dois'])) ?>" data-fim_para_dois="<?= strftime("%R", strtotime($rows['fim_parada_dois'])) ?>" data-fim="<?= $rows['hora_fim'] ?>">Editar</button>
                             </td>
                           </tr>
@@ -194,15 +194,15 @@ tr.subtitles th {
                       </tbody>
                       <tfoot>
                         <tr>
-                          <th>Inicio de Jornada</th>
-                          <th>Inicio de Intervalo</th>
-                          <th>Fim de Intervalo</th>
-                          <th>Inicio de Parada 1</th>
-                          <th>Fim de Parada 1</th>
-                          <th>Inicio de Parada 2</th>
-                          <th>Fim de Parada 2</th>
-                          <th>Fim de Jornada</th>
-                          <th></th>
+                          <th class="tdth">Inicio de Jornada</th>
+                          <th class="tdth">Inicio de Intervalo</th>
+                          <th class="tdth">Fim de Intervalo</th>
+                          <th class="tdth">Inicio de Parada 1</th>
+                          <th class="tdth">Fim de Parada 1</th>
+                          <th class="tdth">Inicio de Parada 2</th>
+                          <th class="tdth">Fim de Parada 2</th>
+                          <th class="tdth">Fim de Jornada</th>
+                          <th class="tdth"></th>
                         </tr>
                       </tfoot>
                     </table>
@@ -269,39 +269,39 @@ tr.subtitles th {
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Inicio de Jornada</th>
-                      <th>Inicio de Intervalo</th>
-                      <th>Fim de Intervalo</th>
-                      <th>Inicio de Parada 1</th>
-                      <th>Fim de Parada 1</th>
-                      <th>Inicio de Parada 2</th>
-                      <th>Fim de Parada 2</th>
-                      <th>Fim de Jornada</th>
+                      <th class="tdth">Inicio de Jornada</th>
+                      <th class="tdth">Inicio de Intervalo</th>
+                      <th class="tdth">Fim de Intervalo</th>
+                      <th class="tdth">Inicio de Parada 1</th>
+                      <th class="tdth">Fim de Parada 1</th>
+                      <th class="tdth">Inicio de Parada 2</th>
+                      <th class="tdth">Fim de Parada 2</th>
+                      <th class="tdth">Fim de Jornada</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td><input style="width: 175px" class="form-control" id="hora_ini" name="hora_ini" maxlength="19"></td>
-                      <td><input class="form-control" id="ini_intervalo" name="ini_intervalo" maxlength="5"></td>
-                      <td><input class="form-control" id="fim_intervalo" name="fim_intervalo" maxlength="8"></td>
-                      <td><input class="form-control" id="ini_parada_um" name="ini_parada_um" maxlength="8"></td>
-                      <td><input class="form-control" id="fim_parada_um" name="fim_parada_um" maxlength="8"></td>
-                      <td><input class="form-control" id="ini_parada_dois" name="ini_parada_dois" maxlength="8"></td>
-                      <td><input class="form-control" id="fim_parada_dois" name="fim_parada_dois" maxlength="8"></td>
-                      <td><input style="width: 175px" class="form-control" id="hora_fim" name="hora_fim" maxlength="19"></td>
+                      <td class="tdth"><input style="width: 175px" class="form-control" id="hora_ini" name="hora_ini" maxlength="19"></td>
+                      <td class="tdth"><input class="form-control" id="ini_intervalo" name="ini_intervalo" maxlength="5"></td>
+                      <td class="tdth"><input class="form-control" id="fim_intervalo" name="fim_intervalo" maxlength="8"></td>
+                      <td class="tdth"><input class="form-control" id="ini_parada_um" name="ini_parada_um" maxlength="8"></td>
+                      <td class="tdth"><input class="form-control" id="fim_parada_um" name="fim_parada_um" maxlength="8"></td>
+                      <td class="tdth"><input class="form-control" id="ini_parada_dois" name="ini_parada_dois" maxlength="8"></td>
+                      <td class="tdth"><input class="form-control" id="fim_parada_dois" name="fim_parada_dois" maxlength="8"></td>
+                      <td class="tdth"><input style="width: 175px" class="form-control" id="hora_fim" name="hora_fim" maxlength="19"></td>
                       <input type="hidden" class="form-control" id="Id" name="Id">
                     </tr>
                   </tbody>
                   <tfoot>
                     <tr>
-                      <th>Inicio de Jornada</th>
-                      <th>Inicio de Intervalo</th>
-                      <th>Fim de Intervalo</th>
-                      <th>Inicio de Parada 1</th>
-                      <th>Fim de Parada 1</th>
-                      <th>Inicio de Parada 2</th>
-                      <th>Fim de Parada 2</th>
-                      <th>Fim de Jornada</th>
+                      <th class="tdth">Inicio de Jornada</th>
+                      <th class="tdth">Inicio de Intervalo</th>
+                      <th class="tdth">Fim de Intervalo</th>
+                      <th class="tdth">Inicio de Parada 1</th>
+                      <th class="tdth">Fim de Parada 1</th>
+                      <th class="tdth">Inicio de Parada 2</th>
+                      <th class="tdth">Fim de Parada 2</th>
+                      <th class="tdth">Fim de Jornada</th>
                     </tr>
                   </tfoot>
                 </table>
@@ -340,45 +340,45 @@ tr.subtitles th {
                   <div id="printableArea" class="mt-3">
                     <table>
                       <tr>
-                        <th class="largura10 text-center" colspan="4">Dados do Colaborador</th>
+                        <th class="tdth" class="largura10 text-center" colspan="4">Dados do Colaborador</th>
                       </tr>
                       <tr>
-                        <th class="largura10">Nome:</th>
-                        <td><?= $row['nome'] ?></td>
-                        <th class="largura10">CPF:</th>
-                        <td><?= utf8_encode($row['cpf']) ?></td>
+                        <th class="tdth" class="largura10">Nome:</th>
+                        <td class="tdth"><?= utf8_encode($row['nome']) ?></td>
+                        <th class="tdth" class="largura10">CPF:</th>
+                        <td class="tdth"><?= utf8_encode($row['cpf']) ?></td>
                       </tr>
                       <tr>
-                        <th>Cadastro:</th>
-                        <td><?= utf8_encode($row['cadastro']) ?></td>
-                        <th>RG:</th>
-                        <td><?= utf8_encode($row['rg']) ?></td>
+                        <th class="tdth">Cadastro:</th>
+                        <td class="tdth"><?= utf8_encode($row['cadastro']) ?></td>
+                        <th class="tdth">RG:</th>
+                        <td class="tdth"><?= utf8_encode($row['rg']) ?></td>
                       </tr>
                       <tr>
-                        <th>Cidade:</th>
-                        <td><?= $row['cidade'] ?></td>
-                        <th>Bairro:</th>
-                        <td><?= $row['bairro'] ?></td>
+                        <th class="tdth">Cidade:</th>
+                        <td class="tdth"><?= utf8_encode($row['cidade']) ?></td>
+                        <th class="tdth">Bairro:</th>
+                        <td class="tdth"><?= utf8_encode($row['bairro']) ?></td>
                       </tr>
                       <tr>
-                        <th>Cargo:</th>
-                        <td><?= utf8_encode($row['tipo_usuario']) ?></td>
-                        <th>Obs:</th>
-                        <td></td>
+                        <th class="tdth">Cargo:</th>
+                        <td class="tdth"><?= utf8_encode($row['tipo_usuario']) ?></td>
+                        <th class="tdth">Obs:</th>
+                        <td class="tdth"></td>
                       </tr>
                     </table>
                     <table class="mt-1">
                       <tr>
-                        <th class="largura10 text-center" colspan="8">Registros</th>
+                        <th class="tdth" class="largura10 text-center" colspan="8">Registros</th>
                       </tr>
                       <tr class="subtitles">
-                        <th colspan="2">Dia</th>
-                        <th>Entrada</th>
-                        <th>Inicio Intervalo</th>
-                        <th>Retorno Intervalo</th>
-                        <th>Saída</th>
-                        <th>Total Horas</th>
-                        <th>Horas Extras</th>
+                        <th class="tdth" colspan="2">Dia</th>
+                        <th class="tdth">Entrada</th>
+                        <th class="tdth">Inicio Intervalo</th>
+                        <th class="tdth">Retorno Intervalo</th>
+                        <th class="tdth">Saída</th>
+                        <th class="tdth">Total Horas</th>
+                        <th class="tdth">Horas Extras</th>
                       </tr>
 
 
@@ -393,20 +393,20 @@ tr.subtitles th {
 
 
                         <tr class="subtitles">
-                          <th class="largura02">
+                          <th class="tdth" class="largura02">
                             <?php
                             setlocale(LC_ALL, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
                             echo ucfirst(utf8_encode(strftime("%A", strtotime($rowHoras['hora_inicio'])))) ?>
                           </th>
-                          <th class="largura02">
+                          <th class="tdth" class="largura02">
                             <?php
                             echo strftime("%d", strtotime($rowHoras['hora_inicio'])) ?>
                           </th>
-                          <th><?= strftime("%R", strtotime($rowHoras['hora_inicio'])) ?></th>
-                          <th><?= strftime("%R", strtotime($rowHoras['hora_inicio_intervalo'])) ?></th>
-                          <th><?= strftime("%R", strtotime($rowHoras['hora_fim_intervalo'])) ?></th>
-                          <th><?= strftime("%R", strtotime($rowHoras['hora_fim'])) ?></th>
-                          <th>
+                          <th class="tdth"><?= strftime("%R", strtotime($rowHoras['hora_inicio'])) ?></th>
+                          <th class="tdth"><?= strftime("%R", strtotime($rowHoras['hora_inicio_intervalo'])) ?></th>
+                          <th class="tdth"><?= strftime("%R", strtotime($rowHoras['hora_fim_intervalo'])) ?></th>
+                          <th class="tdth"><?= strftime("%R", strtotime($rowHoras['hora_fim'])) ?></th>
+                          <th class="tdth">
                             <?php
                             $horas_mensais = 0;
                         //Pega as horas e transforma em segundos
@@ -471,14 +471,14 @@ tr.subtitles th {
                             ?>
 
                           </th>
-                          <th><?=$horas_extras?></th>
+                          <th class="tdth"><?=$horas_extras?></th>
                         </tr>
 
                       <?php endwhile;?>
                       <tr class="subtitles">
-                        <th colspan="6"></th>
-                        <th>Horas Totais</th>
-                        <th><?php 
+                        <th class="tdth" colspan="6"></th>
+                        <th class="tdth">Horas Totais</th>
+                        <th class="tdth"><?php 
                         $horadominuto = floor($minutos_mensais_exibicao / 60);
                         $nova_hora_exibicao = $horas_mensais_exibicao + $horadominuto;
                         $nova_minuto_exibicao = $minutos_mensais_exibicao - ($horadominuto * 60);
