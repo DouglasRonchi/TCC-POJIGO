@@ -21,11 +21,10 @@ if (isset($_POST['btnFrotaOk'])) {
 } else if (isset($_POST['btnInicioViagem'])) {
     $id_rota = $_SESSION['id_rota'];
 
-    $result = mysqli_fetch_assoc($conn->executeQuery("SELECT * FROM registro_ponto WHERE fk_rota = {$id_rota}"));
-    if ($result['fk_rota'] == 0 || $result['fk_veiculo'] == 0) {
+    $result = mysqli_fetch_assoc($conn->executeQuery("SELECT * FROM registro_ponto WHERE cod_viagem = {$_SESSION['cod_viagem']}"));
+    if ($result['fk_rota'] == null || $result['fk_veiculo'] == null) {
         $_SESSION['erro'] = true;
         header('Location: ../pages/paginamotorista/index.php');
-
     } else {
         $conn->executeQuery("UPDATE registro_ponto SET hora_inicio = NOW() WHERE id = {$id_rota}");
         header('Location: ../pages/paginamotorista/index_motorista.php?idRota=' . $_SESSION['id_rota'] . '&codViagem=' . $_SESSION['cod_viagem'] . '');
