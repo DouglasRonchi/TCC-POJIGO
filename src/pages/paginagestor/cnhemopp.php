@@ -5,6 +5,8 @@ $login = new Login;
 $usuario = new Usuario;
 $login->VerificarLogin();
 
+$sqlvenc = $conn->executeQuery("SELECT * FROM usuario");
+$venc = mysqli_fetch_array($sqlvenc);
 
 if (isset($_POST["btnsalvar"])) {
 $cnh = $_POST["VenciCNH"];
@@ -12,12 +14,14 @@ $mopp = $_POST["VenciMOPP"];
 $usuarioId = $_POST["UsuarioId"]; 
 
 
-if (($cnh < date ('Y-m-d')) || ($cnh < $Rows["venc_cnh"]) || ($mopp < date('Y-m-d')) || ($mopp < $Rows["venc_mopp"])) {
+if (($cnh < date ('Y-m-d')) || ($cnh < $venc["venc_cnh"]) || ($mopp < date('Y-m-d')) || ($mopp < $venc["venc_mopp"])) { ?>
 
-  echo  "<script>alert('Data de vencimento não pode ser menor que a data atual e que o vencimento já registrado !!');</script>";  
+  <script>alert('Data de vencimento não pode ser menor que a data atual e que o vencimento já registrado !!');</script>;  
 
-} else {
+<?php } else {
   $result = $conn->executeQuery("UPDATE usuario SET venc_cnh = '{$cnh}', venc_mopp = '{$mopp}' WHERE usuario_id = {$usuarioId}");
+
+  header('Location: cnhemopp.php');
 
   $conn->setAlerta(
     'success',
@@ -26,7 +30,6 @@ if (($cnh < date ('Y-m-d')) || ($cnh < $Rows["venc_cnh"]) || ($mopp < date('Y-m-
     $_SESSION['usuario_id']
   );
 
-  header('Location: cnhemopp.php');
 }
 }
 
@@ -121,7 +124,7 @@ if (isset($_GET['userId'])) {
                         ?>
                         <tr>
                           <td><?= $Rows["cadastro"] ?></td>
-                          <td><?= $Rows["nome"] ?></td>
+                          <td><?= utf8_encode($Rows["nome"]) ?></td>
                           <td><?= $Rows["cpf"] ?></td>
                           <td><?= $Rows["cnh"] ?></td>
                           <td><?= $Rows["venc_cnh"] ?></td>

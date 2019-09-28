@@ -42,6 +42,7 @@ if (isset($_GET['btnExcluirRota'])) {
     <link href="../../../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <style>
         #map {
+            margin-bottom: 20px;
             height: 450px;
             float: left;
             width: 100%;
@@ -82,8 +83,7 @@ if (isset($_GET['btnExcluirRota'])) {
                 <!-- Page Heading -->
                 <h1 class="h3 mb-4 text-gray-800">Rastreamentos</h1>
                 <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                    </div>
+                    
                     <div class="card-body">
                         <div id="map"></div>
                         <h2>Informações da rota:</h2>
@@ -242,7 +242,7 @@ if (isset($_GET['btnExcluirRota'])) {
                                                 $result = mysqli_fetch_assoc($conn->executeQuery("SELECT coo.fk_cod_viagem, coo.hora, goo.formatted_address FROM coordenadas coo LEFT JOIN dados_googleapi goo ON goo.id = coo.fk_dados_google WHERE fk_cod_viagem = {$row["cod_viagem"]} ORDER BY coo.hora DESC LIMIT 1"));
                                                 echo $result['formatted_address'];
                                                 ?></small></td>
-                                        <td><small><?= $row["nome"] ?></small></td>
+                                        <td><small><?= utf8_encode($row["nome"]) ?></small></td>
                                         <td>
                                             <div class="btn-group btn-block">
                                                 <form action="" method="get">

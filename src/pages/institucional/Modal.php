@@ -23,12 +23,7 @@
           <img src="../../../img/institucional/perfil/douglas.png" style="width: 150px;position: relative;bottom: 180px;left: 25px;border: 1px solid black;">
         </div>
         <div class="modal-body">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          <p style="font-family: calibri;color: rgba(0,0,0,0.7);"> Conheça o <strong>Douglas Ronchi</strong>! Programador Web natural de Blumenau, em Santa Catarina, Trabalha com desenvolvimento de sistemas e sites desde 2014 enquanto aprendia sozinho tudo aquilo que viria a amar, Desenvolvimento. Hoje após o programa entra21, conheçe uma ampla gama de estrutura de <strong>HTML5, CSS3, JavaScript, jQuery, Ajax, PHP, MySQL, Bootstrap, GitHub</strong>. Tem conhecimentos básicos em <strong>Programação Orientada a Objetos e Node.js e React</strong>. Uma pessoa que supera desafios todos os dias, até mesmo desafios criados pelo próprio. Enfim, tinha como hobbie programar e hoje terá como profissão, algo que ama e que por isso será algo gratificante de ser desempenhado.</p>
 
           <!-- Load font awesome icons -->
 
@@ -187,12 +182,8 @@
           <img src="../../../img/institucional/perfil/jonas.png" style="width: 150px;position: relative;bottom: 180px;left: 25px;border: 1px solid black;">
         </div>
         <div class="modal-body">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          <p style="font-family: calibri;color: rgba(0,0,0,0.7);"><strong>Jonas Antunes</strong> – Nascido e criado em Blumenau, Santa Catarina. Iniciou no mundo da tecnologia montando e arrumando pcs. Tempos depois quis se aprofundar nesse mundo de TI, até que encontrou o programa <strong>Entra 21</strong> e não pensou duas vezes para aguarrar essa oportunidade. 
+          Foi lá onde iniciou seu aprendizado em programação. Hoje tem conhecimento em <strong>HTML5, CSS3, PHP, JavaScript, MySQL, Bootstrap e GitHub</strong>. Porém busca novos conhecimentos e se aprofunda nos aprendidos dia após dia pois oque mais gosta de fazer é programar e resolver problemas.</p>
 
           <!-- Load font awesome icons -->
 

@@ -138,7 +138,7 @@ $login->VerificarLogin();
                       while ($row = mysqli_fetch_assoc($query)): ?>
                       <tr>
                         <td class="tdth" name="cadastro" id="cadastro"><?=$row['cadastro']?></td>
-                        <td class="tdth"><?=$row['nome']?></td>
+                        <td class="tdth"><?=utf8_encode($row['nome'])?></td>
                         <td class="tdth"><?=$row['quantidade']?></td>
                         <td class="tdth">R&#36; <?=$row['soma']?></td>
                         <td class="tdth" class="text-center"><button class="btn btn-primary" data-toggle="modal"
