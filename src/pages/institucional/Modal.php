@@ -23,7 +23,7 @@
           <img src="../../../img/institucional/perfil/douglas.png" style="width: 150px;position: relative;bottom: 180px;left: 25px;border: 1px solid black;">
         </div>
         <div class="modal-body">
-          <p style="font-family: calibri;color: rgba(0,0,0,0.7);"> Conheça o <strong>Douglas Ronchi</strong>! Programador Web natural de Blumenau, em Santa Catarina, Trabalha com desenvolvimento de sistemas e sites desde 2014 enquanto aprendia sozinho tudo aquilo que viria a amar, Desenvolvimento. Hoje após o programa entra21, conheçe uma ampla gama de estrutura de <strong>HTML5, CSS3, JavaScript, jQuery, Ajax, PHP, MySQL, Bootstrap, GitHub</strong>. Tem conhecimentos básicos em <strong>Programação Orientada a Objetos e Node.js e React</strong>. Uma pessoa que supera desafios todos os dias, até mesmo desafios criados pelo próprio. Enfim, tinha como hobbie programar e hoje terá como profissão, algo que ama e que por isso será algo gratificante de ser desempenhado.</p>
+          <p style="font-family: calibri;color: rgba(0,0,0,0.7);"> Conheça <strong>Douglas Ronchi</strong>! Programador Web natural de Blumenau, em Santa Catarina, Trabalha com desenvolvimento de sistemas e sites desde 2014 enquanto aprendia sozinho tudo aquilo que viria a amar, Desenvolvimento. Hoje após o programa entra21, conheçe uma ampla gama de estrutura de <strong>HTML5, CSS3, JavaScript, jQuery, Ajax, PHP, MySQL, Bootstrap, GitHub</strong>. Tem conhecimentos básicos em <strong>Programação Orientada a Objetos e Node.js e React</strong>. Uma pessoa que supera desafios todos os dias, até mesmo desafios criados pelo próprio. Enfim, tinha como hobbie programar e hoje terá como profissão, algo que ama e que por isso será algo gratificante de ser desempenhado.</p>
 
           <!-- Load font awesome icons -->
 
@@ -59,12 +59,8 @@
           <img src="../../../img/institucional/perfil/paloma.jpg" style="width: 150px;position: relative;bottom: 180px;left: 25px;border: 1px solid black;">
         </div>
         <div class="modal-body">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+           <p style="font-family: calibri;color: rgba(0,0,0,0.7);">
+          Conheça <strong>Paloma Teply!</strong> Natural de Blumenau , em Santa Catarina. Iniciou no mundo da tecnologia através do programa entra21. Foi lá onde seu aprendizado em programação, conhecendo<strong> HTML5, CSS3, JavaScript, PHP, MYSQL, Bootstrap, Github.</strong> Prefere atuar na área de front-end do site.</p>
 
           <!-- Load font awesome icons -->
 
@@ -100,12 +96,8 @@
           <img src="../../../img/institucional/perfil/giovane.jpg" style="width: 150px;position: relative;bottom: 180px;left: 25px;border: 1px solid black;">
         </div>
         <div class="modal-body">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+           <p style="font-family: calibri;color: rgba(0,0,0,0.7);"> Conheça <strong>Geovane Duarte</strong>Tem 23 anos, cursava faculdade de Gestão da tecnologia da informação, iniciou o curso do Entra21 em busca de novos conhecimentos. Buscou a área de tecnologia pois sempre gostou da mesma e decidiu se aprofundar na área. Através do curso Entra21 adquiriu conhecimento em <strong>HTML5, CSS3, PHP, JavaScript, Bootstrap, MySQL.</strong></p> 
+        </p>
 
           <!-- Load font awesome icons -->
 
@@ -116,7 +108,7 @@
             <a href="" class="twitter mr-3" target="_blank"><i class="fa fa-twitter"></i></a> 
             <a href="" class="instagram mr-3" target="_blank"><i class="fab fa-instagram"></i></a> 
             <a href="https://github.com/Geovane22" class="github mr-3" target="_blank"><i class="fab fa-github"></i></a> 
-            <a href="https://www.linkedin.com/in/geovane-duarte-da-silva-989b16189" class="linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
+            <a href="https://www.linkedin.com/in/geovane-duarte-779133195" class="linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
           </div>
 
         </div>
@@ -141,13 +133,8 @@
           <img src="../../../img/institucional/perfil/dauana.jpg" style="width: 150px;position: relative;bottom: 180px;left: 25px;border: 1px solid black;">
         </div>
         <div class="modal-body">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
+          <p style="font-family: calibri;color: rgba(0,0,0,0.7);"> Conheça <strong>
+          Dauana Severo</strong> 26 anos, trancou sua faculdade de Direito para se dedicar a Programação, prefere atuar na parte de Front end, e está se aprofundando em <strong>JavaScript.</strong> Através do curso Entra21 adquiriu conhecimento em <strong>HTML5, CSS3, PHP, JavaScript, Bootstrap, MySQL.</strong></p>
           <!-- Load font awesome icons -->
 
 
@@ -182,7 +169,7 @@
           <img src="../../../img/institucional/perfil/jonas.png" style="width: 150px;position: relative;bottom: 180px;left: 25px;border: 1px solid black;">
         </div>
         <div class="modal-body">
-          <p style="font-family: calibri;color: rgba(0,0,0,0.7);"><strong>Jonas Antunes</strong> – Nascido e criado em Blumenau, Santa Catarina. Iniciou no mundo da tecnologia montando e arrumando pcs. Tempos depois quis se aprofundar nesse mundo de TI, até que encontrou o programa <strong>Entra 21</strong> e não pensou duas vezes para aguarrar essa oportunidade. 
+          <p style="font-family: calibri;color: rgba(0,0,0,0.7);">Conheça<strong>Jonas Antunes</strong> – Nascido e criado em Blumenau, Santa Catarina. Iniciou no mundo da tecnologia montando e arrumando pcs. Tempos depois quis se aprofundar nesse mundo de TI, até que encontrou o programa <strong>Entra 21</strong> e não pensou duas vezes para aguarrar essa oportunidade. 
           Foi lá onde iniciou seu aprendizado em programação. Hoje tem conhecimento em <strong>HTML5, CSS3, PHP, JavaScript, MySQL, Bootstrap e GitHub</strong>. Porém busca novos conhecimentos e se aprofunda nos aprendidos dia após dia pois oque mais gosta de fazer é programar e resolver problemas.</p>
 
           <!-- Load font awesome icons -->
