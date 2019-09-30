@@ -8,9 +8,9 @@ $berry = strpos($_SERVER['HTTP_USER_AGENT'],"BlackBerry");
 $ipod = strpos($_SERVER['HTTP_USER_AGENT'],"iPod");
 $symbian = strpos($_SERVER['HTTP_USER_AGENT'],"Symbian");
 $windowsphone = strpos($_SERVER['HTTP_USER_AGENT'],"Windows Phone");
- 
+
 if ($iphone || $ipad || $android || $palmpre || $ipod || $berry || $symbian || $windowsphone == true) {
-   $dispositivo = "mobile";
+ $dispositivo = "mobile";
 }
 
 else { $dispositivo = "computador";}
@@ -35,11 +35,11 @@ else { $dispositivo = "computador";}
     <!-- Favicon icon site -->
     <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.ico"/>
 
-<style type="text/css">
-    .iconesico{
-    font-size: 90px;
-  } 
-</style>
+    <style type="text/css">
+        .iconesico{
+            font-size: 90px;
+        } 
+    </style>
 
 </head>
 
@@ -227,20 +227,20 @@ else { $dispositivo = "computador";}
                 <img class="rounded-circle mt-2 col foto" title="Douglas" src="../../../img/institucional/perfil/douglas.png" alt="Imagem de capa do card">
                 <div class="card-body text-center">
                     <h4 class="card-title text-white nomeperfil">Douglas Ronchi</h4>
-                    <?php if ($dispositivo == "computador") { ?>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalDouglas">
-                        Conheça
-                    </button>
-                <?php } elseif ($dispositivo == "mobile") {?>
-                    <!-- The social media icon bar -->
-                    <div class="icon-bar text-center iconesico">
-                        <a href="https://www.facebook.com/douglas.ronchi" class="facebook mr-4" target="_blank" style="color: white;"><i class="fa fa-facebook"></i></a> 
-                        <a href="https://twitter.com/douglasronchi" class="twitter mr-4" target="_blank" style="color: white;"><i class="fa fa-twitter"></i></a> 
-                        <a href="https://www.instagram.com/douglasronchi" class="instagram mr-4" target="_blank" style="color: white;"><i class="fab fa-instagram"></i></a> 
-                        <a href="https://github.com/DouglasRonchi" class="github mr-4" target="_blank" style="color: white;"><i class="fab fa-github"></i></a> 
-                        <a href="https://www.linkedin.com/in/douglas-ronchi-7b5a2b134" class="linkedin" target="_blank" style="color: white;"><i class="fa fa-linkedin"></i></a>
-                    </div>
-                <?php } ?>
+                    <?php if ($dispositivo == "computador" || $ipad == true) { ?>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalDouglas">
+                            Conheça
+                        </button>
+                    <?php } elseif ($dispositivo == "mobile") {?>
+                        <!-- The social media icon bar -->
+                        <div class="icon-bar text-center iconesico">
+                            <a href="https://www.facebook.com/douglas.ronchi" class="facebook mr-4" target="_blank" style="color: white;"><i class="fa fa-facebook"></i></a> 
+                            <a href="https://twitter.com/douglasronchi" class="twitter mr-4" target="_blank" style="color: white;"><i class="fa fa-twitter"></i></a> 
+                            <a href="https://www.instagram.com/douglasronchi" class="instagram mr-4" target="_blank" style="color: white;"><i class="fab fa-instagram"></i></a> 
+                            <a href="https://github.com/DouglasRonchi" class="github mr-4" target="_blank" style="color: white;"><i class="fab fa-github"></i></a> 
+                            <a href="https://www.linkedin.com/in/douglas-ronchi-7b5a2b134" class="linkedin" target="_blank" style="color: white;"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    <?php } ?>
                 </div>
             </div>
 
@@ -249,88 +249,88 @@ else { $dispositivo = "computador";}
                 alt="Imagem de capa do card">
                 <div class="card-body text-center">
                     <h4 class="card-title text-white nomeperfil">Paloma Teply</h4>
-                    <?php if ($dispositivo == "computador") { ?>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalPaloma">
-                        Conheça
-                    </button>
-                <?php } elseif ($dispositivo == "mobile") {?>
-                    <!-- The social media icon bar -->
-                    <div class="icon-bar text-center iconesico">
-                       <a href="https://www.facebook.com/paloma.teply" class="facebook mr-4" target="_blank" style="color: white;"><i class="fa fa-facebook"></i></a> 
-                       <a href="https://twitter.com/TeplyPaloma" class="twitter mr-4" target="_blank" style="color: white;"><i class="fa fa-twitter"></i></a> 
-                       <a href="https://www.instagram.com/teply.p" class="instagram mr-4" target="_blank" style="color: white;"><i class="fab fa-instagram"></i></a> 
-                       <a href="https://github.com/Paloma-teply" class="github mr-4" target="_blank" style="color: white;"><i class="fab fa-github"></i></a> 
-                       <a href="https://www.linkedin.com/in/paloma-teply-b25970190" class="linkedin" target="_blank" style="color: white;"><i class="fa fa-linkedin"></i></a>
-                   </div>
-               <?php } ?>
-                </div>
-            </div>
+                    <?php if ($dispositivo == "computador" || $ipad == true) { ?>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalPaloma">
+                            Conheça
+                        </button>
+                    <?php } elseif ($dispositivo == "mobile") {?>
+                        <!-- The social media icon bar -->
+                        <div class="icon-bar text-center iconesico">
+                         <a href="https://www.facebook.com/paloma.teply" class="facebook mr-4" target="_blank" style="color: white;"><i class="fa fa-facebook"></i></a> 
+                         <a href="https://twitter.com/TeplyPaloma" class="twitter mr-4" target="_blank" style="color: white;"><i class="fa fa-twitter"></i></a> 
+                         <a href="https://www.instagram.com/teply.p" class="instagram mr-4" target="_blank" style="color: white;"><i class="fab fa-instagram"></i></a> 
+                         <a href="https://github.com/Paloma-teply" class="github mr-4" target="_blank" style="color: white;"><i class="fab fa-github"></i></a> 
+                         <a href="https://www.linkedin.com/in/paloma-teply-b25970190" class="linkedin" target="_blank" style="color: white;"><i class="fa fa-linkedin"></i></a>
+                     </div>
+                 <?php } ?>
+             </div>
+         </div>
 
-            <div class="card col-lg col-sm-10 border-0 divperfil">
-                <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/giovane.jpg" title="Geovane" 
-                alt="Imagem de capa do card">
-                <div class="card-body text-center">
-                    <h4 class="card-title text-white nomeperfil">Geovane Duarte</h4>
-                    <?php if ($dispositivo == "computador") { ?>
+         <div class="card col-lg col-sm-10 border-0 divperfil">
+            <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/giovane.jpg" title="Geovane" 
+            alt="Imagem de capa do card">
+            <div class="card-body text-center">
+                <h4 class="card-title text-white nomeperfil">Geovane Duarte</h4>
+                <?php if ($dispositivo == "computador" || $ipad == true) { ?>
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalGeovane">
                         Conheça
                     </button>
                 <?php } elseif ($dispositivo == "mobile") {?>
                     <!-- The social media icon bar -->
                     <div class="icon-bar text-center iconesico">
-                       <a href="https://www.facebook.com/geovane.duarte.7359" class="facebook mr-4" target="_blank" style="color: white;"><i class="fa fa-facebook"></i></a> 
-                       <a href="" class="twitter mr-4" target="_blank" style="color: white;"><i class="fa fa-twitter"></i></a> 
-                       <a href="" class="instagram mr-4" target="_blank" style="color: white;"><i class="fab fa-instagram"></i></a> 
-                       <a href="https://github.com/Geovane22" class="github mr-4" target="_blank" style="color: white;"><i class="fab fa-github"></i></a> 
-                       <a href="https://www.linkedin.com/in/geovane-duarte-da-silva-3bb387194" class="linkedin" target="_blank" style="color: white;"><i class="fa fa-linkedin"></i></a>
-                   </div>
-               <?php } ?>
-                </div>
-            </div>
+                     <a href="https://www.facebook.com/geovane.duarte.7359" class="facebook mr-4" target="_blank" style="color: white;"><i class="fa fa-facebook"></i></a> 
+                     <!-- <a href="" class="twitter mr-4" target="_blank" style="color: white;"><i class="fa fa-twitter"></i></a>  -->
+                     <!-- <a href="" class="instagram mr-4" target="_blank" style="color: white;"><i class="fab fa-instagram"></i></a>  -->
+                     <a href="https://github.com/Geovane22" class="github mr-4" target="_blank" style="color: white;"><i class="fab fa-github"></i></a> 
+                     <!-- <a href="https://www.linkedin.com/in/geovane-duarte-da-silva-3bb387194" class="linkedin" target="_blank" style="color: white;"><i class="fa fa-linkedin"></i></a> -->
+                 </div>
+             <?php } ?>
+         </div>
+     </div>
 
-            <div class="card col-lg col-sm-10 border-0 divperfil">
-                <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/dauana.jpg" alt="Imagem de capa do card" title="Dauana">
-                <div class="card-body text-center">
-                    <h4 class="card-title text-white nomeperfil">Dauana Severo</h4>
-                    <?php if ($dispositivo == "computador") { ?>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalDauana">
-                        Conheça
-                    </button>
-                <?php } elseif ($dispositivo == "mobile") {?>
-                    <!-- The social media icon bar -->
-                    <div class="icon-bar text-center iconesico">
-                       <a href="https://www.facebook.com/dauana.severo" class="facebook mr-4" target="_blank" style="color: white;"><i class="fa fa-facebook"></i></a> 
-                       <a href="" class="twitter mr-4" target="_blank" style="color: white;"><i class="fa fa-twitter"></i></a> 
-                       <a href="https://www.instagram.com/dauanasvro" class="instagram mr-4" target="_blank" style="color: white;"><i class="fab fa-instagram"></i></a> 
-                       <a href="https://github.com/dauanaana" class="github mr-4" target="_blank" style="color: white;"><i class="fab fa-github"></i></a> 
-                       <a href="https://www.linkedin.com/in/dauana-severo-bb152a18a" class="linkedin" target="_blank" style="color: white;"><i class="fa fa-linkedin"></i></a>
-                   </div>
-               <?php } ?>
-                </div>
-            </div>
+     <div class="card col-lg col-sm-10 border-0 divperfil">
+        <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/dauana.jpg" alt="Imagem de capa do card" title="Dauana">
+        <div class="card-body text-center">
+            <h4 class="card-title text-white nomeperfil">Dauana Severo</h4>
+            <?php if ($dispositivo == "computador" || $ipad == true) { ?>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalDauana">
+                    Conheça
+                </button>
+            <?php } elseif ($dispositivo == "mobile") {?>
+                <!-- The social media icon bar -->
+                <div class="icon-bar text-center iconesico">
+                 <a href="https://www.facebook.com/dauana.severo" class="facebook mr-4" target="_blank" style="color: white;"><i class="fa fa-facebook"></i></a> 
+                 <!-- <a href="" class="twitter mr-4" target="_blank" style="color: white;"><i class="fa fa-twitter"></i></a>  -->
+                 <a href="https://www.instagram.com/dauanasvro" class="instagram mr-4" target="_blank" style="color: white;"><i class="fab fa-instagram"></i></a> 
+                 <a href="https://github.com/dauanaana" class="github mr-4" target="_blank" style="color: white;"><i class="fab fa-github"></i></a> 
+                 <a href="https://www.linkedin.com/in/dauana-severo-bb152a18a" class="linkedin" target="_blank" style="color: white;"><i class="fa fa-linkedin"></i></a>
+             </div>
+         <?php } ?>
+     </div>
+ </div>
 
-            <div class="card col-lg col-sm-10 border-0 divperfil">
-                <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/jonas.png" alt="Imagem de capa do card" title="Jonas">
-                <div class="card-body text-center">
-                    <h4 class="card-title text-white nomeperfil">Jonas Antunes</h4>
-                    <?php if ($dispositivo == "computador") { ?>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalJonas">
-                        Conheça
-                    </button>
-                <?php } elseif ($dispositivo == "mobile") {?>
-                    <!-- The social media icon bar -->
-                    <div class="icon-bar text-center iconesico">
-                        <a href="https://www.facebook.com/people/Jonas-Antunes/100012847776542" class="facebook mr-4" target="_blank" style="color: white;"><i class="fa fa-facebook"></i></a> 
-                        <a href="https://twitter.com/JonasAn14960845" class="twitter mr-4" target="_blank" style="color: white;"><i class="fa fa-twitter"></i></a> 
-                        <a href="https://www.instagram.com/jonas.antunes4955" class="instagram mr-4" target="_blank" style="color: white;"><i class="fab fa-instagram"></i></a> 
-                        <a href="https://github.com/Jonas4955" class="github mr-4" target="_blank" style="color: white;"><i class="fab fa-github"></i></a> 
-                        <a href="https://www.linkedin.com/in/jonas-antunes-049197187" class="linkedin" target="_blank" style="color: white;"><i class="fa fa-linkedin"></i></a>
-                    </div>
-                <?php } ?>
-                </div>
+ <div class="card col-lg col-sm-10 border-0 divperfil">
+    <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/jonas.png" alt="Imagem de capa do card" title="Jonas">
+    <div class="card-body text-center">
+        <h4 class="card-title text-white nomeperfil">Jonas Antunes</h4>
+        <?php if ($dispositivo == "computador" || $ipad == true) { ?>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalJonas">
+                Conheça
+            </button>
+        <?php } elseif ($dispositivo == "mobile") {?>
+            <!-- The social media icon bar -->
+            <div class="icon-bar text-center iconesico">
+                <a href="https://www.facebook.com/people/Jonas-Antunes/100012847776542" class="facebook mr-4" target="_blank" style="color: white;"><i class="fa fa-facebook"></i></a> 
+                <a href="https://twitter.com/JonasAn14960845" class="twitter mr-4" target="_blank" style="color: white;"><i class="fa fa-twitter"></i></a> 
+                <a href="https://www.instagram.com/jonas.antunes4955" class="instagram mr-4" target="_blank" style="color: white;"><i class="fab fa-instagram"></i></a> 
+                <a href="https://github.com/Jonas4955" class="github mr-4" target="_blank" style="color: white;"><i class="fab fa-github"></i></a> 
+                <a href="https://www.linkedin.com/in/jonas-antunes-049197187" class="linkedin" target="_blank" style="color: white;"><i class="fa fa-linkedin"></i></a>
             </div>
-        </div>
+        <?php } ?>
     </div>
+</div>
+</div>
+</div>
 
 </center>
 
@@ -339,62 +339,62 @@ else { $dispositivo = "computador";}
 <div class="contatos">
     <div class="cardgadgets">
         <a class="gadgets gadface" href="https://web.facebook.com/Pojigo-101839457873456" target="_blank">
-        <img class="imgface" border="0" src="../../../img/institucional/inicial_icons/faceboock.png" title="Siga-nos no face" /></a>
-    </div>
-    <div class="cardgadgets">
-        <a class="gadgets gedinsta" href="https://www.instagram.com/pojigoentra21" target="_blank">
-        <img class="imginsta" border="0" src="../../../img/institucional/inicial_icons/insta.png" title="Siga-nos no Insta" /></a>
-    </div>
-    <div class="cardgadgets">
-        <a class="gadgets gedwhats" data-toggle="modal" data-target=".bd-example-modal-sm" href="Whats:(47) 984380116" target="_blank">
-        <img class="imgwhats" border="0" src="../../../img/institucional/inicial_icons/whatsapp.png" title="Whats:(47) 996545424" /></a>
-    </div>
-    <div class="cardgadgets">
-        <a class="gadgets gedyoutube" href="https://www.youtube.com/channel/UCusMR_Z4ozLqcf__GpBgehg" target="_blank">
-        <img class="imgyoutube" border="0" src="../../../img/institucional/inicial_icons/youtube.png" title="Pojigo Entra21" /></a>
-    </div>
-</div>
-
-<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Small modal</button> -->
-
-<!-- Small modal -->
-<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm">
-        <div class="card modal-content" style="background-image: linear-gradient(rgb(0, 130, 255), rgb(0, 50, 255));">
-    <small><button type="button" class="close col-2 mt-2" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span></button></small>
-            <img height="200" width="200" src="../../../img/institucional/inicial_icons/qrPojigoWhats.png" class=" sombra rounded qrWhats ml-5" alt="...">
-            <div class="card-body text-center" style="font-family: arial; color: white;">
-                <h5 class="card-title">Whatsapp add+</h5>
-                <p style="font-size: 14px;">Leia nosso Vcard ou adicione o nº abaixo</p>
-                <input class="text-center" type="text" name="whatsapp" value="(47) 984380116" disabled="" style="border-radius: 5px;">
-            </div>
+            <img class="imgface" border="0" src="../../../img/institucional/inicial_icons/faceboock.png" title="Siga-nos no face" /></a>
         </div>
-  </div>
-</div>
-<?php if ($dispositivo == "computador") {
-    
-    include 'Modal.php'; 
- 
-} ?>
-
-
-
-
-        <!-- Scroll to Top Button-->
-        <a class="scroll-to-top rounded scroltop" href="#page-top">
-            <i class="fas fa-angle-up"></i>
-        </a>
-
-        <footer class="text-center">
-            <div class="p-4 text-dark">
-                <strong>Copyright © Pojigo.tk 2019</strong>
+        <div class="cardgadgets">
+            <a class="gadgets gedinsta" href="https://www.instagram.com/pojigoentra21" target="_blank">
+                <img class="imginsta" border="0" src="../../../img/institucional/inicial_icons/insta.png" title="Siga-nos no Insta" /></a>
             </div>
-        </footer>
+            <div class="cardgadgets">
+                <a class="gadgets gedwhats" data-toggle="modal" data-target=".bd-example-modal-sm" href="Whats:(47) 984380116" target="_blank">
+                    <img class="imgwhats" border="0" src="../../../img/institucional/inicial_icons/whatsapp.png" title="Whats:(47) 996545424" /></a>
+                </div>
+                <div class="cardgadgets">
+                    <a class="gadgets gedyoutube" href="https://www.youtube.com/channel/UCusMR_Z4ozLqcf__GpBgehg" target="_blank">
+                        <img class="imgyoutube" border="0" src="../../../img/institucional/inicial_icons/youtube.png" title="Pojigo Entra21" /></a>
+                    </div>
+                </div>
+
+                <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Small modal</button> -->
+
+                <!-- Small modal -->
+                <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-sm">
+                    <div class="card modal-content" style="background-image: linear-gradient(rgb(0, 130, 255), rgb(0, 50, 255));">
+                        <small><button type="button" class="close col-2 mt-2" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span></button></small>
+                            <img height="200" width="200" src="../../../img/institucional/inicial_icons/qrPojigoWhats.png" class=" sombra rounded qrWhats ml-5" alt="...">
+                            <div class="card-body text-center" style="font-family: arial; color: white;">
+                                <h5 class="card-title">Whatsapp add+</h5>
+                                <p style="font-size: 14px;">Leia nosso Vcard ou adicione o nº abaixo</p>
+                                <input class="text-center" type="text" name="whatsapp" value="(47) 984380116" disabled="" style="border-radius: 5px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php if ($dispositivo == "computador" || $ipad == true) {
+
+                    include 'Modal.php'; 
+
+                } ?>
 
 
 
-        <script type="text/javascript">
+
+                <!-- Scroll to Top Button-->
+                <a class="scroll-to-top rounded scroltop" href="#page-top">
+                    <i class="fas fa-angle-up"></i>
+                </a>
+
+                <footer class="text-center">
+                    <div class="p-4 text-dark">
+                        <strong>Copyright © Pojigo.tk 2019</strong>
+                    </div>
+                </footer>
+
+
+
+                <script type="text/javascript">
     // When the user scrolls down 20px from the top of the document, show the button
     window.onscroll = function () {
         scrollFunction()
@@ -406,17 +406,19 @@ else { $dispositivo = "computador";}
         } else {
             $('.navbar').css("background-color", "rgba(0, 0, 0, 0.0)");
         }
-        if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
-            $('.gadface').css("display", "block");
-            $('.gedinsta').css("display", "block");
-            $('.gedwhats').css("display", "block");
-            $('.gedyoutube').css("display", "block");
-        } else {
-            $('.gadface').css("display", "none");
-            $('.gedinsta').css("display", "none");
-            $('.gedwhats').css("display", "none");
-            $('.gedyoutube').css("display", "none");
-        }  
+        <?php if ($dispositivo == "computador" || $ipad == true) { ?>
+            if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
+                $('.gadface').css("display", "block");
+                $('.gedinsta').css("display", "block");
+                $('.gedwhats').css("display", "block");
+                $('.gedyoutube').css("display", "block");
+            } else {
+                $('.gadface').css("display", "none");
+                $('.gedinsta').css("display", "none");
+                $('.gedwhats').css("display", "none");
+                $('.gedyoutube').css("display", "none");
+            }
+        <?php } ?> 
     }
 
     // When the user clicks on the button, scroll to the top of the document

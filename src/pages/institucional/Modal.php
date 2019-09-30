@@ -113,10 +113,10 @@
           <!-- The social media icon bar -->
           <div class="icon-bar text-center iconesico">
             <a href="https://www.facebook.com/geovane.duarte.7359" class="facebook mr-3" target="_blank"><i class="fa fa-facebook"></i></a> 
-            <a href="" class="twitter mr-3" target="_blank"><i class="fa fa-twitter"></i></a> 
-            <a href="" class="instagram mr-3" target="_blank"><i class="fab fa-instagram"></i></a> 
+            <!-- <a href="" class="twitter mr-3" target="_blank"><i class="fa fa-twitter"></i></a> -->
+            <!-- <a href="" class="instagram mr-3" target="_blank"><i class="fab fa-instagram"></i></a>  -->
             <a href="https://github.com/Geovane22" class="github mr-3" target="_blank"><i class="fab fa-github"></i></a> 
-            <a href="https://www.linkedin.com/in/geovane-duarte-da-silva-989b16189" class="linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
+            <!-- <a href="https://www.linkedin.com/in/geovane-duarte-da-silva-989b16189" class="linkedin" target="_blank"><i class="fa fa-linkedin"></i></a> -->
           </div>
 
         </div>
@@ -154,7 +154,7 @@
           <!-- The social media icon bar -->
           <div class="icon-bar text-center iconesico">
             <a href="https://www.facebook.com/dauana.severo" class="facebook mr-3" target="_blank"><i class="fa fa-facebook"></i></a> 
-            <a href="" class="twitter mr-3" target="_blank"><i class="fa fa-twitter"></i></a> 
+            <!-- <a href="" class="twitter mr-3" target="_blank"><i class="fa fa-twitter"></i></a> -->
             <a href="https://www.instagram.com/dauanasvro" class="instagram mr-3" target="_blank"><i class="fab fa-instagram"></i></a> 
             <a href="https://github.com/dauanaana" class="github mr-3" target="_blank"><i class="fab fa-github"></i></a> 
             <a href="https://www.linkedin.com/in/dauana-severo-bb152a18a" class="linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>

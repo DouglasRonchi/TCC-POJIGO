@@ -32,6 +32,7 @@ $login->VerificarLogin();
       height: 100%;
       border-radius: 14px;
       border: none;
+      box-shadow: 1px 1px 10px 2px rgba(0,0,0,0.3) !important;
     }
 
     .content-heading {

@@ -40,22 +40,7 @@ if (isset($_GET['btnExcluirRota'])) {
     <link href="../../../css/rastreamento.css" rel="stylesheet">
     <!-- Custom styles for this page -->
     <link href="../../../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-    <style>
-        #map {
-            margin-bottom: 20px;
-            height: 450px;
-            float: left;
-            width: 100%;
-        }
-        #directions-panel {
-            color: #000000;
-            margin-top: 10px;
-            background-color: rgba(191, 186, 167, 0.56);
-            padding: 10px;
-            overflow: scroll;
-            height: 174px;
-        }
-    </style>
+
 </head>
 
 <body id="page-top">
@@ -81,7 +66,7 @@ if (isset($_GET['btnExcluirRota'])) {
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <h1 class="h3 mb-4 text-gray-800">Rastreamentos</h1>
+                <h1 class="mb-4 text-gray-800">Rastreamentos</h1>
                 <div class="card shadow mb-4">
                     
                     <div class="card-body">
@@ -136,25 +121,25 @@ if (isset($_GET['btnExcluirRota'])) {
                     <div class="card-header py-3 text-center">
                         <form action="" method="get">
                             <div class="btn-group">
-                                <label class="btn btn-secondary disabled">
+                                <label class="btn btn-secondary pb-1 p-2 disabled">
                                     Filtros
                                 </label>
-                                <label class="btn btn-primary active">
+                                <label class="btn btn-primary pb-1 p-2">
                                     <input type="checkbox" name="TRIPfinalizadas" id="TRIPfinalizadas"
                                            value="1" <?= (isset($_GET['TRIPfinalizadas'])) ? 'checked' : ''; ?>>Viagens
                                     Finalizadas
                                 </label>
-                                <label class="btn btn-primary">
+                                <label class="btn btn-primary pb-1 p-2">
                                     <input type="checkbox" name="TRIPandamento" id="TRIPandamento"
                                            value="1" <?= (isset($_GET['TRIPandamento'])) ? 'checked' : ''; ?>>Viagens em
                                     Andamento
                                 </label>
-                                <label class="btn btn-primary">
+                                <label class="btn btn-primary pb-1 p-2">
                                     <input type="checkbox" name="TRIPproblema" id="TRIPproblema"
                                            value="1" <?= (isset($_GET['TRIPproblema'])) ? 'checked' : ''; ?>>Viagens com
                                     Problema
                                 </label>
-                                <label class="btn btn-primary">
+                                <label class="btn btn-primary p-0 pt-1 pr-1">
                                     <button type="submit" class="btn btn-dark btn-sm" name="TRIPfiltrar"
                                             id="TRIPfiltrar">Filtrar
                                     </button>

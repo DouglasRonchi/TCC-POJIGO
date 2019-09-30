@@ -9,28 +9,28 @@ $sqlvenc = $conn->executeQuery("SELECT * FROM usuario");
 $venc = mysqli_fetch_array($sqlvenc);
 
 if (isset($_POST["btnsalvar"])) {
-$cnh = $_POST["VenciCNH"];
-$mopp = $_POST["VenciMOPP"];
-$usuarioId = $_POST["UsuarioId"]; 
+  $cnh = $_POST["VenciCNH"];
+  $mopp = $_POST["VenciMOPP"];
+  $usuarioId = $_POST["UsuarioId"]; 
 
 
-if (($cnh < date ('Y-m-d')) || ($cnh < $venc["venc_cnh"]) || ($mopp < date('Y-m-d')) || ($mopp < $venc["venc_mopp"])) { ?>
+  if (($cnh < date ('Y-m-d')) || ($cnh < $venc["venc_cnh"]) || ($mopp < date('Y-m-d')) || ($mopp < $venc["venc_mopp"])) { ?>
 
-  <script>alert('Data de vencimento não pode ser menor que a data atual e que o vencimento já registrado !!');</script>;  
+    <script>alert('Data de vencimento não pode ser menor que a data atual e que o vencimento já registrado !!');</script>;  
 
-<?php } else {
-  $result = $conn->executeQuery("UPDATE usuario SET venc_cnh = '{$cnh}', venc_mopp = '{$mopp}' WHERE usuario_id = {$usuarioId}");
+  <?php } else {
+    $result = $conn->executeQuery("UPDATE usuario SET venc_cnh = '{$cnh}', venc_mopp = '{$mopp}' WHERE usuario_id = {$usuarioId}");
 
-  header('Location: cnhemopp.php');
+    header('Location: cnhemopp.php');
 
-  $conn->setAlerta(
-    'success',
-    'CNH ' . $usuario->getCnh() . 'MOPP' . $usuario->getMopp()  . ' atualizado com sucesso',
-    '<img class="img-fluid" src="' . $conn->path('img/icons/success.png') . '">',
-    $_SESSION['usuario_id']
-  );
+    $conn->setAlerta(
+      'success',
+      'CNH ' . $usuario->getCnh() . 'MOPP' . $usuario->getMopp()  . ' atualizado com sucesso',
+      '<img class="img-fluid" src="' . $conn->path('img/icons/success.png') . '">',
+      $_SESSION['usuario_id']
+    );
 
-}
+  }
 }
 
 
@@ -201,6 +201,7 @@ if (isset($_GET['userId'])) {
       <i class="fas fa-angle-up"></i>
     </a>
 
+
     <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -263,15 +264,15 @@ if (isset($_GET['userId'])) {
 
 
 <script>
-$('.btn[name="btnEditar"]').click(function(event){
-  btn = $(event.currentTarget);
-  id = btn.attr("id");
-  $.ajax(location["href"] + "?userId=" + id).done(function(data){
-    $("#VenciCNH").val(data["venc_cnh"]);
-    $("#VenciMOPP").val(data["venc_mopp"]);
-    $("#UsuarioId").val(id);
-  })
-});
+  $('.btn[name="btnEditar"]').click(function(event){
+    btn = $(event.currentTarget);
+    id = btn.attr("id");
+    $.ajax(location["href"] + "?userId=" + id).done(function(data){
+      $("#VenciCNH").val(data["venc_cnh"]);
+      $("#VenciMOPP").val(data["venc_mopp"]);
+      $("#UsuarioId").val(id);
+    })
+  });
 </script>
 </body>
 
