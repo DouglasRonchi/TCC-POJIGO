@@ -14,11 +14,10 @@ if (isset($_POST["btnsalvar"])) {
   $usuarioId = $_POST["UsuarioId"]; 
 
 
-  if (($cnh < date ('Y-m-d')) || ($cnh < $venc["venc_cnh"]) || ($mopp < date('Y-m-d')) || ($mopp < $venc["venc_mopp"])) { ?>
+  if (($cnh < date ('Y-m-d')) || ($cnh < $venc["venc_cnh"]) || ($mopp < date('Y-m-d')) || ($mopp < $venc["venc_mopp"])) { 
 
-    <script>alert('Data de vencimento não pode ser menor que a data atual e que o vencimento já registrado !!');</script>;  
 
-  <?php } else {
+  } else {
     $result = $conn->executeQuery("UPDATE usuario SET venc_cnh = '{$cnh}', venc_mopp = '{$mopp}' WHERE usuario_id = {$usuarioId}");
 
     header('Location: cnhemopp.php');
@@ -99,7 +98,23 @@ if (isset($_GET['userId'])) {
 
             <div class="card shadow mb-4">
               <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Tabela de Vencimentos CNH e MOPP</h6>
+                <div class="row">
+                  <div class="col-4 py-0">
+                    <h6 class="col-12 m-0 font-weight-bold text-primary">Tabela de Vencimentos CNH e MOPP</h6>
+                  </div>
+                  <?php if (isset($_POST["btnsalvar"])) {
+                    if (($cnh < date ('Y-m-d')) || ($cnh < $venc["venc_cnh"]) || ($mopp < date('Y-m-d')) || ($mopp < $venc["venc_mopp"])) { ?>
+                      <div class="col-8 py-0">
+                        <div class="col-12 py-1 alert alert-warning alert-dismissible fade show" role="alert" style="box-shadow: 1px 1px 10px -1px rgba(0,0,0,0.3);margin: -10px;">
+                          <strong>Data de vencimento não pode ser menor que a data atual e que o vencimento já registrado !!</strong>
+                          <button type="button" class="close py-1" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                      </div>
+                    <?php } 
+                  } ?>
+                </div>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -202,24 +217,6 @@ if (isset($_GET['userId'])) {
     </a>
 
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Pronto para partir?</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">Selecione "Sair" abaixo se você estiver pronto para encerrar sua sessão atual.</div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-            <a class="btn btn-primary" href="login.html">Sair</a>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
   <!-- /.container-fluid -->
 

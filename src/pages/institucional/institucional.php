@@ -10,7 +10,7 @@ $symbian = strpos($_SERVER['HTTP_USER_AGENT'],"Symbian");
 $windowsphone = strpos($_SERVER['HTTP_USER_AGENT'],"Windows Phone");
 
 if ($iphone || $ipad || $android || $palmpre || $ipod || $berry || $symbian || $windowsphone == true) {
- $dispositivo = "mobile";
+   $dispositivo = "mobile";
 }
 
 else { $dispositivo = "computador";}
@@ -256,17 +256,17 @@ else { $dispositivo = "computador";}
                     <?php } elseif ($dispositivo == "mobile") {?>
                         <!-- The social media icon bar -->
                         <div class="icon-bar text-center iconesico">
-                         <a href="https://www.facebook.com/paloma.teply" class="facebook mr-4" target="_blank" style="color: white;"><i class="fa fa-facebook"></i></a> 
-                         <a href="https://twitter.com/TeplyPaloma" class="twitter mr-4" target="_blank" style="color: white;"><i class="fa fa-twitter"></i></a> 
-                         <a href="https://www.instagram.com/teply.p" class="instagram mr-4" target="_blank" style="color: white;"><i class="fab fa-instagram"></i></a> 
-                         <a href="https://github.com/Paloma-teply" class="github mr-4" target="_blank" style="color: white;"><i class="fab fa-github"></i></a> 
-                         <a href="https://www.linkedin.com/in/paloma-teply-b25970190" class="linkedin" target="_blank" style="color: white;"><i class="fa fa-linkedin"></i></a>
-                     </div>
-                 <?php } ?>
-             </div>
-         </div>
+                           <a href="https://www.facebook.com/paloma.teply" class="facebook mr-4" target="_blank" style="color: white;"><i class="fa fa-facebook"></i></a> 
+                           <a href="https://twitter.com/TeplyPaloma" class="twitter mr-4" target="_blank" style="color: white;"><i class="fa fa-twitter"></i></a> 
+                           <a href="https://www.instagram.com/teply.p" class="instagram mr-4" target="_blank" style="color: white;"><i class="fab fa-instagram"></i></a> 
+                           <a href="https://github.com/Paloma-teply" class="github mr-4" target="_blank" style="color: white;"><i class="fab fa-github"></i></a> 
+                           <a href="https://www.linkedin.com/in/paloma-teply-b25970190" class="linkedin" target="_blank" style="color: white;"><i class="fa fa-linkedin"></i></a>
+                       </div>
+                   <?php } ?>
+               </div>
+           </div>
 
-         <div class="card col-lg col-sm-10 border-0 divperfil">
+           <div class="card col-lg col-sm-10 border-0 divperfil">
             <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/giovane.jpg" title="Geovane" 
             alt="Imagem de capa do card">
             <div class="card-body text-center">
@@ -278,17 +278,17 @@ else { $dispositivo = "computador";}
                 <?php } elseif ($dispositivo == "mobile") {?>
                     <!-- The social media icon bar -->
                     <div class="icon-bar text-center iconesico">
-                     <a href="https://www.facebook.com/geovane.duarte.7359" class="facebook mr-4" target="_blank" style="color: white;"><i class="fa fa-facebook"></i></a> 
-                     <!-- <a href="" class="twitter mr-4" target="_blank" style="color: white;"><i class="fa fa-twitter"></i></a>  -->
-                     <!-- <a href="" class="instagram mr-4" target="_blank" style="color: white;"><i class="fab fa-instagram"></i></a>  -->
-                     <a href="https://github.com/Geovane22" class="github mr-4" target="_blank" style="color: white;"><i class="fab fa-github"></i></a> 
-                     <!-- <a href="https://www.linkedin.com/in/geovane-duarte-da-silva-3bb387194" class="linkedin" target="_blank" style="color: white;"><i class="fa fa-linkedin"></i></a> -->
-                 </div>
-             <?php } ?>
-         </div>
-     </div>
+                       <a href="https://www.facebook.com/geovane.duarte.7359" class="facebook mr-4" target="_blank" style="color: white;"><i class="fa fa-facebook"></i></a> 
+                       <!-- <a href="" class="twitter mr-4" target="_blank" style="color: white;"><i class="fa fa-twitter"></i></a>  -->
+                       <!-- <a href="" class="instagram mr-4" target="_blank" style="color: white;"><i class="fab fa-instagram"></i></a>  -->
+                       <a href="https://github.com/Geovane22" class="github mr-4" target="_blank" style="color: white;"><i class="fab fa-github"></i></a> 
+                       <!-- <a href="https://www.linkedin.com/in/geovane-duarte-da-silva-3bb387194" class="linkedin" target="_blank" style="color: white;"><i class="fa fa-linkedin"></i></a> -->
+                   </div>
+               <?php } ?>
+           </div>
+       </div>
 
-     <div class="card col-lg col-sm-10 border-0 divperfil">
+       <div class="card col-lg col-sm-10 border-0 divperfil">
         <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/dauana.jpg" alt="Imagem de capa do card" title="Dauana">
         <div class="card-body text-center">
             <h4 class="card-title text-white nomeperfil">Dauana Severo</h4>
@@ -299,17 +299,17 @@ else { $dispositivo = "computador";}
             <?php } elseif ($dispositivo == "mobile") {?>
                 <!-- The social media icon bar -->
                 <div class="icon-bar text-center iconesico">
-                 <a href="https://www.facebook.com/dauana.severo" class="facebook mr-4" target="_blank" style="color: white;"><i class="fa fa-facebook"></i></a> 
-                 <!-- <a href="" class="twitter mr-4" target="_blank" style="color: white;"><i class="fa fa-twitter"></i></a>  -->
-                 <a href="https://www.instagram.com/dauanasvro" class="instagram mr-4" target="_blank" style="color: white;"><i class="fab fa-instagram"></i></a> 
-                 <a href="https://github.com/dauanaana" class="github mr-4" target="_blank" style="color: white;"><i class="fab fa-github"></i></a> 
-                 <a href="https://www.linkedin.com/in/dauana-severo-bb152a18a" class="linkedin" target="_blank" style="color: white;"><i class="fa fa-linkedin"></i></a>
-             </div>
-         <?php } ?>
-     </div>
- </div>
+                   <a href="https://www.facebook.com/dauana.severo" class="facebook mr-4" target="_blank" style="color: white;"><i class="fa fa-facebook"></i></a> 
+                   <!-- <a href="" class="twitter mr-4" target="_blank" style="color: white;"><i class="fa fa-twitter"></i></a>  -->
+                   <a href="https://www.instagram.com/dauanasvro" class="instagram mr-4" target="_blank" style="color: white;"><i class="fab fa-instagram"></i></a> 
+                   <a href="https://github.com/dauanaana" class="github mr-4" target="_blank" style="color: white;"><i class="fab fa-github"></i></a> 
+                   <a href="https://www.linkedin.com/in/dauana-severo-bb152a18a" class="linkedin" target="_blank" style="color: white;"><i class="fa fa-linkedin"></i></a>
+               </div>
+           <?php } ?>
+       </div>
+   </div>
 
- <div class="card col-lg col-sm-10 border-0 divperfil">
+   <div class="card col-lg col-sm-10 border-0 divperfil">
     <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/jonas.png" alt="Imagem de capa do card" title="Jonas">
     <div class="card-body text-center">
         <h4 class="card-title text-white nomeperfil">Jonas Antunes</h4>
@@ -355,8 +355,6 @@ else { $dispositivo = "computador";}
                     </div>
                 </div>
 
-                <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Small modal</button> -->
-
                 <!-- Small modal -->
                 <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
                   <div class="modal-dialog modal-sm">
@@ -378,9 +376,6 @@ else { $dispositivo = "computador";}
 
                 } ?>
 
-
-
-
                 <!-- Scroll to Top Button-->
                 <a class="scroll-to-top rounded scroltop" href="#page-top">
                     <i class="fas fa-angle-up"></i>
@@ -394,7 +389,7 @@ else { $dispositivo = "computador";}
 
 
 
-                <script type="text/javascript">
+<script type="text/javascript">
     // When the user scrolls down 20px from the top of the document, show the button
     window.onscroll = function () {
         scrollFunction()
@@ -408,15 +403,9 @@ else { $dispositivo = "computador";}
         }
         <?php if ($dispositivo == "computador" || $ipad == true) { ?>
             if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
-                $('.gadface').css("display", "block");
-                $('.gedinsta').css("display", "block");
-                $('.gedwhats').css("display", "block");
-                $('.gedyoutube').css("display", "block");
+                $('.gadgets').css("display", "block");
             } else {
-                $('.gadface').css("display", "none");
-                $('.gedinsta').css("display", "none");
-                $('.gedwhats').css("display", "none");
-                $('.gedyoutube').css("display", "none");
+                $('.gadgets').css("display", "none");
             }
         <?php } ?> 
     }
@@ -440,20 +429,7 @@ else { $dispositivo = "computador";}
 <script src="../../../js/sb-admin-2.min.js"></script>
 
 <script src="../../../js/funcoesMobile.js"></script>
-<script type="text/javascript">
 
-        // scrolls suaves areas site
-        $('.btnscroll').on('click', function(e) {
-            e.preventDefault();
-            var id = $(this).attr('href'),
-            targetOffset = $(id).offset().top;
-            
-            $('html, body').animate({ 
-                scrollTop: targetOffset - 50
-            }, 500);
-        });
-
-    </script>
 </body>
 
 </html>

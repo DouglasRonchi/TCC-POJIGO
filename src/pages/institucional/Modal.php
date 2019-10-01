@@ -170,7 +170,7 @@
         </div>
         <div class="modal-body">
           <p style="font-family: calibri;color: rgba(0,0,0,0.7);">Conheça <strong>Jonas Antunes</strong> – Nascido e criado em Blumenau, Santa Catarina. Iniciou no mundo da tecnologia montando e arrumando pcs. Tempos depois quis se aprofundar nesse mundo de TI, até que encontrou o programa <strong>Entra 21</strong> e não pensou duas vezes para aguarrar essa oportunidade. 
-          Foi lá onde iniciou seu aprendizado em programação. Hoje tem conhecimento em <strong>HTML5, CSS3, PHP, JavaScript, MySQL, Bootstrap e GitHub</strong>. Porém busca novos conhecimentos e se aprofunda nos aprendidos dia após dia pois oque mais gosta de fazer é programar e resolver problemas.</p>
+          Foi lá onde iniciou seu aprendizado em programação. Hoje tem conhecimento em <strong>HTML5, CSS3, PHP, JavaScript, MySQL, Bootstrap e GitHub</strong>. Porém busca novos conhecimentos e se aprofunda nos aprendidos dia após dia pois o que mais gosta de fazer é programar e resolver problemas.</p>
 
           <!-- Load font awesome icons -->
 
