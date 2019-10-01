@@ -429,6 +429,20 @@ else { $dispositivo = "computador";}
 <script src="../../../js/sb-admin-2.min.js"></script>
 
 <script src="../../../js/funcoesMobile.js"></script>
+<script type="text/javascript">
+
+        // scrolls suaves areas site
+        $('.btnscroll').on('click', function(e) {
+            e.preventDefault();
+            var id = $(this).attr('href'),
+            targetOffset = $(id).offset().top;
+            
+            $('html, body').animate({ 
+                scrollTop: targetOffset - 50
+            }, 500);
+        });
+
+    </script>
 
 </body>
 
