@@ -53,7 +53,7 @@ $conn = new Site;
 
                 <!-- 404 Error Text -->
                 <div class="text-center">
-                    <div class="error mx-auto" data-text="404">
+                    <div class="error mx-auto" data-text="<?= (isset($_GET['ERROSQL']))? $_SESSION['ERRONOSQL'] : '404' ; ?>">
                         <!-- Código do ERRO -->
                         <?= (isset($_GET['ERROSQL']))? $_SESSION['ERRONOSQL'] : '404' ; ?>
 
