@@ -176,9 +176,9 @@ $login->VerificarLogin();
                                     <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                                          aria-labelledby="dropdownMenuLink">
                                         <div class="dropdown-header">Relatórios:</div>
-                                        <a class="dropdown-item" href="#">Viagens Realizadas</a>
-                                        <a class="dropdown-item" href="#">Km's Rodados</a>
-                                        <a class="dropdown-item" href="#">Horas Reais Rodados</a>
+                                        <a class="dropdown-item" href="relatoriosDashboard/viagensrealizadas.php?ano=<?=date("Y")?>" target="_blank">Viagens Realizadas <?=date("Y")?></a>
+                                        <a class="dropdown-item" href="relatoriosDashboard/kmrodados.php?ano=<?=date("Y")?>" target="_blank">Km's Rodados <?=date("Y")?></a>
+<!--                                        <a class="dropdown-item" href="#" target="_blank">Horas Reais Rodados</a>-->
                                     </div>
                                 </div>
                             </div>

@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c934103-8016-4184-8805-c6d5a3b60100" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/pages/paginagestor/relatoriosDashboard/kmrodados.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/paginagestor/relatoriosDashboard/viagensrealizadas.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/paginagestor/404.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/404.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/paginagestor/registros.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/registros.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/paginagestor/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/paginagestor/dashboard.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -75,14 +76,14 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\TCC-POJIGO\src\pages\paginagestor" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\TCC-POJIGO" />
       <recent name="C:\xampp\htdocs\TCC-POJIGO\src\classes" />
       <recent name="C:\xampp\htdocs\TCC-POJIGO\src\pages\paginamotorista" />
       <recent name="C:\xampp\htdocs\TCC-POJIGO\src\controllers" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\TCC-POJIGO\src\pages\paginagestor" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -172,7 +173,7 @@
       <workItem from="1569412813971" duration="1587000" />
       <workItem from="1569497827140" duration="8572000" />
       <workItem from="1569583670154" duration="11524000" />
-      <workItem from="1569930011763" duration="8687000" />
+      <workItem from="1569930011763" duration="11167000" />
     </task>
     <servers />
   </component>
