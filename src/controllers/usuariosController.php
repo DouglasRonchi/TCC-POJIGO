@@ -62,16 +62,18 @@ if (isset($_POST['btnSalvar'])) {
         $usuario->setFotoPerfil($foto);
     }
 
-    $usuario->cadastrarUsuario();
+    if ($usuario->cadastrarUsuario() == false){
+        header('Location: ../pages/paginagestor/404.php?ERROSQL=t');
+    } else {
+        $conn->setAlerta(
+            'success',
+            'Usuário '.$usuario->getNome().' cadastrado com sucesso',
+            '<img class="img-fluid" src="'.$conn->path('img/icons/success.png').'">',
+            $_SESSION['usuario_id']
+        );
 
-    $conn->setAlerta(
-        'success',
-        'Usuário '.$usuario->getNome().' cadastrado com sucesso',
-        '<img class="img-fluid" src="'.$conn->path('img/icons/success.png').'">',
-        $_SESSION['usuario_id']
-    );
-
-    header('Location: ../pages/paginagestor/cadastro_usuarios.php');
+        header('Location: ../pages/paginagestor/cadastro_usuarios.php');
+    }
 
 } else if (isset($_POST['btnExcluir'])) {
     $conn->executeQuery("DELETE FROM usuario WHERE usuario_id = {$_GET['id']}");

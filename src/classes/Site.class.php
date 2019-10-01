@@ -79,10 +79,15 @@ class Site
         if ($this->result = mysqli_query($this->conn, $this->query)) {
             return $this->result;
         } else {
-            echo "Ocorreu um erro na execução da SQL";
-            echo "Erro :" . mysqli_error($this->conn);
-            echo "SQL: " . $query;
-            die();
+            $msg = "Ocorreu um erro na execução da SQL";
+            $msg .= "Erro :" . mysqli_error($this->conn);
+            $msg .= "SQL: " . $query;
+
+            $errno = mysqli_errno($this->conn);
+
+            $_SESSION['ERRONOSQL'] = $errno;
+            $_SESSION['ERROSQL'] = $msg;
+            return false;
         }
     }
 

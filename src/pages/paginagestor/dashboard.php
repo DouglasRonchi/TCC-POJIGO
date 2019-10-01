@@ -97,7 +97,7 @@ $login->VerificarLogin();
 
 
                                         <?php
-                                        $result = mysqli_fetch_assoc($conn->executeQuery("SELECT COUNT(*) AS total FROM registro_ponto"));
+                                        $result = mysqli_fetch_assoc($conn->executeQuery("SELECT COUNT(*) AS total FROM registro_ponto WHERE MONTH(hora_inicio) = (SELECT MONTH(hora_inicio) FROM registro_ponto ORDER BY MONTH(hora_inicio) DESC LIMIT 1)"));
                                         ?>
 
                                         <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $result['total'] ?></div>
