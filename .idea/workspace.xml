@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="8c934103-8016-4184-8805-c6d5a3b60100" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forgotpassword.php" beforeDir="false" afterPath="$PROJECT_DIR$/forgotpassword.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resetpassword.php" beforeDir="false" afterPath="$PROJECT_DIR$/resetpassword.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/PHPMailer.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/PHPMailer.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/loginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/loginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/menu/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/menu/footer.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -173,7 +173,8 @@
       <workItem from="1569362019579" duration="1683000" />
       <workItem from="1569412813971" duration="1587000" />
       <workItem from="1569497827140" duration="8572000" />
-      <workItem from="1569583670154" duration="11504000" />
+      <workItem from="1569583670154" duration="11524000" />
+      <workItem from="1569930011763" duration="5608000" />
     </task>
     <servers />
   </component>

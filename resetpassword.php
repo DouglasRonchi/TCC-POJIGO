@@ -2,25 +2,7 @@
 require_once 'src/classes/Autoload.class.php';
 $conn = new Site;
 $login = new Login;
-
-if (!isset($_GET['token'])){
-    //exige um token
-    header("Location: index.php");
-}else{
-    $result = mysqli_fetch_assoc($conn->executeQuery("SELECT email,token_recuperacao FROM usuario WHERE token_recuperacao = '{$_GET['token']}'"));
-    $email = $result['email'];
-    if (!$_GET['token'] == $result['token_recuperacao']){
-        header("Location: index.php");
-    } else if (isset($_POST['inputNewPassword'])){
-
-        $conn->executeQuery("UPDATE usuario SET senha = {$_POST['inputNewPassword']} WHERE email = {$email}");
-
-    }
-
-}
-
-
-
+setcookie('emailenviado','',(time()+1),'/');
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +28,7 @@ if (!isset($_GET['token'])){
 </head>
 <body>
 
-<form action="#" class="login-form" method="post">
+<form action="src/controllers/loginController.php" class="login-form" method="post">
     <div class="text-center logologin">
         <h1>POJIGO</h1>
         <small>Rotas & Registros</small>
@@ -55,6 +37,17 @@ if (!isset($_GET['token'])){
 
     </div>
 
+    <?php
+    if (isset($_COOKIE['emaildiff'])): ?>
+        <div class="alert alert-danger alert-dismissible animated--grow-in fade show" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            As senhas não conferem!
+        </div>
+    <?php endif; ?>
+
+    <input type="hidden" name="token" value="<?= $_GET['token'] ?>">
     <div class="txtb">
         <input type="password" id="inputNewPassword" name="inputNewPassword">
         <span data-placeholder="Nova Senha"></span>
@@ -65,7 +58,7 @@ if (!isset($_GET['token'])){
         <span data-placeholder="Confirmação Nova Senha"></span>
     </div>
 
-    <input type="submit" class="logbtn btn btn-primary" value="Confirmar">
+    <input type="submit" class="logbtn btn btn-primary" name="btnResetPass" value="Confirmar">
 
 
 </form>

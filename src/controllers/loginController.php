@@ -1,7 +1,7 @@
 <?php
-require_once ('../classes/Login.class.php');
-require_once ('../classes/Site.class.php');
-require_once ('../classes/PHPMailer.class.php'); //chama a classe de onde você a colocou.
+require_once('../classes/Login.class.php');
+require_once('../classes/Site.class.php');
+require_once('../classes/PHPMailer.class.php'); //chama a classe de onde você a colocou.
 
 
 $login = New Login;
@@ -27,19 +27,16 @@ if (isset($_POST['btnLogar'])) {
     if ($rows > 0) {
 
 
-
         //        //Email e Usuario Encontrados
-        $token = hash('sha256', $email+time());
-        $link = "localhost/TCC-POJIGO/resetpassword.php?token=".$token;
+        $token = hash('sha256', $email . time());
+        $link = "localhost/TCC-POJIGO/resetpassword.php?token=" . $token;
 
         $conn->executeQuery("UPDATE usuario SET token_recuperacao = '{$token}' WHERE email = '{$email}'");
-
         $mail = new PHPMailer(); // instancia a classe PHPMailer
 
-
 //configuração do email
-        DEFINE("USUARIO","pojigo.tk@gmail.com");
-        DEFINE("SENHA","entra21@Blusoft");
+        DEFINE("USUARIO", "pojigo.tk@gmail.com");
+        DEFINE("SENHA", "entra21@Blusoft");
         //$mail->SMTPDebug = 3;
         $mail->isSMTP();
         $mail->CharSet = "UTF-8"; //Configurando UTF-8
@@ -56,7 +53,7 @@ if (isset($_POST['btnLogar'])) {
 
 
 // configuração do email a ver enviado.
-        $mail->SetFrom("pojigo.tk@gmail.com","Pojigo", 0);
+        $mail->SetFrom("pojigo.tk@gmail.com", "Pojigo", 0);
         $mail->FromName = "POJIGO - Rotas & Registros";
 
         $mail->addAddress($email); // email do destinatario.
@@ -103,17 +100,57 @@ if (isset($_POST['btnLogar'])) {
 
         $mail->Subject = "Recuperação de Senha - POJIGO.";
         $mail->Body = $arquivo;
-
-        if(!$mail->Send()){
+        setcookie('emailenviado', 'true', (time() + 10), '/');
+        try {
+            if (!$mail->Send()) {
+                setcookie('emailenviado', '', (time() + 1), '/');
+            } else {
+                echo "E-mail Enviado";
+                //Email enviado com sucesso, verifique sua caixa de entrada
+            }
+        } catch (Exception $e) {
             echo "Erro ao enviar Email:" . $mail->ErrorInfo;
-        }else{
-            echo "E-mail Enviado";
-            //Email enviado com sucesso, verifique sua caixa de entrada
         }
 
 
     }
 
     //Usuario ou Email não conferem
+
+
+} else if (isset($_POST['btnResetPass'])) {
+
+    $pass = $_POST['inputNewPassword'];
+    $confPass = $_POST['inputNewPasswordConf'];
+    if ($pass != $confPass) {
+        setcookie('emaildiff', 'true', (time() + 10), '/');
+        header('Location: ../../resetpassword.php');
+    } else {
+
+        if (!isset($_POST['token'])) {
+            //exige um token
+            setcookie('tokeninvalido', 'true', (time() + 10), '/');
+            header("Location: ../../login.php");
+        } else {
+            $result = mysqli_fetch_assoc($conn->executeQuery("SELECT email,token_recuperacao FROM usuario WHERE token_recuperacao = '{$_POST['token']}'"));
+            $email = $result['email'];
+            if (!$_POST['token'] == $result['token_recuperacao']) {
+                setcookie('tokeninvalido', 'true', (time() + 10), '/');
+                header("Location: ../../login.php");
+            } else if (isset($_POST['inputNewPassword'])) {
+                setcookie('recuperacaoSucesso', 'true', (time() + 10), '/');
+                setcookie('tokeninvalido', 'false', (time() + 1), '/');
+                $conn->executeQuery("UPDATE usuario SET senha = '" . hash('sha512', $_POST['inputNewPassword']) . "' WHERE email = '{$email}'");
+                $conn->executeQuery("UPDATE usuario SET token_recuperacao = '' WHERE email = '{$email}'");
+                header("Location: ../../login.php");
+
+            }
+
+        }
+
+    }
+
+
+
 
 }

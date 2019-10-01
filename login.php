@@ -29,6 +29,40 @@
         <h1>POJIGO</h1>
         <small>Rotas & Registros</small>
     </div>
+
+    <?php
+    if (isset($_COOKIE['recuperacaoSucesso'])): ?>
+        <div class="alert alert-success alert-dismissible animated--grow-in fade show" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            Senha alterada com sucesso!
+        </div>
+    <?php endif; ?>
+
+
+
+    <?php
+    if (isset($_COOKIE['emailenviado']) && $_COOKIE['emailenviado'] == 'true'): ?>
+        <div class="alert alert-warning alert-dismissible animated--grow-in fade show" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            Foi enviado para o e-mail cadastrado, o link para redefinir a sua senha, verifique sua caixa de e-mail.
+        </div>
+    <?php endif; ?>
+
+    <?php
+    if (isset($_COOKIE['tokeninvalido']) && $_COOKIE['tokeninvalido'] == 'true'): ?>
+        <div class="alert alert-warning alert-dismissible animated--grow-in fade show" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            E-mail inválido ou link de recuperação expirado/inválido.
+        </div>
+    <?php endif; ?>
+
+
     <?php if (isset($_COOKIE['inv'])): ?>
         <div class="alert alert-danger alert-dismissible animated--grow-in fade show" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -80,7 +114,6 @@
         if ($(this).val() == "")
             $(this).removeClass("focus");
     });
-
 </script>
 </body>
 </html>
