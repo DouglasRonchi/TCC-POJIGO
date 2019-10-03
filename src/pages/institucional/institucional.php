@@ -345,7 +345,7 @@ else { $dispositivo = "computador";}
             </div>
             <div class="cardgadgets">
                 <a class="gadgets gedwhats" data-toggle="modal" data-target=".bd-example-modal-sm" href="Whats:(47) 984380116" target="_blank">
-                    <img class="imgwhats" border="0" src="../../../img/institucional/inicial_icons/whatsapp.png" title="Whats:(47) 996545424" /></a>
+                    <img class="imgwhats" border="0" src="../../../img/institucional/inicial_icons/whatsapp.png" title="Whats:(47) 984380116" /></a>
                 </div>
                 <div class="cardgadgets">
                     <a class="gadgets gedyoutube" href="https://www.youtube.com/channel/UCusMR_Z4ozLqcf__GpBgehg" target="_blank">
