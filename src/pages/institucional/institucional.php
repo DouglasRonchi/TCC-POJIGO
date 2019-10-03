@@ -308,7 +308,7 @@ else { $dispositivo = "computador";}
  </div>
 
  <div class="card col-lg col-sm-10 border-0 divperfil">
-    <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/jonas.png" alt="Imagem de capa do card" title="Jonas">
+    <img  class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/jonas.png" alt="Imagem de capa do card" title="Jonas">
     <div class="card-body text-center">
         <h4 class="card-title text-white nomeperfil">Jonas Antunes</h4>
         <?php if ($dispositivo == "computador" || $ipad == true) { ?>

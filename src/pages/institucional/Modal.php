@@ -60,7 +60,7 @@
         </div>
         <div class="modal-body">
            <p style="font-family: calibri;color: rgba(0,0,0,0.7);">
-          Conheça <strong>Paloma Teply!</strong> Natural de Blumenau , em Santa Catarina. Iniciou no mundo da tecnologia através do programa entra21. Foi lá onde seu aprendizado em programação, conhecendo<strong> HTML5, CSS3, JavaScript, PHP, MYSQL, Bootstrap, Github.</strong> Prefere atuar na área de front-end do site.</p>
+          Conheça <strong>Paloma Teply!</strong> Natural de Blumenau , em Santa Catarina. Iniciou no mundo da tecnologia através do programa entra21. Foi lá onde adquiriu seu aprendizado em programação, conhecendo<strong> HTML5, CSS3, JavaScript, PHP, MYSQL, Bootstrap, Github.</strong> Prefere atuar na área de front-end do site.</p>
 
           <!-- Load font awesome icons -->
 

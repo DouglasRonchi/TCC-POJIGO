@@ -105,7 +105,7 @@ if (isset($_GET['userId'])) {
                   <?php if (isset($_POST["btnsalvar"])) {
                     if (($cnh < date ('Y-m-d')) || ($cnh < $venc["venc_cnh"]) || ($mopp < date('Y-m-d')) || ($mopp < $venc["venc_mopp"])) { ?>
                       <div class="col-8 py-0">
-                        <div class="col-12 py-1 alert alert-warning alert-dismissible fade show" role="alert" style="box-shadow: 1px 1px 10px -1px rgba(0,0,0,0.3);margin: -10px;">
+                        <div class="col-12 py-1 alert alert-danger alert-dismissible fade show" role="alert" style="box-shadow: 1px 1px 10px -1px rgba(0,0,0,0.3);margin: -10px;">
                           <strong>Data de vencimento não pode ser menor que a data atual e que o vencimento já registrado !!</strong>
                           <button type="button" class="close py-1" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
