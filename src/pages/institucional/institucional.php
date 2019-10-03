@@ -10,7 +10,7 @@ $symbian = strpos($_SERVER['HTTP_USER_AGENT'],"Symbian");
 $windowsphone = strpos($_SERVER['HTTP_USER_AGENT'],"Windows Phone");
 
 if ($iphone || $ipad || $android || $palmpre || $ipod || $berry || $symbian || $windowsphone == true) {
-   $dispositivo = "mobile";
+ $dispositivo = "mobile";
 }
 
 else { $dispositivo = "computador";}
@@ -74,8 +74,6 @@ else { $dispositivo = "computador";}
                     <div class="navbar-nav mr-auto">
                         <a class="nav-item nav-link text-white menulink" href="#"><strong>Home</strong><span class="sr-only">(current)</span></a>
                         <a href="#quemsomos" class="nav-item nav-link text-white btnscroll menulink"><strong>Quem somos</strong></a>
-                        <a href="#faleconosco" class="nav-item nav-link text-white btnscroll menulink"><strong>Fale conosco</strong></a>
-
                     </div>
                 </div>
                 <form class="form-inline my-2 my-lg-0">
@@ -145,7 +143,7 @@ else { $dispositivo = "computador";}
             <div class="card col-lg col-sm-12 m-lg-2 mb-3 text-center sombra" id="card" style="width: 18rem;">
                 <div class="col mt-4"><img class="imgcard" src="../../../img/institucional/monitoramento1.png" title="MONITORAMENTO"></div>
                 <div class="card-body m-3">
-                    <h3 class="card-title titlecard">MONITORAMENTO</h3>
+                    <h3 class="card-title titlecard mt-3">MONITORAMENTO</h3>
                     <center>
                         <a class="btn bg-dark btnscroll col-3 mt-4 btncard" href="#monitoramento"><img height="30" width="30" src="../../../img/institucional/inicial_icons/down.gif"></a>
                     </center>
@@ -184,8 +182,8 @@ else { $dispositivo = "computador";}
 
     <div class="col-12">
         <h4 class="text-center mb-4 titlegif">RASTREAMENTO</h4>
-        <div class="mb-5">
-            <img class="sombra gif" title="RASTREAMENTO" style="border-radius: 15px;" src="../../../img/institucional/rastreagif.gif">
+        <div class="" style="margin-bottom: 100px;">
+            <img class="sombra gif" style="border-radius: 15px;" src="../../../img/institucional/rastreagif.gif">
         </div>
         <h5 class="mb-5 text-center descricao"><strong>Rastreie suas frotas para uma melhor precisão em suas entregas.</strong></h5>
         <a class="btn btn-primary btngif" href="../../../login.php" role="button">EXPERIMENTE AGORA</a>
@@ -196,7 +194,7 @@ else { $dispositivo = "computador";}
     <div class="col-12">
         <h4 class="text-center mb-4 titlegif">MONITORAMENTO</h4>
         <div class="mb-5">
-            <img class="sombra gif" style="border-radius: 15px;" title="MONITORAMENTO" src="../../../img/institucional/monitorgif.gif"
+            <img class="sombra gif" style="border-radius: 15px;" src="../../../img/institucional/monitorgif.gif"
             width="600" height="350">
         </div>
         <h5 class="mb-5 text-center descricao"><strong>Monitore seus motoristas, tenha controle e relatórios de horários, diárias entre outros.</strong></h5>
@@ -208,7 +206,7 @@ else { $dispositivo = "computador";}
     <div class="col-12">
         <h4 class="text-center mb-4 titlegif">CNH E MOPP</h4>
         <div class="mb-5">
-            <img class="sombra gif" style="border-radius: 15px;" title="CNH E MOPP" src="../../../img/institucional/cnhgif.gif" width="600"
+            <img class="sombra gif" style="border-radius: 15px;" src="../../../img/institucional/cnhgif.gif" width="600"
             height="350">
         </div>
         <h5 class="mb-5 text-center descricao"><strong>Garanta a segurança em sua empresa.
@@ -256,17 +254,17 @@ else { $dispositivo = "computador";}
                     <?php } elseif ($dispositivo == "mobile") {?>
                         <!-- The social media icon bar -->
                         <div class="icon-bar text-center iconesico">
-                           <a href="https://www.facebook.com/paloma.teply" class="facebook mr-4" target="_blank" style="color: white;"><i class="fa fa-facebook"></i></a> 
-                           <a href="https://twitter.com/TeplyPaloma" class="twitter mr-4" target="_blank" style="color: white;"><i class="fa fa-twitter"></i></a> 
-                           <a href="https://www.instagram.com/teply.p" class="instagram mr-4" target="_blank" style="color: white;"><i class="fab fa-instagram"></i></a> 
-                           <a href="https://github.com/Paloma-teply" class="github mr-4" target="_blank" style="color: white;"><i class="fab fa-github"></i></a> 
-                           <a href="https://www.linkedin.com/in/paloma-teply-b25970190" class="linkedin" target="_blank" style="color: white;"><i class="fa fa-linkedin"></i></a>
-                       </div>
-                   <?php } ?>
-               </div>
-           </div>
+                         <a href="https://www.facebook.com/paloma.teply" class="facebook mr-4" target="_blank" style="color: white;"><i class="fa fa-facebook"></i></a> 
+                         <a href="https://twitter.com/TeplyPaloma" class="twitter mr-4" target="_blank" style="color: white;"><i class="fa fa-twitter"></i></a> 
+                         <a href="https://www.instagram.com/teply.p" class="instagram mr-4" target="_blank" style="color: white;"><i class="fab fa-instagram"></i></a> 
+                         <a href="https://github.com/Paloma-teply" class="github mr-4" target="_blank" style="color: white;"><i class="fab fa-github"></i></a> 
+                         <a href="https://www.linkedin.com/in/paloma-teply-b25970190" class="linkedin" target="_blank" style="color: white;"><i class="fa fa-linkedin"></i></a>
+                     </div>
+                 <?php } ?>
+             </div>
+         </div>
 
-           <div class="card col-lg col-sm-10 border-0 divperfil">
+         <div class="card col-lg col-sm-10 border-0 divperfil">
             <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/giovane.jpg" title="Geovane" 
             alt="Imagem de capa do card">
             <div class="card-body text-center">
@@ -278,17 +276,17 @@ else { $dispositivo = "computador";}
                 <?php } elseif ($dispositivo == "mobile") {?>
                     <!-- The social media icon bar -->
                     <div class="icon-bar text-center iconesico">
-                       <a href="https://www.facebook.com/geovane.duarte.7359" class="facebook mr-4" target="_blank" style="color: white;"><i class="fa fa-facebook"></i></a> 
-                       <!-- <a href="" class="twitter mr-4" target="_blank" style="color: white;"><i class="fa fa-twitter"></i></a>  -->
-                       <!-- <a href="" class="instagram mr-4" target="_blank" style="color: white;"><i class="fab fa-instagram"></i></a>  -->
-                       <a href="https://github.com/Geovane22" class="github mr-4" target="_blank" style="color: white;"><i class="fab fa-github"></i></a> 
-                       <!-- <a href="https://www.linkedin.com/in/geovane-duarte-da-silva-3bb387194" class="linkedin" target="_blank" style="color: white;"><i class="fa fa-linkedin"></i></a> -->
-                   </div>
-               <?php } ?>
-           </div>
-       </div>
+                     <a href="https://www.facebook.com/geovane.duarte.7359" class="facebook mr-4" target="_blank" style="color: white;"><i class="fa fa-facebook"></i></a> 
+                     <!-- <a href="" class="twitter mr-4" target="_blank" style="color: white;"><i class="fa fa-twitter"></i></a>  -->
+                     <!-- <a href="" class="instagram mr-4" target="_blank" style="color: white;"><i class="fab fa-instagram"></i></a>  -->
+                     <a href="https://github.com/Geovane22" class="github mr-4" target="_blank" style="color: white;"><i class="fab fa-github"></i></a> 
+                     <!-- <a href="https://www.linkedin.com/in/geovane-duarte-da-silva-3bb387194" class="linkedin" target="_blank" style="color: white;"><i class="fa fa-linkedin"></i></a> -->
+                 </div>
+             <?php } ?>
+         </div>
+     </div>
 
-       <div class="card col-lg col-sm-10 border-0 divperfil">
+     <div class="card col-lg col-sm-10 border-0 divperfil">
         <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/dauana.jpg" alt="Imagem de capa do card" title="Dauana">
         <div class="card-body text-center">
             <h4 class="card-title text-white nomeperfil">Dauana Severo</h4>
@@ -299,17 +297,17 @@ else { $dispositivo = "computador";}
             <?php } elseif ($dispositivo == "mobile") {?>
                 <!-- The social media icon bar -->
                 <div class="icon-bar text-center iconesico">
-                   <a href="https://www.facebook.com/dauana.severo" class="facebook mr-4" target="_blank" style="color: white;"><i class="fa fa-facebook"></i></a> 
-                   <!-- <a href="" class="twitter mr-4" target="_blank" style="color: white;"><i class="fa fa-twitter"></i></a>  -->
-                   <a href="https://www.instagram.com/dauanasvro" class="instagram mr-4" target="_blank" style="color: white;"><i class="fab fa-instagram"></i></a> 
-                   <a href="https://github.com/dauanaana" class="github mr-4" target="_blank" style="color: white;"><i class="fab fa-github"></i></a> 
-                   <a href="https://www.linkedin.com/in/dauana-severo-bb152a18a" class="linkedin" target="_blank" style="color: white;"><i class="fa fa-linkedin"></i></a>
-               </div>
-           <?php } ?>
-       </div>
-   </div>
+                 <a href="https://www.facebook.com/dauana.severo" class="facebook mr-4" target="_blank" style="color: white;"><i class="fa fa-facebook"></i></a> 
+                 <!-- <a href="" class="twitter mr-4" target="_blank" style="color: white;"><i class="fa fa-twitter"></i></a>  -->
+                 <a href="https://www.instagram.com/dauanasvro" class="instagram mr-4" target="_blank" style="color: white;"><i class="fab fa-instagram"></i></a> 
+                 <a href="https://github.com/dauanaana" class="github mr-4" target="_blank" style="color: white;"><i class="fab fa-github"></i></a> 
+                 <a href="https://www.linkedin.com/in/dauana-severo-bb152a18a" class="linkedin" target="_blank" style="color: white;"><i class="fa fa-linkedin"></i></a>
+             </div>
+         <?php } ?>
+     </div>
+ </div>
 
-   <div class="card col-lg col-sm-10 border-0 divperfil">
+ <div class="card col-lg col-sm-10 border-0 divperfil">
     <img class="rounded-circle mt-2 col foto" src="../../../img/institucional/perfil/jonas.png" alt="Imagem de capa do card" title="Jonas">
     <div class="card-body text-center">
         <h4 class="card-title text-white nomeperfil">Jonas Antunes</h4>
@@ -389,7 +387,7 @@ else { $dispositivo = "computador";}
 
 
 
-<script type="text/javascript">
+                <script type="text/javascript">
     // When the user scrolls down 20px from the top of the document, show the button
     window.onscroll = function () {
         scrollFunction()
