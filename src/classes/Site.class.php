@@ -9,15 +9,15 @@
 class Site
 {
 
-     private $host = "pojigo.tk:3306";
-     private $user = "pojigo";
-     private $password = "entra21@Blusoft";
-     private $database = "pojigo_master";
+     // private $host = "pojigo.tk:3306";
+     // private $user = "pojigo";
+     // private $password = "entra21@Blusoft";
+     // private $database = "pojigo_master";
 
-// private $host="localhost";
-// private $user="root";
-// private $password="";
-// private $database="controlerotas";
+    private $host="localhost";
+    private $user="root";
+    private $password="";
+    private $database="controlerotas";
 
  public $query;
  private $conn;
@@ -51,8 +51,8 @@ class Site
 
 
          //Includes de configurações e funções globais do projeto
-//			require_once($this->path("src/include/config.php"));
-//            require_once($this->path("src/include/functions.php"));
+         //   require_once($this->path("src/include/config.php"));
+         //   require_once($this->path("src/include/functions.php"));
     }
 
     public static function path($url){
